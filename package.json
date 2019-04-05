@@ -1,0 +1,33 @@
+{
+  "name": "nightwatch",
+  "version": "1.0.0",
+  "description": "Research for nightwatch Framework and write test scripts to execute end-to-end test case by using nightwatch with Ecommerce site",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "nightwatch": "^1.0.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vihoang0706/autoTest_PNVTeam1.git"
+  },
+  "keywords": [
+    "nightwatch",
+    "automation",
+    "testing",
+    "galen",
+    "framework"
+  ],
+  "author": "PNVTeam1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vihoang0706/autoTest_PNVTeam1/issues"
+  },
+  "homepage": "https://github.com/vihoang0706/autoTest_PNVTeam1#readme"
+}

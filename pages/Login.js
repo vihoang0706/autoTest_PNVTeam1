@@ -1,39 +1,66 @@
 var loginCommands = {
-    validateForm: function() {
+	validateForm: function () {
 		this
 			.verify.visible('@linkAccount')
 			.click('@linkAccount')
 			.verify.visible('@linkLogin')
 			.click('@linkLogin')
-			.verify.visible('@email')
-			.verify.visible('@password')
-			.verify.visible('@submit')
+			.verify.visible('@inputEmail')
+			.verify.visible('@inputPassword')
+			.verify.visible('@buttonSubmit')
+			.verify.containsText('@buttonSubmit', 'Đăng nhập')
 			.verify.visible('@linkForgotPass')
 			.verify.visible('@linkRegister')
 			.verify.elementNotPresent('@errorMessage')
-			return this;
+		return this;
 	},
-	fillInForm: function(username, password) {
-		return this.waitForElementVisible('body', 1000)
-			.setValue('@username', username)
-			.setValue('@password', password)
+	gotoPage: function () {
+		this
+			.click('@linkAccount')
+			.click('@linkLogin')
+		return this;
 	},
-	submit: function() {
-		return this.verify.value('@submit', 'Log In')
-			.click('@submit')
+
+	fillInLoginForm: function (username, password) {
+		this
+			.setValue('@inputEmail', username)
+			.setValue('@inputPassword', password)
+			.verify.containsText('@buttonSubmit', 'Đăng nhập')
+			.click('@buttonSubmit')
+		return this;
 	},
-	validateError: function(errorMessage) {
-		return this.verify.visible('@error')
-			.verify.containsText('@error', errorMessage)
-			.verify.valueContains('@username', '')
-			.verify.valueContains('@password', '')
+	checkLoginSucessfully() {
+		this
+			.waitForElementVisible('@logged_account', 1000)
+			.assert.containsText('@logged_account', 'Chào bạn')
+			.pause(1000);
+		return this;
+	},
+	checkErrorMessage: function (errorMessage) {
+		this
+			.waitForElementVisible('@errorMessage', 1000)
+			.verify.visible('@errorMessage')
+			.assert.containsText('@errorMessage', errorMessage)
+		return this;
+	},
+	checkValidationErrorMess: function(xpath,errorValidationError){
+		this.waitForElementVisible(xpath,1000)
+				.verify.visible(xpath)
+				.assert.containsText(xpath,errorValidationError)
+		return this;
+	},
+	checkValueContainInput: function (email, password) {
+		this
+			.verify.valueContains('@inputEmail', email)
+			.verify.valueContains('@inputPassword', password)
+		return this;
 	}
 };
 
 module.exports = {
-    commands: [loginCommands],
-    url:'http://127.0.0.1:8000/home',
-    elements: {
+	commands: [loginCommands],
+	url: 'http://127.0.0.1:8000/home',
+	elements: {
 		linkAccount: {
 			selector: '//li/a[@id="dropdown-category"]/i[contains(text(),"Tài khoản")]',
 			locateStrategy: 'xpath'
@@ -46,34 +73,37 @@ module.exports = {
 			selector: '//div[@align="center"]/a[@class="btn btn-link"]',
 			locateStrategy: 'xpath'
 		},
-		linkRegister:{
+		linkRegister: {
 			selector: '//div[@align="right"]/a[@class="btn btn-link"]',
 			locateStrategy: 'xpath'
 		},
-		email: {
+		inputEmail: {
 			selector: '//input[@id="email"]',
 			locateStrategy: 'xpath'
 		},
-		password: {
+		inputPassword: {
 			selector: '//input[@id="password"]',
 			locateStrategy: 'xpath'
 		},
-		submit: {
+		buttonSubmit: {
 			selector: '//button[@name="Đăng nhập"]',
 			locateStrategy: 'xpath'
 		},
 		errorEmailValidationMess: {
-			selector: '//span[@id="error_email" and text()="Vui lòng nhập email"]',
-			locateStrategy:'xpath'
+			selector: '//span[@id="error_email"]',
+			locateStrategy: 'xpath'
 		},
 		errorPasswordValidationMess: {
-			selector: '//span[@id="error_email" and text()="Vui lòng nhập mật khẩu"]',
-			locateStrategy:'xpath'
+			selector: '//span[@id="error_password"]',
+			locateStrategy: 'xpath'
+		},
+		logged_account: {
+			selector: '//a[@id="dropdown-category"]/i[@class="fa fa-user"]',
+			locateStrategy: 'xpath'
 		},
 		errorMessage: {
 			selector: '//div[@class="alert alert-danger"]/p',
 			locateStrategy: 'xpath'
 		},
 	}
-
 }

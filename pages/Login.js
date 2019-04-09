@@ -7,8 +7,8 @@ var loginCommands = {
 			.click('@linkLogin')
 			.verify.visible('@inputEmail')
 			.verify.visible('@inputPassword')
-			.verify.visible('@buttonSubmit')
-			.verify.containsText('@buttonSubmit', 'Đăng nhập')
+			.verify.visible('@buttonLogin')
+			.verify.containsText('@buttonLogin', 'Đăng nhập')
 			.verify.visible('@linkForgotPass')
 			.verify.visible('@linkRegister')
 			.verify.elementNotPresent('@errorMessage')
@@ -24,8 +24,8 @@ var loginCommands = {
 		this
 			.setValue('@inputEmail', username)
 			.setValue('@inputPassword', password)
-			.verify.containsText('@buttonSubmit', 'Đăng nhập')
-			.click('@buttonSubmit')
+			.verify.containsText('@buttonLogin', 'Đăng nhập')
+			.click('@buttonLogin')
 		return this;
 	},
 	checkLoginSucessfully() {
@@ -61,6 +61,15 @@ var loginCommands = {
 	logout: function (){
 		this.click('@linkLogout');
 		return this;
+	},
+	checkMessageExist: function(xpath, errorMessage){
+		if(errorMessage !=""){
+			if(xpath){
+				this
+				    .assert.containsText(xpath,errorMessage);
+			}
+			else this.verify.visible(xpath);
+		}
 	}
 };
 
@@ -92,7 +101,7 @@ module.exports = {
 			selector: '//input[@id="password"]',
 			locateStrategy: 'xpath'
 		},
-		buttonSubmit: {
+		buttonLogin: {
 			selector: '//button[@name="Đăng nhập"]',
 			locateStrategy: 'xpath'
 		},

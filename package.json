@@ -7,6 +7,7 @@
     "test": "tests"
   },
   "dependencies": {
+    "exceljs": "^1.9.0",
     "nightwatch": "^1.0.19"
   },
   "devDependencies": {},

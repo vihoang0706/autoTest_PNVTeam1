@@ -5,9 +5,13 @@
 
   <testsuite name="testLoginDataDriven"
     errors="0" failures="0" hostname="" id="" package="testLoginDataDriven" skipped="0"
-    tests="3" time="27.43" timestamp="">
+    tests="3" time="19.07" timestamp="">
   
-    <testcase name="Login Page Initial Render" classname="testLoginDataDriven" time="4.407" assertions="9">
+    <testcase name="Login Page Initial Render" classname="testLoginDataDriven" time="1.759" assertions="11">
+
+    
+
+    
 
     
 
@@ -28,22 +32,56 @@
     
     </testcase>
   
-    <testcase name="Data-driven Testing for Invalid Login function" classname="testLoginDataDriven" time="15.26" assertions="6">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
+    <testcase name="Data-driven Testing for login with Invalid account" classname="testLoginDataDriven" time="0.3170" assertions="0">
     </testcase>
   
-    <testcase name="Login with valid account" classname="testLoginDataDriven" time="7.764" assertions="5">
+    <testcase name="Login with valid account" classname="testLoginDataDriven" time="17.00" assertions="28">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
 

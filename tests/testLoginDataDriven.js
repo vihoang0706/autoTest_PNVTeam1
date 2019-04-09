@@ -3,16 +3,17 @@ const password = 'a123456789';
 module.exports = {
     '@tags': ['loginDataDriven'],
 
+    before : function(browser) {
+        var login = browser.page.Login();
+        login.navigate().maximizeWindow();
+      },
+
     'Login Page Initial Render': function (browser) {
         var login = browser.page.Login();
-        browser.maximizeWindow()
-        login.navigate()
-            .validateForm();
+        login.gotoPage().validateForm();
     },
     'Data-driven Testing for login with Invalid account': function (browser) {
         var login = browser.page.Login();
-        login.navigate()
-            .maximizeWindow();
         var Excel = require('exceljs');
         //Read a file
         var workbook = new Excel.Workbook();
@@ -22,20 +23,21 @@ module.exports = {
             var row = worksheet.lastRow;
             //Count actual number of row
             var rowCount = worksheet.actualRowCount;
-            for (let i = 1; i <= rowCount; i++) {
-                login.gotoPage()
-                    .setValue('@inputEmail', worksheet.getRow(i).getCell(1).text)
-                    .setValue('@inputPassword', worksheet.getRow(i).getCell(2).text)
-                    .pause(1000)
-                    .click('@buttonLogin')
-                var actutalEmailValidationError = worksheet.getRow(i).getCell(3).text;
-                var actutalPassValidationError = worksheet.getRow(i).getCell(4).text;
-                var actutalError = worksheet.getRow(i).getCell(5).text;
-                login.checkMessageExist('@errorEmailValidationMess', actutalEmailValidationError);
-                login.checkMessageExist('@errorPasswordValidationMess', actutalPassValidationError);
-                login.checkMessageExist('@errorMessage', actutalError);
-                login.clearValue('@inputEmail')
-                    .clearValue('@inputPassword');
+            var columnCount = worksheet.columnCount;
+            for (let i = 2; i <= rowCount; i++) {
+                for(let j=1; j<columnCount;j++){
+                    var username = worksheet.getRow(i).getCell(j).text;
+                    var pass = worksheet.getRow(i).getCell(++j).text;
+                    var actutalEmailValidationError = worksheet.getRow(i).getCell(++j).text;
+                    var actutalPassValidationError = worksheet.getRow(i).getCell(++j).text;
+                    var actutalError = worksheet.getRow(i).getCell(++j).text;
+                    login.gotoPage().fillInLoginForm(username, pass)
+                    login.checkMessageExist('@errorEmailValidationMess', actutalEmailValidationError);
+                    login.checkMessageExist('@errorPasswordValidationMess', actutalPassValidationError);
+                    login.checkMessageExist('@errorMessage', actutalError);
+                    login.clearValue('@inputEmail')
+                         .clearValue('@inputPassword');
+                }
             }
             row.commit();
         });

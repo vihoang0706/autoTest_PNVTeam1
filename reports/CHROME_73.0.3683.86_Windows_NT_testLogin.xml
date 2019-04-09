@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+<<<<<<< HEAD
+            failures="1"
+            tests="1">
+
+  <testsuite name="testLogin"
+    errors="0" failures="1" hostname="" id="" package="testLogin" skipped="0"
+    tests="1" time="3.138" timestamp="">
+  
+    <testcase name="login with valid account" classname="testLogin" time="3.138" assertions="1">  <failure message="Timed out while waiting for element &lt;body&gt; to be present for 1000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.fillInForm (C:\xampp\htdocs\autoTest_PNVTeam1\pages\DraftLogin.js:5:15)
+    at Object.login with valid account (C:\xampp\htdocs\autoTest_PNVTeam1\tests\testLogin.js:7:10)</failure>
+
+    <failure message="    at Page.fillInForm (C:\xampp\htdocs\autoTest_PNVTeam1\pages\DraftLogin.js:5:15)">    at Object.login with valid account (C:\xampp\htdocs\autoTest_PNVTeam1\tests\testLogin.js:7:10)</failure>
+=======
+            failures="0"
+            tests="7">
+
+  <testsuite name="testLogin"
+    errors="0" failures="0" hostname="" id="" package="testLogin" skipped="0"
+    tests="7" time="30.41" timestamp="">
+  
+    <testcase name="Login Page Initial Render" classname="testLogin" time="3.971" assertions="9">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Try to login with no username or password" classname="testLogin" time="3.767" assertions="9">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Try to login with a username and no password" classname="testLogin" time="3.699" assertions="6">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Try to login with a password and no username" classname="testLogin" time="3.828" assertions="6">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Enter password less than 8 characters" classname="testLogin" time="3.703" assertions="6">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Enter wrong username and password" classname="testLogin" time="3.816" assertions="6">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Login with valid account" classname="testLogin" time="7.626" assertions="5">
+
+    
+
+    
+
+    
+
+    
+
+    
+>>>>>>> dev
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

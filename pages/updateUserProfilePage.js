@@ -33,6 +33,9 @@ module.exports = {
             this
                 .clearValue('@inputEmail')
                 .clearValue('@inputName')
+                .clearValue('@inputAccount')
+                .clearValue('@inputAddress')
+                .clearValue('@inputPhone')
                 .setValue('@inputUploadImage', require('path').resolve(image))  
                 .setValue('@inputName',name )
                 .setValue('@inputEmail',email )
@@ -44,7 +47,35 @@ module.exports = {
                 .setValue('@inputPhone',phone_number )
                 .click('@buttonSaveProfile')
             return this.api
-        }         
+        },  
+        logOutWebsite()  {
+            this
+                .click('@accountLink')
+                .click('@linkSignOut')
+                return this.api
+        },
+        checkUserProfileSuccess(image, name, email, account, gender, address, phone_number){
+            var link_image = '';
+            this
+                .assert.attributeContains('@inputName', 'value', name)
+                .assert.attributeContains('@inputEmail', 'value', email)
+                .assert.attributeContains('@inputAccount', 'value', account)
+                .assert.attributeContains('@inputAddress', 'value', address)
+                .assert.attributeContains('@inputPhone', 'value', phone_number)
+                .assert.attributeContains('@selectGender', 'value', gender)
+                // .getAttribute('@imgAvatar', "src", function(result) {
+                //     link_image = result.value;
+                // })
+                // console.log(link_image);
+
+            return this.api    
+
+        },
+        checkErrorMessage(elementor, value) {
+            this
+            .assert.containsText(elementor, value)
+            return this.api 
+        }  
     }],
     elements: {
         // elementor of login function
@@ -125,5 +156,17 @@ module.exports = {
             selector: '//button[@name="save_profile"]',
             locateStrategy: 'xpath'
         },
+        imgAvatar: {
+            selector: '//div[@class="avatar"]/img',
+            locateStrategy: 'xpath'
+        },
+        nameError: {
+            selector: '//span[@id="error_name"]',
+            locateStrategy: 'xpath'
+        },
+        emailError: {
+            selector: '//span[@id="error_email"]',
+            locateStrategy: 'xpath'
+        }
     }
 };

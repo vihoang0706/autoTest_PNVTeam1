@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="0"
+            failures="1"
             tests="1">
 
   <testsuite name="updateUserProfile"
-    errors="0" failures="0" hostname="" id="" package="updateUserProfile" skipped="0"
-    tests="1" time="4.990" timestamp="">
+    errors="0" failures="1" hostname="" id="" package="updateUserProfile" skipped="0"
+    tests="1" time="0.3560" timestamp="">
   
-    <testcase name="User can edit your account after login" classname="updateUserProfile" time="4.990" assertions="0">
+    <testcase name="MyTest" classname="updateUserProfile" time="0.3560" assertions="2">
+
+      <failure message="Testing if element &lt;Element [name=@emailError]&gt; contains text: &#34;&#34;. Element could not be located in 1000 ms. - expected [0;32m&#34;&#34;[0m but got: [0;31m&#34;null&#34;[0m">    at Page.checkErrorMessage (C:\Users\InternDN19.01.06\autoTest_PNVTeam1\pages\updateUserProfilePage.js:76:21)
+    at C:\Users\InternDN19.01.06\autoTest_PNVTeam1\tests\updateUserProfile.js:29:36</failure>
+
+    <failure message="    at Page.checkErrorMessage (C:\Users\InternDN19.01.06\autoTest_PNVTeam1\pages\updateUserProfilePage.js:76:21)">    at C:\Users\InternDN19.01.06\autoTest_PNVTeam1\tests\updateUserProfile.js:29:36</failure>
     </testcase>
   
 

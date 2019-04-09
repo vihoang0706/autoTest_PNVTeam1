@@ -7,7 +7,9 @@
     "test": "tests"
   },
   "dependencies": {
-    "nightwatch": "^1.0.19"
+    "exceljs": "^1.9.0",
+    "nightwatch": "^1.0.19",
+    "nightwatch-data-driven": "0.0.8"
   },
   "devDependencies": {},
   "scripts": {

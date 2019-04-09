@@ -19,22 +19,27 @@ var registerCommands = {
         .setValue('@inputComfirmPassword', comfirmPassword)
     },
     submitRegisterForm: function() {
-        return this.verify.value('@buttonRegister', 'Đăng ký')
-        .click('@buttonRegister')
-    },
-    validationError: function(errormessage) {
-        return this.verify.visible('@error')
-        .verify.containsText('@error', errormessage)   
-        .verify.valueContains('@inputName','')
-        .verify.valueContains('@inputEmail','')
-        .verify.valueContains('@inputPassword','')
-        .verify.valueContains('@inputComfirmPassword','')
-    },
-    validationSuccess: function() {
         return this
-        .verify.visible('@successMess')
+        // .verify.value('@buttonRegister', 'Đăng ký')
+        .click('@buttonRegister');
     },
-    checkRegisterSuccess: function(){
+    validationErrorMessage: function(xpath,validationErrorMessage) {
+       if(xpath){
+        this
+        .assert.visible(xpath) 
+        .assert.containsText(xpath,validationErrorMessage)
+       }
+       else{
+           console.log("Ko tìm thấy");
+       }
+        return this;
+    },
+    checkRegisterSuccessMessage: function() {
+        return this
+        .waitForElementVisible('@successMess',1000)
+        .verify.containsText('@successMess', 'Tài khoản người dùng được tạo thành công.')
+    },
+    login: function(){
         return this.verify.visible('@linkAccount')
         .click('@linkAccount')
         .verify.visible('@linkLogin')
@@ -59,7 +64,16 @@ var registerCommands = {
     },
     show_random_number: function() {
         return random_number= Math.random().toString(36).substring(2, 15);
-      }
+    },
+    clearInput: function() {
+        return this
+        .clearValue('@inputName')
+        .clearValue('@inputEmail')
+        .clearValue('@inputPassword')
+        .clearValue('@inputComfirmPassword');
+
+    }
+    
 };
 
 
@@ -95,28 +109,24 @@ module.exports = {
             selector: '//form[@id="form-register"]/div/input[@name="signup"]',
             locateStrategy: 'xpath'
         },
-        errormessage: {
-            selector: '//form[@id="form-register"]/div/span[@class="text-danger"]',
-            locateStrategy: 'xpath'
-        },
         errorNameValidationMess: {
-            selector: '//span[@id="error_name" and text()="Bạn chưa nhập tên"]',
-            locatestrategy: 'xpath'
+          selector: '//span[@id="error_name" and text()="Bạn chưa nhập tên"]',
+          locateStrategy: 'xpath'  
         },
         errorEmailValidationMess: {
-            selector: '//span[@id="error_email" and text()="Bạn chưa nhập email."]',
-            locatestrategy: 'xpath'
+            selector: '//span[@id="error_email"]',
+            locateStrategy: 'xpath'
         },
         errorPasswordValidationMess: {          
             selector: '//span[@id="error_password" and text()="Bạn chưa nhập mật khẩu."]',
-            locatestrategy: 'xpath'
+            locateStrategy: 'xpath'
         },
         errorComfirmPasswordValidationMess: {
-            selector: '//span[@id="error_password_confirmation" and text()="Bạn chưa xác nhận mật khẩu."]',
-            locatestrategy: 'xpath'
+            selector: '//span[@id="error_password_confirmation"]',
+            locateStrategy: 'xpath'
         },
         successMess: {
-            selector: '//div[@class="alert alert-success"]/p[contains(text(), "Tài khoản người dùng được tạo thành công.")]',
+            selector: '//div[@class="alert alert-success"]/p',
             locateStrategy: 'xpath'
         },
         linkAccount: {

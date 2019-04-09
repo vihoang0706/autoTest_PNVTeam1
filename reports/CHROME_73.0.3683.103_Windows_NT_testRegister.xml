@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
             failures="0"
-            tests="1">
+            tests="4">
 
   <testsuite name="testRegister"
     errors="0" failures="0" hostname="" id="" package="testRegister" skipped="0"
-    tests="1" time="6.167" timestamp="">
+    tests="4" time="8.823" timestamp="">
   
-    <testcase name="Register" classname="testRegister" time="6.167" assertions="15">
+    <testcase name="TC1: User cannot register when user leave blank all fields" classname="testRegister" time="1.534" assertions="8">
 
     
 
@@ -22,6 +22,25 @@
     
 
     
+
+    
+    </testcase>
+  
+    <testcase name="TC2: User cannot register when user enters confirm password field not match with password field" classname="testRegister" time="1.207" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="TC3: user cannot register when user enters email existent" classname="testRegister" time="1.712" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="TC4: User is able to register success with valid data" classname="testRegister" time="4.370" assertions="8">
 
     
 

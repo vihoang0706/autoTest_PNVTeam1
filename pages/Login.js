@@ -7,8 +7,8 @@ var loginCommands = {
 			.click('@linkLogin')
 			.verify.visible('@inputEmail')
 			.verify.visible('@inputPassword')
-			.verify.visible('@buttonSubmit')
-			.verify.containsText('@buttonSubmit', 'Đăng nhập')
+			.verify.visible('@buttonLogin')
+			.verify.containsText('@buttonLogin', 'Đăng nhập')
 			.verify.visible('@linkForgotPass')
 			.verify.visible('@linkRegister')
 			.verify.elementNotPresent('@errorMessage')
@@ -16,7 +16,9 @@ var loginCommands = {
 	},
 	gotoPage: function () {
 		this
+		    .waitForElementVisible('@linkAccount', 1000)
 			.click('@linkAccount')
+			.waitForElementVisible('@linkLogin',1000)
 			.click('@linkLogin')
 		return this;
 	},
@@ -24,8 +26,8 @@ var loginCommands = {
 		this
 			.setValue('@inputEmail', username)
 			.setValue('@inputPassword', password)
-			.verify.containsText('@buttonSubmit', 'Đăng nhập')
-			.click('@buttonSubmit')
+			.verify.containsText('@buttonLogin', 'Đăng nhập')
+			.click('@buttonLogin')
 		return this;
 	},
 	checkLoginSucessfully() {
@@ -37,7 +39,7 @@ var loginCommands = {
 			.pause(1000)
 			.waitForElementVisible('@linkLogout', 1000)
 			.verify.visible('@linkLogout')
-			return this;
+		return this;
 	},
 	checkErrorMessageExist: function (errorMessage) {
 		this
@@ -46,10 +48,10 @@ var loginCommands = {
 			.assert.containsText('@errorMessage', errorMessage)
 		return this;
 	},
-	checkValidationErrorMessExist: function(xpath,errorValidationError){
-		this.waitForElementVisible(xpath,1000)
-				.verify.visible(xpath)
-				.assert.containsText(xpath,errorValidationError)
+	checkValidationErrorMessExist: function (xpath, errorValidationError) {
+		this.waitForElementVisible(xpath, 1000)
+			.verify.visible(xpath)
+			.assert.containsText(xpath, errorValidationError)
 		return this;
 	},
 	checkValueContainInput: function (email, password) {
@@ -58,15 +60,26 @@ var loginCommands = {
 			.verify.valueContains('@inputPassword', password)
 		return this;
 	},
-	logout: function (){
+	logout: function () {
 		this.click('@linkLogout');
 		return this;
+	},
+	checkMessageExist: function (xpath, errorMessage) {
+		if (errorMessage != "") {
+			if (xpath) {
+				this
+					.assert.containsText(xpath, errorMessage);
+			}
+			else this.verify.visible(xpath);
+		}
 	}
 };
 
 module.exports = {
 	commands: [loginCommands],
-	url: 'http://127.0.0.1:8000/home',
+	url: function () {
+		return this.api.launchUrl + 'home';
+	},
 	elements: {
 		linkAccount: {
 			selector: '//li/a[@id="dropdown-category"]/i[contains(text(),"Tài khoản")]',
@@ -92,7 +105,7 @@ module.exports = {
 			selector: '//input[@id="password"]',
 			locateStrategy: 'xpath'
 		},
-		buttonSubmit: {
+		buttonLogin: {
 			selector: '//button[@name="Đăng nhập"]',
 			locateStrategy: 'xpath'
 		},

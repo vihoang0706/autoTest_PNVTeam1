@@ -20,7 +20,6 @@ var loginCommands = {
 			.click('@linkLogin')
 		return this;
 	},
-
 	fillInLoginForm: function (username, password) {
 		this
 			.setValue('@inputEmail', username)
@@ -33,17 +32,21 @@ var loginCommands = {
 		this
 			.waitForElementVisible('@logged_account', 1000)
 			.assert.containsText('@logged_account', 'Chào bạn')
-			.pause(1000);
-		return this;
+			.pause(1000)
+			.click('@logged_account')
+			.pause(1000)
+			.waitForElementVisible('@linkLogout', 1000)
+			.verify.visible('@linkLogout')
+			return this;
 	},
-	checkErrorMessage: function (errorMessage) {
+	checkErrorMessageExist: function (errorMessage) {
 		this
 			.waitForElementVisible('@errorMessage', 1000)
 			.verify.visible('@errorMessage')
 			.assert.containsText('@errorMessage', errorMessage)
 		return this;
 	},
-	checkValidationErrorMess: function(xpath,errorValidationError){
+	checkValidationErrorMessExist: function(xpath,errorValidationError){
 		this.waitForElementVisible(xpath,1000)
 				.verify.visible(xpath)
 				.assert.containsText(xpath,errorValidationError)
@@ -53,6 +56,10 @@ var loginCommands = {
 		this
 			.verify.valueContains('@inputEmail', email)
 			.verify.valueContains('@inputPassword', password)
+		return this;
+	},
+	logout: function (){
+		this.click('@linkLogout');
 		return this;
 	}
 };
@@ -99,6 +106,10 @@ module.exports = {
 		},
 		logged_account: {
 			selector: '//a[@id="dropdown-category"]/i[@class="fa fa-user"]',
+			locateStrategy: 'xpath'
+		},
+		linkLogout: {
+			selector: '//div[@id="dropdown-category-group"]/a[text()="Đăng xuất"]',
 			locateStrategy: 'xpath'
 		},
 		errorMessage: {

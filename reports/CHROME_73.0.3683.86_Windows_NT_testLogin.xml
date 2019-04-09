@@ -5,9 +5,9 @@
 
   <testsuite name="testLogin"
     errors="0" failures="0" hostname="" id="" package="testLogin" skipped="0"
-    tests="7" time="35.88" timestamp="">
+    tests="7" time="30.41" timestamp="">
   
-    <testcase name="Login Page Initial Render" classname="testLogin" time="5.580" assertions="9">
+    <testcase name="Login Page Initial Render" classname="testLogin" time="3.971" assertions="9">
 
     
 
@@ -28,7 +28,7 @@
     
     </testcase>
   
-    <testcase name="Try to login with no username or password" classname="testLogin" time="4.763" assertions="9">
+    <testcase name="Try to login with no username or password" classname="testLogin" time="3.767" assertions="9">
 
     
 
@@ -49,7 +49,7 @@
     
     </testcase>
   
-    <testcase name="Try to login with a username and no password" classname="testLogin" time="4.838" assertions="6">
+    <testcase name="Try to login with a username and no password" classname="testLogin" time="3.699" assertions="6">
 
     
 
@@ -64,7 +64,7 @@
     
     </testcase>
   
-    <testcase name="Try to login with a password and no username" classname="testLogin" time="4.823" assertions="6">
+    <testcase name="Try to login with a password and no username" classname="testLogin" time="3.828" assertions="6">
 
     
 
@@ -79,7 +79,7 @@
     
     </testcase>
   
-    <testcase name="Enter password less than 8 characters" classname="testLogin" time="4.665" assertions="6">
+    <testcase name="Enter password less than 8 characters" classname="testLogin" time="3.703" assertions="6">
 
     
 
@@ -94,7 +94,7 @@
     
     </testcase>
   
-    <testcase name="Enter wrong username and password" classname="testLogin" time="4.960" assertions="6">
+    <testcase name="Enter wrong username and password" classname="testLogin" time="3.816" assertions="6">
 
     
 
@@ -109,7 +109,11 @@
     
     </testcase>
   
-    <testcase name="Login with valid account" classname="testLogin" time="6.246" assertions="3">
+    <testcase name="Login with valid account" classname="testLogin" time="7.626" assertions="5">
+
+    
+
+    
 
     
 

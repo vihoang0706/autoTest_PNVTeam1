@@ -1,79 +1,83 @@
 const email = 'vi.hoang0706@gmail.com';
-const password= 'a123456789';
+const password = 'a123456789';
 module.exports = {
   '@tags': ['login'],
 
-  'Login Page Initial Render': function(browser) {
+  'Login Page Initial Render': function (browser) {
     var login = browser.page.Login();
     browser.maximizeWindow()
     login.navigate()
-         .validateForm()
+      .validateForm()
   },
 
-  'Try to login with no username or password': function(browser) {
+  'Try to login with no username or password': function (browser) {
     var login = browser.page.Login();
     browser.maximizeWindow()
     login.navigate()
       .gotoPage()
-      .fillInLoginForm('','')
+      .fillInLoginForm('', '')
       .pause(1000)
-      .checkValidationErrorMess('@errorEmailValidationMess','Vui lòng nhập email')
-      .checkValidationErrorMess('@errorPasswordValidationMess','Vui lòng nhập mật khẩu')
-      .checkValueContainInput('','')
+      .checkValidationErrorMessExist('@errorEmailValidationMess', 'Vui lòng nhập email')
+      .checkValidationErrorMessExist('@errorPasswordValidationMess', 'Vui lòng nhập mật khẩu')
+      .checkValueContainInput('', '')
   },
 
-  'Try to login with a username and no password': function(browser) {
+  'Try to login with a username and no password': function (browser) {
     var login = browser.page.Login();
     browser.maximizeWindow()
     login.navigate()
       .gotoPage()
-      .fillInLoginForm(email,'')
+      .fillInLoginForm(email, '')
       .pause(1000)
-      .checkValidationErrorMess('@errorPasswordValidationMess','Vui lòng nhập mật khẩu')
-      .checkValueContainInput('','')
+      .checkValidationErrorMessExist('@errorPasswordValidationMess', 'Vui lòng nhập mật khẩu')
+      .checkValueContainInput('', '')
   },
-'Try to login with a password and no username': function(browser) {
+
+  'Try to login with a password and no username': function (browser) {
     var login = browser.page.Login();
     browser.maximizeWindow()
     login.navigate()
       .gotoPage()
-      .fillInLoginForm('',password)
+      .fillInLoginForm('', password)
       .pause(1000)
-      .checkValidationErrorMess('@errorEmailValidationMess','Vui lòng nhập email')
-      .checkValueContainInput('','')
+      .checkValidationErrorMessExist('@errorEmailValidationMess', 'Vui lòng nhập email')
+      .checkValueContainInput('', '')
   },
-  'Enter password less than 8 characters': function(browser) {
+
+  'Enter password less than 8 characters': function (browser) {
     var login = browser.page.Login();
     browser.maximizeWindow()
     login.navigate()
       .gotoPage()
-      .fillInLoginForm(email,'test')
+      .fillInLoginForm(email, 'test')
       .pause(1000)
-      .checkValidationErrorMess('@errorPasswordValidationMess','Mật khẩu phải chứa ít nhất 8 ký tự')
-      .checkValueContainInput('','')
+      .checkValidationErrorMessExist('@errorPasswordValidationMess', 'Mật khẩu phải chứa ít nhất 8 ký tự')
+      .checkValueContainInput('', '')
   },
-'Enter wrong username and password': function(browser) {
+
+  'Enter wrong username and password': function (browser) {
     var login = browser.page.Login();
     browser.maximizeWindow()
     login.navigate()
       .gotoPage()
-      .fillInLoginForm(email,'test123459')
+      .fillInLoginForm(email, 'test123459')
       .pause(1000)
-      .checkErrorMessage('Đăng nhập không thành công!')
-      .checkValueContainInput('','')
+      .checkErrorMessageExist('Đăng nhập không thành công!')
+      .checkValueContainInput('', '')
   },
-  'Login with valid account': function(browser) {
+
+  'Login with valid account': function (browser) {
     var login = browser.page.Login();
     browser.maximizeWindow()
     login.navigate()
       .gotoPage()
-      .fillInLoginForm(email,password)
+      .fillInLoginForm(email, password)
       .pause(1000)
       .checkLoginSucessfully()
+      .logout()
   },
-
-    after: (browser, done) => {
-        browser.end(); 
-        done();
-    },
+  after: (browser, done) => {
+    browser.end();
+    done();
+  },
 };

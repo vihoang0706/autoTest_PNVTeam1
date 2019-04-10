@@ -2,7 +2,7 @@ module.exports = {
     tags: ['registerFunction'], 
 
     before: function(browser) {
-        const register = browser.page.register(); 
+        const register = browser.page.registerPage(); 
         register
         .navigate()
         .maximizeWindow()
@@ -10,7 +10,7 @@ module.exports = {
     },
 
     'TC1: User cannot register when user leave blank all fields': function (browser) {
-        const register = browser.page.register(); 
+        const register = browser.page.registerPage(); 
         register
             .fillInRegisterForm('','','','')
             .submitRegisterForm()
@@ -21,7 +21,7 @@ module.exports = {
     },
 
     'TC2: User cannot register when user enters confirm password field not match with password field': function (browser) {
-        const register = browser.page.register(); 
+        const register = browser.page.registerPage(); 
         let password = register.show_random_number();
         const username = password+"@ccnd.com";
         register
@@ -31,7 +31,7 @@ module.exports = {
     },
 
     'TC3: user cannot register when user enters email existent': function (browser) {
-        const register = browser.page.register(); 
+        const register = browser.page.registerPage(); 
         let password = register.show_random_number();
         register
             .clearInput()
@@ -41,7 +41,7 @@ module.exports = {
     },
 
     'TC4: User is able to register success with valid data': function (browser) { 
-        const register = browser.page.register(); 
+        const register = browser.page.registerPage(); 
         let password = register.show_random_number();
         const username = password+"@ccnd.com";
         register
@@ -49,14 +49,14 @@ module.exports = {
             .fillInRegisterForm('Van Tao', username, password,password) 
             .submitRegisterForm() 
             .checkRegisterSuccessMessage()
-            .login()
+            .loginPage()
             .captureLoginForm()
             .fillInLoginForm(username, password)
             .submitLoginForm()
     },
 
     after: function (browser) {
-        const register = browser.page.register(); 
+        const register = browser.page.registerPage(); 
         register.end()
     }
 }

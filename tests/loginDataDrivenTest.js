@@ -4,17 +4,17 @@ module.exports = {
     '@tags': ['loginDataDriven'],
 
     before : function(browser) {
-        var login = browser.page.Login();
+        var login = browser.page.loginPage();
         login.navigate().maximizeWindow();
       },
 
     'Login Page Initial Render': function (browser) {
-        var login = browser.page.Login();
+        var login = browser.page.loginPage();
         login.gotoPage().validateForm();
     },
     'Data-driven Testing for login with Invalid account': function (browser) {
-        var login = browser.page.Login();
-        var Excel = require('exceljs');
+        var login = browser.page.loginPage();
+        var Excel = require('../libraries/nightwatch/node_modules/exceljs');
         //Read a file
         var workbook = new Excel.Workbook();
         workbook.xlsx.readFile("data/Sample.xlsx").then(function () {
@@ -43,7 +43,7 @@ module.exports = {
         });
     },
     'Login with valid account': function (browser) {
-        var login = browser.page.Login();
+        var login = browser.page.loginPage();
         browser.maximizeWindow()
         login.navigate()
             .gotoPage()

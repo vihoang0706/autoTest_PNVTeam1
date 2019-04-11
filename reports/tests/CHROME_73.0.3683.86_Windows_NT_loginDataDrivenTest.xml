@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="3">
+
+  <testsuite name="tests.loginDataDrivenTest"
+    errors="0" failures="0" hostname="" id="" package="loginDataDrivenTest" skipped="0"
+    tests="3" time="19.15" timestamp="">
+  
+    <testcase name="Login Page Initial Render" classname="tests.loginDataDrivenTest" time="1.695" assertions="11">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Data-driven Testing for login with Invalid account" classname="tests.loginDataDrivenTest" time="0.3240" assertions="0">
+    </testcase>
+  
+    <testcase name="Login with valid account" classname="tests.loginDataDrivenTest" time="17.13" assertions="28">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

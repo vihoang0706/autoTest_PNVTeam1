@@ -4,14 +4,14 @@ module.exports = {
   '@tags': ['login'],
 
   'Login Page Initial Render': function (browser) {
-    var login = browser.page.Login();
+    var login = browser.page.loginPage();
     browser.maximizeWindow()
     login.navigate()
       .validateForm()
   },
 
   'Try to login with no username or password': function (browser) {
-    var login = browser.page.Login();
+    var login = browser.page.loginPage();
     browser.maximizeWindow()
     login.navigate()
       .gotoPage()
@@ -23,7 +23,7 @@ module.exports = {
   },
 
   'Try to login with a username and no password': function (browser) {
-    var login = browser.page.Login();
+    var login = browser.page.loginPage();
     browser.maximizeWindow()
     login.navigate()
       .gotoPage()
@@ -34,7 +34,7 @@ module.exports = {
   },
 
   'Try to login with a password and no username': function (browser) {
-    var login = browser.page.Login();
+    var login = browser.page.loginPage();
     browser.maximizeWindow()
     login.navigate()
       .gotoPage()
@@ -45,7 +45,7 @@ module.exports = {
   },
 
   'Enter password less than 8 characters': function (browser) {
-    var login = browser.page.Login();
+    var login = browser.page.loginPage();
     browser.maximizeWindow()
     login.navigate()
       .gotoPage()
@@ -56,7 +56,7 @@ module.exports = {
   },
 
   'Enter wrong username and password': function (browser) {
-    var login = browser.page.Login();
+    var login = browser.page.loginPage();
     browser.maximizeWindow()
     login.navigate()
       .gotoPage()
@@ -67,7 +67,7 @@ module.exports = {
   },
 
   'Login with valid account': function (browser) {
-    var login = browser.page.Login();
+    var login = browser.page.loginPage();
     browser.maximizeWindow()
     login.navigate()
       .gotoPage()

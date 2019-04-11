@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="4">
+
+  <testsuite name="tests.registerTest"
+    errors="0" failures="0" hostname="" id="" package="registerTest" skipped="0"
+    tests="4" time="8.809" timestamp="">
+  
+    <testcase name="TC1: User cannot register when user leave blank all fields" classname="tests.registerTest" time="1.371" assertions="8">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="TC2: User cannot register when user enters confirm password field not match with password field" classname="tests.registerTest" time="1.334" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="TC3: user cannot register when user enters email existent" classname="tests.registerTest" time="1.459" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="TC4: User is able to register success with valid data" classname="tests.registerTest" time="4.645" assertions="8">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

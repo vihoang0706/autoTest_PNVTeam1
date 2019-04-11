@@ -49,7 +49,7 @@ module.exports = {
             .fillInRegisterForm('Van Tao', username, password,password) 
             .submitRegisterForm() 
             .checkRegisterSuccessMessage()
-            .loginPage()
+            .login()
             .captureLoginForm()
             .fillInLoginForm(username, password)
             .submitLoginForm()

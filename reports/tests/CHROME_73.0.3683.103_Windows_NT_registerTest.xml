@@ -5,9 +5,9 @@
 
   <testsuite name="tests.registerTest"
     errors="0" failures="0" hostname="" id="" package="registerTest" skipped="0"
-    tests="4" time="8.485" timestamp="">
+    tests="4" time="9.588" timestamp="">
   
-    <testcase name="TC1: User cannot register when user leave blank all fields" classname="tests.registerTest" time="1.453" assertions="8">
+    <testcase name="TC1: User cannot register when user leave blank all fields" classname="tests.registerTest" time="1.854" assertions="8">
 
     
 
@@ -26,21 +26,21 @@
     
     </testcase>
   
-    <testcase name="TC2: User cannot register when user enters confirm password field not match with password field" classname="tests.registerTest" time="1.404" assertions="2">
+    <testcase name="TC2: User cannot register when user enters confirm password field not match with password field" classname="tests.registerTest" time="1.377" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="TC3: user cannot register when user enters email existent" classname="tests.registerTest" time="1.496" assertions="2">
+    <testcase name="TC3: user cannot register when user enters email existent" classname="tests.registerTest" time="1.584" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="TC4: User is able to register success with valid data" classname="tests.registerTest" time="4.132" assertions="8">
+    <testcase name="TC4: User is able to register success with valid data" classname="tests.registerTest" time="4.773" assertions="8">
 
     
 

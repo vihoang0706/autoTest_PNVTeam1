@@ -58,6 +58,14 @@
             ]
           }
         }
+      },
+
+      "test_runner" : {
+        "type" : "mocha",
+        "options" : {
+          "ui" : "bdd",
+          "reporter" : "list"
+        }
       }
     }
   }

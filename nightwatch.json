@@ -25,6 +25,7 @@
     },
     "test_settings" : {
       "default" : {
+        "skip_testcases_on_fail": false,
         "launch_url" : "http://127.0.0.1:8000/",
         "selenium_port"  : 4444,
         "selenium_host"  : "localhost",
@@ -32,7 +33,7 @@
         "use_xpath":true,
         "screenshots" : {
           "enabled" : false,
-          "path" : ""
+          "path" : "screenshorts/"
         },
       "globals": {
         "waitForConditionTimeout": 5000 

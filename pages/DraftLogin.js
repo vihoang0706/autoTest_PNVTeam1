@@ -1,5 +1,5 @@
 
-var loginCommands = {
+var setUpCommands = {
 
 	fillInForm: function(username, password) {
 		return this
@@ -14,7 +14,7 @@ var loginCommands = {
 };
 
 module.exports = {
-    commands: [loginCommands],
+    commands: [setUpCommands],
     url: 'http://127.0.0.1:8000/layouts/login',
 
     elements: {

@@ -10,10 +10,12 @@
     "exceljs": "^1.9.0",
     "fs": "0.0.1-security",
     "handlebars": "^4.1.1",
+    "jasmine-data-provider": "^2.2.0",
     "mocha": "^6.1.2",
     "moment": "^2.24.0",
     "nightwatch": "^1.0.19",
-    "nightwatch-html-reporter": "^2.0.6"
+    "nightwatch-html-reporter": "^2.0.6",
+    "path": "^0.12.7"
   },
   "devDependencies": {},
   "scripts": {

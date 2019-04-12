@@ -28,6 +28,8 @@ var loginCommands = {
 			.setValue('@inputPassword', password)
 			.verify.containsText('@buttonLogin', 'Đăng nhập')
 			.click('@buttonLogin')
+			.clearValue('@inputEmail')
+			.clearValue('@inputPassword');
 		return this;
 	},
 	checkLoginSucessfully() {

@@ -23,7 +23,13 @@
         "webdriver.chrome.driver" : "libraries/drivers/chromedriver.exe"
       }
     },
-   
+    "test_runner" : {
+      "type" : "mocha",
+      "options" : {
+        "ui" : "bdd",
+        "reporter" : "list"
+      }
+    },
     "test_settings" : {
       "default" : {
         "launch_url" : "http://127.0.0.1:8000/",
@@ -43,14 +49,7 @@
           "javascriptEnabled": true,
           "acceptSslCerts": true
         }
-      },
-      "test_runner" : {
-        "type" : "mocha",
-        "options" : {
-          "ui" : "bdd",
-          "reporter" : "list"
-        }
-      },
+      },    
       "chrome" : {
         "desiredCapabilities": {
           "browserName": "chrome",

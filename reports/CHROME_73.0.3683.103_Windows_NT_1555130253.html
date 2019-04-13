@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Test Results - CHROME 73.0.3683.86 Windows NT </title>
+  <title>Test Results - CHROME 73.0.3683.103 Windows NT </title>
 
   <style>
     html, body {
@@ -49,30 +49,61 @@
 
   <table border="0" cellpadding="0" cellspacing="0">
     <tr class="overview">
-      <td colspan="3" title="CHROME 73.0.3683.86 Windows NT "><strong>Browser:</strong> CHROME 73.0.3683.86 Windows NT </td>
+      <td colspan="3" title="CHROME 73.0.3683.103 Windows NT "><strong>Browser:</strong> CHROME 73.0.3683.103 Windows NT </td>
     </tr>
     <tr class="overview">
-      <td colspan="3"><strong>Timestamp:</strong> Fri Apr 12 2019 15:10:47 GMT+0700 (Indochina Time)</td>
+      <td colspan="3"><strong>Timestamp:</strong> Sat Apr 13 2019 11:37:33 GMT+0700 (Indochina Time)</td>
     </tr>
     <tr class="overview last">
       <td colspan="3"><strong>Tests:</strong> 0<br></td>
     </tr>
     <tr>
-      <td class="pass"><strong>0</strong> passed</td>
+      <td class="pass"><strong>2</strong> passed</td>
       <td class="skip"><strong>0</strong> errors</td>
-      <td class="fail"><strong>0</strong> failures</td>
+      <td class="fail"><strong>1</strong> failures</td>
     </tr>
   </table>
 
-      <h2>adminLoginTest</h2>
+      <h2>adminTagsTest</h2>
 
-        <h3>Login with valid information</h3>
+        <h3>Go to Create a tag page</h3>
         <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: string &#x3D;&#x3D; string
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: Tags ‹ Store Website — WordPress &#x3D;&#x3D; Tags ‹ Store Website — WordPress
+
+
+            </li>
         </ul>
 
         <p>
             <span class="success"><strong>OK.</strong></span>
-            <span class="success"><strong>0</strong></span> assertions passed. (3.888s)
+            <span class="success"><strong>2</strong></span> assertions passed. (1.584s)
+        </p>
+        <h3>Fill tags form</h3>
+        <ul class="assertions">
+            <li>
+                <span class="error">&#10006;</span>
+
+              Testing if element &lt;@rowTitle&gt; contains text: &quot;automation testing&quot;. Element could not be located in 1000 ms. - expected [0;32m&quot;automation testing&quot;[0m but got: [0;31m&quot;null&quot;[0m
+
+                Expected &quot;automation testing&quot; but got: &quot;null&quot;
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="error"><strong>FAILED:</strong></span>
+            <span class="error"><strong>1</strong></span> assertions failed and
+            <span class="success"><strong>0</span></strong> passed. (6.602s)
         </p>
 
 

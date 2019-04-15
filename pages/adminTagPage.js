@@ -20,16 +20,31 @@ module.exports = {
         },
         inputDescription: '#tag-description',
         buttonAddNewTag: '#submit',
-        rowTitle: {
-            selector:'//*[@id="tag-11"]/td[1]/strong/a',
-            locateStrategy: 'css selector'
+        inputEditName: '#name',
+        inputEditSlug: '#slug',
+        inputEditDescription:'#description',
+        buttonUpdate: {
+            selector: '//div[@class="edit-tag-actions"]/input',
+            locateStrategy: 'xpath'
         },
+        linkBackToTag: {
+            selector: '//div[@id="message"]/p/a[contains(text()," Back to Tags")]',
+            locateStrategy: 'xpath'
+        },
+        linkDeleteTag: {
+            selector: 'div.row-actions > span.delete > a',
+            locateStrategy: 'css selector'
+        }
+        // rowTitle: {
+        //     selector:'(//table[@class="wp-list-table widefat fixed striped tags"]//tbody/tr//td[@class="name column-name has-row-actions column-primary"]/strong/a)[1]',
+        //     locateStrategy: 'xpath'
+        // },
         // rowDescription: {
-        //     selector: '//table[@class="wp-list-table widefat fixed striped tags"]//tbody/tr[1]//td[2]/p',
+        //     selector: '(//table[@class="wp-list-table widefat fixed striped tags"]//tbody/tr//td[@class="description column-description"]/p)[1]',
         //     locateStrategy: 'xpath'
         // },
         // rowSlug: {
-        //     selector: '//table[@class="wp-list-table widefat fixed striped tags"]//tbody/tr[1]//td[last()-1]',
+        //     selector: '(//table[@class="wp-list-table widefat fixed striped tags"]//tbody/tr//td[@class="slug column-slug"])[1]',
         //     locateStrategy: 'xpath'
         // },
     },
@@ -46,6 +61,14 @@ module.exports = {
                 .setValue('@inputDescription',description)
                 .click('@buttonAddNewTag');
         },
+        goBackToTag() {
+            return this
+                .click('@linkBackToTag');
+        },
+        deleteTag() {
+            return this
+                .click('@linkDeleteTag');
+        },
         setQuery(value) {
             return this
                 .setValue('@mainQueryInput', value);
@@ -58,6 +81,17 @@ module.exports = {
         search() {
             return this
                 .click('@submitButton');
+        },
+        editTagForm(tagsName,slugName,description){
+            return this
+                .clearValue('@inputEditName')
+                .setValue('@inputEditName',tagsName)
+                .clearValue('@inputEditSlug')
+                .setValue('@inputEditSlug',slugName)
+                .clearValue('@inputEditDescription')
+                .setValue('@inputEditDescription',description)
+                .click('@buttonUpdate');
+                
         }
     }]
 };

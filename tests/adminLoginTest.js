@@ -1,5 +1,5 @@
-const username = 'team1_theme2';
-const password = 'team1_theme2';
+const username = 'admin';
+const password = '123456789';
 const url = require('../pages/utils/setUp');
 
 module.exports = {

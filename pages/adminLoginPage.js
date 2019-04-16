@@ -11,7 +11,6 @@ var login = {
 
 module.exports = {
     commands: [login],
-    // url: 'http://localhost:8080/team1_theme2/wordpress/wp-login.php',
     elements: {
         inputUsername: {
             selector: '//input[@id="user_login"]',

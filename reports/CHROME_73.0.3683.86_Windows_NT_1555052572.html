@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Results - CHROME 73.0.3683.86 Windows NT </title>
+
+  <style>
+    html, body {
+      font-family: Arial,sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    body { padding: 10px 40px; }
+    table { width: 100%; margin-bottom: 20px; }
+      td {
+        padding: 7px;
+        border-top: none;
+        border-left: 1px black solid;
+        border-bottom: 1px black solid;
+        border-right: none;
+      }
+      td.pass { color: #003b07; background: #86e191; }
+      td.skip { color: #7d3a00; background: #ffd24a; }
+      td.fail { color: #5e0e00; background: #ff9c8a; }
+    tr:last-child       { border-top: 1px black solid; }
+      tr:last-child td    { border-top: 1px black solid; }
+      tr:first-child td   { border-top: 1px black solid; }
+        td:last-child       { border-right: 1px black solid; }
+    tr.overview td      { padding-bottom: 0px; border-bottom: none; }
+    tr.overview.last td { padding-bottom: 3px; }
+    ul.assertions   { list-style-type: none; }
+      span.error      { color: #AD2B2B; }
+      span.success    { color: #53891E; }
+    .stacktrace { display: inline; }
+      .stacktrace code { display: none; }
+    #nightwatch-logo {
+      position: absolute;
+      top: 20px;
+      right: 33px;
+      width: 70px;
+      height: 75px;
+      background: transparent url('http://nightwatchjs.org/img/logo-nightwatch.png') no-repeat;
+      background-size: 70px 75px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Test Results</h1>
+
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr class="overview">
+      <td colspan="3" title="CHROME 73.0.3683.86 Windows NT "><strong>Browser:</strong> CHROME 73.0.3683.86 Windows NT </td>
+    </tr>
+    <tr class="overview">
+      <td colspan="3"><strong>Timestamp:</strong> Fri Apr 12 2019 14:02:52 GMT+0700 (Indochina Time)</td>
+    </tr>
+    <tr class="overview last">
+      <td colspan="3"><strong>Tests:</strong> 0<br></td>
+    </tr>
+    <tr>
+      <td class="pass"><strong>59</strong> passed</td>
+      <td class="skip"><strong>0</strong> errors</td>
+      <td class="fail"><strong>0</strong> failures</td>
+    </tr>
+  </table>
+
+      <h2>loginTest</h2>
+
+        <h3>Login Page Initial Render</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@linkAccount]&gt; is visible  - 143 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@linkLogin]&gt; is visible  - 40 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@inputEmail]&gt; is visible  - 39 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@inputPassword]&gt; is visible  - 35 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@buttonLogin]&gt; is visible  - 31 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@buttonLogin]&gt; contains text: &quot;Đăng nhập&quot;  - 27 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@linkForgotPass]&gt; is visible  - 25 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@linkRegister]&gt; is visible  - 27 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@errorMessage]&gt; is not present  - 16 ms.
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>9</strong></span> assertions passed. (5.516s)
+        </p>
+        <h3>Try to login with no username or password</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//li/a[@id&#x3D;&quot;dropdown-category&quot;]/i[contains(text(),&quot;Tài khoản&quot;)]&gt; was visible after 45 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//div/a[contains(text(),&quot;Đăng nhập&quot;)]&gt; was visible after 25 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@buttonLogin]&gt; contains text: &quot;Đăng nhập&quot;  - 29 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//span[@id&#x3D;&quot;error_email&quot;]&gt; was visible after 25 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@errorEmailValidationMess]&gt; is visible  - 24 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@errorEmailValidationMess]&gt; contains text: &quot;Vui lòng nhập email&quot;  - 26 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//span[@id&#x3D;&quot;error_password&quot;]&gt; was visible after 27 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@errorPasswordValidationMess]&gt; is visible  - 27 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@errorPasswordValidationMess]&gt; contains text: &quot;Vui lòng nhập mật khẩu&quot;  - 29 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if value of &lt;Element [name&#x3D;@inputEmail]&gt; contains: &quot;&quot;  - 20 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if value of &lt;Element [name&#x3D;@inputPassword]&gt; contains: &quot;&quot;  - 19 ms.
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>11</strong></span> assertions passed. (3.933s)
+        </p>
+        <h3>Try to login with a username and no password</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//li/a[@id&#x3D;&quot;dropdown-category&quot;]/i[contains(text(),&quot;Tài khoản&quot;)]&gt; was visible after 39 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//div/a[contains(text(),&quot;Đăng nhập&quot;)]&gt; was visible after 22 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@buttonLogin]&gt; contains text: &quot;Đăng nhập&quot;  - 25 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//span[@id&#x3D;&quot;error_password&quot;]&gt; was visible after 24 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@errorPasswordValidationMess]&gt; is visible  - 24 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@errorPasswordValidationMess]&gt; contains text: &quot;Vui lòng nhập mật khẩu&quot;  - 28 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if value of &lt;Element [name&#x3D;@inputEmail]&gt; contains: &quot;&quot;  - 20 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if value of &lt;Element [name&#x3D;@inputPassword]&gt; contains: &quot;&quot;  - 20 ms.
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>8</strong></span> assertions passed. (4.096s)
+        </p>
+        <h3>Try to login with a password and no username</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//li/a[@id&#x3D;&quot;dropdown-category&quot;]/i[contains(text(),&quot;Tài khoản&quot;)]&gt; was visible after 26 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//div/a[contains(text(),&quot;Đăng nhập&quot;)]&gt; was visible after 33 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@buttonLogin]&gt; contains text: &quot;Đăng nhập&quot;  - 26 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//span[@id&#x3D;&quot;error_email&quot;]&gt; was visible after 22 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@errorEmailValidationMess]&gt; is visible  - 31 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@errorEmailValidationMess]&gt; contains text: &quot;Vui lòng nhập email&quot;  - 27 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if value of &lt;Element [name&#x3D;@inputEmail]&gt; contains: &quot;&quot;  - 21 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if value of &lt;Element [name&#x3D;@inputPassword]&gt; contains: &quot;&quot;  - 21 ms.
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>8</strong></span> assertions passed. (3.840s)
+        </p>
+        <h3>Enter password less than 8 characters</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//li/a[@id&#x3D;&quot;dropdown-category&quot;]/i[contains(text(),&quot;Tài khoản&quot;)]&gt; was visible after 25 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//div/a[contains(text(),&quot;Đăng nhập&quot;)]&gt; was visible after 35 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@buttonLogin]&gt; contains text: &quot;Đăng nhập&quot;  - 27 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//span[@id&#x3D;&quot;error_password&quot;]&gt; was visible after 27 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@errorPasswordValidationMess]&gt; is visible  - 21 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@errorPasswordValidationMess]&gt; contains text: &quot;Mật khẩu phải chứa ít nhất 8 ký tự&quot;  - 29 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if value of &lt;Element [name&#x3D;@inputEmail]&gt; contains: &quot;&quot;  - 18 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if value of &lt;Element [name&#x3D;@inputPassword]&gt; contains: &quot;&quot;  - 25 ms.
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>8</strong></span> assertions passed. (3.806s)
+        </p>
+        <h3>Enter wrong username and password</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//li/a[@id&#x3D;&quot;dropdown-category&quot;]/i[contains(text(),&quot;Tài khoản&quot;)]&gt; was visible after 40 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//div/a[contains(text(),&quot;Đăng nhập&quot;)]&gt; was visible after 25 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@buttonLogin]&gt; contains text: &quot;Đăng nhập&quot;  - 25 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//div[@class&#x3D;&quot;alert alert-danger&quot;]/p&gt; was visible after 26 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@errorMessage]&gt; is visible  - 24 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@errorMessage]&gt; contains text: &quot;Đăng nhập không thành công!&quot;  - 30 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if value of &lt;Element [name&#x3D;@inputEmail]&gt; contains: &quot;&quot;  - 17 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if value of &lt;Element [name&#x3D;@inputPassword]&gt; contains: &quot;&quot;  - 21 ms.
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>8</strong></span> assertions passed. (4.167s)
+        </p>
+        <h3>Login with valid account</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//li/a[@id&#x3D;&quot;dropdown-category&quot;]/i[contains(text(),&quot;Tài khoản&quot;)]&gt; was visible after 42 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//div/a[contains(text(),&quot;Đăng nhập&quot;)]&gt; was visible after 26 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@buttonLogin]&gt; contains text: &quot;Đăng nhập&quot;  - 26 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//a[@id&#x3D;&quot;dropdown-category&quot;]/i[@class&#x3D;&quot;fa fa-user&quot;]&gt; was visible after 27 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@logged_account]&gt; contains text: &quot;Chào bạn&quot;  - 48 ms.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//div[@id&#x3D;&quot;dropdown-category-group&quot;]/a[text()&#x3D;&quot;Đăng xuất&quot;]&gt; was visible after 56 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element &lt;Element [name&#x3D;@linkLogout]&gt; is visible  - 30 ms.
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>7</strong></span> assertions passed. (9.581s)
+        </p>
+
+
+      <hr>
+
+  <div id="nightwatch-logo"></div>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script>
+  $(function() {
+    $('div.stacktrace').on('click', 'a', function(evt) {
+      evt.preventDefault();
+      var $link = $(this);
+      var $code = $link.parent().find('code');
+      $code.is(':visible') ? $link.text('hide stacktrace'):
+                             $link.text('view stacktrace');
+      $code.toggle();
+    });
+  });
+  </script>
+</body>
+</html>

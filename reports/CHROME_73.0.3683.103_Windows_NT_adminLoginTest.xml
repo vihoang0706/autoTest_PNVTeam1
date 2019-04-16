@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="0"
+<testsuites errors="1"
             failures="0"
             tests="1">
 
   <testsuite name="adminLoginTest"
-    errors="0" failures="0" hostname="" id="" package="adminLoginTest" skipped="0"
-    tests="1" time="6.207" timestamp="">
+    errors="1" failures="0" hostname="" id="" package="adminLoginTest" skipped="0"
+    tests="1" time="9.316" timestamp="">
   
-    <testcase name="Login with valid information" classname="adminLoginTest" time="6.207" assertions="0">
+    <testcase name="Login with valid information" classname="adminLoginTest" time="9.316" assertions="0">
     </testcase>
   
 

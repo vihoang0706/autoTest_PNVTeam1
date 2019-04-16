@@ -8,6 +8,11 @@ module.exports = {
         url.openBrowser(browser);
         var login = browser.page.adminLoginPage();
         login.fillInLoginForm(username,password);
+
+        var dashboard = browser.page.adminDashboardPage();
+       
+        dashboard.logOutAccount();
+
         browser.end();
     }
 };

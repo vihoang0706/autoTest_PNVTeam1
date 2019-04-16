@@ -117,7 +117,5 @@ module.exports = {
 			selector: '//li[@id="wp-admin-bar-logout"]/a[text()="Log Out"]',
 			locateStrategy: 'xpath'
         },
-
-
 	}
 }

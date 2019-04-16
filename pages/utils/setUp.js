@@ -1,5 +1,4 @@
 module.exports = {
-    
     openBrowser: (browser)=>{
         browser
         .maximizeWindow()

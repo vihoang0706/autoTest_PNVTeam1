@@ -1,16 +1,13 @@
-
-var login = {
-	fillInLoginForm: function (username, password) {
-		this
-			.setValue('@inputUsername', username)
-			.setValue('@inputPassword', password)
-			.click('@inputLogin')
-		return this;
-	}
-};
-
 module.exports = {
-    commands: [login],
+    commands: [{
+        login(username, password) {
+            this
+                .setValue('@inputUsername', username)
+                .setValue('@inputPassword', password)
+                .click('@inputLogin')
+            return this;
+        }
+    }],
     elements: {
         inputUsername: {
             selector: '//input[@id="user_login"]',

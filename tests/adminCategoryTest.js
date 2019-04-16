@@ -1,6 +1,4 @@
-const setup = require('../pages/utils/setUp');
-const username = 'admin';
-const password = '123456789';
+const utils = require('../pages/utils/setUp');
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
 const parentCategory = 'None';
@@ -10,43 +8,42 @@ const slugEditCategory = 'shopping-store';
 const parentEditCategory = 'None';
 const descriptionEditCategory = 'Clothes on the Team 1 store';
 const editMessageSuccessful = 'Category updated.';
-
-module.exports =  {
-    '@tags' :['category'],
-    before: function(browser){
+module.exports = {
+    '@tags': ['category'],
+    before: function (browser) {
         var login = browser.page.adminLoginPage();
-        setup.openBrowser(browser);
-        login.fillInLoginForm(username, password);
+        var username = browser.globals.userNames.username;
+        var password = browser.globals.userNames.password;
+        utils.openBrowser(browser);
+        login.login(username, password);
     },
-    
-    'Step1: Go to category page ' : function (browser) {
+    'Go to category page': function (browser) {
         var dashboard = browser.page.adminDashboardPage();
         dashboard.goToPage('@linkPosts', '@linkCategories');
-    },      
-    'Step2: Add new category': function (browser) {
+    },
+    'Add new category': function (browser) {
         var category = browser.page.adminCategoryPage();
         category.addCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
-        //check category exist
         category
             .assert.containsText('@columnActualName', nameCategory)
             .assert.containsText('@columnActualDescription', descriptionCategory)
             .assert.containsText('@columnActualSlug', slugCategory);
     },
-    'Step3: Editing category just create': function (browser) {
+    'Edit category': function (browser) {
         var category = browser.page.adminCategoryPage();
-        browser.execute(function() {
+        browser.execute(function () {
             document.querySelector('div.row-actions > span.edit > a').click();
         });
         category.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
         category
             .assert.containsText('@strongMessageEditSuccessful', editMessageSuccessful)
-            .click('@linkBackToCategories')
+            .goBackToCategory()
             .assert.containsText('@columnActualName', nameEditCategory)
             .assert.containsText('@columnActualDescription', descriptionEditCategory)
             .assert.containsText('@columnActualSlug', slugEditCategory);
     },
-    'Step4: Delete category': function(browser) {
-        browser.execute(function() {
+    'Delete category': function (browser) {
+        browser.execute(function () {
             document.querySelector('div.row-actions > span.delete > a').click();
         });
         browser.acceptAlert();
@@ -55,9 +52,9 @@ module.exports =  {
             .assert.elementNotPresent('@columnActualDescription')
             .assert.elementNotPresent('@columnActualSlug');
     },
-    after: function(browser){
+    after: function (browser) {
         browser
-        .pause(1000)
-        .end()
+            .pause(1000)
+            .end()
     },
 }

@@ -1,9 +1,13 @@
-var dashboardCommands = {
-	
-};
-
 module.exports = {
-	commands: [dashboardCommands],
+	commands: [{
+        goToPage(mainlink,sublink) {
+            this
+                .click(mainlink)
+                .click(sublink)   
+            return this.api           
+        }, 
+
+    }],
 	elements: {
         // Post
 		linkPosts: {

@@ -1,5 +1,25 @@
-17:32:48.597 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
-17:32:48.659 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
-2019-04-12 17:32:48.681:INFO::main: Logging initialized @251ms to org.seleniumhq.jetty9.util.log.StdErrLog
-17:32:48.844 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
-17:32:48.952 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+12:02:25.147 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
+12:02:25.194 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+2019-04-16 12:02:25.225:INFO::main: Logging initialized @249ms to org.seleniumhq.jetty9.util.log.StdErrLog
+12:02:25.382 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+12:02:25.495 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+12:02:25.826 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "acceptSslCerts": true,
+  "browserName": "chrome",
+  "chromeOptions": {
+    "args": [
+      "disable-web-security",
+      "ignore-certificate-errors",
+      "--test-type"
+    ]
+  },
+  "javascriptEnabled": true,
+  "name": "Admin Category Test"
+}
+12:02:25.827 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+Starting ChromeDriver 73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72) on port 40281
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+12:02:28.216 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
+12:02:28.417 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session bd3775acedc1dc6ab7a0e24670bfc3b0 (org.openqa.selenium.chrome.ChromeDriverService)
+12:02:39.132 INFO [ActiveSessions$1.onStop] - Removing session bd3775acedc1dc6ab7a0e24670bfc3b0 (org.openqa.selenium.chrome.ChromeDriverService)

@@ -2,7 +2,7 @@ module.exports = {
     openBrowser: (browser)=>{
         browser
         .maximizeWindow()
-        .url('http://127.0.0.1:8000/home')
+        .url('http://localhost/team1_theme2/wordpress/wp-login.php')
     },
     selectMainMenu: (browser,xpath)=>{
         browser

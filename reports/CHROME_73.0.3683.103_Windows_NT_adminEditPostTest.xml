@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
             failures="0"
-            tests="1">
+            tests="2">
 
   <testsuite name="adminEditPostTest"
     errors="0" failures="0" hostname="" id="" package="adminEditPostTest" skipped="0"
-    tests="1" time="1.017" timestamp="">
+    tests="2" time="8.774" timestamp="">
   
-    <testcase name="Navigate link post" classname="adminEditPostTest" time="1.017" assertions="0">
+    <testcase name="Navigate link post" classname="adminEditPostTest" time="0.9260" assertions="0">
+    </testcase>
+  
+    <testcase name="Edit Information in post" classname="adminEditPostTest" time="7.848" assertions="3">
+
+    
+
+    
+
+    
     </testcase>
   
 

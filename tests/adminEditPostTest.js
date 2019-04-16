@@ -1,5 +1,8 @@
 const url = require('../pages/utils/setUp');
 require('./adminNewPostTest');
+const randomNumber = Math.floor(Math.random()*10);
+const titleName = 'Post: '+randomNumber+'Thien Trieu Quoc';
+const content = 'vui long nhap noi dung ban muon chinh sua';
 
 module.exports = {
     tags :['editPost'],
@@ -15,5 +18,16 @@ module.exports = {
         post 
             .navigateMenuItem()
     },
+    'Edit Information in post': function(browser) {
+        const editPost = browser.page.adminPostPage();
+        editPost
+            .clickEditPost()
+            .assert.title('Edit Post ‹ Auto — WordPress')
+            .cancleTip()
+            .fillInDataEditPost('',content)
+            .clickUpdatePost()
+            .clickViewPost()
+            .assert.containsText('@paragraphContentCheck',content)
+    }
     
 }

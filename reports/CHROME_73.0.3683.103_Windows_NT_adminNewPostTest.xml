@@ -5,15 +5,15 @@
 
   <testsuite name="adminNewPostTest"
     errors="0" failures="0" hostname="" id="" package="adminNewPostTest" skipped="0"
-    tests="3" time="11.74" timestamp="">
+    tests="3" time="12.27" timestamp="">
   
-    <testcase name="Navigate link post" classname="adminNewPostTest" time="0.8310" assertions="0">
+    <testcase name="Navigate link post" classname="adminNewPostTest" time="0.8590" assertions="0">
     </testcase>
   
-    <testcase name="Click sub menu item in post" classname="adminNewPostTest" time="3.302" assertions="0">
+    <testcase name="Click sub menu item in post" classname="adminNewPostTest" time="3.987" assertions="0">
     </testcase>
   
-    <testcase name="Post information" classname="adminNewPostTest" time="7.607" assertions="3">
+    <testcase name="Post information" classname="adminNewPostTest" time="7.420" assertions="3">
 
     
 

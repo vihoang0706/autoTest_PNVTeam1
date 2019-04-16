@@ -29,6 +29,26 @@ var postPageCommands = {
         return this
         .waitForElementVisible('@linkViewPost')
         .click('@linkViewPost')
+    },
+    clickEditPost: function() {
+        return this
+        .click('@clickEditPost')
+    },
+    fillInDataEditPost: function(title, content) {
+        return this
+        .clearValue('@inputTitle')
+        .clearValue('@paragraphContent')
+        .setValue('@inputTitle', title)
+        .setValue('@paragraphContent', content)
+    },
+    clickUpdatePost: function(){
+        return this
+        .click('@buttonUpdate')
+    },
+    clearInput: function() {
+        return this
+        .clearValue('@inputTitle')
+        .clearValue('@paragraphContent')
     }
 };
 
@@ -63,6 +83,10 @@ module.exports = {
             selector: '//textarea[@id="post-title-0"]',
             locateStrategy: 'xpath'
         },
+        textareaContent: {
+            selector: '//textarea[@class="editor-default-block-appender__content"]',
+            locateStrategy: 'xpath'
+        },
         paragraphContent: {
             selector: '//div[@class="components-autocomplete"]/p',
             locateStrategy: 'xpath'
@@ -85,6 +109,14 @@ module.exports = {
         },
         paragraphContentCheck: {
             selector: '//div[@class="entry-content"]/p',
+            locateStrategy: 'xpath'
+        },
+        clickEditPost: {
+            selector: '//tr[1]/td[@class="title column-title has-row-actions column-primary page-title"]/strong/a',
+            locateStrategy: 'xpath'
+        },
+        buttonUpdate: {
+            selector: '//button[@class="components-button editor-post-publish-button is-button is-default is-primary is-large"]',
             locateStrategy: 'xpath'
         }
 

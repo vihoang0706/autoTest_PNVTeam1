@@ -1,25 +1,132 @@
-var dashboard = {
-    // movetoLogOutLink: function(){
-    //     this.moveTo('@linkAccountAdmin')
-    //     return this;
-    // },
-	logOutAccount: function () {
-		this
-			.click('@linkLogOutAdmin')
-		return this;
+var dashboardCommands = {
+    LogOutAccountUser: function () {
+        this
+        .waitForElementVisible('@linkLogOut', 1000)
+        .pause(1000)
+        .click('@linkLogOut') 
+    return this;
+		
 	}
+	
 };
 
+
 module.exports = {
-    commands: [dashboard],
-    elements: {
-        linkAccountAdmin: {
-            selector: '//li[@id="wp-admin-bar-my-account"]/a[@class="ab-item"]',
+	commands: [dashboardCommands],
+	elements: {
+        // Post
+		linkPosts: {
+			selector: '//div[@class="wp-menu-name" and text()= "Posts"]',
+			locateStrategy: 'xpath'
+        },
+        linkAllPosts: {
+            selector: '//li[@id="menu-posts"]//a[text()="All Posts"]',
             locateStrategy: 'xpath'
         },
-        linkLogOutAdmin: {
-            selector: '//li[@id="wp-admin-bar-logout"]',
+        linkCategories: {
+            selector: '//li[@id="menu-posts"]//a[text()="Categories"]',
             locateStrategy: 'xpath'
-        }
-    }
+        },
+        linkTags: {
+            selector: '//li[@id="menu-posts"]//a[text()="Tags"]',
+            locateStrategy: 'xpath'
+        },
+        // Media
+        linkMedia: {
+			selector: '//div[@class="wp-menu-name" and text()= "Media"]',
+			locateStrategy: 'xpath'
+        },
+        linkLibrary: {
+            selector: '//li[@id="menu-media"]//a[text()="Library"]',
+            locateStrategy: 'xpath'
+        },
+        linkAddNewMedia: {
+            selector: '//li[@id="menu-media"]//a[text()="Add New"]',
+            locateStrategy: 'xpath'
+        },
+        //Pages
+        linkPages: {
+			selector: '//div[@class="wp-menu-name" and text()= "Pages"]',
+			locateStrategy: 'xpath'
+        },
+        linkAllPages: {
+            selector: '//li[@id="menu-pages"]//a[text()="All Pages"]',
+            locateStrategy: 'xpath'
+        },
+        linkAddNewPages: {
+            selector: '//li[@id="menu-pages"]//a[text()="Add New"]',
+            locateStrategy: 'xpath'
+        },
+        //Comments
+        linkComments: {
+			selector: '//div[@class="wp-menu-name" and text()= "Comments "]',
+			locateStrategy: 'xpath'
+        },
+        //Appearance
+        linkAppearance: {
+			selector: '//div[@class="wp-menu-name" and text()= "Appearance"]',
+			locateStrategy: 'xpath'
+        },
+        linkThemes: {
+			selector: '//li[@id="menu-appearance"]//a[text()="Themes"]',
+			locateStrategy: 'xpath'
+        },
+        linkCustomize: {
+			selector: '//li[@id="menu-appearance"]//a[text()="Customize"]',
+			locateStrategy: 'xpath'
+        },
+        linkWidgets: {
+			selector: '//li[@id="menu-appearance"]//a[text()="Widgets"]',
+			locateStrategy: 'xpath'
+        },
+        linkMenus: {
+			selector: '//li[@id="menu-appearance"]//a[text()="Menus"]',
+			locateStrategy: 'xpath'
+        },
+        //Plugins
+        linkPlugins: {
+			selector: '//div[@class="wp-menu-name" and text()= "Plugins "]',
+			locateStrategy: 'xpath'
+        },
+        linkInstalledPlugins: {
+			selector: '//li[@id="menu-plugins"]//a[text()="Installed Plugins"]',
+			locateStrategy: 'xpath'
+        },
+        linkAddNewPlugins: {
+			selector: '//li[@id="menu-plugins"]//a[text()="Add New"]',
+			locateStrategy: 'xpath'
+        },
+        //Users
+        linkUsers: {
+			selector: '//div[@class="wp-menu-name" and text()= "Users"]',
+			locateStrategy: 'xpath'
+        },
+        linkAllUsers: {
+			selector: '//li[@id="menu-users"]//a[text()="All Users"]',
+			locateStrategy: 'xpath'
+        },
+        linkAddNewUser: {
+			selector: '//li[@id="menu-users"]//a[text()="Add New"]',
+			locateStrategy: 'xpath'
+        },
+        linkAddNewUser: {
+			selector: '//li[@id="menu-users"]//a[text()="Add New"]',
+			locateStrategy: 'xpath'
+        },
+        linkYourProfile: {
+			selector: '//li[@id="menu-users"]//a[text()="Your Profile"]',
+			locateStrategy: 'xpath'
+        },
+        //Header
+        linkYourAccount: {
+			selector: '//li[@id="wp-admin-bar-my-account"]/a[@class="ab-item"]',
+			locateStrategy: 'xpath'
+        },
+        linkLogOut: {
+			selector: '//li[@id="wp-admin-bar-logout"]/a[text()="Log Out"]',
+			locateStrategy: 'xpath'
+        },
+
+
+	}
 }

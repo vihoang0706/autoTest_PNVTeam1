@@ -24,6 +24,8 @@ var loginCommands = {
 	},
 	fillInLoginForm: function (username, password) {
 		this
+			.clearValue('@inputEmail')
+			.clearValue('@inputPassword')
 			.setValue('@inputEmail', username)
 			.setValue('@inputPassword', password)
 			.verify.containsText('@buttonLogin', 'Đăng nhập')

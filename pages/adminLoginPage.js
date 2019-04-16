@@ -1,7 +1,8 @@
 
 var login = {
 	fillInLoginForm: function (username, password) {
-		this
+        this
+            .pause(2000)
 			.setValue('@inputUsername', username)
 			.setValue('@inputPassword', password)
 			.click('@inputLogin')

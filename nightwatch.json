@@ -4,7 +4,7 @@
     "custom_commands_path" : "",
     "custom_assertions_path" : "",
     "page_objects_path" : "pages",
-    "globals_path" : "",
+    "globals_path" : "globals.js",
     "webdriver": {
       "start_process" : true,
       "server_path": "libraries/drivers/chromedriver.exe",
@@ -23,6 +23,7 @@
         "webdriver.chrome.driver" : "libraries/drivers/chromedriver.exe"
       }
     },
+
     "test_settings" : {
       "default" : {
         "skip_testcases_on_fail": false,
@@ -43,8 +44,7 @@
           "javascriptEnabled": true,
           "acceptSslCerts": true
         }
-      },
-   
+      },    
       "chrome" : {
         "desiredCapabilities": {
           "browserName": "chrome",
@@ -59,7 +59,6 @@
           }
         }
       },
-
       "test_runner" : {
         "type" : "mocha",
         "options" : {

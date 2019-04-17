@@ -1,17 +1,13 @@
-
-var login = {
-	fillInLoginForm: function (username, password) {
-		this
-			.setValue('@inputUsername', username)
-			.setValue('@inputPassword', password)
-			.click('@inputLogin')
-		return this;
-	}
-};
-
 module.exports = {
-    commands: [login],
-    // url: 'http://localhost:8080/team1_theme2/wordpress/wp-login.php',
+    commands: [{
+        login(username, password) {
+            this
+                .setValue('@inputUsername', username)
+                .setValue('@inputPassword', password)
+                .click('@inputLogin')
+            return this;
+        }
+    }],
     elements: {
         inputUsername: {
             selector: '//input[@id="user_login"]',

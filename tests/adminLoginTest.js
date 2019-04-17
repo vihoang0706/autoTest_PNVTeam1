@@ -1,13 +1,25 @@
-const username = 'team1_theme2';
-const password = 'team1_theme2';
-const url = require('../pages/utils/setUp');
-
+const utils = require('../pages/utils/setUp');
 module.exports = {
-    '@tags':['login1'],
-    'Login with valid information': function(browser) {
-        url.openBrowser(browser);
+    '@tags': ['logintest'],
+    before: function (browser) {
+        utils.openBrowser(browser);
+    },
+    'Login with valid information': function (browser) {
         var login = browser.page.adminLoginPage();
-        login.fillInLoginForm(username,password);
-        browser.end();
+        const dashboard = browser.page.adminDashboardPage();
+        var username = browser.globals.userNames.username;
+        var password = browser.globals.userNames.password;
+        login.login(username, password);
+        dashboard
+            .pause(1000)
+            .assert.visible('@link');
+        browser.execute(function () {
+            document.querySelector('#wp-admin-bar-logout > a').click();
+        });
+    },
+    after: function (browser) {
+        browser
+            .pause(2000)
+            .end();
     }
 };

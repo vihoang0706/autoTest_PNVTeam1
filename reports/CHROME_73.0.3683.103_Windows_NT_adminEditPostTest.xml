@@ -5,18 +5,12 @@
 
   <testsuite name="adminEditPostTest"
     errors="0" failures="0" hostname="" id="" package="adminEditPostTest" skipped="0"
-    tests="2" time="8.774" timestamp="">
+    tests="2" time="0.03700" timestamp="">
   
-    <testcase name="Navigate link post" classname="adminEditPostTest" time="0.9260" assertions="0">
+    <testcase name="Navigate link post" classname="adminEditPostTest" time="0.03700" assertions="0">
     </testcase>
   
-    <testcase name="Edit Information in post" classname="adminEditPostTest" time="7.848" assertions="3">
-
-    
-
-    
-
-    
+    <testcase name="Edit Information in post" classname="adminEditPostTest" time="0.000" assertions="0">
     </testcase>
   
 

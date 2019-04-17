@@ -1,4 +1,4 @@
-const utils = require('../../page-objects/utils/set-up');
+const utils = require('../../page-objects/utils/setUp');
 module.exports = {
     '@tags': ['logintest'],
     before: function (browser) {

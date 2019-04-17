@@ -1,4 +1,4 @@
-const utils = require('../../page-objects/utils/set-up');
+const utils = require('../../page-objects/utils/setUp');
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
 const parentCategory = 'None';

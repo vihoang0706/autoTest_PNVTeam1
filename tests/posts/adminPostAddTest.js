@@ -1,4 +1,4 @@
-const utils = require('../../page-objects/utils/set-up');
+const utils = require('../../page-objects/utils/setUp');
 const randomNumber = Math.floor(Math.random() * 10);
 const number = randomNumber;
 const titleName = 'Post: ' + number + ' Where were you';

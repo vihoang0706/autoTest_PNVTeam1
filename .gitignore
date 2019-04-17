@@ -1,3 +1,11 @@
-## Build generated
-reports/
-logs/
+.project
+*.DS_Store
+*.idea
+/*.log
+/nightwatch.json
+logs
+node_modules
+reports
+*~
+\#*
+\.#*

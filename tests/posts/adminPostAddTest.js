@@ -7,17 +7,17 @@ module.exports = {
     tags: ['addPostFunction'],
     before: function (browser) {
         utils.openBrowser(browser);
-        const login = browser.page.adminLoginPage();
+        const login = browser.page.adminUserLoginPage();
         var username = browser.globals.userNames.username;
         var password = browser.globals.userNames.password;
         login.login(username, password);
     },
     'Go to post page ': function (browser) {
-        var dashboard = browser.page.adminDashboardPage();
+        var dashboard = browser.page.adminBasePage();
         dashboard.goToPage('@linkPosts', '@linkNewPost');
     },
     'Post information': function (browser) {
-        const post = browser.page.adminPostPage();
+        const post = browser.page.adminPostAddPage();
         post
             .cancelTip()
             .addNewPost(titleName, content)

@@ -1,0 +1,8 @@
+# Node_modules
+libraries/nightwatch/
+
+# Log Folder
+logs/
+
+# Report
+reports/

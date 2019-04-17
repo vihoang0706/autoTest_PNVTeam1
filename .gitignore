@@ -1,8 +1,11 @@
-# Node_modules
-libraries/nightwatch/
-
-# Log Folder
-logs/
-
-# Report
-reports/
+.project
+*.DS_Store
+*.idea
+/*.logs
+/nightwatch.json
+.logs/
+node_modules
+.reports/
+*~
+\#*
+\.#*

@@ -1,4 +1,4 @@
-const utils = require('../../page-objects/utils/set-up');
+const utils = require('../../page-objects/utils/setUp');
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
 const parentCategory = 'None';
@@ -11,18 +11,18 @@ const editMessageSuccessful = 'Category updated.';
 module.exports = {
     '@tags': ['category'],
     before: function (browser) {
-        var login = browser.page.adminLoginPage();
+        var login = browser.page.adminUserLoginPage();
         var username = browser.globals.userNames.username;
         var password = browser.globals.userNames.password;
         utils.openBrowser(browser);
         login.login(username, password);
     },
     'Go to category page': function (browser) {
-        var dashboard = browser.page.adminDashboardPage();
+        var dashboard = browser.page.adminBasePage();
         dashboard.goToPage('@linkPosts', '@linkCategories');
     },
     'Add new category': function (browser) {
-        var category = browser.page.adminCategoryPage();
+        var category = browser.page.adminCategoryAddPage();
         category.addCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
         category
             .assert.containsText('@columnActualName', nameCategory)
@@ -30,7 +30,7 @@ module.exports = {
             .assert.containsText('@columnActualSlug', slugCategory);
     },
     'Edit category': function (browser) {
-        var category = browser.page.adminCategoryPage();
+        var category = browser.page.adminCategoryAddPage();
         browser.execute(function () {
             document.querySelector('div.row-actions > span.edit > a').click();
         });

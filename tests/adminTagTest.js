@@ -1,6 +1,4 @@
 var utils = require('../pages/utils/setUp.js');
-const username = 'admin';
-const password = '123456789';
 const titleWebsite = 'Tags ‹ Store Front Website — WordPress';
 const nameTag = 'automation testing';
 const slugTag = 'automation-test';
@@ -13,60 +11,66 @@ module.exports = {
     before: function (browser) {
         utils.openBrowser(browser);
         const login = browser.page.adminLoginPage();
-        login.fillInLoginForm(username, password);
-        const page = browser.page.adminTagPage();
-        page.gotoTagPage()
-            .deleteAllTags();
+        var username = browser.globals.userNames.username;
+        var password = browser.globals.userNames.password;
+        login.login(username, password);
     },
-    'Go to Create a tag page': function (browser) {
-        const page = browser.page.adminTagPage();
-        page.gotoTagPage();
-        browser.getTitle(function(title) {
+    'Go to tag page': function (browser) {
+        const dashboard = browser.page.adminDashboardPage();
+        dashboard.goToPage('@linkPosts', '@linkTags');
+        browser.getTitle(function (title) {
             this.assert.equal(typeof title, 'string');
-            this.assert.equal(title,titleWebsite);
-          });
+            this.assert.equal(title, titleWebsite);
+        });
     },
-    'Fill tag form': function(browser) {
+    'Add new tag': function (browser) {
         const page = browser.page.adminTagPage();
-        page.fillInTagForm(nameTag,slugTag,descriptionTag);
-        browser.pause(2000);
-        page.assert.containsText('@columnActualTitle',nameTag)
+        page.addNewTag(nameTag, slugTag, descriptionTag);
+        page
+            .pause(2000)
+            .assert.containsText('@columnActualTitle', nameTag)
             .assert.containsText('@columnActualSlug', slugTag)
             .assert.containsText('@columnActualDescription', descriptionTag);
     },
-    'Edit Tag': function(browser){
+    'Edit Tag': function (browser) {
         const page = browser.page.adminTagPage();
-        browser.execute(function() {
+        browser.execute(function () {
             document.querySelector('div.row-actions > span.edit > a').click();
         });
-        page.editTagForm(editNameTag,editSlugTag,editDescriptionTag)
+        page
+            .editTag(editNameTag, editSlugTag, editDescriptionTag)
             .goBackToTagPage();
-        page.assert.containsText('@columnActualTitle',editNameTag)
+        page
+            .assert.containsText('@columnActualTitle', editNameTag)
             .assert.containsText('@columnActualSlug', editSlugTag)
             .assert.containsText('@columnActualDescription', editDescriptionTag);
     },
-    'Quick Edit':function(browser){
+    'Quick Edit Tag': function (browser) {
         const page = browser.page.adminTagPage();
-        browser.execute(function() {
+        browser.execute(function () {
             document.querySelector('div.row-actions > span.inline.hide-if-no-js > button').click();
         });
-        page.quickEditTagForm(nameTag,slugTag);
-        page.assert.containsText('@columnActualTitle',nameTag)
+        page.quickEditTag(nameTag, slugTag);
+        page
+            .assert.containsText('@columnActualTitle', nameTag)
             .assert.containsText('@columnActualSlug', slugTag);
     },
-    'Delete Tag': function(browser) {
-        browser.execute(function() {
+    'Delete Tag': function (browser) {
+        const page = browser.page.adminTagPage();
+        browser.execute(function () {
             document.querySelector('div.row-actions > span.delete > a').click();
         });
-        const page = browser.page.adminTagPage();
-        browser.pause(1000)
-               .acceptAlert();
-        page.assert.elementNotPresent('@columnActualTitle')
+        browser
+            .pause(1000)
+            .acceptAlert();
+        page
+            .assert.elementNotPresent('@columnActualTitle')
             .assert.elementNotPresent('@columnActualSlug')
             .assert.elementNotPresent('@columnActualDescription');
-        },
-    after: function(browser){
-        browser.pause(1000);
-        browser.end();
+    },
+    after: function (browser) {
+        browser
+            .pause(1000)
+            .end();
     }
 };

@@ -6,7 +6,6 @@ module.exports = {
                 .click(sublink)   
             return this.api           
         }, 
-
     }],
 	elements: {
         // Post
@@ -16,6 +15,10 @@ module.exports = {
         },
         linkAllPosts: {
             selector: '//li[@id="menu-posts"]//a[text()="All Posts"]',
+            locateStrategy: 'xpath'
+        },
+        linkNewPost: {
+            selector: '//li[@id="menu-posts"]//a[text()="Add New"]',
             locateStrategy: 'xpath'
         },
         linkCategories: {

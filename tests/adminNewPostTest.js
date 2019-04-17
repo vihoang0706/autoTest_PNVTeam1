@@ -1,37 +1,28 @@
-const url = require('../pages/utils/setUp');
+const utils = require('../pages/utils/setUp');
 const randomNumber = Math.floor(Math.random() * 10);
 const number = randomNumber;
 const titleName = 'Post: ' + number + ' Where were you';
 const content = 'When you were in trouble and you needed a hand I was always there. When your legs got shaky and you could not stand I was always there. I was always there when you needed me the most. When trouble comes a-knocking and I needed a hand. Where will you be then? When you needed a hand, I am always ready and when I tired you, you where were you place?';
-const username = 'admin';
-const password = '123456789';
 module.exports = {
     tags: ['addPostFunction'],
-
     before: function (browser) {
-        url.openBrowser(browser);
+        utils.openBrowser(browser);
         const login = browser.page.adminLoginPage();
-        login
-            .fillInLoginForm(username, password)
+        var username = browser.globals.userNames.username;
+        var password = browser.globals.userNames.password;
+        login.login(username, password);
     },
-    'Navigate link post': function (browser) {
-        const post = browser.page.adminPostPage();
-        post
-            .navigateMenuItem()
-    },
-    'Click sub menu item in post': function (browser) {
-        const post = browser.page.adminPostPage();
-        post
-            .goToAddNewPost()
-            .cancleTip()
+    'Go to post page ': function (browser) {
+        var dashboard = browser.page.adminDashboardPage();
+        dashboard.goToPage('@linkPosts', '@linkNewPost');
     },
     'Post information': function (browser) {
         const post = browser.page.adminPostPage();
         post
-            .fillInData(titleName, content)
-            .saveInfor()
-            .clickViewPost()
-            .assert.containsText('@h1TiltePostCheck', titleName)
+            .cancelTip()
+            .addNewPost(titleName, content)
+            .goToViewPost()
+        assert.containsText(post.getPostTile(), titleName)
             .assert.containsText('@paragraphContentCheck', content)
     },
     after: function (browser) {

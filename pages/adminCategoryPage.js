@@ -1,26 +1,30 @@
 module.exports = {
     commands: [{
-        addCategory(name, slug, parent, description){
+        addCategory(name, slug, parent, description) {
             this
-                .setValue('@inputName', name) 
-                .setValue('@inputSlug', slug) 
+                .setValue('@inputName', name)
+                .setValue('@inputSlug', slug)
                 .setValue('@selectParent', parent)
-                .setValue('@textareaDescription', description)   
+                .setValue('@textareaDescription', description)
                 .click('@inputSubmit')
-            return this.api           
-        }, 
+            return this.api
+        },
         editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory) {
             this
                 .getLocationInView('@inputSubmitUpdateCategory')
                 .clearValue('@inputEditName')
                 .clearValue('@inputEditSlug')
                 .clearValue('@textareaEditDescription')
-                .setValue('@inputEditName', nameEditCategory) 
-                .setValue('@inputEditSlug', slugEditCategory) 
+                .setValue('@inputEditName', nameEditCategory)
+                .setValue('@inputEditSlug', slugEditCategory)
                 .setValue('@selectEditParent', parentEditCategory)
-                .setValue('@textareaEditDescription', descriptionEditCategory)   
+                .setValue('@textareaEditDescription', descriptionEditCategory)
                 .click('@inputSubmitUpdateCategory')
             return this.api
+        },
+        goBackToCategory() {
+            return this
+                .click('@linkBackToCategories');
         }
     }],
     elements: {
@@ -75,7 +79,7 @@ module.exports = {
             selector: '//div[@id="message"]//a',
             locateStrategy: 'xpath'
         },
-        
-        
+
+
     }
 };

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
             failures="0"
+<<<<<<< HEAD
             tests="3">
 
   <testsuite name="adminNewPostTest"
@@ -14,6 +15,18 @@
     </testcase>
   
     <testcase name="Post information" classname="adminNewPostTest" time="7.513" assertions="3">
+=======
+            tests="2">
+
+  <testsuite name="adminNewPostTest"
+    errors="0" failures="0" hostname="" id="" package="adminNewPostTest" skipped="0"
+    tests="2" time="8.177" timestamp="">
+  
+    <testcase name="Go to post page " classname="adminNewPostTest" time="2.549" assertions="0">
+    </testcase>
+  
+    <testcase name="Post information" classname="adminNewPostTest" time="5.628" assertions="3">
+>>>>>>> a73d2f32890a4c7657a169e931dbf823f84dfb28
 
     
 

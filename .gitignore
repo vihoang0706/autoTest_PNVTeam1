@@ -3,9 +3,9 @@
 *.idea
 /*.logs
 /nightwatch.json
-logs/
+.logs/
 node_modules
-reports/
+.reports/
 *~
 \#*
 \.#*

@@ -1,4 +1,4 @@
-var utils = require('../pages/utils/setUp.js');
+const utils = require('../../page-objects/utils/set-up');
 const titleWebsite = 'Tags ‹ Store Front Website — WordPress';
 const nameTag = 'automation testing';
 const slugTag = 'automation-test';

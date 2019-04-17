@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="4"
+            failures="0"
+            tests="4">
+
+  <testsuite name="categories.adminCategoryAddTest"
+    errors="4" failures="0" hostname="" id="" package="adminCategoryAddTest" skipped="0"
+    tests="4" time="0.2840" timestamp="">
+  
+    <testcase name="Go to category page" classname="categories.adminCategoryAddTest" time="0.002000" assertions="0">
+    </testcase>
+  
+    <testcase name="Add new category" classname="categories.adminCategoryAddTest" time="0.000" assertions="0">
+    </testcase>
+  
+    <testcase name="Edit category" classname="categories.adminCategoryAddTest" time="0.000" assertions="0">
+    </testcase>
+  
+    <testcase name="Delete category" classname="categories.adminCategoryAddTest" time="0.2820" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

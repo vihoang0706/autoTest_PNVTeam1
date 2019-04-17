@@ -1,5 +1,25 @@
-15:27:28.691 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
-15:27:28.736 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
-2019-04-17 15:27:28.768:INFO::main: Logging initialized @267ms to org.seleniumhq.jetty9.util.log.StdErrLog
-15:27:28.937 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
-15:27:29.022 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+15:33:07.719 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
+15:33:07.793 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+2019-04-17 15:33:07.821:INFO::main: Logging initialized @270ms to org.seleniumhq.jetty9.util.log.StdErrLog
+15:33:07.979 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+15:33:08.072 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+15:33:08.385 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "acceptSslCerts": true,
+  "browserName": "chrome",
+  "chromeOptions": {
+    "args": [
+      "disable-web-security",
+      "ignore-certificate-errors",
+      "--test-type"
+    ]
+  },
+  "javascriptEnabled": true,
+  "name": "Categories\\admin Category Add Test"
+}
+15:33:08.387 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+Starting ChromeDriver 73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72) on port 14970
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+15:33:11.374 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
+15:33:11.711 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session fb6107052b070eaf7e8e6faf537c9999 (org.openqa.selenium.chrome.ChromeDriverService)
+15:33:13.068 INFO [ActiveSessions$1.onStop] - Removing session fb6107052b070eaf7e8e6faf537c9999 (org.openqa.selenium.chrome.ChromeDriverService)

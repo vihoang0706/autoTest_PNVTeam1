@@ -5,8 +5,8 @@ module.exports = {
         utils.openBrowser(browser);
     },
     'Login with valid information': function (browser) {
-        var login = browser.page.adminLoginPage();
-        const dashboard = browser.page.adminDashboardPage();
+        var login = browser.page.adminUserLoginPage();
+        const dashboard = browser.page.adminBasePage();
         var username = browser.globals.userNames.username;
         var password = browser.globals.userNames.password;
         login.login(username, password);

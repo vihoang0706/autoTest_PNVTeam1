@@ -1,5 +1,0 @@
-15:44:20.036 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
-15:44:20.105 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
-2019-04-17 15:44:20.136:INFO::main: Logging initialized @257ms to org.seleniumhq.jetty9.util.log.StdErrLog
-15:44:20.290 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
-15:44:20.390 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444

@@ -13,7 +13,6 @@ module.exports = {
         const login = browser.page.adminLoginPage();
         login
             .fillInLoginForm(username, password)
-            .assert.title('Dashboard ‹ Store Front Website — WordPress')
     },
     'Navigate link post': function (browser) {
         const post = browser.page.adminPostPage();

@@ -22,7 +22,7 @@ module.exports = {
             .cancelTip()
             .addNewPost(titleName, content)
             .goToViewPost()
-        assert.containsText(post.getPostTile(), titleName)
+            .assert.containsText('@titlePostCheck', titleName)
             .assert.containsText('@paragraphContentCheck', content)
     },
     after: function (browser) {

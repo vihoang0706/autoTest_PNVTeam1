@@ -27,6 +27,13 @@
     "test_settings" : {
       "default" : {
         "skip_testcases_on_fail": false,
+        "test_runner" : {
+          "type" : "mocha",
+          "options" : {
+            "ui" : "bdd",
+            "reporter" : "list"
+          }
+        },
         "launch_url" : "http://127.0.0.1:8000/",
         "selenium_port"  : 4444,
         "selenium_host"  : "localhost",
@@ -57,13 +64,6 @@
              "--test-type"
             ]
           }
-        }
-      },
-      "test_runner" : {
-        "type" : "mocha",
-        "options" : {
-          "ui" : "bdd",
-          "reporter" : "list"
         }
       }
     }

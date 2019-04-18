@@ -25,6 +25,10 @@ module.exports = {
         goBackToCategory() {
             return this
                 .click('@linkBackToCategories');
+        },
+        getValueOfElement(selector) {
+            return this 
+                .getValue('@'+ selector)
         }
     }],
     elements: {

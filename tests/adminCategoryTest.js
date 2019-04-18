@@ -24,34 +24,40 @@ module.exports = {
     'Add new category': function (browser) {
         var category = browser.page.adminCategoryPage();
         category.addCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
+        console.log(category.getValue('@'+ 'columnActualName',function(result){
+            console.log(result.value);
+          })
+        );
+        console.log(category.getValueOfElement('columnActualName'));
+        assert.containsText(category.getValueElement('columnActualName'), nameCategory);
         category
             .assert.containsText('@columnActualName', nameCategory)
             .assert.containsText('@columnActualDescription', descriptionCategory)
             .assert.containsText('@columnActualSlug', slugCategory);
     },
-    'Edit category': function (browser) {
-        var category = browser.page.adminCategoryPage();
-        browser.execute(function () {
-            document.querySelector('div.row-actions > span.edit > a').click();
-        });
-        category.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
-        category
-            .assert.containsText('@strongMessageEditSuccessful', editMessageSuccessful)
-            .goBackToCategory()
-            .assert.containsText('@columnActualName', nameEditCategory)
-            .assert.containsText('@columnActualDescription', descriptionEditCategory)
-            .assert.containsText('@columnActualSlug', slugEditCategory);
-    },
-    'Delete category': function (browser) {
-        browser.execute(function () {
-            document.querySelector('div.row-actions > span.delete > a').click();
-        });
-        browser.acceptAlert();
-        browser
-            .assert.elementNotPresent('@columnActualName')
-            .assert.elementNotPresent('@columnActualDescription')
-            .assert.elementNotPresent('@columnActualSlug');
-    },
+    // 'Edit category': function (browser) {
+    //     var category = browser.page.adminCategoryPage();
+    //     browser.execute(function () {
+    //         document.querySelector('div.row-actions > span.edit > a').click();
+    //     });
+    //     category.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
+    //     category
+    //         .assert.containsText('@strongMessageEditSuccessful', editMessageSuccessful)
+    //         .goBackToCategory()
+    //         .assert.containsText('@columnActualName', nameEditCategory)
+    //         .assert.containsText('@columnActualDescription', descriptionEditCategory)
+    //         .assert.containsText('@columnActualSlug', slugEditCategory);
+    // },
+    // 'Delete category': function (browser) {
+    //     browser.execute(function () {
+    //         document.querySelector('div.row-actions > span.delete > a').click();
+    //     });
+    //     browser.acceptAlert();
+    //     browser
+    //         .assert.elementNotPresent('@columnActualName')
+    //         .assert.elementNotPresent('@columnActualDescription')
+    //         .assert.elementNotPresent('@columnActualSlug');
+    // },
     after: function (browser) {
         browser
             .pause(1000)

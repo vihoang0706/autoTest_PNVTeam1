@@ -62,6 +62,18 @@ module.exports = {
         paragraphContentCheck: {
             selector: '//div[@class="entry-content"]/p',
             locateStrategy: 'xpath'
+        },
+        selectBulkActions: {
+            selector: '//select[@id="bulk-action-selector-top"]',
+            locateStrategy: 'xpath'
+        },
+        optionMoveToTrash: {
+            selector: '//select[@id="bulk-action-selector-top"]/option[3]',
+            locateStrategy: 'xpath'
+        },
+        buttonAppli: {
+            selector: '//input[@id="doaction"]',
+            locateStrategy: 'xpath'
         }
     }
 }

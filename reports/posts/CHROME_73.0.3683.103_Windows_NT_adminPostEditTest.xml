@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="2">
+
+  <testsuite name="posts.adminPostEditTest"
+    errors="1" failures="0" hostname="" id="" package="adminPostEditTest" skipped="0"
+    tests="2" time="5.763" timestamp="">
+  
+    <testcase name="Precondition: Create a new post" classname="posts.adminPostEditTest" time="5.754" assertions="0">
+    </testcase>
+  
+    <testcase name="Step 1: Go to edit post" classname="posts.adminPostEditTest" time="0.009000" assertions="0">
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

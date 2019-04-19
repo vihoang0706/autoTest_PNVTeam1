@@ -22,10 +22,14 @@ module.exports = {
             .click('@linkPosts')
             .click('@linkAllPosts')            
         },
-        trashPost() {
+        clickHideLine(element) {
             return this
             .moveToElement('@fristTableRow', 0, 0)
-            .click('@linkTrashPost')
+            .click(element)
+        },
+        goToEditPost() {
+            return this
+            .click('@linkAllPosts')
         }
     }],
     elements: {

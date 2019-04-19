@@ -2,6 +2,11 @@ var userNames = {
     username:'admin',
     password:'123456789',
   };
-module.exports = {
-    userNames: userNames
+var urls = {
+    siteURL: 'http://localhost/team1_theme2/wordpress/wp-login.php',
 }
+  
+  module.exports = {
+    userNames: userNames,
+    url:urls,
+  }

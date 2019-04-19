@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="3"
+            failures="0"
+            tests="2">
+
+  <testsuite name="draft2"
+    errors="3" failures="0" hostname="" id="" package="draft2" skipped="0"
+    tests="2" time="0.005000" timestamp="">
+  
+    <testcase name="Step 1: Go to Category page" classname="draft2" time="0.004000" assertions="0">
+    </testcase>
+  
+    <testcase name="Step 2: Add a new category" classname="draft2" time="0.001000" assertions="0">
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

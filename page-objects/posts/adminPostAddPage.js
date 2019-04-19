@@ -1,11 +1,9 @@
+const goToPost = require("../base-objects/adminBasePage");
 module.exports = {
     commands: [{
-        cancelTip() {
-            return this
-            .click('@buttonCancelTip')
-        },
         addNewPost(title, content) {
             return this
+            .click('@buttonCancelTip')
             .setValue('@inputTitle', title)
             .click('//textarea[@class="editor-default-block-appender__content"]')
             .setValue('@paragraphContent', content)
@@ -16,9 +14,29 @@ module.exports = {
             return this
             .waitForElementVisible('@linkViewPost')
             .click('@linkViewPost');
+        },
+        comeBackYourPost(){
+            return this
+            .moveToElement('@linkStoreFrontWebsite', 0, 0)
+            .click('@linkDashboard')
+            .click('@linkPosts')
+            .click('@linkAllPosts')            
+        },
+        trashPost() {
+            return this
+            .moveToElement('@fristTableRow', 0, 0)
+            .click('@linkTrashPost')
         }
     }],
     elements: {
+        linkPosts: {
+			selector: '//div[@class="wp-menu-name" and text()= "Posts"]',
+			locateStrategy: 'xpath'
+        },
+        linkAllPosts: {
+            selector: '//li[@id="menu-posts"]//a[text()="All Posts"]',
+            locateStrategy: 'xpath'
+        },
         linkAddNewInItem: {
             selector: '//div[@id="adminmenuwrap"]/ul/li[4]/ul/li/a[contains(text(), "Add New")]',
             locateStrategy: 'xpath'
@@ -67,12 +85,32 @@ module.exports = {
             selector: '//div[@class="entry-content"]/p',
             locateStrategy: 'xpath'
         },
-        clickEditPost: {
-            selector: '//tr[1]/td[@class="title column-title has-row-actions column-primary page-title"]/strong/a',
+        selectBulkActions: {
+            selector: '//select[@id="bulk-action-selector-top"]',
             locateStrategy: 'xpath'
         },
-        buttonUpdate: {
-            selector: '//button[@class="components-button editor-post-publish-button is-button is-default is-primary is-large"]',
+        optionMoveToTrash: {
+            selector: '//select[@id="bulk-action-selector-top"]/option[3]',
+            locateStrategy: 'xpath'
+        },
+        buttonApply: {
+            selector: '//input[@id="doaction"]',
+            locateStrategy: 'xpath'
+        },
+        linkStoreFrontWebsite: {
+            selector: '//ul/li/a[@class="ab-item" and text() = "Store Front Website" ]',
+            locateStrategy: 'xpath'
+        },
+        linkDashboard: {
+            selector: '//ul/li/a[@class="ab-item" and text() = "Dashboard" ]',
+            locateStrategy: 'xpath'
+        },
+        fristTableRow: {
+            selector: '//tbody[@id="the-list"]/tr[1]/td[1]',
+            locateStrategy: 'xpath'
+        },
+        linkTrashPost: {
+            selector: '//span[@class="trash"]/a[text()="Trash"]',
             locateStrategy: 'xpath'
         }
     }

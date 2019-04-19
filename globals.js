@@ -3,7 +3,7 @@ var userNames = {
     password:'123456789',
   };
 var urls = {
-    siteURL: 'http://localhost/team1_theme2/wordpress/wp-login.php',
+    siteURL: 'http://192.168.189.70/wordpress/wp-login.php',
 }
   
   module.exports = {

@@ -1,28 +1,5 @@
-<<<<<<< HEAD
-=======
-13:48:27.093 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
-13:48:27.155 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
-2019-04-17 13:48:27.192:INFO::main: Logging initialized @251ms to org.seleniumhq.jetty9.util.log.StdErrLog
-13:48:27.340 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
-13:48:27.425 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
-13:48:27.777 INFO [ActiveSessionFactory.apply] - Capabilities are: {
-  "acceptSslCerts": true,
-  "browserName": "chrome",
-  "chromeOptions": {
-    "args": [
-      "disable-web-security",
-      "ignore-certificate-errors",
-      "--test-type"
-    ]
-  },
-  "javascriptEnabled": true,
-  "name": "Users\\admin Login Test"
-}
-13:48:27.778 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
-Starting ChromeDriver 73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72) on port 11770
-Only local connections are allowed.
-Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-13:48:30.417 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
-13:48:30.617 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 6759ef810d7a9d701010e125fdc865eb (org.openqa.selenium.chrome.ChromeDriverService)
-13:48:35.256 INFO [ActiveSessions$1.onStop] - Removing session 6759ef810d7a9d701010e125fdc865eb (org.openqa.selenium.chrome.ChromeDriverService)
->>>>>>> 29b4f4bb5a5af264a2da12fcc5fde0dfaaf8d37c
+14:53:10.254 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
+14:53:10.342 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+2019-04-20 14:53:10.403:INFO::main: Logging initialized @375ms to org.seleniumhq.jetty9.util.log.StdErrLog
+14:53:10.724 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+14:53:10.873 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444

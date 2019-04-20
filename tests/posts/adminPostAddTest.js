@@ -20,7 +20,7 @@ module.exports = {
         const post = browser.page.adminPostAddPage();
         post
             .addNewPost(titleName, content)
-            .goToViewPost()
+            .viewPost()
             .assert.containsText('@titlePostCheck', titleName)
             .assert.containsText('@paragraphContentCheck', content)
     },

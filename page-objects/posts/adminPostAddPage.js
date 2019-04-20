@@ -9,8 +9,9 @@ module.exports = {
             .setValue('@paragraphContent', content)
             .click('@buttonPublish')
             .click('@subButtonPublish')
+            .pause('1000')
         },
-        goToViewPost() {
+        viewPost() {
             return this
             .waitForElementVisible('@linkViewPost')
             .click('@linkViewPost');
@@ -30,6 +31,19 @@ module.exports = {
         goToEditPost() {
             return this
             .click('@linkAllPosts')
+            .assert.title('Posts ‹ Store Front Website — WordPress')
+            .clickHideLine('@linkEditPost')
+        },
+        clearInput() {
+            return this
+            .clearValue('@paragraphContent')
+        },
+        editPost(title, content) {
+            return this
+            .clearInput()
+            .setValue('@inputTitle', title)
+            .setValue('@paragraphContent', content)
+            .click('@buttonUpdatePost')
         }
     }],
     elements: {
@@ -115,6 +129,14 @@ module.exports = {
         },
         linkTrashPost: {
             selector: '//span[@class="trash"]/a[text()="Trash"]',
+            locateStrategy: 'xpath'
+        },
+        linkEditPost: {
+            selector: '//div[@class="row-actions"]/span[@class="edit"]/a[text()="Edit"]',
+            locateStrategy: 'xpath'
+        },
+        buttonUpdatePost: {
+            selector: '//button[@class="components-button editor-post-publish-button is-button is-default is-primary is-large"]',
             locateStrategy: 'xpath'
         }
     }

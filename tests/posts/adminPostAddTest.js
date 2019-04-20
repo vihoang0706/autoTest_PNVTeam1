@@ -11,6 +11,7 @@ module.exports = {
         addPost = browser.page.adminPostAddPage();
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
+        
         utils.openBrowser(browser);
         login.login(username, password);
     },

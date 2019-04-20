@@ -26,9 +26,7 @@ module.exports = {
     },
     after: function (browser) {
         const post = browser.page.adminPostAddPage();
-        post 
-            .comeBackYourPost()
-            .clickHideLine('@linkTrashPost')
+        post.stop()
         browser
             .pause(1000)
             .end();

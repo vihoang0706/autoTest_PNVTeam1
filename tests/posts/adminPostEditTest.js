@@ -7,24 +7,24 @@ const content2 = 'I have some best friends their names are: Delia and Sofia. The
 module.exports =  {
     tags :['editPostFunction'],
     before: function (browser) {
-        const login = browser.page.adminUserLoginPage();
-        const username = browser.globals.userNames.username;
-        const password = browser.globals.userNames.password;
+        let login = browser.page.adminUserLoginPage();
+        let username = browser.globals.userNames.username;
+        let password = browser.globals.userNames.password;
         utils.openBrowser(browser);
         login.login(username, password);
     },
     'Precondition: Create a new post': function (browser){
-        const dashboard = browser.page.adminBasePage();
+        let dashboard = browser.page.adminBasePage();
         dashboard.goToPage('@linkPosts', '@linkNewPost');
-        const post = browser.page.adminPostAddPage();
+        let post = browser.page.adminPostAddPage();
               post.addNewPost(titleName, content1);
     },
     'Step 1: Go to edit post': function (browser)  {
-        const post = browser.page.adminPostAddPage();
+        let post = browser.page.adminPostAddPage();
             post.goToEditPost()
     },
     'Step 2: Edit Information in post': function(browser) {
-        const editPost = browser.page.adminPostAddPage();
+        let editPost = browser.page.adminPostAddPage();
         editPost
             .editPost('', content2)
             .viewPost()
@@ -32,7 +32,7 @@ module.exports =  {
             .assert.containsText('@paragraphContentCheck', content2)
     },
     after: function (browser) {
-        const editPost = browser.page.adminPostAddPage();
+        let editPost = browser.page.adminPostAddPage();
         editPost 
             .comeBackYourPost()
             .clickHideLine('@linkTrashPost')

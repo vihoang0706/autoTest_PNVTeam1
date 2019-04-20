@@ -5,12 +5,12 @@
 
   <testsuite name="posts.adminPostAddTest"
     errors="0" failures="0" hostname="" id="" package="adminPostAddTest" skipped="0"
-    tests="2" time="7.951" timestamp="">
+    tests="2" time="7.720" timestamp="">
   
-    <testcase name="Step 1: Go to post page " classname="posts.adminPostAddTest" time="2.607" assertions="0">
+    <testcase name="Step 1: Go to post page " classname="posts.adminPostAddTest" time="2.403" assertions="0">
     </testcase>
   
-    <testcase name="Step 2: Post information" classname="posts.adminPostAddTest" time="5.344" assertions="3">
+    <testcase name="Step 2: Post information" classname="posts.adminPostAddTest" time="5.317" assertions="3">
 
     
 

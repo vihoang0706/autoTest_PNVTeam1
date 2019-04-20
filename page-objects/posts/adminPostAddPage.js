@@ -28,6 +28,11 @@ module.exports = {
             .moveToElement('@fristTableRow', 0, 0)
             .click(element)
         },
+        stop() {
+            return this
+            .comeBackYourPost()
+            .clickHideLine('@linkTrashPost')
+        },
         goToEditPost() {
             return this
             .click('@linkAllPosts')
@@ -44,7 +49,8 @@ module.exports = {
             .setValue('@inputTitle', title)
             .setValue('@paragraphContent', content)
             .click('@buttonUpdatePost')
-        }
+            .pause('1000')
+        },
     }],
     elements: {
         linkPosts: {

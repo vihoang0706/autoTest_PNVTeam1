@@ -8,6 +8,7 @@ module.exports = {
             .click('//textarea[@class="editor-default-block-appender__content"]')
             .setValue('@paragraphContent', content)
             .click('@buttonPublish')
+            .waitForElementVisible('@subButtonPublish',500)
             .click('@subButtonPublish')
             .pause('1000')
         },
@@ -51,6 +52,9 @@ module.exports = {
             .click('@buttonUpdatePost')
             .pause('1000')
         },
+        checkContainsText(element, expectedContain) {
+            return this.assert.containsText('@'+element, expectedContain)
+        }
     }],
     elements: {
         linkPosts: {
@@ -101,11 +105,11 @@ module.exports = {
             selector: '//a[@class="components-button components-notice__action is-link"]',
             locateStrategy: 'xpath'
         },
-        titlePostCheck: {
+        actualTitlePost: {
             selector: '//h1[@class="entry-title"]',
             locateStrategy: 'xpath'
         },
-        paragraphContentCheck: {
+        actualParagraphContent: {
             selector: '//div[@class="entry-content"]/p',
             locateStrategy: 'xpath'
         },

@@ -1,4 +1,7 @@
 const utils = require('../../page-objects/utils/setUp');
+var category;
+var dashboard;
+const assert = require('assert');
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
 const parentCategory = 'None';
@@ -7,26 +10,25 @@ module.exports = {
     '@tags': ['addcategory'],
     before: function (browser) {
         var login = browser.page.adminUserLoginPage();
-        var username = browser.globals.userNames.username;
-        var password = browser.globals.userNames.password;
+        category = browser.page.adminCategoryPage();
+        dashboard = browser.page.adminBasePage();
         utils.openBrowser(browser);
-        login.login(username, password);
+        login.login(browser.globals.userNames.username, browser.globals.userNames.password);
     },
     'Step 1: Go to Category page': function (browser) {
-        var dashboard = browser.page.adminBasePage();
         dashboard.goToPage('@linkPosts', '@linkCategories');
     },
     'Step 2: Add a new category': function (browser){
-        var category = browser.page.adminCategoryAddPage();
         category.addCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
-        category
-            .assert.containsText('@columnActualName', nameCategory)
-            .assert.containsText('@columnActualDescription', descriptionCategory)
-            .assert.containsText('@columnActualSlug', slugCategory);
+        category.ckeckContainsText('columnActualName', nameCategory);
+        assert.equal(category.getElementTextFromPage('columnActualName',function(textFromPage){}), nameCategory);
+            // .assert.containsText('@columnActualName', nameCategory)
+            // .assert.containsText('@columnActualDescription', descriptionCategory)
+            // .assert.containsText('@columnActualSlug', slugCategory);
     },
     after: function (browser) {
-        var category = browser.page.adminCategoryAddPage();
-        category.deleteCategory(); 
+        category.clickHideLink('@linkDeleteCategory'); 
+        browser.acceptAlert();
         browser.end()
     },
 }

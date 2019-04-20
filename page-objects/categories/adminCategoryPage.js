@@ -1,4 +1,4 @@
-module.exports = {
+const category = {
     commands: [{
         addCategory(name, slug, parent, description) {
             this
@@ -26,16 +26,23 @@ module.exports = {
             return this
                 .click('@linkBackToCategories');
         },
-        // getValueOfElement(selector) {
-        //     return this 
-        //         .getValue('@'+ selector)
-        // },
-        deleteCategory() {
+        clickHideLink(element) {
             this
-            .moveToElement('linkDelete', 0, 0)
-            .click('linkDelete')
+            .moveToElement('@rowFirstTable', 0, 0) 
+            .click(element)
             return this.api
-        }
+        },
+        ckeckContainsText(element, expectedContain) {
+            console.log('@'+element);
+            this.assert.containsText('@'+element, expectedContain)
+        },
+        getElementTextFromPage(element,callback) {
+            this.waitForElementPresent('@'+ element)
+                .getText('@'+ element, function(result){
+                    callback(result.value);
+                });
+            return this.api
+        },
     }],
     elements: {
         inputName: {
@@ -89,10 +96,18 @@ module.exports = {
             selector: '//div[@id="message"]//a',
             locateStrategy: 'xpath'
         },
-        linkDelete: {
-            selector: '//span[@class="delete"]/a',
+        rowFirstTable: {
+            selector: '//tbody[@id="the-list"]/tr[1]/td[1]',
             locateStrategy: 'xpath'
+        },
+        linkDeleteCategory: {
+            selector: '//span[@class="delete"]/a[@class="delete-tag aria-button-if-js"]',
+            locateStrategy: 'xpath'
+        },
+        linkEditCategory: {
+            selector: 'div.row-actions > span.edit > a',
         }
 
     }
 };
+module.exports = category;

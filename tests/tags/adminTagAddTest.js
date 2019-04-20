@@ -29,8 +29,7 @@ module.exports = {
             .assert.containsText('@columnActualTitle', nameTag)
             .assert.containsText('@columnActualSlug', slugTag)
             .assert.containsText('@columnActualDescription', descriptionTag);
-            console.log(page.getContainsText('@columnActualTitle'));
-        // assert.equal(page.getContainsText('@columnActualTitle').text, nameTag);
+            page.assert.isVisible();
     },
     after: function (browser) {
         const page = browser.page.adminTagAddPage();

@@ -32,17 +32,9 @@ const category = {
             .click(element)
             return this.api
         },
-        ckeckContainsText(element, expectedContain) {
-            console.log('@'+element);
-            this.assert.containsText('@'+element, expectedContain)
-        },
-        getElementTextFromPage(element,callback) {
-            this.waitForElementPresent('@'+ element)
-                .getText('@'+ element, function(result){
-                    callback(result.value);
-                });
-            return this.api
-        },
+        checkContainsText(element, expectedContain) {
+            return this.assert.containsText('@'+element, expectedContain)
+        }
     }],
     elements: {
         inputName: {

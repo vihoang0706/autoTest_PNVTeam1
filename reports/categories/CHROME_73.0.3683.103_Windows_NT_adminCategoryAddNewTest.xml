@@ -1,32 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="1"
+            failures="0"
             tests="2">
 
   <testsuite name="categories.adminCategoryAddNewTest"
-    errors="0" failures="1" hostname="" id="" package="adminCategoryAddNewTest" skipped="0"
-    tests="2" time="0.8060" timestamp="">
+    errors="0" failures="0" hostname="" id="" package="adminCategoryAddNewTest" skipped="0"
+    tests="2" time="1.743" timestamp="">
   
-    <testcase name="Step 1: Go to Category page" classname="categories.adminCategoryAddNewTest" time="0.7480" assertions="0">
+    <testcase name="Step 1: Go to Category page" classname="categories.adminCategoryAddNewTest" time="0.8400" assertions="0">
     </testcase>
   
-    <testcase name="Step 2: Add a new category" classname="categories.adminCategoryAddNewTest" time="0.05800" assertions="0"><failure message="AssertionError [ERR_ASSERTION]: Page {">  _RecursiveLookup: [Function],
-  __elements: {
-    columnActualDescription: Element {
-      __index: undefined,
-      locateStrategy: &#39;xpath&#39;,
-      name: &#39;columnActualDescription&#39;,
-      parent: [Circular],
-      selector: &#39;(//table//tr/td[@class=&#34;description column-description&#34;]/p)[1]&#39;
-    },
-    columnActualName: Element {
-      __index: undefined,
-      locateStrategy: &#39;xpath&#39;,
-      name: &#39;columnActualName&#39;,
-      parent: [Circular],
-      selector: &#39;(//table//tbody/tr//td[@data-colname=&#34;Nam... == &#39;clothes&#39; - expected &#34;clothes&#34; but got: &#34;[object Object]&#34;
-    at Object.Step 2: Add a new category (C:\Users\InternDN19.01.06\autoTest_PNVTeam1\tests\categories\adminCategoryAddNewTest.js:24:16)
-    at processTicksAndRejections (internal/process/task_queues.js:86:5)</failure>
+    <testcase name="Step 2: Add a new category" classname="categories.adminCategoryAddNewTest" time="0.9030" assertions="3">
+
+    
+
+    
+
+    
     </testcase>
   
 

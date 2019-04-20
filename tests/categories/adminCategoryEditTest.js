@@ -1,6 +1,5 @@
 const utils = require('../../page-objects/utils/setUp');
-var category;
-var dashboard;
+var dashboard, category, login;
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
 const parentCategory = 'None';
@@ -13,7 +12,7 @@ const editMessageSuccessful = 'Category updated.';
 module.exports = {
     '@tags': ['editcategory'],
     before: function (browser) {
-        var login = browser.page.adminUserLoginPage();
+        login = browser.page.adminUserLoginPage();
         category = browser.page.adminCategoryPage();
         dashboard = browser.page.adminBasePage();
         utils.openBrowser(browser);
@@ -31,11 +30,11 @@ module.exports = {
     'Step 2: Edit category': function (browser) {
         category.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
         category
-            .assert.containsText('@strongMessageEditSuccessful', editMessageSuccessful)
+            .checkContainsText('strongMessageEditSuccessful', editMessageSuccessful)
             .goBackToCategory()
-            .assert.containsText('@columnActualName', nameEditCategory)
-            .assert.containsText('@columnActualDescription', descriptionEditCategory)
-            .assert.containsText('@columnActualSlug', slugEditCategory);
+            .checkContainsText('columnActualName', nameEditCategory)
+            .checkContainsText('columnActualDescription', descriptionEditCategory)
+            .checkContainsText('columnActualSlug', slugEditCategory);
     },
     after: function (browser) {
         category.clickHideLink('@linkDeleteCategory'); 

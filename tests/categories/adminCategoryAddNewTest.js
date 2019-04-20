@@ -1,7 +1,6 @@
 const utils = require('../../page-objects/utils/setUp');
 var category;
 var dashboard;
-const assert = require('assert');
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
 const parentCategory = 'None';
@@ -15,16 +14,15 @@ module.exports = {
         utils.openBrowser(browser);
         login.login(browser.globals.userNames.username, browser.globals.userNames.password);
     },
-    'Step 1: Go to Category page': function (browser) {
+    'Step 1: Go to Category page': function () {
         dashboard.goToPage('@linkPosts', '@linkCategories');
     },
-    'Step 2: Add a new category': function (browser){
+    'Step 2: Add a new category': function (){
         category.addCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
-        category.ckeckContainsText('columnActualName', nameCategory);
-        assert.equal(category.getElementTextFromPage('columnActualName',function(textFromPage){}), nameCategory);
-            // .assert.containsText('@columnActualName', nameCategory)
-            // .assert.containsText('@columnActualDescription', descriptionCategory)
-            // .assert.containsText('@columnActualSlug', slugCategory);
+        category
+            .checkContainsText('columnActualName', nameCategory)
+            .checkContainsText('columnActualDescription', descriptionCategory)
+            .checkContainsText('columnActualSlug', slugCategory);
     },
     after: function (browser) {
         category.clickHideLink('@linkDeleteCategory'); 

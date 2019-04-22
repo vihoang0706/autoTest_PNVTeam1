@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="1"
-            failures="1"
+<testsuites errors="0"
+            failures="0"
             tests="2">
 
   <testsuite name="tags.adminTagAddTest"
-    errors="1" failures="1" hostname="" id="" package="adminTagAddTest" skipped="0"
-    tests="2" time="0.7810" timestamp="">
+    errors="0" failures="0" hostname="" id="" package="adminTagAddTest" skipped="0"
+    tests="2" time="3.036" timestamp="">
   
-    <testcase name="Step 1: Go to tag page" classname="tags.adminTagAddTest" time="0.7730" assertions="2">
-
-    
-
-    
+    <testcase name="Step 1: Go to tag page" classname="tags.adminTagAddTest" time="0.7040" assertions="0">
     </testcase>
   
-    <testcase name="Step 2: Add new tag with data" classname="tags.adminTagAddTest" time="0.008000" assertions="1">  <failure message="Timed out while waiting for element &lt;(//table[@class=&#34;wp-list-table widefat fixed striped tags&#34;]//tbody/tr//td[@class=&#34;name column-name has-row-actions column-primary&#34;]/strong/a)[1]&gt; to be present for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.clickHiddenLink (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\tags\adminTagAddPage.js:39:18)
-    at Object.after (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\tags\adminTagAddTest.js:36:14)
-    at new Promise (&lt;anonymous&gt;)</failure>
+    <testcase name="Step 2: Add new tag with data" classname="tags.adminTagAddTest" time="2.332" assertions="3">
 
-    <failure message="    at Page.clickHiddenLink (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\tags\adminTagAddPage.js:39:18)">    at Object.after (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\tags\adminTagAddTest.js:36:14)
-    at new Promise (&lt;anonymous&gt;)</failure>
+    
+
+    
+
+    
     </testcase>
   
 

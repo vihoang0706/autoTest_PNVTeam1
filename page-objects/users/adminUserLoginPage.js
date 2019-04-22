@@ -7,6 +7,7 @@ module.exports = {
                 .click('@inputLogin')
             return this;
         }
+       
     }],
     elements: {
         inputUsername: {

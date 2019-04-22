@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="3">
+
+  <testsuite name="users.adminLoginTest"
+    errors="0" failures="0" hostname="" id="" package="adminLoginTest" skipped="0"
+    tests="3" time="3.344" timestamp="">
+  
+    <testcase name="Step1: Login with valid information" classname="users.adminLoginTest" time="2.081" assertions="0">
+    </testcase>
+  
+    <testcase name="Step2: Observe information of user on dashboard page" classname="users.adminLoginTest" time="0.06500" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Step3: LogOut account" classname="users.adminLoginTest" time="1.198" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

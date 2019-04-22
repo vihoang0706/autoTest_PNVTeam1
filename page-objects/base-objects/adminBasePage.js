@@ -2,8 +2,8 @@ module.exports = {
 	commands: [{
         goToPage(mainlink,sublink) {
             this
-                .click(mainlink)
-                .click(sublink)   
+                .click('@' + mainlink)
+                .click('@' + sublink)   
             return this.api           
         }, 
     }],

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="3">
+
+  <testsuite name="users.adminUserAddNewTest"
+    errors="0" failures="0" hostname="" id="" package="adminUserAddNewTest" skipped="0"
+    tests="3" time="5.960" timestamp="">
+  
+    <testcase name="Step 1: Login to the admin page" classname="users.adminUserAddNewTest" time="1.093" assertions="0">
+    </testcase>
+  
+    <testcase name="Step 2: Go to the add new user page" classname="users.adminUserAddNewTest" time="0.8230" assertions="0">
+    </testcase>
+  
+    <testcase name="Step 3: Add new user" classname="users.adminUserAddNewTest" time="4.044" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

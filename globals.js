@@ -16,11 +16,10 @@ module.exports = {
                 done();
           });
   },
-  afterEach: function (browser) {
+  afterEach: function (browser, done) {
     browser
-          .end()
-          .perform(function() {
+          .end(function() {
             done();
-          });
+          })
   }
 }

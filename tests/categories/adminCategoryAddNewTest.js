@@ -1,32 +1,29 @@
-const config = require('../utils/config.js');
-var category;
-var dashboard;
+var category, login, dashboard;
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
 const parentCategory = 'None';
 const descriptionCategory = 'Clothes on the store';
 module.exports = {
     '@tags': ['addcategory'],
-    before: function (browser) {
-        var login = browser.page.adminUserLoginPage();
-        category = browser.page.adminCategoryPage();
-        dashboard = browser.page.adminBasePage();
-        config(browser).openBrowser();
+    'Step 1: Login to the admin page' :  function (browser) {
+        login = browser.page.adminUserLoginPage();
         login.login(browser.globals.userNames.username, browser.globals.userNames.password);
     },
-    'Step 1: Go to Category page': function () {
-        dashboard.goToPage('@linkPosts', '@linkCategories');
+    'Step 2: Go to Category page': function (browser) {
+        dashboard = browser.page.adminBasePage();
+        dashboard.goToPage('linkPosts', 'linkCategories');
     },
-    'Step 2: Add a new category': function (){
+    'Step 3: Add a new category': function (browser){
+        category = browser.page.adminCategoryPage();
         category.addCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
         category
             .checkContainsText('columnActualName', nameCategory)
             .checkContainsText('columnActualDescription', descriptionCategory)
             .checkContainsText('columnActualSlug', slugCategory);
     },
-    after: function (browser) {
-        category.clickHideLink('@linkDeleteCategory'); 
+    'Delete the category just created': function (browser) {
+        category = browser.page.adminCategoryPage();
+        category.goToHideLink('linkDeleteCategory');
         browser.acceptAlert();
-        browser.end()
-    },
+    }
 }

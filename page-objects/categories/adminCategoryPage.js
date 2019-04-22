@@ -1,4 +1,4 @@
-const category = {
+module.exports = {
     commands: [{
         addCategory(name, slug, parent, description) {
             this
@@ -22,14 +22,14 @@ const category = {
                 .click('@inputSubmitUpdateCategory')
             return this.api
         },
-        goBackToCategory() {
+        goBackToCategory(element) {
             return this
-                .click('@linkBackToCategories');
+                .click('@' +element);
         },
-        clickHideLink(element) {
+        goToHideLink(element) {
             this
             .moveToElement('@rowFirstTable', 0, 0) 
-            .click(element)
+            .click('@' + element)
             return this.api
         },
         checkContainsText(element, expectedContain) {
@@ -102,4 +102,3 @@ const category = {
 
     }
 };
-module.exports = category;

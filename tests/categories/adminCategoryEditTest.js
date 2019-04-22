@@ -10,34 +10,37 @@ const descriptionEditCategory = 'Clothes on the Team 1 store';
 const editMessageSuccessful = 'Category updated.';
 module.exports = {
     '@tags': ['editcategory'],
-    beforeEach: function (browser) {
+    'Pre-condition: Login to the admin page ': function (browser){
         login = browser.page.adminUserLoginPage();
-        category = browser.page.adminCategoryPage();
-        dashboard = browser.page.adminBasePage();
-        // utils(browser).openBrowser();
         login.login(browser.globals.userNames.username, browser.globals.userNames.password);
     },
     'Pre-condition: Add a new category': function (browser){
-        dashboard.goToPage('@linkPosts', '@linkCategories');
+        login = browser.page.adminUserLoginPage();
+        category = browser.page.adminCategoryPage();
+        dashboard = browser.page.adminBasePage();
+        login.login(browser.globals.userNames.username, browser.globals.userNames.password);
+        dashboard.goToPage('linkPosts', 'linkCategories');
         category.addCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
     },
     'Step 1: Go to the Edit Category page': function (browser) {
+        category = browser.page.adminCategoryPage();
         category
             .pause(500)
-            .clickHideLink('@linkEditCategory');
+            .goToHideLink('linkEditCategory');
     },
     'Step 2: Edit category': function (browser) {
+        category = browser.page.adminCategoryPage();
         category.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
         category
             .checkContainsText('strongMessageEditSuccessful', editMessageSuccessful)
-            .goBackToCategory()
+            .goBackToCategory('linkBackToCategories')
             .checkContainsText('columnActualName', nameEditCategory)
             .checkContainsText('columnActualDescription', descriptionEditCategory)
             .checkContainsText('columnActualSlug', slugEditCategory);
-            category.clickHideLink('@linkDeleteCategory'); 
-            browser.acceptAlert();
     },
-    // after: function (browser) {
-    //     browser.end()
-    // }
+    'Delete the category just created': function (browser) {
+        category = browser.page.adminCategoryPage();
+        category.goToHideLink('linkDeleteCategory');
+        browser.acceptAlert();
+    }
 }

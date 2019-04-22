@@ -11,12 +11,8 @@ module.exports = {
             return this
                 .click('@linkBackToTag');
         },
-        getContainsText(elements) {
-            return this.getText(elements, function (el) {
-                if (typeof callback === 'function') {
-                    callback.call(this, el.value);
-                }
-            });
+        checkContainsText(element, expectedContain) {
+            return this.assert.containsText('@'+element, expectedContain)
         },
         editTag(tagsName, slugName, description) {
             return this

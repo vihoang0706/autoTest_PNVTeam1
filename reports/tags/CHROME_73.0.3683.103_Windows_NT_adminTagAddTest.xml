@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="3">
+
+  <testsuite name="tags.adminTagAddTest"
+    errors="0" failures="0" hostname="" id="" package="adminTagAddTest" skipped="0"
+    tests="3" time="4.049" timestamp="">
+  
+    <testcase name="Pre-condition: Login with valid account" classname="tags.adminTagAddTest" time="2.484" assertions="0">
+    </testcase>
+  
+    <testcase name="Step 1: Go to tag page" classname="tags.adminTagAddTest" time="0.6430" assertions="0">
+    </testcase>
+  
+    <testcase name="Step 2: Add new tag with valid data" classname="tags.adminTagAddTest" time="0.9220" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

@@ -1,25 +1,17 @@
-const utils = require('../../page-objects/utils/setUp');
 module.exports = {
     '@tags': ['logintest'],
-    before: function (browser) {
-        utils.openBrowser(browser);
-    },
-    'Login with valid information': function (browser) {
-        var login = browser.page.adminUserLoginPage();
-        const dashboard = browser.page.adminBasePage();
+    'Step1: Login with valid information': function (browser) {
+        const login= browser.page.adminUserLoginPage();
         var username = browser.globals.userNames.username;
         var password = browser.globals.userNames.password;
         login.login(username, password);
-        dashboard
-            .pause(1000)
-            .assert.visible('@link');
-        browser.execute(function () {
-            document.querySelector('#wp-admin-bar-logout > a').click();
-        });
     },
-    after: function (browser) {
-        browser
-            .pause(2000)
-            .end();
-    }
+    'Step2: Observe information of user on dashboard page': function (browser) {
+        const dashboard = browser.page.adminBasePage();
+        dashboard.assert.visible('@linkYourAccount');
+    },
+    'Step3: LogOut account': function (browser) {
+        const dashboard = browser.page.adminBasePage();
+        dashboard.logOut('@linkLogOut');
+    },
 };

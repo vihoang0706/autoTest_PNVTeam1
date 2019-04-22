@@ -12,6 +12,13 @@ module.exports = {
                 .moveToElement('@linkYourAccount', 0, 0)
                 .waitForElementVisible(element)
                 .click(element);
+        },
+        goToActionUser(element) {
+            return this
+                .waitForElementVisible('@linkYourAccount')
+                .moveToElement('@linkYourAccount', 0, 0)
+                .waitForElementVisible(element)
+                .click(element);
         }
     }],
 	elements: {
@@ -131,5 +138,13 @@ module.exports = {
 			selector: '//li[@id="wp-admin-bar-logout"]/a[text()="Log Out"]',
 			locateStrategy: 'xpath'
         },
+        linkEditProfile: {
+            selector: '#wp-admin-bar-edit-profile > a',
+            locateStrategy: 'css selector'
+        },
+        linkUserInfor: {
+            selector: '//li[@id="wp-admin-bar-user-info"]/ a// span',
+            locateStrategy: 'xpath'
+        }
 	}
 }

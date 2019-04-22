@@ -5,15 +5,15 @@
 
   <testsuite name="categories.adminCategoryEditTest"
     errors="0" failures="0" hostname="" id="" package="adminCategoryEditTest" skipped="0"
-    tests="3" time="3.444" timestamp="">
+    tests="3" time="5.103" timestamp="">
   
-    <testcase name="Pre-condition: Add a new category" classname="categories.adminCategoryEditTest" time="0.9550" assertions="0">
+    <testcase name="Pre-condition: Add a new category" classname="categories.adminCategoryEditTest" time="2.169" assertions="0">
     </testcase>
   
-    <testcase name="Step 1: Go to the Edit Category page" classname="categories.adminCategoryEditTest" time="0.8580" assertions="0">
+    <testcase name="Step 1: Go to the Edit Category page" classname="categories.adminCategoryEditTest" time="0.9380" assertions="0">
     </testcase>
   
-    <testcase name="Step 2: Edit category" classname="categories.adminCategoryEditTest" time="1.631" assertions="4">
+    <testcase name="Step 2: Edit category" classname="categories.adminCategoryEditTest" time="1.996" assertions="4">
 
     
 

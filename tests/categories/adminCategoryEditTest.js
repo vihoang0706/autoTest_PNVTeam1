@@ -1,4 +1,3 @@
-const utils = require('../../page-objects/utils/setUp');
 var dashboard, category, login;
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
@@ -11,11 +10,11 @@ const descriptionEditCategory = 'Clothes on the Team 1 store';
 const editMessageSuccessful = 'Category updated.';
 module.exports = {
     '@tags': ['editcategory'],
-    before: function (browser) {
+    beforeEach: function (browser) {
         login = browser.page.adminUserLoginPage();
         category = browser.page.adminCategoryPage();
         dashboard = browser.page.adminBasePage();
-        utils.openBrowser(browser);
+        // utils(browser).openBrowser();
         login.login(browser.globals.userNames.username, browser.globals.userNames.password);
     },
     'Pre-condition: Add a new category': function (browser){
@@ -35,10 +34,10 @@ module.exports = {
             .checkContainsText('columnActualName', nameEditCategory)
             .checkContainsText('columnActualDescription', descriptionEditCategory)
             .checkContainsText('columnActualSlug', slugEditCategory);
+            category.clickHideLink('@linkDeleteCategory'); 
+            browser.acceptAlert();
     },
-    after: function (browser) {
-        category.clickHideLink('@linkDeleteCategory'); 
-        browser.acceptAlert();
-        browser.end()
-    }
+    // after: function (browser) {
+    //     browser.end()
+    // }
 }

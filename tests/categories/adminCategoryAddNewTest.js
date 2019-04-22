@@ -1,4 +1,4 @@
-const utils = require('../../page-objects/utils/setUp');
+const config = require('../utils/config.js');
 var category;
 var dashboard;
 const nameCategory = 'clothes';
@@ -11,7 +11,7 @@ module.exports = {
         var login = browser.page.adminUserLoginPage();
         category = browser.page.adminCategoryPage();
         dashboard = browser.page.adminBasePage();
-        utils.openBrowser(browser);
+        config(browser).openBrowser();
         login.login(browser.globals.userNames.username, browser.globals.userNames.password);
     },
     'Step 1: Go to Category page': function () {

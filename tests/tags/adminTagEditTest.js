@@ -1,11 +1,12 @@
 const utils = require('../utils/config.js');
-const titleWebsite = 'Tags ‹ Store Front Website — WordPress';
 const nameTag = 'automation testing';
 const slugTag = 'automation-test';
-const assert = require('assert');
 const descriptionTag = 'To learn Automation testing';
+const editNameTag = 'automation';
+const editSlugTag = 'automation-testing';
+const editDescriptionTag = 'To learn Automation testing by using nightwatch';
 module.exports = {
-    '@tags': ['add-tag'],
+    '@tags': ['edit-tag'],
     before: function (browser) {
         utils(browser).openBrowser();
         const login = browser.page.adminUserLoginPage();
@@ -13,23 +14,25 @@ module.exports = {
         var password = browser.globals.userNames.password;
         login.login(username, password);
     },
-    'Step 1: Go to tag page': function (browser) {
+    'Pre-condition: Create a new tag': function (browser) {
         const dashboard = browser.page.adminBasePage();
-        dashboard.goToPage('@linkPosts', '@linkTags');
-        browser.getTitle(function (title) {
-            this.assert.equal(typeof title, 'string');
-            this.assert.equal(title, titleWebsite);
-        });
-    },
-    'Step 2: Add new tag with data': function (browser) {
         const page = browser.page.adminTagAddPage();
+        dashboard.goToPage('@linkPosts', '@linkTags');
         page.addNewTag(nameTag, slugTag, descriptionTag);
+    },
+    'Step 1: Go to edit tag': function (browser) {
+        const page = browser.page.adminTagAddPage();
+        page.clickHiddenLink('@linkEdit');
+    },
+    'Step 2: Edit Tag': function (browser) {
+        const page = browser.page.adminTagAddPage();
         page
-            .pause(2000)
-            .assert.containsText('@columnActualTitle', nameTag)
-            .assert.containsText('@columnActualSlug', slugTag)
-            .assert.containsText('@columnActualDescription', descriptionTag);
-            page.assert.isVisible();
+            .editTag(editNameTag, editSlugTag, editDescriptionTag)
+            .goBackToTagPage();
+        page
+            .assert.containsText('@columnActualTitle', editNameTag)
+            .assert.containsText('@columnActualSlug', editSlugTag)
+            .assert.containsText('@columnActualDescription', editDescriptionTag);
     },
     after: function (browser) {
         const page = browser.page.adminTagAddPage();

@@ -1,8 +1,8 @@
-const utils = require('../../page-objects/utils/setUp');
+const utils = require('../utils/config.js');
 module.exports = {
     '@tags': ['logintest'],
     before: function (browser) {
-        utils.openBrowser(browser);
+        utils(browser).openBrowser();
     },
     'Login with valid information': function (browser) {
         var login = browser.page.adminUserLoginPage();

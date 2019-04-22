@@ -5,12 +5,12 @@
 
   <testsuite name="categories.adminCategoryAddNewTest"
     errors="0" failures="0" hostname="" id="" package="adminCategoryAddNewTest" skipped="0"
-    tests="2" time="1.743" timestamp="">
+    tests="2" time="1.670" timestamp="">
   
-    <testcase name="Step 1: Go to Category page" classname="categories.adminCategoryAddNewTest" time="0.8400" assertions="0">
+    <testcase name="Step 1: Go to Category page" classname="categories.adminCategoryAddNewTest" time="0.7350" assertions="0">
     </testcase>
   
-    <testcase name="Step 2: Add a new category" classname="categories.adminCategoryAddNewTest" time="0.9030" assertions="3">
+    <testcase name="Step 2: Add a new category" classname="categories.adminCategoryAddNewTest" time="0.9350" assertions="3">
 
     
 

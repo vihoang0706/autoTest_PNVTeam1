@@ -5,17 +5,17 @@
 
   <testsuite name="users.adminLoginTest"
     errors="0" failures="0" hostname="" id="" package="adminLoginTest" skipped="0"
-    tests="3" time="2.123" timestamp="">
+    tests="3" time="2.896" timestamp="">
   
-    <testcase name="Step1: Login with valid information" classname="users.adminLoginTest" time="1.019" assertions="0">
+    <testcase name="Step1: Login with valid information" classname="users.adminLoginTest" time="1.564" assertions="0">
     </testcase>
   
-    <testcase name="Step2: Observe information of user on dashboard page" classname="users.adminLoginTest" time="0.03800" assertions="1">
+    <testcase name="Step2: Observe information of user on dashboard page" classname="users.adminLoginTest" time="0.07900" assertions="1">
 
     
     </testcase>
   
-    <testcase name="Step3: LogOut account" classname="users.adminLoginTest" time="1.066" assertions="2">
+    <testcase name="Step3: LogOut account" classname="users.adminLoginTest" time="1.253" assertions="2">
 
     
 

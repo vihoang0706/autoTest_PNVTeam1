@@ -5,23 +5,19 @@
 
   <testsuite name="tags.adminTagEditTest"
     errors="0" failures="0" hostname="" id="" package="adminTagEditTest" skipped="0"
-    tests="3" time="3.372" timestamp="">
+    tests="3" time="5.960" timestamp="">
   
-    <testcase name="Pre-condition: Create a new tag" classname="tags.adminTagEditTest" time="0.9220" assertions="0">
+    <testcase name="Pre-condition: Create a new tag" classname="tags.adminTagEditTest" time="3.214" assertions="0">
     </testcase>
   
-    <testcase name="Step 1: Go to edit tag" classname="tags.adminTagEditTest" time="1.030" assertions="2">
+    <testcase name="Step 1: Go to edit tag" classname="tags.adminTagEditTest" time="0.9820" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Step 2: Edit Tag" classname="tags.adminTagEditTest" time="1.420" assertions="5">
-
-    
-
-    
+    <testcase name="Step 2: Edit Tag" classname="tags.adminTagEditTest" time="1.764" assertions="3">
 
     
 

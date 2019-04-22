@@ -1,4 +1,3 @@
-const utils = require('../utils/config.js');
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
 const parentCategory = 'None';
@@ -14,7 +13,6 @@ module.exports = {
         var login = browser.page.adminUserLoginPage();
         var username = browser.globals.userNames.username;
         var password = browser.globals.userNames.password;
-        utils(browser).openBrowser();
         login.login(username, password);
     },
     'Go to category page': function (browser) {

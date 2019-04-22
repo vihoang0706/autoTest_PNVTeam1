@@ -1,4 +1,3 @@
-const utils = require('../utils/config.js');
 const randomNumber = Math.floor(Math.random() * 10);
 const number = randomNumber;
 const titleName = 'Post: ' + number + ' Where were you';
@@ -6,7 +5,6 @@ const content = 'When you were in trouble and you needed a hand I was always the
 module.exports = {
     tags: ['addPostFunction'],
     before: function (browser) {
-        utils(browser).openBrowser();
         const login = browser.page.adminUserLoginPage();
         var username = browser.globals.userNames.username;
         var password = browser.globals.userNames.password;

@@ -30,7 +30,7 @@ module.exports = {
                 .click('@buttonDeleteBulkAction')
                 .click('@buttonApply');
         },
-        clickHiddenLink(element) {
+        goToAction(element) {
             return this
                 .waitForElementVisible('@columnActualTitle')
                 .moveToElement('@columnActualTitle', 0, 0)

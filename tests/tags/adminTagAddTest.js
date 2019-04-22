@@ -1,23 +1,24 @@
-const utils = require('../utils/config.js');
 const nameTag = 'automation testing';
 const slugTag = 'automation-test';
 const descriptionTag = 'To learn Automation testing';
-var dashboard, tagPage;
 module.exports = {
     '@tags': ['add-tag'],
-    before: function (browser) {
-        utils(browser).openBrowser();
+    'Pre-condition: Login with valid account and Delete all tags': function(browser){
         const login = browser.page.adminUserLoginPage();
-        dashboard = browser.page.adminBasePage();
-        tagPage = browser.page.adminTagAddPage();
         var username = browser.globals.userNames.username;
         var password = browser.globals.userNames.password;
         login.login(username, password);
+        const dashboard = browser.page.adminBasePage();
+        dashboard.goToPage('@linkPosts', '@linkTags');
+        const tagPage = browser.page.adminTagAddPage();
+        tagPage.deleteAllTags();
     },
-    'Step 1: Go to tag page': function () {
+    'Step 1: Go to tag page': function (browser) {
+        const dashboard = browser.page.adminBasePage();
         dashboard.goToPage('@linkPosts', '@linkTags');
     },
-    'Step 2: Add new tag with data': function () {
+    'Step 2: Add new tag with valid data': function (browser) {
+        const tagPage = browser.page.adminTagAddPage();
         tagPage.addNewTag(nameTag, slugTag, descriptionTag);
         tagPage
             .waitForElementVisible('@columnActualTitle')
@@ -25,11 +26,4 @@ module.exports = {
             .checkContainsText('columnActualSlug', slugTag)
             .checkContainsText('columnActualDescription', descriptionTag);
     },
-    after: function (browser) {
-        tagPage.clickHiddenLink('@linkDelete');
-        browser
-            .pause(1000)
-            .acceptAlert()
-            .end();
-    }
 };

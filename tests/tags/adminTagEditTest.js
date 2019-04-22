@@ -1,5 +1,3 @@
-const utils = require('../utils/config.js');
-var dashboard, tagPage;
 const nameTag = 'automation testing';
 const slugTag = 'automation-test';
 const descriptionTag = 'To learn Automation testing';
@@ -8,23 +6,24 @@ const editSlugTag = 'automation-testing';
 const editDescriptionTag = 'To learn Automation testing by using nightwatch';
 module.exports = {
     '@tags': ['edit-tag'],
-    before: function (browser) {
+    'Pre-condition: Login and Create a new tag': function (browser) {
         const login = browser.page.adminUserLoginPage();
-        dashboard = browser.page.adminBasePage();
-        tagPage = browser.page.adminTagAddPage();
-        utils(browser).openBrowser();
         var username = browser.globals.userNames.username;
         var password = browser.globals.userNames.password;
         login.login(username, password);
-    },
-    'Pre-condition: Create a new tag': function () {
+        const dashboard = browser.page.adminBasePage();
         dashboard.goToPage('@linkPosts', '@linkTags');
-        tagPage.addNewTag(nameTag, slugTag, descriptionTag);
+        const tagPage = browser.page.adminTagAddPage();
+        tagPage
+            .deleteAllTags()
+            .addNewTag(nameTag, slugTag, descriptionTag);
     },
-    'Step 1: Go to edit tag': function () {
-        tagPage.clickHiddenLink('@linkEdit');
+    'Step 1: Go to edit tag': function (browser) {
+        const tagPage = browser.page.adminTagAddPage();
+        tagPage.goToAction('@linkEdit');
     },
-    'Step 2: Edit Tag': function () {
+    'Step 2: Edit Tag': function (browser) {
+        const tagPage = browser.page.adminTagAddPage();
         tagPage
             .editTag(editNameTag, editSlugTag, editDescriptionTag)
             .goBackToTagPage();
@@ -33,11 +32,4 @@ module.exports = {
             .checkContainsText('columnActualSlug', editSlugTag)
             .checkContainsText('columnActualDescription', editDescriptionTag);
     },
-    after: function (browser) {
-        tagPage.clickHiddenLink('@linkDelete');
-        browser
-            .pause(1000)
-            .acceptAlert()
-            .end();
-    }
 };

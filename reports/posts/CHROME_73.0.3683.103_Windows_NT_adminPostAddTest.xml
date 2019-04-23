@@ -5,15 +5,15 @@
 
   <testsuite name="posts.adminPostAddTest"
     errors="0" failures="0" hostname="" id="" package="adminPostAddTest" skipped="0"
-    tests="3" time="8.643" timestamp="">
+    tests="3" time="8.209" timestamp="">
   
-    <testcase name="Pre-condition: Login with valid account" classname="posts.adminPostAddTest" time="2.678" assertions="0">
+    <testcase name="Pre-condition: Login with valid account" classname="posts.adminPostAddTest" time="1.946" assertions="0">
     </testcase>
   
-    <testcase name="Step 1: Go to post page " classname="posts.adminPostAddTest" time="2.163" assertions="0">
+    <testcase name="Step 1: Go to post page " classname="posts.adminPostAddTest" time="2.063" assertions="0">
     </testcase>
   
-    <testcase name="Step 2: Post Information" classname="posts.adminPostAddTest" time="3.802" assertions="4">
+    <testcase name="Step 2: Post Information" classname="posts.adminPostAddTest" time="4.200" assertions="4">
 
     
 

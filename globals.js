@@ -2,6 +2,7 @@ var userNames = {
     username:'admin',
     password:'123456789',
   };
+var numberPost = (Math.floor(Math.random() * 50));
 module.exports = {
 //  default the done invocation timeout is 
 // set to 10 seconds (2 seconds for unit tests)

@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="2"
+            failures="0"
             tests="3">
 
   <testsuite name="posts.adminPostEditTest"
-    errors="0" failures="2" hostname="" id="" package="adminPostEditTest" skipped="0"
-    tests="3" time="5.238" timestamp="">
+    errors="0" failures="0" hostname="" id="" package="adminPostEditTest" skipped="0"
+    tests="3" time="14.02" timestamp="">
   
-    <testcase name="Precondition: Login with valid account, create a new post" classname="posts.adminPostEditTest" time="4.313" assertions="1">  <failure message="Timed out while waiting for element &lt;//button[@class=&#34;components-button editor-post-publish-button is-button is-default is-primary is-large&#34;]&gt; to be present for 500 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.addNewPost (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\posts\adminPostAddPage.js:10:14)
-    at Object.Precondition: Login with valid account, create a new post (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\posts\adminPostEditTest.js:18:17)</failure>
-
-    <failure message="    at Page.addNewPost (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\posts\adminPostAddPage.js:10:14)">    at Object.Precondition: Login with valid account, create a new post (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\posts\adminPostEditTest.js:18:17)</failure>
-    </testcase>
-  
-    <testcase name="Step 1: Go to edit post" classname="posts.adminPostEditTest" time="0.3640" assertions="1">
+    <testcase name="Precondition: Login with valid account, create a new post" classname="posts.adminPostEditTest" time="8.101" assertions="1">
 
     
     </testcase>
   
-    <testcase name="Step 2: Edit Information in post" classname="posts.adminPostEditTest" time="0.5610" assertions="1">  <failure message="Timed out while waiting for element &lt;//button[@class=&#34;components-button editor-post-publish-button is-button is-default is-primary is-large&#34;]&gt; to be present for 500 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.editPost (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\posts\adminPostAddPage.js:35:14)
-    at Object.Step 2: Edit Information in post (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\posts\adminPostEditTest.js:25:14)</failure>
+    <testcase name="Step 1: Go to edit post" classname="posts.adminPostEditTest" time="1.718" assertions="1">
 
-    <failure message="    at Page.editPost (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\posts\adminPostAddPage.js:35:14)">    at Object.Step 2: Edit Information in post (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\posts\adminPostEditTest.js:25:14)</failure>
+    
+    </testcase>
+  
+    <testcase name="Step 2: Edit Information in post" classname="posts.adminPostEditTest" time="4.203" assertions="4">
+
+    
+
+    
+
+    
+
+    
     </testcase>
   
 

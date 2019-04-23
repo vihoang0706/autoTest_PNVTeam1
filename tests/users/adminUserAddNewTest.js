@@ -15,21 +15,20 @@ module.exports = {
         user = browser.page.adminUserManagementPage();
         addUser = browser.page.adminAddUserPage();
         login.login(browser.globals.userNames.username, browser.globals.userNames.password);
-        // dashboard.goToPage('linkUsers', 'linkAllUsers');
-        // user.deleteAllUser();
     },
     'Step 2: Go to the add new user page': function () {
         dashboard.goToPage('linkUsers', 'linkAddNewUser');
     },
     'Step 3: Add new user': function () {
         addUser.addUser(username, email, firstName, lastName, website, password, role);
+        addUser.pause(1000);
         user
             .checkContainsText('collumnUsername', username)
             .checkContainsText('collumnName', name)
             .checkContainsText('collumnEmail', email)
             .checkContainsText('collumnRole', role)
         //Checkpoint: The new user account can login to Admin page
-        dashboard.logOut('@linkLogOut');
+        dashboard.logOut('linkLogOut');
         login.login(username, password);
         dashboard.assert.visible('@linkYourAccount');
     },
@@ -37,6 +36,6 @@ module.exports = {
         dashboard.goToPage('linkUsers', 'linkAllUsers');
         dashboard.pause(1000);
         user.deleteUser();
-        dashboard.logOut('@linkLogOut');
+        dashboard.logOut('linkLogOut');
     }
 }

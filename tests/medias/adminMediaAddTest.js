@@ -1,6 +1,4 @@
-const utils = require('../../page-objects/utils/setUp');
-let addMedia, dashboard, login, username, password;
-let imageName = 1234, extension = '.jpg';
+let addMedia, dashboard, login, username, password, imageName = 1234, extension = '.jpg';
 let image = 'C:/Users/InternDN19.01.05/'+imageName+extension;
 module.exports = {
     tags: ['addMediaFunction'],

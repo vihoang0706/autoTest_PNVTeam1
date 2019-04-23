@@ -5,7 +5,6 @@ module.exports = {
             return this
             .click('@buttonCancelTip')
             .setValue('@inputTitle', title)
-            // .click('//textarea[@class="editor-default-block-appender__content"]')
             .setValue('@paragraphContent', content)
             .click('@buttonPublish')
             .waitForElementVisible('@subButtonPublish',500)
@@ -16,23 +15,6 @@ module.exports = {
             return this
             .waitForElementVisible('@linkViewPost')
             .click('@linkViewPost');
-        },
-        comeBackYourPost(){
-            return this
-            .moveToElement('@linkStoreFrontWebsite', 0, 0)
-            .click('@linkDashboard')
-            .click('@linkPosts')
-            .click('@linkAllPosts')            
-        },
-        clickHideLine(element) {
-            return this
-            .moveToElement('@fristTableRow', 0, 0)
-            .click(element)
-        },
-        stop() {
-            return this
-            .comeBackYourPost()
-            .clickHideLine('@linkTrashPost')
         },
         goToEditPost() {
             return this

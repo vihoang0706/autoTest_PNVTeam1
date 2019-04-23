@@ -10,8 +10,9 @@ module.exports = {
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
         login.login(username, password);
-        // dashboard.goToPage('@linkPosts', '@linkAllPosts');
-        // addPost.deleteAllPosts()
+        dashboard.goToPage('linkMedia', 'linkLibrary');
+        addMedia.deleteAllLibrary()
+        browser.acceptAlert()
     },
     'Step 1: Go to media page ': function () {
         dashboard.goToPage('linkMedia', 'linkAddNewMedia')

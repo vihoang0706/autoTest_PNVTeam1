@@ -14,6 +14,12 @@ module.exports = {
             return this
             .moveToElement('@fristTableRow', 0, 0)
             .click(element)
+        },
+        deleteAllLibrary() {
+            return this
+            .click('@checkboxSelectAll')
+            .click('@buttonDeleteBulkAction')
+            .click('@buttonApply');
         }
     }],
     elements: {
@@ -36,6 +42,9 @@ module.exports = {
         linkDeleteImage: {
             selector: '//span[@class="edit"]/a[@class="submitdelete aria-button-if-js" and text() ="Delete Permanently"]',
             locateStrategy: 'xpath'
-        }
+        },
+        checkboxSelectAll: '#cb-select-all-2',
+        buttonDeleteBulkAction: '#bulk-action-selector-bottom > option:nth-child(2)',
+        buttonApply: '#doaction2',
     }
 }

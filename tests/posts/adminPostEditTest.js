@@ -12,7 +12,7 @@ module.exports =  {
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
         login.login(username, password);
-        dashboard.goToPage('@linkPosts', '@linkNewPost');
+        dashboard.goToPage('linkPosts', 'linkNewPost');
         addPost.addNewPost(titleName, content1);
     },
     'Step 1: Go to edit post': function ()  {

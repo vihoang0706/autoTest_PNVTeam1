@@ -6,9 +6,13 @@ module.exports = {
                 .setValue('@inputPassword', password)
                 .click('@inputLogin')
             return this;
+        },
+        checkContainsText(element, expectedContain) {
+            return this.assert.containsText('@'+element, expectedContain);
         }
     }],
     elements: {
+       
         inputUsername: {
             selector: '//input[@id="user_login"]',
             locateStrategy: 'xpath'
@@ -19,6 +23,14 @@ module.exports = {
         },
         inputLogin: {
             selector: '//input[@id="wp-submit"]',
+            locateStrategy: 'xpath'
+        },
+        lableErrorMessage: {
+            selector: '//div[@id="login_error"]',
+            locateStrategy: 'xpath'
+        },
+        formLogin: {
+            selector: '//form[@name="loginform"]',
             locateStrategy: 'xpath'
         }
     }

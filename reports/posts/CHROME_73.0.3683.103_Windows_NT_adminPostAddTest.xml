@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="0"
-            failures="0"
+<testsuites errors="1"
+            failures="1"
             tests="3">
 
   <testsuite name="posts.adminPostAddTest"
-    errors="0" failures="0" hostname="" id="" package="adminPostAddTest" skipped="0"
-    tests="3" time="11.21" timestamp="">
+    errors="1" failures="1" hostname="" id="" package="adminPostAddTest" skipped="0"
+    tests="3" time="1.724" timestamp="">
   
-    <testcase name="Pre-condition: Login with valid account" classname="posts.adminPostAddTest" time="4.385" assertions="0">
+    <testcase name="Pre-condition: Login with valid account" classname="posts.adminPostAddTest" time="1.117" assertions="0">
     </testcase>
   
-    <testcase name="Step 1: Go to post page " classname="posts.adminPostAddTest" time="2.170" assertions="0">
+    <testcase name="Step 1: Go to post page " classname="posts.adminPostAddTest" time="0.002000" assertions="0">
     </testcase>
   
-    <testcase name="Step 2: Post Information" classname="posts.adminPostAddTest" time="4.658" assertions="4">
+    <testcase name="Step 2: Post Information" classname="posts.adminPostAddTest" time="0.6050" assertions="1">  <failure message="Timed out while waiting for element &lt;//button[@class=&#34;components-button editor-post-publish-button is-button is-default is-primary is-large&#34;]&gt; to be present for 500 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.addNewPost (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\posts\adminPostAddPage.js:10:14)
+    at Object.Step 2: Post Information (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\posts\adminPostAddTest.js:20:14)</failure>
 
-    
-
-    
-
-    
-
-    
+    <failure message="    at Page.addNewPost (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\posts\adminPostAddPage.js:10:14)">    at Object.Step 2: Post Information (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\posts\adminPostAddTest.js:20:14)</failure>
     </testcase>
   
 

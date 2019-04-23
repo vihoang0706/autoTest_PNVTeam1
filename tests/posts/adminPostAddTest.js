@@ -4,31 +4,24 @@ let dashboard, addPost, login, username, password;
 
 module.exports = {
     tags: ['addPostFunction'],
-    before: function (browser) {
+    'Pre-condition: Login with valid account': function (browser) {
         login = browser.page.adminUserLoginPage();
-        dashboard = browser.page.adminBasePage();
         addPost = browser.page.adminPostAddPage();
+        dashboard = browser.page.adminBasePage();
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
-        utils.openBrowser(browser);
         login.login(username, password);
+        dashboard.goToPage('@linkPosts', '@linkAllPosts');
+        addPost.deleteAllPosts();
     },
-
     'Step 1: Go to post page ': function () {
         dashboard.goToPage('@linkPosts', '@linkNewPost');
     },
-    'Step 2: Post information': function () {
+    'Step 2: Post Information': function () {
         addPost
             .addNewPost(titleName, content)
             .viewPost()
             .checkContainsText('actualTitlePost', titleName)
             .checkContainsText('actualParagraphContent', content)
     },
-    
-    after: function () {
-        addPost
-            .stop()
-            .pause(1000)
-            .end();
-    }
 };

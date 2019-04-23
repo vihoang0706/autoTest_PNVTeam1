@@ -2,16 +2,16 @@ let addMedia, dashboard, login, username, password, imageName = 1234, extension 
 let image = 'C:/Users/InternDN19.01.05/'+imageName+extension;
 module.exports = {
     tags: ['addMediaFunction'],
-
-    before: function (browser) {
+    'Pre-condition: Login with valid account': function (browser) {
         login = browser.page.adminUserLoginPage();
+        addPost = browser.page.adminPostAddPage();
         dashboard = browser.page.adminBasePage();
         addMedia = browser.page.adminMediaAddPage();
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
-
-        utils.openBrowser(browser);
         login.login(username, password);
+        // dashboard.goToPage('@linkPosts', '@linkAllPosts');
+        // addPost.deleteAllPosts()
     },
 
     'Step 1: Go to media page ': function () {
@@ -23,14 +23,4 @@ module.exports = {
             .addNewMedia(image)
             .checkCorrectImage('image', imageName)
     },
-
-    after: function (browser) {
-        addMedia
-            .clickHideLine('@linkDeleteImage')
-        browser
-            .pause(1000)
-            .acceptAlert()
-            .end()
-    }
-
 }

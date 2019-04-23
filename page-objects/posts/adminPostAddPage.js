@@ -5,7 +5,6 @@ module.exports = {
             return this
             .click('@buttonCancelTip')
             .setValue('@inputTitle', title)
-            .click('//textarea[@class="editor-default-block-appender__content"]')
             .setValue('@paragraphContent', content)
             .click('@buttonPublish')
             .waitForElementVisible('@subButtonPublish',500)
@@ -54,6 +53,12 @@ module.exports = {
         },
         checkContainsText(element, expectedContain) {
             return this.assert.containsText('@'+element, expectedContain)
+        },
+        deleteAllPosts() {
+            return this
+            .click('@checkboxSelectAll')
+            .click('@buttonDeleteBulkAction')
+            .click('@buttonApply');
         }
     }],
     elements: {
@@ -65,18 +70,6 @@ module.exports = {
             selector: '//li[@id="menu-posts"]//a[text()="All Posts"]',
             locateStrategy: 'xpath'
         },
-        linkAddNewInItem: {
-            selector: '//div[@id="adminmenuwrap"]/ul/li[4]/ul/li/a[contains(text(), "Add New")]',
-            locateStrategy: 'xpath'
-        },
-        linkCategory: {
-            selector: '//div[@id="adminmenuwrap"]/ul/li[4]/ul/li/a[contains(text(), "Categories")]',
-            locateStrategy: 'xpath'
-        },
-        linkTag: {
-            selector: '//div[@id="adminmenuwrap"]/ul/li[4]/ul/li/a[contains(text(), "Tags")]',
-            locateStrategy: 'xpath'
-        },
         buttonCancelTip: {
             selector: '//button[@class="components-button components-icon-button nux-dot-tip__disable"]',
             locateStrategy: 'xpath'
@@ -85,12 +78,8 @@ module.exports = {
             selector: '//textarea[@id="post-title-0"]',
             locateStrategy: 'xpath'
         },
-        textareaContent: {
-            selector: '//textarea[@class="editor-default-block-appender__content"]',
-            locateStrategy: 'xpath'
-        },
         paragraphContent: {
-            selector: '//div[@class="components-autocomplete"]/p',
+            selector: '//textarea[@class="editor-post-text-editor"]',
             locateStrategy: 'xpath'
         },
         buttonPublish: {
@@ -111,18 +100,6 @@ module.exports = {
         },
         actualParagraphContent: {
             selector: '//div[@class="entry-content"]/p',
-            locateStrategy: 'xpath'
-        },
-        selectBulkActions: {
-            selector: '//select[@id="bulk-action-selector-top"]',
-            locateStrategy: 'xpath'
-        },
-        optionMoveToTrash: {
-            selector: '//select[@id="bulk-action-selector-top"]/option[3]',
-            locateStrategy: 'xpath'
-        },
-        buttonApply: {
-            selector: '//input[@id="doaction"]',
             locateStrategy: 'xpath'
         },
         linkStoreFrontWebsite: {
@@ -148,6 +125,9 @@ module.exports = {
         buttonUpdatePost: {
             selector: '//button[@class="components-button editor-post-publish-button is-button is-default is-primary is-large"]',
             locateStrategy: 'xpath'
-        }
+        },
+        checkboxSelectAll: '#cb-select-all-2',
+        buttonDeleteBulkAction: '#bulk-action-selector-bottom > option:nth-child(3)',
+        buttonApply: '#doaction2',
     }
 }

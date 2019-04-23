@@ -28,24 +28,14 @@ module.exports = {
             .moveToElement('@fristTableRow', 0, 0)
             .click(element)
         },
-        stop() {
-            return this
-            .comeBackYourPost()
-            .clickHideLine('@linkTrashPost')
-        },
         goToEditPost() {
             return this
             .click('@linkAllPosts')
-            .assert.title('Posts ‹ Store Front Website — WordPress')
             .clickHideLine('@linkEditPost')
-        },
-        clearInput() {
-            return this
-            .clearValue('@paragraphContent')
         },
         editPost(title, content) {
             return this
-            .clearInput()
+            .clearValue('@paragraphContent')
             .setValue('@inputTitle', title)
             .setValue('@paragraphContent', content)
             .click('@buttonUpdatePost')

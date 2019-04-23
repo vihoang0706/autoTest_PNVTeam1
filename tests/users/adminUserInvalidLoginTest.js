@@ -19,9 +19,7 @@ describe('Data for login with invalid information', function () {
                 .checkContainsText('labelErrorMessage', data.errorMessage)
         });
     });
-
 });
-
 // "test_runner" : {
 //     "type" : "mocha",
 //     "options" : {

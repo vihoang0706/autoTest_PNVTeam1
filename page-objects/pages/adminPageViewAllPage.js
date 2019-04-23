@@ -34,9 +34,6 @@ module.exports = {
             selector: '//select[@id="bulk-action-selector-bottom"]/option[@value="trash"]',
             locateStrategy: 'xpath'
         },
-        buttonApply: {
-            selector: '//input[@id="doaction2"]',
-            locateStrategy: 'xpath'
-        }
+        buttonApply: 'input[id=doaction2]',
     }
 };

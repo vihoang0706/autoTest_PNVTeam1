@@ -9,12 +9,12 @@ module.exports = {
     '@tags': 'edit-user-profile',
     'Step 1: Login with valid account and Unchecked all checkboxs': function (browser) {
         login = browser.page.adminUserLoginPage();
+        editUserProfile = browser.page.adminUserEditProfilePage();
+        dashboard = browser.page.adminBasePage();
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
         login.login(username, password);
-        dashboard = browser.page.adminBasePage();
         dashboard.goToActionUser('linkEditProfile');
-        editUserProfile = browser.page.adminUserEditProfilePage();
         editUserProfile.uncheckedCheckbox();
     },
     'Step 2: Go to Edit Profile page': function () {

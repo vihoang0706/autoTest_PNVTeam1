@@ -4,14 +4,7 @@ module.exports = {
             this
                 .click('@' + mainlink)
                 .click('@' + sublink)
-            return this.api
-        },
-        logOut(element) {
-            return this
-                .waitForElementVisible('@linkYourAccount')
-                .moveToElement('@linkYourAccount', 0, 0)
-                .waitForElementVisible('@' + element)
-                .click('@' + element);
+            return this.api;
         },
         goToActionUser(element) {
             return this

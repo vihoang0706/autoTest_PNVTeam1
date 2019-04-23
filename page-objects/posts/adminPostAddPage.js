@@ -1,60 +1,49 @@
-const goToPost = require("../base-objects/adminBasePage");
 module.exports = {
     commands: [{
         addNewPost(title, content) {
             return this
-            .click('@buttonCancelTip')
-            .setValue('@inputTitle', title)
-            .setValue('@paragraphContent', content)
-            .click('@buttonPublish')
-            .waitForElementVisible('@subButtonPublish',500)
-            .click('@subButtonPublish')
-            .pause('1000')
+                .click('@buttonCancelTip')
+                .setValue('@inputTitle', title)
+                .setValue('@paragraphContent', content)
+                .click('@buttonPublish')
+                .waitForElementVisible('@subButtonPublish')
+                .click('@subButtonPublish');
         },
         viewPost() {
             return this
-            .waitForElementVisible('@linkViewPost')
-            .click('@linkViewPost');
+                .waitForElementVisible('@linkViewPost')
+                .click('@linkViewPost');
         },
-        clickHideLine(element) {
+        goToHideLink(element) {
             return this
-            .moveToElement('@fristTableRow', 0, 0)
-            .click(element)
+                .moveToElement('@columnTitleActual', 0, 0)
+                .click(element);
         },
         goToEditPost() {
             return this
-            .click('@linkAllPosts')
-            .assert.title('Posts ‹ Store Front Website — WordPress')
-            .clickHideLine('@linkEditPost')
+                .click('@linkAllPosts')
+                .clickHideLine('@linkEditPost')
         },
         editPost(title, content) {
             return this
-            .clearValue('@paragraphContent')
-            .setValue('@inputTitle', title)
-            .setValue('@paragraphContent', content)
-            .waitForElementVisible('@buttonUpdatePost',500)
-            .click('@buttonUpdatePost')
-            .pause('500')
+                .clearValue('@paragraphContent')
+                .setValue('@inputTitle', title)
+                .setValue('@paragraphContent', content)
+                .waitForElementVisible('@buttonUpdatePost', 500)
+                .click('@buttonUpdatePost')
+                // .pause('500')
         },
         checkContainsText(element, expectedContain) {
-            return this.assert.containsText('@'+element, expectedContain)
+            return this.assert.containsText('@' + element, expectedContain)
         },
         deleteAllPosts() {
             return this
-            .click('@checkboxSelectAll')
-            .click('@buttonDeleteBulkAction')
-            .click('@buttonApply');
+                .click('@checkboxSelectAll')
+                .click('@buttonDeleteBulkAction')
+                .click('@buttonApply');
         }
     }],
     elements: {
-        linkPosts: {
-			selector: '//div[@class="wp-menu-name" and text()= "Posts"]',
-			locateStrategy: 'xpath'
-        },
-        linkAllPosts: {
-            selector: '//li[@id="menu-posts"]//a[text()="All Posts"]',
-            locateStrategy: 'xpath'
-        },
         buttonCancelTip: {
             selector: '//button[@class="components-button components-icon-button nux-dot-tip__disable"]',
             locateStrategy: 'xpath'
@@ -95,7 +84,7 @@ module.exports = {
             selector: '//ul/li/a[@class="ab-item" and text() = "Dashboard" ]',
             locateStrategy: 'xpath'
         },
-        fristTableRow: {
+        columnTitleActual: {
             selector: '//tbody[@id="the-list"]/tr[1]/td[1]',
             locateStrategy: 'xpath'
         },

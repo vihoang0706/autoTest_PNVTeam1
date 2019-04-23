@@ -16,15 +16,13 @@ module.exports = {
         dashboard = browser.page.adminBasePage();
         login.login(browser.globals.userNames.username, browser.globals.userNames.password);
         dashboard.goToPage('linkPosts', 'linkCategories');
-        category.deleteAllCategory();
+        category.deleteAllCategories();
         category.addCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
     },
-    'Step 1: Go to the Edit Category page': function (browser) {
-        category
-            .pause(500)
-            .goToHideLink('linkEditCategory');
+    'Step 1: Go to the Edit Category page': function () {
+        category.goToHideLink('linkEditCategory');
     },
-    'Step 2: Edit category': function (browser) {
+    'Step 2: Edit category': function () {
         category.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
         category
             .checkContainsText('strongMessageEditSuccessful', editMessageSuccessful)

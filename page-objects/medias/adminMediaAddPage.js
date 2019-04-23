@@ -2,23 +2,18 @@ module.exports = {
     commands: [{
         addNewMedia(image) {
             return this
-            .setValue('@inputImage', require('path').resolve(image))
-            .click('@buttonUpload')
-            .pause('1000')
+                .setValue('@inputImage', require('path').resolve(__dirname+image))
+                .click('@buttonUpload')
+                // .pause('1000')
         },
         checkImageExist(element, nameImage) {
             return this.assert.containsText('@'+element, nameImage)
         },
-        clickHideLine(element) {
+        deleteAllImages() {
             return this
-            .moveToElement('@fristTableRow', 0, 0)
-            .click(element)
-        },
-        deleteImage() {
-            return this
-            .click('@checkboxSelectAll')
-            .click('@buttonDeleteBulkAction')
-            .click('@buttonApply');
+                .click('@checkboxSelectAll')
+                .click('@buttonDeleteBulkAction')
+                .click('@buttonApply');
         }
     }],
     elements: {

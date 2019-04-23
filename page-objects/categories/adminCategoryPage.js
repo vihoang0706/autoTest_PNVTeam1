@@ -6,12 +6,12 @@ module.exports = {
                 .setValue('@inputSlug', slug)
                 .setValue('@selectParent', parent)
                 .setValue('@textareaDescription', description)
-                .click('@inputSubmit')
-            return this.api
+                .click('@inputAddCategory')
+            return this.api;
         },
         editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory) {
             this
-                .getLocationInView('@inputSubmitUpdateCategory')
+                .getLocationInView('@inputUpdateCategory')
                 .clearValue('@inputEditName')
                 .clearValue('@inputEditSlug')
                 .clearValue('@textareaEditDescription')
@@ -19,8 +19,8 @@ module.exports = {
                 .setValue('@inputEditSlug', slugEditCategory)
                 .setValue('@selectEditParent', parentEditCategory)
                 .setValue('@textareaEditDescription', descriptionEditCategory)
-                .click('@inputSubmitUpdateCategory')
-            return this.api
+                .click('@inputUpdateCategory')
+            return this.api;
         },
         goBackToCategory(element) {
             return this
@@ -30,17 +30,17 @@ module.exports = {
             this
                 .moveToElement('@rowFirstTable', 0, 0)
                 .click('@' + element)
-            return this.api
+            return this.api;
         },
         checkContainsText(element, expectedContain) {
-            return this.assert.containsText('@' + element, expectedContain)
+            return this.assert.containsText('@' + element, expectedContain);
         },
-        deleteAllCategory() {
+        deleteAllCategories() {
             this
                 .click('@checkboxCategory')
                 .setValue('@selectDelete', 'Delete')
                 .click('@inputApply')
-            return this.api
+            return this.api;
         }
     }],
     elements: {
@@ -56,7 +56,7 @@ module.exports = {
         textareaDescription: {
             selector: 'textarea[id=tag-description]',
         },
-        inputSubmit: {
+        inputAddCategory: {
             selector: 'input[id=submit]',
         },
         columnActualName: {
@@ -84,7 +84,7 @@ module.exports = {
         textareaEditDescription: {
             selector: 'textarea[id=description]'
         },
-        inputSubmitUpdateCategory: {
+        inputUpdateCategory: {
             selector: 'input[type=submit]'
         },
         strongMessageEditSuccessful: {

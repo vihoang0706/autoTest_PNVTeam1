@@ -1,5 +1,6 @@
-let addMedia, dashboard, login, username, password, imageName = 1234, extension = '.jpg';
-let image = 'C:/Users/InternDN19.01.05/'+imageName+extension;
+let addMedia, dashboard, login, username, password,
+    imageName = 'tung-son';
+let image = '../../../images/tung-son.jpg';
 module.exports = {
     tags: ['addMediaFunction'],
     'Pre-condition: Login with valid account': function (browser) {
@@ -11,15 +12,17 @@ module.exports = {
         password = browser.globals.userNames.password;
         login.login(username, password);
         dashboard.goToPage('linkMedia', 'linkLibrary');
-        addMedia.deleteImage()
-        browser.acceptAlert()
     },
     'Step 1: Go to media page ': function () {
-        dashboard.goToPage('linkMedia', 'linkAddNewMedia')
+        dashboard.goToPage('linkMedia', 'linkAddNewMedia');
     },
     'Step 2: Add media': function () {
         addMedia
             .addNewMedia(image)
-            .checkImageExist('image', imageName)
+            .checkImageExist('image', imageName);
     },
+    'Pre-condition: Clear image': function(browser) {
+        addMedia.deleteAllImages();
+        browser.acceptAlert();
+    }
 }

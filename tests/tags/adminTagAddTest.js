@@ -6,12 +6,12 @@ module.exports = {
     '@tags': ['add-tag'],
     'Pre-condition: Login with valid account and Delete all tags': function (browser) {
         login = browser.page.adminUserLoginPage();
+        tagPage = browser.page.adminTagAddPage();
+        dashboard = browser.page.adminBasePage();
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
         login.login(username, password);
-        dashboard = browser.page.adminBasePage();
         dashboard.goToPage('linkPosts', 'linkTags');
-        tagPage = browser.page.adminTagAddPage();
         tagPage.deleteAllTags();
     },
     'Step 1: Go to tag page': function () {

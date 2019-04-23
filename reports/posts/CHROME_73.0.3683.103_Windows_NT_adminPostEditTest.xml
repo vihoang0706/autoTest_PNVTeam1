@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="3">
+
+  <testsuite name="posts.adminPostEditTest"
+    errors="0" failures="0" hostname="" id="" package="adminPostEditTest" skipped="0"
+    tests="3" time="13.83" timestamp="">
+  
+    <testcase name="Precondition: Login with valid account, create a new post" classname="posts.adminPostEditTest" time="8.118" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Step 1: Go to edit post" classname="posts.adminPostEditTest" time="1.992" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Step 2: Edit Information in post" classname="posts.adminPostEditTest" time="3.720" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

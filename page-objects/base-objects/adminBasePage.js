@@ -56,7 +56,7 @@ module.exports = {
             locateStrategy: 'xpath'
         },
         linkAddNewMedia: {
-            selector: '//li[@id="menu-media"]//a[text()="Add New"]',
+            selector: '//div[@id="wpbody-content"]/div/a',
             locateStrategy: 'xpath'
         },
         //Pages
@@ -118,10 +118,6 @@ module.exports = {
         },
         linkAllUsers: {
             selector: '//li[@id="menu-users"]//a[text()="All Users"]',
-            locateStrategy: 'xpath'
-        },
-        linkAddNewUser: {
-            selector: '//li[@id="menu-users"]//a[text()="Add New"]',
             locateStrategy: 'xpath'
         },
         linkAddNewUser: {

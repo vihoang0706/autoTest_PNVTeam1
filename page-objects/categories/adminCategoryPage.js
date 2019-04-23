@@ -22,9 +22,25 @@ module.exports = {
                 .click('@inputSubmitUpdateCategory')
             return this.api
         },
-        goBackToCategory() {
+        goBackToCategory(element) {
             return this
-                .click('@linkBackToCategories');
+                .click('@' + element);
+        },
+        goToHideLink(element) {
+            this
+                .moveToElement('@rowFirstTable', 0, 0)
+                .click('@' + element)
+            return this.api
+        },
+        checkContainsText(element, expectedContain) {
+            return this.assert.containsText('@' + element, expectedContain)
+        },
+        deleteAllCategory() {
+            this
+                .click('@checkboxCategory')
+                .setValue('@selectDelete', 'Delete')
+                .click('@inputApply')
+            return this.api
         }
     }],
     elements: {
@@ -79,7 +95,28 @@ module.exports = {
             selector: '//div[@id="message"]//a',
             locateStrategy: 'xpath'
         },
-
-
+        rowFirstTable: {
+            selector: '//tbody[@id="the-list"]/tr[1]/td[1]',
+            locateStrategy: 'xpath'
+        },
+        linkDeleteCategory: {
+            selector: '//span[@class="delete"]/a[@class="delete-tag aria-button-if-js"]',
+            locateStrategy: 'xpath'
+        },
+        linkEditCategory: {
+            selector: 'div.row-actions > span.edit > a',
+        },
+        checkboxCategory: {
+            selector: '(//table//input[@type="checkbox"])[last()]',
+            locateStrategy: 'xpath'
+        },
+        selectDelete: {
+            selector: '//select[@id="bulk-action-selector-bottom"]',
+            locateStrategy: 'xpath'
+        },
+        inputApply: {
+            selector: '//input[@id="doaction2"]',
+            locateStrategy: 'xpath'
+        },
     }
 };

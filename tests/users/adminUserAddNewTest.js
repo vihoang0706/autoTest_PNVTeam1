@@ -7,7 +7,7 @@ var website = 'Team1234';
 var role = 'Administrator';
 var name = 'NightWatch' + ' Team 1'
 module.exports = {
-    '@tags' : ['adduser'],
+    '@tags': ['adduser'],
     'Step 1: Login to the admin page': function (browser) {
         login = browser.page.adminUserLoginPage();
         login.login(browser.globals.userNames.username, browser.globals.userNames.password);
@@ -26,5 +26,8 @@ module.exports = {
             .checkContainsText('collumnEmail', email)
             .checkContainsText('collumnRole', role)
     },
+    'Checkpoint: The new user account can login to Admin page': function () {
+
+    }
 
 }

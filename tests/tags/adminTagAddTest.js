@@ -1,42 +1,29 @@
-const utils = require('../utils/config.js');
-const titleWebsite = 'Tags ‹ Store Front Website — WordPress';
 const nameTag = 'automation testing';
 const slugTag = 'automation-test';
-const assert = require('assert');
 const descriptionTag = 'To learn Automation testing';
 module.exports = {
     '@tags': ['add-tag'],
-    before: function (browser) {
-        utils(browser).openBrowser();
+    'Pre-condition: Login with valid account and Delete all tags': function(browser){
         const login = browser.page.adminUserLoginPage();
         var username = browser.globals.userNames.username;
         var password = browser.globals.userNames.password;
         login.login(username, password);
+        const dashboard = browser.page.adminBasePage();
+        dashboard.goToPage('@linkPosts', '@linkTags');
+        const tagPage = browser.page.adminTagAddPage();
+        tagPage.deleteAllTags();
     },
     'Step 1: Go to tag page': function (browser) {
         const dashboard = browser.page.adminBasePage();
         dashboard.goToPage('@linkPosts', '@linkTags');
-        browser.getTitle(function (title) {
-            this.assert.equal(typeof title, 'string');
-            this.assert.equal(title, titleWebsite);
-        });
     },
-    'Step 2: Add new tag with data': function (browser) {
-        const page = browser.page.adminTagAddPage();
-        page.addNewTag(nameTag, slugTag, descriptionTag);
-        page
-            .pause(2000)
-            .assert.containsText('@columnActualTitle', nameTag)
-            .assert.containsText('@columnActualSlug', slugTag)
-            .assert.containsText('@columnActualDescription', descriptionTag);
-            page.assert.isVisible();
+    'Step 2: Add new tag with valid data': function (browser) {
+        const tagPage = browser.page.adminTagAddPage();
+        tagPage.addNewTag(nameTag, slugTag, descriptionTag);
+        tagPage
+            .waitForElementVisible('@columnActualTitle')
+            .checkContainsText('columnActualTitle', nameTag)
+            .checkContainsText('columnActualSlug', slugTag)
+            .checkContainsText('columnActualDescription', descriptionTag);
     },
-    after: function (browser) {
-        const page = browser.page.adminTagAddPage();
-        page.clickHiddenLink('@linkDelete');
-        browser
-            .pause(1000)
-            .acceptAlert()
-            .end();
-    }
 };

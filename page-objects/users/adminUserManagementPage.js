@@ -1,7 +1,7 @@
 module.exports = {
     commands: [{
         checkContainsText(element, expectedContain) {
-            return this.assert.containsText('@'+element, expectedContain)
+            return this.assert.containsText('@' + element, expectedContain)
         }
     }],
     elements: {
@@ -20,6 +20,6 @@ module.exports = {
         collumnRole: {
             selector: '(//table//tbody//td[@class="role column-role"])[last()]',
             locateStrategy: 'xpath'
-        },   
+        },
     }
 }

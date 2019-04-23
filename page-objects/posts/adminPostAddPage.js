@@ -5,7 +5,6 @@ module.exports = {
             return this
             .click('@buttonCancelTip')
             .setValue('@inputTitle', title)
-            // .click('//textarea[@class="editor-default-block-appender__content"]')
             .setValue('@paragraphContent', content)
             .click('@buttonPublish')
             .waitForElementVisible('@subButtonPublish',500)

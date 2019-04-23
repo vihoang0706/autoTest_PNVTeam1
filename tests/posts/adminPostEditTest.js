@@ -5,18 +5,13 @@ let dashboard, addPost, login, username, password, editPost;
 
 module.exports =  {
     tags :['editPostFunction'],
-
-    'Precondition: Login with valid account, create a new post': function (){
+    'Precondition: Login with valid account, create a new post': function (browser){
         login = browser.page.adminUserLoginPage();
+        addPost = editPost =  browser.page.adminPostAddPage();
         dashboard = browser.page.adminBasePage();
-        addPost = browser.page.adminPostAddPage();
-        editPost = browser.page.adminPostAddPage();
-
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
-
         login.login(username, password);
-
         dashboard.goToPage('@linkPosts', '@linkNewPost');
         addPost.addNewPost(titleName, content1);
     },
@@ -30,4 +25,4 @@ module.exports =  {
             .checkContainsText('actualTitlePost', titleName)
             .checkContainsText('actualParagraphContent', content2)
     },
-}
+};

@@ -9,15 +9,14 @@ module.exports = {
                 .setValue('@selectDelete', 'Delete')
                 .click('@inputApply')
                 .click('@inputDeleteAll')
+                .click('@inputConfirmDeletion') 
+            return this.api
+        },
+        deleteUser() {
+            this
+                .moveToElement('@columnLastName', 0, 0) 
+                .click('@linkDelete')
                 .click('@inputConfirmDeletion')
-            // this.getText('@linkCountUser', function(result){
-            //         if (result.value != "(1)") {
-            //             console.log(result.value);
-            //             return this
-
-            //         }
-            //     }
-            // );  
             return this.api
         }
     }],
@@ -38,10 +37,19 @@ module.exports = {
             selector: '(//table//tbody//td[@class="role column-role"])[last()]',
             locateStrategy: 'xpath'
         },
+        columnLastName: {
+            selector: '(//table//tr/td[@data-colname="Username"])[last()]',
+            locateStrategy: 'xpath'
+        },
         linkDelete: {
             selector: '(//span[@class="delete"]/a[@class="submitdelete"])[last()]',
             locateStrategy: 'xpath'
         },
+        inputConfirmDeletion: {
+            selector: '//input[@id="submit"]',
+            locateStrategy: 'xpath'
+        },
+        //Delete all user
         checkboxUser: {
             selector: '(//table//input[@type="checkbox"])[last()]',
             locateStrategy: 'xpath'

@@ -1,11 +1,11 @@
 var login, dashboard, user, addUser;
-var username = 'nightwatch';
+var username = 'nightwatch.team1';
 var email = 'nightwatch@gmail.com';
 var firstName = 'NightWatch';
 var lastName = 'Team 1';
 var password = 'Team1234';
 var website = 'Team1234';
-var role = 'Administrator';
+var role = 'Subscriber';
 var name = 'NightWatch' + ' Team 1'
 module.exports = {
     '@tags': ['adduser'],
@@ -15,8 +15,8 @@ module.exports = {
         user = browser.page.adminUserManagementPage();
         addUser = browser.page.adminAddUserPage();
         login.login(browser.globals.userNames.username, browser.globals.userNames.password);
-        dashboard.goToPage('linkUsers', 'linkAllUsers');
-        user.deleteAllUser();
+        // dashboard.goToPage('linkUsers', 'linkAllUsers');
+        // user.deleteAllUser();
     },
     'Step 2: Go to the add new user page': function () {
         dashboard.goToPage('linkUsers', 'linkAddNewUser');
@@ -32,6 +32,11 @@ module.exports = {
         dashboard.logOut('@linkLogOut');
         login.login(username, password);
         dashboard.assert.visible('@linkYourAccount');
-        dashboard.logOut('@linkLogOut');
     },
+    'Clear data': function() {
+        dashboard.goToPage('linkUsers', 'linkAllUsers');
+        dashboard.pause(1000);
+        user.deleteUser();
+        dashboard.logOut('@linkLogOut');
+    }
 }

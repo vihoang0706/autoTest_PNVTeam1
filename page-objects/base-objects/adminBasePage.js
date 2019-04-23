@@ -121,10 +121,6 @@ module.exports = {
 			selector: '//li[@id="menu-users"]//a[text()="Add New"]',
 			locateStrategy: 'xpath'
         },
-        linkAddNewUser: {
-			selector: '//li[@id="menu-users"]//a[text()="Add New"]',
-			locateStrategy: 'xpath'
-        },
         linkYourProfile: {
 			selector: '//li[@id="menu-users"]//a[text()="Your Profile"]',
 			locateStrategy: 'xpath'

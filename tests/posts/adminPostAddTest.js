@@ -17,7 +17,7 @@ module.exports = {
     'Step 1: Go to post page ': function () {
         dashboard.goToPage('linkPosts', 'linkNewPost');
     },
-    'Step 2: Post information': function () {
+    'Step 2: Post Information': function () {
         addPost
             .addNewPost(titleName, content)
             .viewPost()

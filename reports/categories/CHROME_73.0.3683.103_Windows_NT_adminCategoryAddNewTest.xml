@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
             failures="0"
-            tests="4">
+            tests="3">
 
   <testsuite name="categories.adminCategoryAddNewTest"
     errors="0" failures="0" hostname="" id="" package="adminCategoryAddNewTest" skipped="0"
-    tests="4" time="2.724" timestamp="">
+    tests="3" time="3.992" timestamp="">
   
-    <testcase name="Pre-condition: login to admin" classname="categories.adminCategoryAddNewTest" time="0.9100" assertions="0">
+    <testcase name="Pre-condition: Login to the admin page and delete all category" classname="categories.adminCategoryAddNewTest" time="2.387" assertions="0">
     </testcase>
   
-    <testcase name="Step 1: Go to Category page" classname="categories.adminCategoryAddNewTest" time="0.7390" assertions="0">
+    <testcase name="Step 2: Go to Category page" classname="categories.adminCategoryAddNewTest" time="0.6540" assertions="0">
     </testcase>
   
-    <testcase name="Step 2: Add a new category" classname="categories.adminCategoryAddNewTest" time="0.9820" assertions="3">
+    <testcase name="Step 3: Add a new category" classname="categories.adminCategoryAddNewTest" time="0.9510" assertions="3">
 
     
 
     
 
     
-    </testcase>
-  
-    <testcase name="Delete the category just created" classname="categories.adminCategoryAddNewTest" time="0.09300" assertions="0">
     </testcase>
   
 

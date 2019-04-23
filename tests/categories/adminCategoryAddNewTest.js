@@ -5,25 +5,22 @@ const parentCategory = 'None';
 const descriptionCategory = 'Clothes on the store';
 module.exports = {
     '@tags': ['addcategory'],
-    'Step 1: Login to the admin page' :  function (browser) {
+    'Pre-condition: Login to the admin page and delete all category': function (browser) {
         login = browser.page.adminUserLoginPage();
-        login.login(browser.globals.userNames.username, browser.globals.userNames.password);
-    },
-    'Step 2: Go to Category page': function (browser) {
         dashboard = browser.page.adminBasePage();
+        category = browser.page.adminCategoryPage();
+        login.login(browser.globals.userNames.username, browser.globals.userNames.password);
+        dashboard.goToPage('linkPosts', 'linkCategories');
+        category.deleteAllCategory();
+    },
+    'Step 1: Go to Category page': function () {
         dashboard.goToPage('linkPosts', 'linkCategories');
     },
-    'Step 3: Add a new category': function (browser){
-        category = browser.page.adminCategoryPage();
+    'Step 2: Add a new category': function () {
         category.addCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
         category
             .checkContainsText('columnActualName', nameCategory)
             .checkContainsText('columnActualDescription', descriptionCategory)
             .checkContainsText('columnActualSlug', slugCategory);
     },
-    'Delete the category just created': function (browser) {
-        category = browser.page.adminCategoryPage();
-        category.goToHideLink('linkDeleteCategory');
-        browser.acceptAlert();
-    }
 }

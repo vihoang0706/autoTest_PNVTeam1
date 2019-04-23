@@ -24,16 +24,23 @@ module.exports = {
         },
         goBackToCategory(element) {
             return this
-                .click('@' +element);
+                .click('@' + element);
         },
         goToHideLink(element) {
             this
-            .moveToElement('@rowFirstTable', 0, 0) 
-            .click('@' + element)
+                .moveToElement('@rowFirstTable', 0, 0)
+                .click('@' + element)
             return this.api
         },
         checkContainsText(element, expectedContain) {
-            return this.assert.containsText('@'+element, expectedContain)
+            return this.assert.containsText('@' + element, expectedContain)
+        },
+        deleteAllCategory() {
+            this
+                .click('@checkboxCategory')
+                .setValue('@selectDelete', 'Delete')
+                .click('@inputApply')
+            return this.api
         }
     }],
     elements: {
@@ -98,7 +105,18 @@ module.exports = {
         },
         linkEditCategory: {
             selector: 'div.row-actions > span.edit > a',
-        }
-
+        },
+        checkboxCategory: {
+            selector: '(//table//input[@type="checkbox"])[last()]',
+            locateStrategy: 'xpath'
+        },
+        selectDelete: {
+            selector: '//select[@id="bulk-action-selector-bottom"]',
+            locateStrategy: 'xpath'
+        },
+        inputApply: {
+            selector: '//input[@id="doaction2"]',
+            locateStrategy: 'xpath'
+        },
     }
 };

@@ -53,7 +53,7 @@ module.exports = {
             locateStrategy: 'xpath'
         },
         linkAddNewMedia: {
-            selector: '//li[@id="menu-media"]//a[text()="Add New"]',
+            selector: '//div[@id="wpbody-content"]/div/a',
             locateStrategy: 'xpath'
         },
         //Pages

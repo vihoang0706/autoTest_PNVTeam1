@@ -16,13 +16,6 @@ module.exports = {
             .waitForElementVisible('@linkViewPost')
             .click('@linkViewPost');
         },
-        comeBackYourPost(){
-            return this
-            .moveToElement('@linkStoreFrontWebsite', 0, 0)
-            .click('@linkDashboard')
-            .click('@linkPosts')
-            .click('@linkAllPosts')            
-        },
         clickHideLine(element) {
             return this
             .moveToElement('@fristTableRow', 0, 0)
@@ -38,8 +31,9 @@ module.exports = {
             .clearValue('@paragraphContent')
             .setValue('@inputTitle', title)
             .setValue('@paragraphContent', content)
+            .waitForElementVisible('@buttonUpdatePost',500)
             .click('@buttonUpdatePost')
-            .pause('1000')
+            .pause('500')
         },
         checkContainsText(element, expectedContain) {
             return this.assert.containsText('@'+element, expectedContain)
@@ -102,10 +96,6 @@ module.exports = {
         },
         fristTableRow: {
             selector: '//tbody[@id="the-list"]/tr[1]/td[1]',
-            locateStrategy: 'xpath'
-        },
-        linkTrashPost: {
-            selector: '//span[@class="trash"]/a[text()="Trash"]',
             locateStrategy: 'xpath'
         },
         linkEditPost: {

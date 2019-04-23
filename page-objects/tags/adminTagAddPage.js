@@ -11,6 +11,9 @@ module.exports = {
             return this
                 .click('@linkBackToTag');
         },
+        checkContainsText(element, expectedContain) {
+            return this.assert.containsText('@'+element, expectedContain)
+        },
         editTag(tagsName, slugName, description) {
             return this
                 .clearValue('@inputEditName')
@@ -21,24 +24,18 @@ module.exports = {
                 .setValue('@inputEditDescription', description)
                 .click('@buttonUpdate');
         },
-        quickEditTag(tagsName, slugName, ) {
-            return this
-                .clearValue('@inputTitleTextWrap')
-                .setValue('@inputTitleTextWrap', tagsName)
-                .clearValue('@inputSlugTextWrap')
-                .setValue('@inputSlugTextWrap', slugName)
-                .click('@buttonUpdateTagWrap');
-        },
         deleteAllTags() {
             return this
                 .click('@checkboxSelectAll')
                 .click('@buttonDeleteBulkAction')
                 .click('@buttonApply');
         },
-        deleteTag() {
+        goToAction(element) {
             return this
-                .pause(1000)
-                .acceptAlert();
+                .waitForElementVisible('@columnActualTitle')
+                .moveToElement('@columnActualTitle', 0, 0)
+                .waitForElementVisible(element)
+                .click(element);
         }
     }],
     elements: {
@@ -81,6 +78,14 @@ module.exports = {
         buttonUpdateTagWrap: {
             selector: '//tr[@class="inline-edit-row inline-editor"]/td/div/button[@class="save button button-primary alignright"]',
             locateStrategy: 'xpath'
+        },
+        linkDelete: {
+            selector: 'div.row-actions > span.delete > a',
+            locateStrategy: 'css selector'
+        },
+        linkEdit: {
+            selector: 'div.row-actions > span.edit > a',
+            locateStrategy: 'css selector'
         },
         // Check Column Actual
         columnActualTitle: {

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="4">
+
+  <testsuite name="users.adminUserEditProfileTest"
+    errors="0" failures="0" hostname="" id="" package="adminUserEditProfileTest" skipped="0"
+    tests="4" time="7.755" timestamp="">
+  
+    <testcase name="Step 1: Login with valid account" classname="users.adminUserEditProfileTest" time="3.839" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Step 2: Go to Edit Profile page" classname="users.adminUserEditProfileTest" time="0.9420" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Step 3: Edit user profile with valid data" classname="users.adminUserEditProfileTest" time="1.823" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Step 4: Go to Admin page and Check information has just edited that displays correctly " classname="users.adminUserEditProfileTest" time="1.151" assertions="13">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

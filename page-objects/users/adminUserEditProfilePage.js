@@ -19,7 +19,7 @@ module.exports = {
                     .setValue('@inputEditWebsite', website)
                     .clearValue('@inputEditDescription')
                     .setValue('@inputEditDescription', userInfor)
-                    .click('@buttonUpdateProfile');
+                    .click('@inputUpdateProfile');
             },
             checkContainsText(element, expectedContain) {
                 return this
@@ -40,31 +40,32 @@ module.exports = {
                     .click('@checkboxSyntaxHightlight')
                     .click('@checkboxCommentShortcut')
                     .click('@checkboxShowToolBar')
-                    .click('@buttonUpdateProfile');
+                    .click('@inputUpdateProfile');
             }
         }
     ],
     elements: {
-        checkboxRichEditing: '#rich_editing',
-        checkboxSyntaxHightlight: '#syntax_highlighting',
-        radioAdminColor: {
-            selector: '//div[@class="color-option selected"]/input[@id="admin_color_fresh"]',
+        checkboxRichEditing: 'input[id=rich_editing]',
+        checkboxSyntaxHightlight: 'input[id=syntax_highlighting]',
+        radioAdminColor: 'input[id=admin_color_fresh]',
+        checkboxCommentShortcut: 'input[id=comment_shortcuts]',
+        checkboxShowToolBar: 'input[id=admin_bar_front]',
+        inputEditFirstName: 'input[id=first_name]',
+        inputEditLastName: 'input[id=last_name]',
+        inputEditNickName: 'input[id=nickname]',
+        inputEditEmail: 'input[id=email]',
+        inputEditWebsite: 'input[id=url]',
+        inputEditDescription: 'textarea[id=description]',
+        inputNewPassword: 'input[id=pass1-text]',
+        inputUpdateProfile: 'input[id=submit]',
+        comboboxDisplayName: {
+            selector: '//select[@id="display_name"]/option[text()="admin"]',
             locateStrategy: 'xpath'
         },
-        checkboxCommentShortcut: '#comment_shortcuts',
-        checkboxShowToolBar: '#admin_bar_front',
-        inputEditFirstName: 'input[name="first_name"]',
-        inputEditLastName: 'input[name="last_name"]',
-        inputEditNickName: '#nickname',
-        comboboxDisplayName: '#display_name',
-        inputEditEmail: '#email',
-        inputEditWebsite: '#url',
-        inputEditDescription: '#description',
         buttonGeneratePassword: {
             selector: '//tr[@id="password"] //td/button',
             locateStrategy: 'xpath'
         },
-        inputNewPassword: '#pass1-text',
         buttonHidePassword: {
             selector: '//tr[@id="password"]//td//div//button[@class="button wp-hide-pw hide-if-no-js"]',
             locateStrategy: 'xpath'
@@ -73,7 +74,6 @@ module.exports = {
             selector: '//tr[@id="password"]//td//div//button[@class="button wp-cancel-pw hide-if-no-js"]',
             locateStrategy: 'xpath'
         },
-        buttonUpdateProfile: '#submit',
         messageProfileUpdated: {
             selector: '//div[@id="message"] // strong',
             locateStrategy: 'xpath'

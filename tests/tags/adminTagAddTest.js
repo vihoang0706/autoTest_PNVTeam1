@@ -10,17 +10,17 @@ module.exports = {
         var password = browser.globals.userNames.password;
         login.login(username, password);
         dashboard = browser.page.adminBasePage();
-        dashboard.goToPage('@linkPosts', '@linkTags');
+        dashboard.goToPage('linkPosts', 'linkTags');
         tagPage = browser.page.adminTagAddPage();
         tagPage.deleteAllTags();
     },
     'Step 1: Go to tag page': function () {
-        dashboard.goToPage('@linkPosts', '@linkTags');
+        dashboard.goToPage('linkPosts', 'linkTags');
     },
     'Step 2: Add new tag with valid data': function () {
         tagPage.addNewTag(nameTag, slugTag, descriptionTag);
         tagPage
-            .waitForElementVisible('@columnActualTitle')
+            .waitUntilElementVisible('columnActualTitle')
             .checkContainsText('columnActualTitle', nameTag)
             .checkContainsText('columnActualSlug', slugTag)
             .checkContainsText('columnActualDescription', descriptionTag);

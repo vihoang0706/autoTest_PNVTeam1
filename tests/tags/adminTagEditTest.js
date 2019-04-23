@@ -13,14 +13,14 @@ module.exports = {
         var password = browser.globals.userNames.password;
         login.login(username, password);
         dashboard = browser.page.adminBasePage();
-        dashboard.goToPage('@linkPosts', '@linkTags');
+        dashboard.goToPage('linkPosts', 'linkTags');
         tagPage = browser.page.adminTagAddPage();
         tagPage
             .deleteAllTags()
             .addNewTag(nameTag, slugTag, descriptionTag);
     },
     'Step 1: Go to edit tag': function () {
-        tagPage.goToAction('@linkEdit');
+        tagPage.goToAction('linkEdit');
     },
     'Step 2: Edit Tag': function (browser) {
         tagPage

@@ -1,7 +1,7 @@
 module.exports = {
     commands: [{
         checkContainsText(element, expectedContain) {
-            return this.assert.containsText('@'+element, expectedContain)
+            return this.assert.containsText('@' + element, expectedContain)
         },
         deleteAllPages() {
             return this
@@ -13,8 +13,8 @@ module.exports = {
             return this
                 .waitForElementVisible('@columnActualTitle')
                 .moveToElement('@columnActualTitle', 0, 0)
-                .waitForElementVisible(element)
-                .click(element);
+                .waitForElementVisible('@' + element)
+                .click('@' + element);
         }
     }],
     elements: {

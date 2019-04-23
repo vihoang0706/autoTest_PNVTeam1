@@ -4,21 +4,16 @@ let dashboard, addPost, login, username, password;
 
 module.exports = {
     tags: ['addPostFunction'],
-    // before: function (browser) {
-    //     login = browser.page.adminUserLoginPage();
-    //     dashboard = browser.page.adminBasePage();
-    //     addPost = browser.page.adminPostAddPage();
-    //     username = browser.globals.userNames.username;
-    //     password = browser.globals.userNames.password;
-    //     utils.openBrowser(browser);
-    //     login.login(username, password);
-    // },
 
     'Pre-condition: Login with valid account': function (browser) {
-        const login = browser.page.adminUserLoginPage();
-        var username = browser.globals.userNames.username;
-        var password = browser.globals.userNames.password;
+        login = browser.page.adminUserLoginPage();
+        addPost = browser.page.adminPostAddPage();
+        dashboard = browser.page.adminBasePage();
+        username = browser.globals.userNames.username;
+        password = browser.globals.userNames.password;
         login.login(username, password);
+        dashboard.goToPage('@linkPosts', '@linkAllPosts');
+        addPost.deleteAllPosts();
     },
     'Step 1: Go to post page ': function () {
         dashboard.goToPage('@linkPosts', '@linkNewPost');
@@ -30,11 +25,4 @@ module.exports = {
             .checkContainsText('actualTitlePost', titleName)
             .checkContainsText('actualParagraphContent', content)
     },
-    
-    // after: function () {
-    //     addPost
-    //         .stop()
-    //         .pause(1000)
-    //         .end();
-    // }
 };

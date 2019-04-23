@@ -19,7 +19,10 @@ module.exports = {
                 .moveToElement('@linkYourAccount', 0, 0)
                 .waitForElementVisible('@' + element)
                 .click('@' + element);
-        }
+        },
+        checkElementVisible(element) {
+            return this.assert.visible('@' + element);
+        },
     }],
     elements: {
         // Post

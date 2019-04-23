@@ -6,16 +6,15 @@ module.exports = {
             .click('@buttonUpload')
             .pause('1000')
         },
-        checkCorrectImage(element, nameImage) {
+        checkImageExist(element, nameImage) {
             return this.assert.containsText('@'+element, nameImage)
         },
-
         clickHideLine(element) {
             return this
             .moveToElement('@fristTableRow', 0, 0)
             .click(element)
         },
-        deleteAllLibrary() {
+        deleteImage() {
             return this
             .click('@checkboxSelectAll')
             .click('@buttonDeleteBulkAction')

@@ -11,7 +11,7 @@ module.exports = {
         password = browser.globals.userNames.password;
         login.login(username, password);
         dashboard.goToPage('linkMedia', 'linkLibrary');
-        addMedia.deleteAllLibrary()
+        addMedia.deleteImage()
         browser.acceptAlert()
     },
     'Step 1: Go to media page ': function () {
@@ -20,6 +20,6 @@ module.exports = {
     'Step 2: Add media': function () {
         addMedia
             .addNewMedia(image)
-            .checkCorrectImage('image', imageName)
+            .checkImageExist('image', imageName)
     },
 }

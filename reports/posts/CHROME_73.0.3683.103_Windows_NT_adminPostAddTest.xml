@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
             failures="0"
-            tests="2">
+            tests="3">
 
   <testsuite name="posts.adminPostAddTest"
     errors="0" failures="0" hostname="" id="" package="adminPostAddTest" skipped="0"
-    tests="2" time="8.015" timestamp="">
+    tests="3" time="9.542" timestamp="">
   
-    <testcase name="Step 1: Go to post page " classname="posts.adminPostAddTest" time="2.256" assertions="0">
+    <testcase name="Pre-condition: Login with valid account" classname="posts.adminPostAddTest" time="2.728" assertions="0">
     </testcase>
   
-    <testcase name="Step 2: Post information" classname="posts.adminPostAddTest" time="5.759" assertions="4">
+    <testcase name="Step 1: Go to post page " classname="posts.adminPostAddTest" time="2.604" assertions="0">
+    </testcase>
+  
+    <testcase name="Step 2: Post information" classname="posts.adminPostAddTest" time="4.210" assertions="4">
 
     
 

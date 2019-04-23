@@ -1,4 +1,3 @@
-const goToPost = require("../base-objects/adminBasePage");
 module.exports = {
     commands: [{
         addNewMedia(image) {

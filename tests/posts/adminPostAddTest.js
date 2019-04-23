@@ -4,7 +4,6 @@ let dashboard, addPost, login, username, password;
 
 module.exports = {
     tags: ['addPostFunction'],
-
     'Pre-condition: Login with valid account': function (browser) {
         login = browser.page.adminUserLoginPage();
         addPost = browser.page.adminPostAddPage();

@@ -27,7 +27,6 @@
         "webdriver.chrome.driver" : "libraries/drivers/chromedriver.exe"
       }
     },
-
     "test_settings" : {
       "default" : {
         "skip_testcases_on_fail": false,
@@ -61,13 +60,6 @@
              "--test-type"
             ]
           }
-        }
-      },
-      "test_runner" : {
-        "type" : "mocha",
-        "options" : {
-          "ui" : "bdd",
-          "reporter" : "list"
         }
       }
     }

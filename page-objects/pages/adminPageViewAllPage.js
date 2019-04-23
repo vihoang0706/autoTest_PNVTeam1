@@ -18,7 +18,6 @@ module.exports = {
         }
     }],
     elements: {
-        // Check Column Actual
         columnActualTitle: {
             selector: '(//table[@class="wp-list-table widefat fixed striped pages"]//tbody/tr//td[@class="title column-title has-row-actions column-primary page-title"]/strong/a)[1]',
             locateStrategy: 'xpath'

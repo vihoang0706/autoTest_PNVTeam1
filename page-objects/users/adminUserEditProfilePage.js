@@ -1,7 +1,7 @@
 module.exports = {
     commands: [
         {
-            updateUserProfile(firstName, lastName, nickName, website, userInfor) {
+            updateUserProfile(firstName, lastName, nickName, linkWebsite, userInfor) {
                 return this
                     .click('@checkboxRichEditing')
                     .click('@checkboxSyntaxHightlight')
@@ -16,7 +16,7 @@ module.exports = {
                     .setValue('@inputEditNickName', nickName)
                     .click('@comboboxDisplayName')
                     .clearValue('@inputEditWebsite')
-                    .setValue('@inputEditWebsite', website)
+                    .setValue('@inputEditWebsite', linkWebsite)
                     .clearValue('@inputEditDescription')
                     .setValue('@inputEditDescription', userInfor)
                     .click('@inputUpdateProfile');
@@ -74,7 +74,7 @@ module.exports = {
             selector: '//tr[@id="password"]//td//div//button[@class="button wp-cancel-pw hide-if-no-js"]',
             locateStrategy: 'xpath'
         },
-        messageProfileUpdated: {
+        strongMessProfileUpdated: {
             selector: '//div[@id="message"] // strong',
             locateStrategy: 'xpath'
         }

@@ -14,7 +14,7 @@ module.exports = {
         // addPost.deleteAllPosts()
     },
     'Step 1: Go to media page ': function () {
-        dashboard.goToPage('@linkMedia', '@linkAddNewMedia')
+        dashboard.goToPage('linkMedia', 'linkAddNewMedia')
     },
     'Step 2: Add media': function () {
         addMedia

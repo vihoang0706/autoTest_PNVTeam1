@@ -1,13 +1,13 @@
 const nameTag = 'automation testing';
 const slugTag = 'automation-test';
 const descriptionTag = 'To learn Automation testing';
-var dashboard, tagPage;
+var login, dashboard, tagPage, username, password;
 module.exports = {
     '@tags': ['add-tag'],
     'Pre-condition: Login with valid account and Delete all tags': function (browser) {
-        const login = browser.page.adminUserLoginPage();
-        var username = browser.globals.userNames.username;
-        var password = browser.globals.userNames.password;
+        login = browser.page.adminUserLoginPage();
+        username = browser.globals.userNames.username;
+        password = browser.globals.userNames.password;
         login.login(username, password);
         dashboard = browser.page.adminBasePage();
         dashboard.goToPage('linkPosts', 'linkTags');

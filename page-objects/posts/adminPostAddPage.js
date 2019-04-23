@@ -1,34 +1,58 @@
+const goToPost = require("../base-objects/adminBasePage");
 module.exports = {
     commands: [{
-        cancelTip() {
-            return this
-            .click('@buttonCancelTip')
-        },
         addNewPost(title, content) {
             return this
+            .click('@buttonCancelTip')
             .setValue('@inputTitle', title)
-            .click('//textarea[@class="editor-default-block-appender__content"]')
             .setValue('@paragraphContent', content)
             .click('@buttonPublish')
+            .waitForElementVisible('@subButtonPublish',500)
             .click('@subButtonPublish')
+            .pause('1000')
         },
-        goToViewPost() {
+        viewPost() {
             return this
             .waitForElementVisible('@linkViewPost')
             .click('@linkViewPost');
+        },
+        clickHideLine(element) {
+            return this
+            .moveToElement('@fristTableRow', 0, 0)
+            .click(element)
+        },
+        goToEditPost() {
+            return this
+            .click('@linkAllPosts')
+            .assert.title('Posts ‹ Store Front Website — WordPress')
+            .clickHideLine('@linkEditPost')
+        },
+        editPost(title, content) {
+            return this
+            .clearValue('@paragraphContent')
+            .setValue('@inputTitle', title)
+            .setValue('@paragraphContent', content)
+            .waitForElementVisible('@buttonUpdatePost',500)
+            .click('@buttonUpdatePost')
+            .pause('500')
+        },
+        checkContainsText(element, expectedContain) {
+            return this.assert.containsText('@'+element, expectedContain)
+        },
+        deleteAllPosts() {
+            return this
+            .click('@checkboxSelectAll')
+            .click('@buttonDeleteBulkAction')
+            .click('@buttonApply');
         }
     }],
     elements: {
-        linkAddNewInItem: {
-            selector: '//div[@id="adminmenuwrap"]/ul/li[4]/ul/li/a[contains(text(), "Add New")]',
-            locateStrategy: 'xpath'
+        linkPosts: {
+			selector: '//div[@class="wp-menu-name" and text()= "Posts"]',
+			locateStrategy: 'xpath'
         },
-        linkCategory: {
-            selector: '//div[@id="adminmenuwrap"]/ul/li[4]/ul/li/a[contains(text(), "Categories")]',
-            locateStrategy: 'xpath'
-        },
-        linkTag: {
-            selector: '//div[@id="adminmenuwrap"]/ul/li[4]/ul/li/a[contains(text(), "Tags")]',
+        linkAllPosts: {
+            selector: '//li[@id="menu-posts"]//a[text()="All Posts"]',
             locateStrategy: 'xpath'
         },
         buttonCancelTip: {
@@ -40,7 +64,7 @@ module.exports = {
             locateStrategy: 'xpath'
         },
         paragraphContent: {
-            selector: '//div[@class="components-autocomplete"]/p',
+            selector: '//textarea[@class="editor-post-text-editor"]',
             locateStrategy: 'xpath'
         },
         buttonPublish: {
@@ -55,13 +79,36 @@ module.exports = {
             selector: '//a[@class="components-button components-notice__action is-link"]',
             locateStrategy: 'xpath'
         },
-        titlePostCheck: {
+        actualTitlePost: {
             selector: '//h1[@class="entry-title"]',
             locateStrategy: 'xpath'
         },
-        paragraphContentCheck: {
+        actualParagraphContent: {
             selector: '//div[@class="entry-content"]/p',
             locateStrategy: 'xpath'
-        }
+        },
+        linkStoreFrontWebsite: {
+            selector: '//ul/li/a[@class="ab-item" and text() = "Store Front Website" ]',
+            locateStrategy: 'xpath'
+        },
+        linkDashboard: {
+            selector: '//ul/li/a[@class="ab-item" and text() = "Dashboard" ]',
+            locateStrategy: 'xpath'
+        },
+        fristTableRow: {
+            selector: '//tbody[@id="the-list"]/tr[1]/td[1]',
+            locateStrategy: 'xpath'
+        },
+        linkEditPost: {
+            selector: '//div[@class="row-actions"]/span[@class="edit"]/a[text()="Edit"]',
+            locateStrategy: 'xpath'
+        },
+        buttonUpdatePost: {
+            selector: '//button[@class="components-button editor-post-publish-button is-button is-default is-primary is-large"]',
+            locateStrategy: 'xpath'
+        },
+        checkboxSelectAll: '#cb-select-all-2',
+        buttonDeleteBulkAction: '#bulk-action-selector-bottom > option:nth-child(3)',
+        buttonApply: '#doaction2',
     }
 }

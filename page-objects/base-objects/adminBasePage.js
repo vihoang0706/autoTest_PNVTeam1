@@ -19,7 +19,10 @@ module.exports = {
                 .moveToElement('@linkYourAccount', 0, 0)
                 .waitForElementVisible('@' + element)
                 .click('@' + element);
-        }
+        },
+        checkElementVisible(element) {
+            return this.assert.visible('@' + element);
+        },
     }],
     elements: {
         // Post
@@ -53,7 +56,7 @@ module.exports = {
             locateStrategy: 'xpath'
         },
         linkAddNewMedia: {
-            selector: '//li[@id="menu-media"]//a[text()="Add New"]',
+            selector: '//div[@id="wpbody-content"]/div/a',
             locateStrategy: 'xpath'
         },
         //Pages

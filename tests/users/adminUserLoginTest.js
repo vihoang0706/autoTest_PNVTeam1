@@ -12,6 +12,6 @@ module.exports = {
     },
     'Step3: LogOut account': function (browser) {
         const dashboard = browser.page.adminBasePage();
-        dashboard.logOut('@linkLogOut');
+        dashboard.logOut('linkLogOut');
     },
 };

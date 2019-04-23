@@ -12,12 +12,12 @@ module.exports = {
         var password = browser.globals.userNames.password;
         login.login(username, password);
         dashboard = browser.page.adminBasePage();
-        dashboard.goToActionUser('@linkEditProfile');
+        dashboard.goToActionUser('linkEditProfile');
         editUserProfile = browser.page.adminUserEditProfilePage();
         editUserProfile.uncheckedCheckbox();
     },
     'Step 2: Go to Edit Profile page': function () {
-        dashboard.goToActionUser('@linkEditProfile');
+        dashboard.goToActionUser('linkEditProfile');
     },
     'Step 3: Edit user profile with valid data': function () {
         editUserProfile
@@ -25,7 +25,7 @@ module.exports = {
             .checkContainsText('messageProfileUpdated', 'Profile updated.');
     },
     'Step 4: Go to Admin page and Check information has just edited that displays correctly ': function () {
-        dashboard.goToActionUser('@linkUserInfor');
+        dashboard.goToActionUser('linkViewUserInfor');
         editUserProfile
             .checkSelectedOption('checkboxRichEditing')
             .checkSelectedOption('checkboxSyntaxHightlight')

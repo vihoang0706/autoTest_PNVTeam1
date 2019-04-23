@@ -12,7 +12,10 @@ module.exports = {
                 .click('@linkBackToTag');
         },
         checkContainsText(element, expectedContain) {
-            return this.assert.containsText('@'+element, expectedContain)
+            return this.assert.containsText('@' + element, expectedContain)
+        },
+        waitUntilElementVisible(element) {
+            return this.waitForElementVisible('@' + element);
         },
         editTag(tagsName, slugName, description) {
             return this
@@ -22,50 +25,41 @@ module.exports = {
                 .setValue('@inputEditSlug', slugName)
                 .clearValue('@inputEditDescription')
                 .setValue('@inputEditDescription', description)
-                .click('@buttonUpdate');
+                .click('@inputUpdate');
         },
         deleteAllTags() {
             return this
                 .click('@checkboxSelectAll')
                 .click('@buttonDeleteBulkAction')
-                .click('@buttonApply');
+                .click('@inputApply');
         },
         goToAction(element) {
             return this
                 .waitForElementVisible('@columnActualTitle')
                 .moveToElement('@columnActualTitle', 0, 0)
-                .waitForElementVisible(element)
-                .click(element);
+                .waitForElementVisible('@' + element)
+                .click('@' + element);
         }
     }],
     elements: {
         // Add Tag Form
-        inputTagName: {
-            selector: '#tag-name',
-            locateStrategy: 'css selector'
-        },
-        inputSlugName: {
-            selector: '#tag-slug',
-            locateStrategy: 'css selector'
-        },
-        inputDescription: '#tag-description',
-        buttonAddNewTag: '#submit',
+        inputTagName: 'input[id=tag-name]',
+        inputSlugName: 'input[id=tag-slug]',
+        inputDescription: 'textarea[id=tag-description]',
+        buttonAddNewTag: 'input[id=submit]',
         // Edit Form
-        inputEditName: '#name',
-        inputEditSlug: '#slug',
-        inputEditDescription: '#description',
-        buttonUpdate: {
-            selector: '//div[@class="edit-tag-actions"]/input',
-            locateStrategy: 'xpath'
-        },
+        inputEditName: 'input[id=name]',
+        inputEditSlug: 'input[id=slug]',
+        inputEditDescription: 'textarea[id=description]',
+        inputUpdate: 'input[type="submit"]',
         linkBackToTag: {
-            selector: '//div[@id="message"]/p/a[contains(text()," Back to Tags")]',
+            selector: '//div[@id="message"]/p/a[contains(text(),"Back to Tags")]',
             locateStrategy: 'xpath'
         },
         // Delete All Tags
-        checkboxSelectAll: '#cb-select-all-2',
+        checkboxSelectAll: 'input[id=cb-select-all-2]',
         buttonDeleteBulkAction: '#bulk-action-selector-bottom > option:nth-child(2)',
-        buttonApply: '#doaction2',
+        inputApply: 'input[id="doaction2"]',
         // Quick Edit Form
         inputTitleTextWrap: {
             selector: '//tr[@class="inline-edit-row inline-editor"]/td/fieldset/div/label[1]/span[2]/input',

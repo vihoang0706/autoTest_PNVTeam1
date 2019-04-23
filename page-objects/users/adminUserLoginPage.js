@@ -12,7 +12,6 @@ module.exports = {
         }
     }],
     elements: {
-       
         inputUsername: {
             selector: '//input[@id="user_login"]',
             locateStrategy: 'xpath'

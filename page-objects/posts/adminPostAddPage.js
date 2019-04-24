@@ -1,68 +1,50 @@
-const goToPost = require("../base-objects/adminBasePage");
 module.exports = {
     commands: [{
         addNewPost(title, content) {
             return this
-            .click('@buttonCancelTip')
-            .setValue('@inputTitle', title)
-            .setValue('@paragraphContent', content)
-            .click('@buttonPublish')
-            .waitForElementVisible('@subButtonPublish',500)
-            .click('@subButtonPublish')
-            .pause('1000')
+                .click('@buttonCancelTip')
+                .setValue('@inputTitlePost', title)
+                .setValue('@contentPost', content)
+                .click('@buttonPublish')
+                .waitForElementVisible('@subButtonPublish')
+                .click('@subButtonPublish')
+                .pause(1000)
         },
-        viewPost() {
+        goToHideLink(element) {
             return this
-            .waitForElementVisible('@linkViewPost')
-            .click('@linkViewPost');
-        },
-        clickHideLine(element) {
-            return this
-            .moveToElement('@fristTableRow', 0, 0)
-            .click(element)
+                .moveToElement('@columnTitleActual', 0, 0)
+                .click(element);
         },
         goToEditPost() {
             return this
-            .click('@linkAllPosts')
-            .clickHideLine('@linkEditPost')
-        },
-        editPost(title, content) {
-            return this
-            .clearValue('@paragraphContent')
-            .setValue('@inputTitle', title)
-            .setValue('@paragraphContent', content)
-            .waitForElementVisible('@buttonUpdatePost',500)
-            .click('@buttonUpdatePost')
-            .pause('500')
+                .click('@linkAllPosts')
+                .goToHideLink('@linkEditPost')
         },
         checkContainsText(element, expectedContain) {
-            return this.assert.containsText('@'+element, expectedContain)
+            return this.assert.containsText('@' + element, expectedContain)
+        },
+        clickPostItem(){
+            return this
+            .waitForElementVisible('@titleActual')
+            .click('@titleActual');
         },
         deleteAllPosts() {
             return this
-            .click('@checkboxSelectAll')
-            .click('@buttonDeleteBulkAction')
-            .click('@buttonApply');
+                .click('@checkboxSelectAll')
+                .click('@buttonDeleteBulkAction')
+                .click('@buttonApply');
         }
     }],
     elements: {
-        linkPosts: {
-			selector: '//div[@class="wp-menu-name" and text()= "Posts"]',
-			locateStrategy: 'xpath'
-        },
-        linkAllPosts: {
-            selector: '//li[@id="menu-posts"]//a[text()="All Posts"]',
-            locateStrategy: 'xpath'
-        },
         buttonCancelTip: {
             selector: '//button[@class="components-button components-icon-button nux-dot-tip__disable"]',
             locateStrategy: 'xpath'
         },
-        inputTitle: {
+        inputTitlePost: {
             selector: '//textarea[@id="post-title-0"]',
             locateStrategy: 'xpath'
         },
-        paragraphContent: {
+        contentPost: {
             selector: '//textarea[@class="editor-post-text-editor"]',
             locateStrategy: 'xpath'
         },
@@ -74,27 +56,11 @@ module.exports = {
             selector: '//button[@class="components-button editor-post-publish-button is-button is-default is-primary is-large"]',
             locateStrategy: 'xpath'
         },
-        linkViewPost: {
-            selector: '//a[@class="components-button components-notice__action is-link"]',
+        titleActual: {
+            selector: '//tbody[@id="the-list"]/tr[1]/td[1]/strong/a',
             locateStrategy: 'xpath'
         },
-        actualTitlePost: {
-            selector: '//h1[@class="entry-title"]',
-            locateStrategy: 'xpath'
-        },
-        actualParagraphContent: {
-            selector: '//div[@class="entry-content"]/p',
-            locateStrategy: 'xpath'
-        },
-        linkStoreFrontWebsite: {
-            selector: '//ul/li/a[@class="ab-item" and text() = "Store Front Website" ]',
-            locateStrategy: 'xpath'
-        },
-        linkDashboard: {
-            selector: '//ul/li/a[@class="ab-item" and text() = "Dashboard" ]',
-            locateStrategy: 'xpath'
-        },
-        fristTableRow: {
+        columnTitleActual: {
             selector: '//tbody[@id="the-list"]/tr[1]/td[1]',
             locateStrategy: 'xpath'
         },
@@ -105,6 +71,14 @@ module.exports = {
         buttonUpdatePost: {
             selector: '//button[@class="components-button editor-post-publish-button is-button is-default is-primary is-large"]',
             locateStrategy: 'xpath'
+        },
+        linkAllPosts: {
+            selector: '//li[@id="menu-posts"]//a[text()="All Posts"]',
+            locateStrategy: 'xpath'
+        },
+        messagePublishedSuccess: {
+            selector: '//div[@class="components-notice__content"]',
+            localStorage: 'xpath'
         },
         checkboxSelectAll: '#cb-select-all-2',
         buttonDeleteBulkAction: '#bulk-action-selector-bottom > option:nth-child(3)',

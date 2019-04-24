@@ -9,7 +9,7 @@ var role = 'Subscriber';
 var name = 'NightWatch' + ' Team 1'
 module.exports = {
     '@tags': ['adduser'],
-    'Pre-condetion: Login to the admin page and delete all user': function (browser) {
+    'Pre-condetion: Login to the admin page': function (browser) {
         login = browser.page.adminUserLoginPage();
         dashboard = browser.page.adminBasePage();
         user = browser.page.adminUserManagementPage();

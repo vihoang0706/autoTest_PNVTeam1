@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="0">
+
+  <testsuite name="users.adminUserAddNewTest"
+    errors="1" failures="0" hostname="" id="" package="adminUserAddNewTest" skipped="4"
+    tests="0" time="0.000" timestamp="">
+  
+
+  
+
+  
+    
+    <testcase
+      name="Pre-condetion: Login to the admin page and delete all user" classname="users.adminUserAddNewTest">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Step 2: Go to the add new user page" classname="users.adminUserAddNewTest">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Step 3: Add new user" classname="users.adminUserAddNewTest">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Clear data" classname="users.adminUserAddNewTest">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

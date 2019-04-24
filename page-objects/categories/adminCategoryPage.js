@@ -6,12 +6,12 @@ module.exports = {
                 .setValue('@inputSlug', slug)
                 .setValue('@selectParent', parent)
                 .setValue('@textareaDescription', description)
-                .click('@inputSubmit')
-            return this.api
+                .click('@inputAddCategory')
+            return this.api;
         },
         editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory) {
             this
-                .getLocationInView('@inputSubmitUpdateCategory')
+                .getLocationInView('@inputUpdateCategory')
                 .clearValue('@inputEditName')
                 .clearValue('@inputEditSlug')
                 .clearValue('@textareaEditDescription')
@@ -19,12 +19,28 @@ module.exports = {
                 .setValue('@inputEditSlug', slugEditCategory)
                 .setValue('@selectEditParent', parentEditCategory)
                 .setValue('@textareaEditDescription', descriptionEditCategory)
-                .click('@inputSubmitUpdateCategory')
-            return this.api
+                .click('@inputUpdateCategory')
+            return this.api;
         },
-        goBackToCategory() {
+        goBackToCategory(element) {
             return this
-                .click('@linkBackToCategories');
+                .click('@' + element);
+        },
+        goToHideLink(element) {
+            this
+                .moveToElement('@rowFirstTable', 0, 0)
+                .click('@' + element)
+            return this.api;
+        },
+        checkContainsText(element, expectedContain) {
+            return this.assert.containsText('@' + element, expectedContain);
+        },
+        deleteAllCategories() {
+            this
+                .click('@checkboxCategory')
+                .setValue('@selectDelete', 'Delete')
+                .click('@inputApply')
+            return this.api;
         }
     }],
     elements: {
@@ -40,7 +56,7 @@ module.exports = {
         textareaDescription: {
             selector: 'textarea[id=tag-description]',
         },
-        inputSubmit: {
+        inputAddCategory: {
             selector: 'input[id=submit]',
         },
         columnActualName: {
@@ -68,7 +84,7 @@ module.exports = {
         textareaEditDescription: {
             selector: 'textarea[id=description]'
         },
-        inputSubmitUpdateCategory: {
+        inputUpdateCategory: {
             selector: 'input[type=submit]'
         },
         strongMessageEditSuccessful: {
@@ -79,7 +95,28 @@ module.exports = {
             selector: '//div[@id="message"]//a',
             locateStrategy: 'xpath'
         },
-
-
+        rowFirstTable: {
+            selector: '//tbody[@id="the-list"]/tr[1]/td[1]',
+            locateStrategy: 'xpath'
+        },
+        linkDeleteCategory: {
+            selector: '//span[@class="delete"]/a[@class="delete-tag aria-button-if-js"]',
+            locateStrategy: 'xpath'
+        },
+        linkEditCategory: {
+            selector: 'div.row-actions > span.edit > a',
+        },
+        checkboxCategory: {
+            selector: '(//table//input[@type="checkbox"])[last()]',
+            locateStrategy: 'xpath'
+        },
+        selectDelete: {
+            selector: '//select[@id="bulk-action-selector-bottom"]',
+            locateStrategy: 'xpath'
+        },
+        inputApply: {
+            selector: '//input[@id="doaction2"]',
+            locateStrategy: 'xpath'
+        },
     }
 };

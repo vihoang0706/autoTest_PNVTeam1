@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="0"
+            failures="1"
             tests="3">
 
   <testsuite name="categories.adminCategoryAddNewTest"
-    errors="0" failures="0" hostname="" id="" package="adminCategoryAddNewTest" skipped="0"
-    tests="3" time="4.327" timestamp="">
+    errors="0" failures="1" hostname="" id="" package="adminCategoryAddNewTest" skipped="0"
+    tests="3" time="11.21" timestamp="">
   
-    <testcase name="Pre-condition: Login to the admin page and delete all category" classname="categories.adminCategoryAddNewTest" time="2.698" assertions="0">
+    <testcase name="Pre-condition: Login to the admin page and delete all categories" classname="categories.adminCategoryAddNewTest" time="8.152" assertions="2">
+
+    
+
+    
     </testcase>
   
-    <testcase name="Step 1: Go to Category page" classname="categories.adminCategoryAddNewTest" time="0.6830" assertions="0">
+    <testcase name="Step 1: Go to Category page" classname="categories.adminCategoryAddNewTest" time="1.177" assertions="0">
     </testcase>
   
-    <testcase name="Step 2: Add a new category" classname="categories.adminCategoryAddNewTest" time="0.9460" assertions="3">
+    <testcase name="Step 2: Add a new category" classname="categories.adminCategoryAddNewTest" time="1.884" assertions="1">  <failure message="Testing if element &lt;Element [name=@columnActualName]&gt; contains text: &#34;clothes&#34; in 1000 ms. - expected [0;32m&#34;clothes&#34;[0m but got: [0;31m&#34;Uncategory&#34;[0m">    at Page.checkContainsText (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\categories\adminCategoryPage.js:36:32)
+    at Object.Step 2: Add a new category (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\categories\adminCategoryAddNewTest.js:24:14)</failure>
 
-    
-
-    
-
-    
+    <failure message="    at Page.checkContainsText (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\categories\adminCategoryPage.js:36:32)">    at Object.Step 2: Add a new category (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\categories\adminCategoryAddNewTest.js:24:14)</failure>
     </testcase>
   
 

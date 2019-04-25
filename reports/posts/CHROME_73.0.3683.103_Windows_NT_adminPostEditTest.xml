@@ -5,9 +5,9 @@
 
   <testsuite name="posts.adminPostEditTest"
     errors="0" failures="0" hostname="" id="" package="adminPostEditTest" skipped="0"
-    tests="4" time="15.02" timestamp="">
+    tests="4" time="14.77" timestamp="">
   
-    <testcase name="Pre-condition: Login with valid account, create a new post" classname="posts.adminPostEditTest" time="6.526" assertions="4">
+    <testcase name="Pre-condition: Login with valid account, create a new post" classname="posts.adminPostEditTest" time="6.998" assertions="4">
 
     
 
@@ -18,10 +18,10 @@
     
     </testcase>
   
-    <testcase name="Step 1: Go to edit post" classname="posts.adminPostEditTest" time="1.753" assertions="0">
+    <testcase name="Step 1: Go to edit post" classname="posts.adminPostEditTest" time="1.760" assertions="0">
     </testcase>
   
-    <testcase name="Step 2: Edit Information in post" classname="posts.adminPostEditTest" time="4.815" assertions="5">
+    <testcase name="Step 2: Edit Information in post" classname="posts.adminPostEditTest" time="4.198" assertions="5">
 
     
 
@@ -34,7 +34,7 @@
     
     </testcase>
   
-    <testcase name="Pre-condition: Delete Post" classname="posts.adminPostEditTest" time="1.926" assertions="0">
+    <testcase name="Pre-condition: Delete Post" classname="posts.adminPostEditTest" time="1.818" assertions="0">
     </testcase>
   
 

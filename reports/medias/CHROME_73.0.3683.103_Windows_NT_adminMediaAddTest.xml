@@ -5,24 +5,24 @@
 
   <testsuite name="medias.adminMediaAddTest"
     errors="0" failures="0" hostname="" id="" package="adminMediaAddTest" skipped="0"
-    tests="4" time="3.606" timestamp="">
+    tests="4" time="3.447" timestamp="">
   
-    <testcase name="Pre-condition: Login with valid account" classname="medias.adminMediaAddTest" time="1.910" assertions="2">
+    <testcase name="Pre-condition: Login with valid account" classname="medias.adminMediaAddTest" time="1.771" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Step 1: Go to media page " classname="medias.adminMediaAddTest" time="0.6870" assertions="0">
+    <testcase name="Step 1: Go to media page " classname="medias.adminMediaAddTest" time="0.7070" assertions="0">
     </testcase>
   
-    <testcase name="Step 2: Add media" classname="medias.adminMediaAddTest" time="0.9150" assertions="1">
+    <testcase name="Step 2: Add media" classname="medias.adminMediaAddTest" time="0.8810" assertions="1">
 
     
     </testcase>
   
-    <testcase name="Pre-condition: Delete image" classname="medias.adminMediaAddTest" time="0.09400" assertions="0">
+    <testcase name="Pre-condition: Delete image" classname="medias.adminMediaAddTest" time="0.08800" assertions="0">
     </testcase>
   
 

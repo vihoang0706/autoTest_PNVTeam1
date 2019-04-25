@@ -8,11 +8,14 @@ module.exports = {
         checkImageExist(element, nameImage) {
             return this.assert.containsText('@'+element, nameImage)
         },
-        deleteAllImages() {
+        goToHideLink(element) {
             return this
-                .click('@checkboxSelectAll')
-                .click('@buttonDeleteBulkAction')
-                .click('@buttonApply');
+                .moveToElement('@columnTitleActual', 0, 0)
+                .click(element);
+        },
+        deleteImage() {
+            return this
+            .goToHideLink('@linkDeleteImage')
         },
     }],
     elements: {
@@ -34,6 +37,14 @@ module.exports = {
         },
         linkDeleteImage: {
             selector: '//span[@class="edit"]/a[@class="submitdelete aria-button-if-js" and text() ="Delete Permanently"]',
+            locateStrategy: 'xpath'
+        },
+        linkDeleteImage: {
+            selector: '//tr/td[1]/div[@class="row-actions"]/span[@class="delete"]/a[@class="submitdelete aria-button-if-js" and text()="Delete Permanently"]',
+            locateStrategy: 'xpath'
+        },
+        columnTitleActual: {
+            selector: '//tbody[@id="the-list"]/tr[1]/td[1]',
             locateStrategy: 'xpath'
         },
         checkboxSelectAll: '#cb-select-all-2',

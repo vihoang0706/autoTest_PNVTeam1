@@ -8,7 +8,7 @@ module.exports = {
                 .click('@buttonPublish')
                 .waitForElementVisible('@subButtonPublish')
                 .click('@subButtonPublish')
-                .pause(1000)
+                .waitForElementVisible('@messagePublishedSuccess')
         },
         goToHideLink(element) {
             return this
@@ -33,7 +33,12 @@ module.exports = {
                 .click('@checkboxSelectAll')
                 .click('@buttonDeleteBulkAction')
                 .click('@buttonApply');
-        }
+        },
+        deletePost() {
+            return this
+            .goToHideLink('@linkDeletePost')
+        },
+    
     }],
     elements: {
         buttonCancelTip: {
@@ -78,7 +83,11 @@ module.exports = {
         },
         messagePublishedSuccess: {
             selector: '//div[@class="components-notice__content"]',
-            localStorage: 'xpath'
+            locateStrategy: 'xpath'
+        },
+        linkDeletePost: {
+            selector: '//tr/td[1]/div[@class="row-actions"]/span[@class="trash"]/a[@class="submitdelete" and text()="Trash"]',
+            locateStrategy: 'xpath'
         },
         checkboxSelectAll: '#cb-select-all-2',
         buttonDeleteBulkAction: '#bulk-action-selector-bottom > option:nth-child(3)',

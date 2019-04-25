@@ -15,12 +15,14 @@ module.exports = {
     'Step 1: Go to media page ': function () {
         dashboard.goToPage('linkMedia', 'linkAddNewMedia');
     },
-    'Step 2: Add media': function (browser) {
+    'Step 2: Add media': function () {
         addMedia
             .addNewMedia(image)
             .checkImageExist('image', imageName)
-            .deleteAllImages()
-        browser.acceptAlert()
     },
+    'Pre-condition: Delete image': function (browser) {
+        addMedia.deleteImage();
+        browser.acceptAlert();
+    }
     
 }

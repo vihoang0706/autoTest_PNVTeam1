@@ -9,9 +9,9 @@ module.exports = {
                 .clearValue('@contentPost')
                 .setValue('@inputTitlePost', title)
                 .setValue('@contentPost', content)
-                .waitForElementVisible('@buttonUpdatePost', 500)
+                .waitForElementVisible('@buttonUpdatePost')
                 .click('@buttonUpdatePost')
-                .pause(1000)
+                .waitForElementVisible('@messagePublishedSuccess')
         },
     }],
     elements: {
@@ -33,6 +33,10 @@ module.exports = {
         },
         buttonUpdatePost: {
             selector: '//button[@class="components-button editor-post-publish-button is-button is-default is-primary is-large"]',
+            locateStrategy: 'xpath'
+        },
+        messagePublishedSuccess: {
+            selector: '//div[@class="components-notice__content"]',
             locateStrategy: 'xpath'
         },
     }

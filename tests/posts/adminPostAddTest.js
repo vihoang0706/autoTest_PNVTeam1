@@ -11,10 +11,8 @@ module.exports = {
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
         login.login(username, password);
-        dashboard.goToPage('linkPosts', 'linkAllPosts');
-        addPost.deleteAllPosts();
     },
-    'Step 1: Go to post page ': function () {
+    'Step 1: Go to post page': function () {
         dashboard.goToPage('linkPosts', 'linkNewPost');
     },
     'Step 2: Post Information': function () {
@@ -25,4 +23,8 @@ module.exports = {
             .clickPostItem();
         editPost.checkContainsText('actualContentPost', content);
     },
+    'Pre-condition: Delete post': function () {
+        dashboard.goToPage('linkPosts', 'linkAllPosts');
+        addPost.deletePost();
+    }
 };

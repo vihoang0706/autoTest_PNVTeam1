@@ -1,4 +1,4 @@
-var login, dashboard, user, addUser;
+var login, dashboard, user, addUser, userAdmin, passwordAdmin;
 var username = 'nightwatch.team1';
 var email = 'nightwatch@gmail.com';
 var firstName = 'NightWatch';
@@ -8,34 +8,36 @@ var website = 'Team1234';
 var role = 'Subscriber';
 var name = 'NightWatch' + ' Team 1'
 module.exports = {
-    '@tags': ['adduser'],
-    'Pre-condetion: Login to the admin page': function (browser) {
+    '@tags': ['add-user'],
+    'Pre-condition: Login to the admin page and delete all user': function (browser) {
         login = browser.page.adminUserLoginPage();
         dashboard = browser.page.adminBasePage();
         user = browser.page.adminUserManagementPage();
         addUser = browser.page.adminAddUserPage();
-        login.login(browser.globals.userNames.username, browser.globals.userNames.password);
+        userAdmin = browser.globals.userNames.username;
+        passwordAdmin = browser.globals.userNames.password;
+        login.login(userAdmin,passwordAdmin);
     },
-    'Step 2: Go to the add new user page': function () {
+    'Step 1: Go to the add new user page': function () {
         dashboard.goToPage('linkUsers', 'linkAddNewUser');
     },
-    'Step 3: Add new user': function () {
+    'Step 2: Add new user': function () {
         addUser.addUser(username, email, firstName, lastName, website, password, role);
-        addUser.pause(1000);
         user
             .checkContainsText('collumnUsername', username)
             .checkContainsText('collumnName', name)
             .checkContainsText('collumnEmail', email)
             .checkContainsText('collumnRole', role)
         //Checkpoint: The new user account can login to Admin page
-        dashboard.logOut('linkLogOut');
+        dashboard.goToActionUser('linkLogOut');
         login.login(username, password);
-        dashboard.assert.visible('@linkYourAccount');
+        dashboard.checkElementVisible('linkYourAccount');
+        dashboard.goToActionUser('linkLogOut');
     },
-    'Clear data': function() {
+    'Pre-condition: Clear data': function(browser) {
+        login.login(userAdmin,passwordAdmin);
         dashboard.goToPage('linkUsers', 'linkAllUsers');
-        dashboard.pause(1000);
         user.deleteUser();
-        dashboard.logOut('linkLogOut');
+        dashboard.goToActionUser('linkLogOut');
     }
 }

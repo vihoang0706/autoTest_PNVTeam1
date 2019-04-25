@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="2">
+
+  <testsuite name="adminNewPostTest"
+    errors="0" failures="0" hostname="" id="" package="adminNewPostTest" skipped="0"
+    tests="2" time="9.210" timestamp="">
+  
+    <testcase name="Go to post page " classname="adminNewPostTest" time="3.393" assertions="0">
+    </testcase>
+  
+    <testcase name="Post information" classname="adminNewPostTest" time="5.817" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

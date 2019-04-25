@@ -1,17 +1,19 @@
-var category, login, dashboard;
+var category, login, dashboard, username, password;
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
 const parentCategory = 'None';
 const descriptionCategory = 'Clothes on the store';
 module.exports = {
-    '@tags': ['addcategory'],
-    'Pre-condition: Login to the admin page and delete all category': function (browser) {
+    '@tags': ['add-category'],
+    'Pre-condition: Login to the admin page and delete all categories': function (browser) {
         login = browser.page.adminUserLoginPage();
         dashboard = browser.page.adminBasePage();
         category = browser.page.adminCategoryPage();
-        login.login(browser.globals.userNames.username, browser.globals.userNames.password);
+        username = browser.globals.userNames.username;
+        password = browser.globals.userNames.password;
+        login.login(username, password);
         dashboard.goToPage('linkPosts', 'linkCategories');
-        category.deleteAllCategory();
+        category.deleteAllCategories();
     },
     'Step 1: Go to Category page': function () {
         dashboard.goToPage('linkPosts', 'linkCategories');
@@ -22,5 +24,5 @@ module.exports = {
             .checkContainsText('columnActualName', nameCategory)
             .checkContainsText('columnActualDescription', descriptionCategory)
             .checkContainsText('columnActualSlug', slugCategory);
-    },
+    }
 }

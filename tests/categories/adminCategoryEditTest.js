@@ -9,22 +9,22 @@ const parentEditCategory = 'None';
 const descriptionEditCategory = 'Clothes on the Team 1 store';
 const editMessageSuccessful = 'Category updated.';
 module.exports = {
-    '@tags': ['editcategory'],
+    '@tags': ['edit-category'],
     'Pre-condition: Login to the admin page, delete all category and add a new category ': function (browser) {
         login = browser.page.adminUserLoginPage();
         category = browser.page.adminCategoryPage();
         dashboard = browser.page.adminBasePage();
         login.login(browser.globals.userNames.username, browser.globals.userNames.password);
         dashboard.goToPage('linkPosts', 'linkCategories');
-        category.deleteAllCategory();
+        category.deleteAllCategories();
         category.addCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
     },
-    'Step 1: Go to the Edit Category page': function (browser) {
+    'Step 1: Go to the Edit Category page': function () {
         category
             .pause(500)
             .goToHideLink('linkEditCategory');
     },
-    'Step 2: Edit category': function (browser) {
+    'Step 2: Edit category': function () {
         category.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
         category
             .checkContainsText('strongMessageEditSuccessful', editMessageSuccessful)

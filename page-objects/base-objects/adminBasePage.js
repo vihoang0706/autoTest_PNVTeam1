@@ -4,14 +4,7 @@ module.exports = {
             this
                 .click('@' + mainlink)
                 .click('@' + sublink)
-            return this.api
-        },
-        logOut(element) {
-            return this
-                .waitForElementVisible('@linkYourAccount')
-                .moveToElement('@linkYourAccount', 0, 0)
-                .waitForElementVisible('@' + element)
-                .click('@' + element);
+            return this.api;
         },
         goToActionUser(element) {
             return this
@@ -19,7 +12,10 @@ module.exports = {
                 .moveToElement('@linkYourAccount', 0, 0)
                 .waitForElementVisible('@' + element)
                 .click('@' + element);
-        }
+        },
+        checkElementVisible(element) {
+            return this.assert.visible('@' + element);
+        },
     }],
     elements: {
         // Post
@@ -53,7 +49,7 @@ module.exports = {
             locateStrategy: 'xpath'
         },
         linkAddNewMedia: {
-            selector: '//li[@id="menu-media"]//a[text()="Add New"]',
+            selector: '//div[@id="wpbody-content"]/div/a',
             locateStrategy: 'xpath'
         },
         //Pages

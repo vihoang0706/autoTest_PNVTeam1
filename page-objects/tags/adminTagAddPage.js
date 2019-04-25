@@ -1,26 +1,28 @@
 module.exports = {
     commands: [{
-        addNewTag(tagsName, slugName, description) {
+        addNewTag(tagName, slugName, description) {
             return this
-                .setValue('@inputTagName', tagsName)
+                .setValue('@inputTagName', tagName)
                 .setValue('@inputSlugName', slugName)
                 .setValue('@inputDescription', description)
-                .click('@buttonAddNewTag');
+                .click('@inputAddNewTag');
         },
         goBackToTagPage() {
             return this
                 .click('@linkBackToTag');
         },
         checkContainsText(element, expectedContain) {
-            return this.assert.containsText('@' + element, expectedContain)
+            return this
+                .assert.containsText('@' + element, expectedContain)
         },
         waitUntilElementVisible(element) {
-            return this.waitForElementVisible('@' + element);
+            return this
+                .waitForElementVisible('@' + element);
         },
-        editTag(tagsName, slugName, description) {
+        editTag(tagName, slugName, description) {
             return this
                 .clearValue('@inputEditName')
-                .setValue('@inputEditName', tagsName)
+                .setValue('@inputEditName', tagName)
                 .clearValue('@inputEditSlug')
                 .setValue('@inputEditSlug', slugName)
                 .clearValue('@inputEditDescription')
@@ -33,7 +35,7 @@ module.exports = {
                 .click('@buttonDeleteBulkAction')
                 .click('@inputApply');
         },
-        goToAction(element) {
+        goToHideLink(element) {
             return this
                 .waitForElementVisible('@columnActualTitle')
                 .moveToElement('@columnActualTitle', 0, 0)
@@ -46,7 +48,7 @@ module.exports = {
         inputTagName: 'input[id=tag-name]',
         inputSlugName: 'input[id=tag-slug]',
         inputDescription: 'textarea[id=tag-description]',
-        buttonAddNewTag: 'input[id=submit]',
+        inputAddNewTag: 'input[id=submit]',
         // Edit Form
         inputEditName: 'input[id=name]',
         inputEditSlug: 'input[id=slug]',
@@ -56,23 +58,15 @@ module.exports = {
             selector: '//div[@id="message"]/p/a[contains(text(),"Back to Tags")]',
             locateStrategy: 'xpath'
         },
+        strongMessageSuccess: {
+            selector: '//div[@id="message"]//strong',
+            locateStrategy: 'xpath'
+        },
         // Delete All Tags
         checkboxSelectAll: 'input[id=cb-select-all-2]',
         buttonDeleteBulkAction: '#bulk-action-selector-bottom > option:nth-child(2)',
         inputApply: 'input[id="doaction2"]',
-        // Quick Edit Form
-        inputTitleTextWrap: {
-            selector: '//tr[@class="inline-edit-row inline-editor"]/td/fieldset/div/label[1]/span[2]/input',
-            locateStrategy: 'xpath'
-        },
-        inputSlugTextWrap: {
-            selector: '//tr[@class="inline-edit-row inline-editor"]/td/fieldset/div/label[2]/span[2]/input',
-            locateStrategy: 'xpath'
-        },
-        buttonUpdateTagWrap: {
-            selector: '//tr[@class="inline-edit-row inline-editor"]/td/div/button[@class="save button button-primary alignright"]',
-            locateStrategy: 'xpath'
-        },
+        //Hidden link
         linkDelete: {
             selector: 'div.row-actions > span.delete > a',
             locateStrategy: 'css selector'

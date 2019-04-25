@@ -5,32 +5,48 @@
 
   <testsuite name="users.adminUserAddNewTest"
     errors="0" failures="0" hostname="" id="" package="adminUserAddNewTest" skipped="0"
-    tests="4" time="11.64" timestamp="">
+    tests="4" time="12.66" timestamp="">
   
-    <testcase name="Pre-condetion: Login to the admin page" classname="users.adminUserAddNewTest" time="1.051" assertions="0">
-    </testcase>
-  
-    <testcase name="Step 2: Go to the add new user page" classname="users.adminUserAddNewTest" time="0.7970" assertions="0">
-    </testcase>
-  
-    <testcase name="Step 3: Add new user" classname="users.adminUserAddNewTest" time="7.076" assertions="7">
-
-    
-
-    
-
-    
-
-    
-
-    
+    <testcase name="Pre-condition: Login to the admin page and delete all user" classname="users.adminUserAddNewTest" time="0.9910" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Clear data" classname="users.adminUserAddNewTest" time="2.718" assertions="2">
+    <testcase name="Step 1: Go to the add new user page" classname="users.adminUserAddNewTest" time="0.7470" assertions="0">
+    </testcase>
+  
+    <testcase name="Step 2: Add new user" classname="users.adminUserAddNewTest" time="7.126" assertions="11">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Pre-condition: Clear data" classname="users.adminUserAddNewTest" time="3.793" assertions="4">
+
+    
+
+    
 
     
 

@@ -1,3 +1,4 @@
+var Q = require('q');
 module.exports = {
     commands: [{
         addNewTag(tagName, slugName, description) {
@@ -11,9 +12,10 @@ module.exports = {
             return this
                 .click('@linkBackToTag');
         },
-        checkContainsText(element, expectedContain) {
-            return this
-                .assert.containsText('@' + element, expectedContain)
+        getContainsText(selector,callback){
+            this.getText('@'+ selector,function(result){
+                callback(result.value);
+            });
         },
         waitUntilElementVisible(element) {
             return this

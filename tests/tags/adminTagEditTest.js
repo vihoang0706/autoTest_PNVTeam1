@@ -14,7 +14,7 @@ module.exports = {
         password = browser.globals.userNames.password;
         login.login(username, password);
         dashboard = browser.page.adminBasePage();
-        dashboard.goToPage('linkPosts', 'linkTags');
+        dashboard.goToPage(dashboard.el('@linkMainMenu', 'Posts'),dashboard.el('@linkSubMenuPosts', 'Tags'));
         tagPage = browser.page.adminTagAddPage();
         tagPage
             .deleteAllTags()
@@ -23,13 +23,24 @@ module.exports = {
     'Step 1: Go to edit tag': function () {
         tagPage.goToHiddenLink('linkEdit');
     },
-    'Step 2: Edit Tag': function () {
+    'Step 2: Edit Tag': function (browser) {
         tagPage.editTag(editNameTag, editSlugTag, editDescriptionTag)
         tagPage
-            .checkContainsText('strongMessageSuccess', messageTagUpdated)
-            .goBackToTagPage()
-            .checkContainsText('columnActualTitle', editNameTag)
-            .checkContainsText('columnActualSlug', editSlugTag)
-            .checkContainsText('columnActualDescription', editDescriptionTag);
+            .getContainsText('strongMessageSuccess', function (result) {
+                browser.assert.equal(result, messageTagUpdated);
+        });
+        tagPage.goBackToTagPage();
+        tagPage
+            .getContainsText('columnActualTitle', function (result) {
+                browser.assert.equal(result, editNameTag);
+        });
+        tagPage
+            .getContainsText('columnActualSlug', function (result) {
+                browser.assert.equal(result, editSlugTag);
+        });
+        tagPage
+            .getContainsText('columnActualDescription', function (result) {
+                browser.assert.equal(result, editDescriptionTag);
+        });
     },
 };

@@ -23,13 +23,24 @@ module.exports = {
     'Step 1: Go to edit tag': function () {
         tagPage.goToHideLink('linkEdit');
     },
-    'Step 2: Edit Tag': function () {
+    'Step 2: Edit Tag': function (browser) {
         tagPage.editTag(editNameTag, editSlugTag, editDescriptionTag)
         tagPage
-            .checkContainsText('strongMessageSuccess', messageTagUpdated)
-            .goBackToTagPage()
-            .checkContainsText('columnActualTitle', editNameTag)
-            .checkContainsText('columnActualSlug', editSlugTag)
-            .checkContainsText('columnActualDescription', editDescriptionTag);
+            .getContainsText('strongMessageSuccess', function (result) {
+                browser.assert.equal(result, messageTagUpdated);
+        });
+        tagPage.goBackToTagPage();
+        tagPage
+            .getContainsText('columnActualTitle', function (result) {
+                browser.assert.equal(result, editNameTag);
+        });
+        tagPage
+            .getContainsText('columnActualSlug', function (result) {
+                browser.assert.equal(result, editSlugTag);
+        });
+        tagPage
+            .getContainsText('columnActualDescription', function (result) {
+                browser.assert.equal(result, editDescriptionTag);
+        });
     },
 };

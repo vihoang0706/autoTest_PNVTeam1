@@ -1,4 +1,6 @@
 var dashboard, category, login;
+const action = require('../../page-objects/utils/action');
+const assert = require('assert');
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
 const parentCategory = 'None';
@@ -17,20 +19,26 @@ module.exports = {
         login.login(browser.globals.userNames.username, browser.globals.userNames.password);
         dashboard.goToPage('linkPosts', 'linkCategories');
         category.deleteAllCategories();
-        category.addCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
+        category.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
     },
     'Step 1: Go to the Edit Category page': function () {
-        category
-            .pause(500)
-            .goToHideLink('linkEditCategory');
+        category.pause(500)
+        action.goToHideLink('linkEditCategory');
     },
-    'Step 2: Edit category': function () {
+    'Step 2: Edit category': function (browser) {
         category.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
-        category
-            .checkContainsText('strongMessageEditSuccessful', editMessageSuccessful)
-            .goBackToCategory('linkBackToCategories')
-            .checkContainsText('columnActualName', nameEditCategory)
-            .checkContainsText('columnActualDescription', descriptionEditCategory)
-            .checkContainsText('columnActualSlug', slugEditCategory);
+        category.getContainValue('strongMessageEditSuccessful',function(actualMessage) {
+            browser.assert.equal(actualMessage, editMessageSuccessful);
+        });
+        category.goBackToCategory('linkBackToCategories')
+        category.getContainValue('columnActualName',function(actualName) {
+            browser.assert.equal(actualName, nameEditCategory);
+        });
+        category.getContainValue('columnActualDescription',function(actualDescription) {
+            browser.assert.equal(actualDescription, descriptionEditCategory);
+        });
+        category.getContainValue('columnActualSlug',function(actualSlug) {
+            browser.assert.equal(actualSlug, slugEditCategory);
+        });
     },
 }

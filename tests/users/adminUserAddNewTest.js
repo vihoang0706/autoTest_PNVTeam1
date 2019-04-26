@@ -7,6 +7,7 @@ var password = 'Team1234';
 var website = 'Team1234';
 var role = 'Subscriber';
 var name = 'NightWatch' + ' Team 1'
+const assert = require('assert');
 module.exports = {
     '@tags': ['add-user'],
     'Pre-condition: Login to the admin page and delete all user': function (browser) {
@@ -21,14 +22,20 @@ module.exports = {
     'Step 1: Go to the add new user page': function () {
         dashboard.goToPage('linkUsers', 'linkAddNewUser');
     },
-    'Step 2: Add new user': function () {
-        addUser.addUser(username, email, firstName, lastName, website, password, role);
-        user
-            .checkContainsText('collumnUsername', username)
-            .checkContainsText('collumnName', name)
-            .checkContainsText('collumnEmail', email)
-            .checkContainsText('collumnRole', role)
-        //Checkpoint: The new user account can login to Admin page
+    'Step 2: Add new user': function (browser) {
+        addUser.addNewUser(username, email, firstName, lastName, website, password, role);
+        user.getContainValue('collumnUsername',function(actualUserName) {
+            browser.assert.equal(actualUserName, username, 'Pass');
+        })
+        user.getContainValue('collumnName',function(actualName) {
+            browser.assert.equal(actualName, name);
+        })
+        user.getContainValue('collumnEmail',function(actualEmail) {
+            browser.assert.equal(actualEmail, email);
+        })
+        user.getContainValue('collumnRole',function(actualRole) {
+            browser.assert.equal(actualRole, role);
+        })
         dashboard.goToActionUser('linkLogOut');
         login.login(username, password);
         dashboard.checkElementVisible('linkYourAccount');

@@ -1,6 +1,6 @@
 module.exports = {
     commands: [{
-        addCategory(name, slug, parent, description) {
+        addNewCategory(name, slug, parent, description) {
             this
                 .setValue('@inputName', name)
                 .setValue('@inputSlug', slug)
@@ -27,13 +27,15 @@ module.exports = {
                 .click('@' + element);
         },
         goToHideLink(element) {
-            this
+            return this
                 .moveToElement('@rowFirstTable', 0, 0)
                 .click('@' + element)
             return this.api;
         },
-        checkContainsText(element, expectedContain) {
-            return this.assert.containsText('@' + element, expectedContain);
+        getContainValue(element,callback){
+            this.getText('@' + element, function(result){
+                callback(result.value);
+            });
         },
         deleteAllCategories() {
             this

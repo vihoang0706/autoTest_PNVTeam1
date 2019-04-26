@@ -1,4 +1,5 @@
 var category, login, dashboard, username, password;
+const assert = require('assert');
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
 const parentCategory = 'None';
@@ -18,11 +19,17 @@ module.exports = {
     'Step 1: Go to Category page': function () {
         dashboard.goToPage('linkPosts', 'linkCategories');
     },
-    'Step 2: Add a new category': function () {
-        category.addCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
-        category
-            .checkContainsText('columnActualName', nameCategory)
-            .checkContainsText('columnActualDescription', descriptionCategory)
-            .checkContainsText('columnActualSlug', slugCategory);
+    'Step 2: Add a new category': function (browser) {
+        category.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
+        category.pause(500);
+        category.getContainValue('columnActualName',function(actualName) {
+            browser.assert.equal(actualName, nameCategory);
+        });
+        category.getContainValue('columnActualDescription',function(actualDescription) {
+            browser.assert.equal(actualDescription, descriptionCategory);
+        });
+        category.getContainValue('columnActualSlug',function(actualSlug) {
+            browser.assert.equal(actualSlug, slugCategory);
+        });
     }
 }

@@ -1,6 +1,11 @@
+const util = require('../../tests/src/Utilities/Utilis');
 module.exports = {
     commands: [{
-        goToPage(mainlink, sublink) {
+        el: function(elementName, data) {
+            var element = this.elements[elementName.slice(1)];
+            return util.format(element.selector, data);
+        },
+        goToPage(mainlink, sublink,) {
             this
                 .click('@' + mainlink)
                 .click('@' + sublink)
@@ -16,14 +21,19 @@ module.exports = {
         checkElementVisible(element) {
             return this.assert.visible('@' + element);
         },
+        getContainValue(element,callback){
+            this.getText('@' + element, function(result){
+                callback(result.value);
+            });
+        },
     }],
     elements: {
-        // Post
+        // Post, Media, Pages, Comments
         linkPosts: {
             selector: '//div[@class="wp-menu-name" and text()= "Posts"]',
             locateStrategy: 'xpath'
         },
-        linkAllPosts: {
+        linkAllUsers: {
             selector: '//li[@id="menu-posts"]//a[text()="All Posts"]',
             locateStrategy: 'xpath'
         },

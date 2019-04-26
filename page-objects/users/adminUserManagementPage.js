@@ -1,7 +1,9 @@
 module.exports = {
     commands: [{
-        checkContainsText(element, expectedContain) {
-            return this.assert.containsText('@' + element, expectedContain)
+        getContainValue(element,callback){
+            this.getText('@' + element, function(result){
+                callback(result.value);
+            });
         },
         deleteAllUser() {
             this

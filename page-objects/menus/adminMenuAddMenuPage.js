@@ -1,43 +1,26 @@
 module.exports = {
     commands: [{
-        gotoCreateNewMenu(){
-            return this
-            .click('@linkCreateNewMenu');
+        goToMenuPage() {
+            return this.click('@linkCreateNewMenu');
         },
-        addNewMenuStruct(nameMenu) {
+        addNewMenu(nameMenu) {
             return this
-                .setValue('@inputNameMenu', nameMenu) 
+                .setValue('@inputNameMenu', nameMenu)
                 .click('@inputSaveMenuHeader')
         },
-        addMenuSetting(){
-            return this
-                .click('@inputAutoAddPages')
-                .click('@inputLocationPrimary')
-                .click('@inputLocationFooter')
-                .click('@inputLocationSocialLink')
-                .click('@inputSaveMenuFooter');
-        },
-        selectMenu(){
+        selectMenu() {
             return this
                 .click('@selectMenu')
                 .click('@inputSelectMenu');
         },
-        deleteMenu(){
-            return this
-                .click('@linkDeleteMenu');
+        deleteMenu() {
+            return this.click('@linkDeleteMenu');
         },
-        checkElementVisible(element) {
-            return this.assert.visible('@' + element);
-        },
-        checkSelectedOption(element) {
-            return this
-                .assert.attributeEquals('@' + element, "checked", 'true');
-        },
-        getContainValue(element, callback){
-            this.getValue('@' + element, function(result){
-              callback(result.value);
+        getContainValue(element, callback) {
+            this.getValue('@' + element, function (result) {
+                callback(result.value);
             });
-          }
+        }
     }],
     elements: {
         inputSelectMenu: {
@@ -63,6 +46,6 @@ module.exports = {
         inputLocationPrimary: 'input[id=locations-menu-1]',
         inputLocationFooter: 'input[id=locations-footer]',
         inputLocationSocialLink: 'input[id=locations-social]',
-       
+
     }
 };

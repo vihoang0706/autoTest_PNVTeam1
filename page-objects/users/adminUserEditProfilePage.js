@@ -31,20 +31,9 @@ module.exports = {
                     callback(result.value);
                 });
             },
-            optionIsSelected(selector,callback) {
-                var self = this;
+            getElementIsSelected(selector,callback) {
                 return this.getAttribute('@'+selector, "checked", function (result) {
-                  let isSelected = result.value;
-                  callback.call(self, isSelected);
-                });
-            },
-            checkSelectedOption(element) {
-                return this
-                    .assert.attributeEquals('@' + element, "checked", 'true');
-            },
-            checkContainsValue(element, expectedValue) {
-                return this.getValue('@' + element, function (result) {
-                    this.assert.equal(result.value, expectedValue);
+                  callback(result.value);
                 });
             },
             uncheckedCheckbox() {

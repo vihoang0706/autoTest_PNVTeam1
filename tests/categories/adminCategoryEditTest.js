@@ -1,5 +1,4 @@
 var dashboard, category, login;
-const assert = require('assert');
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
 const parentCategory = 'None';
@@ -27,17 +26,17 @@ module.exports = {
     },
     'Step 2: Edit category': function (browser) {
         category.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
-        category.getContainValue('strongMessageEditSuccessful',function(actualMessage) {
+        category.getContainText('strongMessageEditSuccessful',function(actualMessage) {
             browser.assert.equal(actualMessage, editMessageSuccessful);
         });
         category.goBackToCategory('linkBackToCategories')
-        category.getContainValue('columnActualName',function(actualName) {
+        category.getContainText('columnActualName',function(actualName) {
             browser.assert.equal(actualName, nameEditCategory);
         });
-        category.getContainValue('columnActualDescription',function(actualDescription) {
+        category.getContainText('columnActualDescription',function(actualDescription) {
             browser.assert.equal(actualDescription, descriptionEditCategory);
         });
-        category.getContainValue('columnActualSlug',function(actualSlug) {
+        category.getContainText('columnActualSlug',function(actualSlug) {
             browser.assert.equal(actualSlug, slugEditCategory);
         });
     },

@@ -8,7 +8,9 @@ module.exports = {
         password = browser.globals.userNames.password;
         login.login(username, password);
         dashboard
-            .checkElementVisible('linkYourAccount')
-            .goToActionUser('linkLogOut');
+            .getElementIsVisible('linkYourAccount',function(result){
+                browser.assert.equal(result, true);
+            });
+        dashboard.goToActionUser('linkLogOut');
     }
 };

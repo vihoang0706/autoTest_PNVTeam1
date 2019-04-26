@@ -1,5 +1,4 @@
 var category, login, dashboard, username, password;
-const assert = require('assert');
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
 const parentCategory = 'None';
@@ -22,13 +21,13 @@ module.exports = {
     'Step 2: Add a new category': function (browser) {
         category.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
         category.pause(500);
-        category.getContainValue('columnActualName',function(actualName) {
+        category.getContainText('columnActualName', function (actualName) {
             browser.assert.equal(actualName, nameCategory);
         });
-        category.getContainValue('columnActualDescription',function(actualDescription) {
+        category.getContainText('columnActualDescription', function (actualDescription) {
             browser.assert.equal(actualDescription, descriptionCategory);
         });
-        category.getContainValue('columnActualSlug',function(actualSlug) {
+        category.getContainText('columnActualSlug', function (actualSlug) {
             browser.assert.equal(actualSlug, slugCategory);
         });
     }

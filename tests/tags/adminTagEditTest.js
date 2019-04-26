@@ -21,7 +21,7 @@ module.exports = {
             .addNewTag(nameTag, slugTag, descriptionTag);
     },
     'Step 1: Go to edit tag': function () {
-        tagPage.goToHiddenLink('linkEdit');
+        tagPage.goToHideLink('linkEdit');
     },
     'Step 2: Edit Tag': function (browser) {
         tagPage.editTag(editNameTag, editSlugTag, editDescriptionTag)

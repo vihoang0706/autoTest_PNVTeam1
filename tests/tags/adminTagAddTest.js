@@ -1,6 +1,5 @@
 const nameTag = 'automation testing';
 const slugTag = 'automation-test';
-var assert = require('assert');
 const descriptionTag = 'To learn Automation testing';
 var login, dashboard, tagPage, username, password;
 module.exports = {

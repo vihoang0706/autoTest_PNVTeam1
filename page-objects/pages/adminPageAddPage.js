@@ -5,7 +5,7 @@ module.exports = {
         .setValue('@inputTitle', titlePage)
         .setValue('@inputDescription', description)
         .click('@buttonPublish')
-        .click('@subButtonPublishPage');
+        .click('@subButtonPublish');
     },
     dismissTip() {
       return this
@@ -25,7 +25,7 @@ module.exports = {
       selector: '//button[@class="components-button editor-post-publish-panel__toggle is-button is-primary"]',
       locateStrategy: 'xpath'
     },
-    subButtonPublishPage: {
+    subButtonPublish: {
       selector: '//button[@class="components-button editor-post-publish-button is-button is-default is-primary is-large"]',
       locateStrategy: 'xpath'
     },
@@ -37,10 +37,9 @@ module.exports = {
       selector: '//div[@class="components-popover__content"]/button[@class="components-button components-icon-button nux-dot-tip__disable"]',
       locateStrategy: 'xpath'
     },
-    lableCommentNotice: {
+    labelMessageSuccess: {
       selector: '//div[@class="components-notice__content"]',
       locateStrategy: 'xpath'
     }
-
   }
 };

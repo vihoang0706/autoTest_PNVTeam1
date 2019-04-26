@@ -37,7 +37,7 @@ module.exports = {
                 .click('@buttonDeleteBulkAction')
                 .click('@inputApply');
         },
-        goToHiddenLink(element) {
+        goToHideLink(element) {
             return this
                 .waitForElementVisible('@columnActualTitle')
                 .moveToElement('@columnActualTitle', 0, 0)

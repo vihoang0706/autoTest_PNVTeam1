@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="3">
+
+  <testsuite name="tags.adminTagAddTest"
+    errors="0" failures="1" hostname="" id="" package="adminTagAddTest" skipped="0"
+    tests="3" time="6.453" timestamp="">
+  
+    <testcase name="Pre-condition: Login with valid account and Delete all tags" classname="tags.adminTagAddTest" time="1.234" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Step 1: Go to tag page" classname="tags.adminTagAddTest" time="0.02700" assertions="0">
+    </testcase>
+  
+    <testcase name="Step 2: Add new tag with valid data" classname="tags.adminTagAddTest" time="5.192" assertions="1">  <failure message="Timed out while waiting for element &lt;(//table[@class=&#34;wp-list-table widefat fixed striped tags&#34;]//tbody/tr//td[@class=&#34;name column-name has-row-actions column-primary&#34;]/strong/a)[1]&gt; to be present for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.waitUntilElementVisible (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\tags\adminTagAddPage.js:20:18)
+    at Object.Step 2: Add new tag with valid data (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\tags\adminTagAddTest.js:25:14)</failure>
+
+    <failure message="    at Page.waitUntilElementVisible (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\tags\adminTagAddPage.js:20:18)">    at Object.Step 2: Add new tag with valid data (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\tags\adminTagAddTest.js:25:14)</failure>
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

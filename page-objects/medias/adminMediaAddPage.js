@@ -5,8 +5,8 @@ module.exports = {
                 .setValue('@inputImage', require('path').resolve(__dirname+image))
                 .click('@buttonUpload')
         },
-        checkImageExist(element, nameImage) {
-            return this.assert.containsText('@'+element, nameImage)
+        checkImageExist(element, callback) {
+            this.getContentValue(element, callback)
         },
         goToHideLink(element) {
             return this
@@ -17,6 +17,11 @@ module.exports = {
             return this
             .goToHideLink('@linkDeleteImage')
         },
+        getContentValue(element, callback) {
+            this.getText('@'+element, function(result){
+                callback(result.value)
+            });
+        }
     }],
     elements: {
         inputImage: {

@@ -20,13 +20,10 @@ module.exports = {
                 .click('@linkAllPosts')
                 .goToHideLink('@linkEditPost')
         },
-        checkContainsText(element, expectedContain) {
-            return this.assert.containsText('@' + element, expectedContain)
-        },
         clickPostItem(){
             return this
-            .waitForElementVisible('@titleActual')
-            .click('@titleActual');
+            .waitForElementVisible('@actualTitle')
+            .click('@actualTitle');
         },
         deleteAllPosts() {
             return this
@@ -38,7 +35,11 @@ module.exports = {
             return this
             .goToHideLink('@linkDeletePost')
         },
-    
+        getContentValue(element, callback) {
+            this.getText('@'+element, function(result){
+                callback(result.value)
+            });
+        }
     }],
     elements: {
         buttonCancelTip: {
@@ -61,7 +62,7 @@ module.exports = {
             selector: '//button[@class="components-button editor-post-publish-button is-button is-default is-primary is-large"]',
             locateStrategy: 'xpath'
         },
-        titleActual: {
+        actualTitle: {
             selector: '//tbody[@id="the-list"]/tr[1]/td[1]/strong/a',
             locateStrategy: 'xpath'
         },

@@ -1,9 +1,5 @@
 module.exports = {
     commands: [{
-        checkContainsText(element, expected) {
-            return this
-                .assert.containsText('@' + element, expected)
-        },
         editPost(title, content) {
             return this
                 .clearValue('@contentPost')
@@ -13,13 +9,18 @@ module.exports = {
                 .click('@buttonUpdatePost')
                 .waitForElementVisible('@messagePublishedSuccess')
         },
+        getContentValue(element, callback) {
+            this.getText('@'+element, function(result){
+                callback(result.value)
+            });
+        }
     }],
     elements: {
         actualTitlePost: {
             selector: '//textarea[@class="editor-post-title__input"]',
             locateStrategy: 'xpath  '
         },
-        actualContentPost: {
+        actualContent: {
             selector: '//div[@class="edit-post-text-editor__body"]/textarea[@class="editor-post-text-editor"]',
             locateStrategy: 'xpath'
         },

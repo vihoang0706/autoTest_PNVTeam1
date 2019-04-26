@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 14:46:12.445 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
 14:46:12.511 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
 2019-04-25 14:46:12.544:INFO::main: Logging initialized @276ms to org.seleniumhq.jetty9.util.log.StdErrLog
@@ -23,3 +24,5 @@ Please protect ports used by ChromeDriver and related test frameworks to prevent
 14:46:15.556 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
 14:46:15.767 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 372e1bee56390a8c87c758b7ad837ee0 (org.openqa.selenium.chrome.ChromeDriverService)
 14:46:27.907 INFO [ActiveSessions$1.onStop] - Removing session 372e1bee56390a8c87c758b7ad837ee0 (org.openqa.selenium.chrome.ChromeDriverService)
+=======
+>>>>>>> dev

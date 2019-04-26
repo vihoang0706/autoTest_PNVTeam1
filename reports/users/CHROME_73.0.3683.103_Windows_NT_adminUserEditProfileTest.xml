@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="3"
+            tests="3">
+
+  <testsuite name="users.adminUserEditProfileTest"
+    errors="0" failures="3" hostname="" id="" package="adminUserEditProfileTest" skipped="0"
+    tests="3" time="12.93" timestamp="">
+  
+    <testcase name="Step 1: Login with valid account and Unchecked all checkboxs" classname="users.adminUserEditProfileTest" time="6.554" assertions="3">
+
+    
+
+      <failure message="Timed out while waiting for element &lt;//li[@id=&#34;wp-admin-bar-my-account&#34;]/a[@class=&#34;ab-item&#34;]&gt; to be present for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.goToActionUser (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\base-objects\adminBasePage.js:11:18)
+    at Object.Step 1: Login with valid account and Unchecked all checkboxs (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\users\adminUserEditProfileTest.js:17:19)</failure>
+
+    <failure message="    at Page.goToActionUser (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\base-objects\adminBasePage.js:11:18)">    at Object.Step 1: Login with valid account and Unchecked all checkboxs (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\users\adminUserEditProfileTest.js:17:19)</failure>
+    </testcase>
+  
+    <testcase name="Step 2: Go to Edit Profile page" classname="users.adminUserEditProfileTest" time="5.127" assertions="1">  <failure message="Timed out while waiting for element &lt;//li[@id=&#34;wp-admin-bar-my-account&#34;]/a[@class=&#34;ab-item&#34;]&gt; to be present for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.goToActionUser (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\base-objects\adminBasePage.js:11:18)
+    at Object.Step 2: Go to Edit Profile page (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\users\adminUserEditProfileTest.js:21:19)</failure>
+
+    <failure message="    at Page.goToActionUser (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\base-objects\adminBasePage.js:11:18)">    at Object.Step 2: Go to Edit Profile page (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\users\adminUserEditProfileTest.js:21:19)</failure>
+    </testcase>
+  
+    <testcase name="Step 3: Edit user profile with valid data" classname="users.adminUserEditProfileTest" time="1.249" assertions="1">  <failure message="Testing if element &lt;Element [name=@strongMessProfileUpdated]&gt; contains text: &#34;Profile updated.&#34;. Element could not be located in 1000 ms. - expected [0;32m&#34;Profile updated.&#34;[0m but got: [0;31m&#34;null&#34;[0m">    at Page.checkContainsText (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\users\adminUserEditProfilePage.js:26:29)
+    at Object.Step 3: Edit user profile with valid data (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\users\adminUserEditProfileTest.js:26:14)</failure>
+
+    <failure message="    at Page.checkContainsText (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\users\adminUserEditProfilePage.js:26:29)">    at Object.Step 3: Edit user profile with valid data (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\users\adminUserEditProfileTest.js:26:14)</failure>
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="1">
+
+  <testsuite name="users.adminUserLoginTest"
+    errors="0" failures="0" hostname="" id="" package="adminUserLoginTest" skipped="0"
+    tests="1" time="2.489" timestamp="">
+  
+    <testcase name="Step 1: Login with valid account" classname="users.adminUserLoginTest" time="2.489" assertions="5">
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

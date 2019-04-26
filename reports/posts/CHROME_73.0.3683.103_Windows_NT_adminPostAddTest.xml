@@ -5,19 +5,34 @@
 
   <testsuite name="posts.adminPostAddTest"
     errors="0" failures="0" hostname="" id="" package="adminPostAddTest" skipped="0"
+<<<<<<< HEAD
     tests="4" time="10.59" timestamp="">
   
     <testcase name="Pre-condition: Login with valid account" classname="posts.adminPostAddTest" time="1.100" assertions="2">
+=======
+    tests="3" time="37.50" timestamp="">
+  
+    <testcase name="Pre-condition: Login with valid account" classname="posts.adminPostAddTest" time="10.35" assertions="2">
+>>>>>>> dev
 
     
 
     
     </testcase>
   
+<<<<<<< HEAD
     <testcase name="Step 1: Go to post page" classname="posts.adminPostAddTest" time="2.131" assertions="0">
     </testcase>
   
     <testcase name="Step 2: Post Information" classname="posts.adminPostAddTest" time="5.558" assertions="3">
+=======
+    <testcase name="Step 1: Go to post page " classname="posts.adminPostAddTest" time="15.09" assertions="0">
+    </testcase>
+  
+    <testcase name="Step 2: Post Information" classname="posts.adminPostAddTest" time="12.06" assertions="4">
+
+    
+>>>>>>> dev
 
     
 

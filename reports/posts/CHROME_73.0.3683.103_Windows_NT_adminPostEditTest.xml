@@ -5,9 +5,15 @@
 
   <testsuite name="posts.adminPostEditTest"
     errors="0" failures="0" hostname="" id="" package="adminPostEditTest" skipped="0"
+<<<<<<< HEAD
     tests="4" time="14.77" timestamp="">
   
     <testcase name="Pre-condition: Login with valid account, create a new post" classname="posts.adminPostEditTest" time="6.998" assertions="4">
+=======
+    tests="4" time="16.01" timestamp="">
+  
+    <testcase name="Pre-condition: Login with valid account, create a new post" classname="posts.adminPostEditTest" time="7.009" assertions="4">
+>>>>>>> t-refactor
 
     
 
@@ -18,6 +24,7 @@
     
     </testcase>
   
+<<<<<<< HEAD
     <testcase name="Step 1: Go to edit post" classname="posts.adminPostEditTest" time="1.760" assertions="0">
     </testcase>
   
@@ -26,6 +33,12 @@
     
 
     
+=======
+    <testcase name="Step 1: Go to edit post" classname="posts.adminPostEditTest" time="1.848" assertions="0">
+    </testcase>
+  
+    <testcase name="Step 2: Edit Information in post" classname="posts.adminPostEditTest" time="5.402" assertions="3">
+>>>>>>> t-refactor
 
     
 
@@ -34,7 +47,11 @@
     
     </testcase>
   
+<<<<<<< HEAD
     <testcase name="Pre-condition: Delete Post" classname="posts.adminPostEditTest" time="1.818" assertions="0">
+=======
+    <testcase name="Pre-condition: Delete Post" classname="posts.adminPostEditTest" time="1.749" assertions="0">
+>>>>>>> t-refactor
     </testcase>
   
 

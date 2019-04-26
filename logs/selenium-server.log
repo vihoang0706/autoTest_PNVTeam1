@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 10:40:56.338 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
 10:40:56.384 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
 2019-04-25 10:40:56.429:INFO::main: Logging initialized @261ms to org.seleniumhq.jetty9.util.log.StdErrLog
 10:40:56.569 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
 10:40:56.670 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
 10:40:57.023 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+=======
+14:46:12.445 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
+14:46:12.511 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+2019-04-25 14:46:12.544:INFO::main: Logging initialized @276ms to org.seleniumhq.jetty9.util.log.StdErrLog
+14:46:12.708 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+14:46:12.814 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+14:46:13.169 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+>>>>>>> t-refactor
   "acceptSslCerts": true,
   "browserName": "chrome",
   "chromeOptions": {
@@ -14,6 +23,7 @@
     ]
   },
   "javascriptEnabled": true,
+<<<<<<< HEAD
   "name": "Posts\\admin Post Edit Test"
 }
 10:40:57.024 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
@@ -23,3 +33,14 @@ Please protect ports used by ChromeDriver and related test frameworks to prevent
 10:40:59.516 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
 10:40:59.701 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 86910568444f10a28c5c0e1e14720234 (org.openqa.selenium.chrome.ChromeDriverService)
 10:41:16.071 INFO [ActiveSessions$1.onStop] - Removing session 86910568444f10a28c5c0e1e14720234 (org.openqa.selenium.chrome.ChromeDriverService)
+=======
+  "name": "Posts\\admin Post Add Test"
+}
+14:46:13.171 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+Starting ChromeDriver 73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72) on port 10177
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+14:46:15.556 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
+14:46:15.767 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 372e1bee56390a8c87c758b7ad837ee0 (org.openqa.selenium.chrome.ChromeDriverService)
+14:46:27.907 INFO [ActiveSessions$1.onStop] - Removing session 372e1bee56390a8c87c758b7ad837ee0 (org.openqa.selenium.chrome.ChromeDriverService)
+>>>>>>> t-refactor

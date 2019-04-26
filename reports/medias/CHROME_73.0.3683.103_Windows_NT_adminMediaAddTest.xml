@@ -5,15 +5,22 @@
 
   <testsuite name="medias.adminMediaAddTest"
     errors="0" failures="0" hostname="" id="" package="adminMediaAddTest" skipped="0"
+<<<<<<< HEAD
     tests="4" time="3.447" timestamp="">
   
     <testcase name="Pre-condition: Login with valid account" classname="medias.adminMediaAddTest" time="1.771" assertions="2">
+=======
+    tests="4" time="3.535" timestamp="">
+  
+    <testcase name="Pre-condition: Login with valid account" classname="medias.adminMediaAddTest" time="1.795" assertions="2">
+>>>>>>> t-refactor
 
     
 
     
     </testcase>
   
+<<<<<<< HEAD
     <testcase name="Step 1: Go to media page " classname="medias.adminMediaAddTest" time="0.7070" assertions="0">
     </testcase>
   
@@ -23,6 +30,15 @@
     </testcase>
   
     <testcase name="Pre-condition: Delete image" classname="medias.adminMediaAddTest" time="0.08800" assertions="0">
+=======
+    <testcase name="Step 1: Go to media page " classname="medias.adminMediaAddTest" time="0.6980" assertions="0">
+    </testcase>
+  
+    <testcase name="Step 2: Add media" classname="medias.adminMediaAddTest" time="0.9520" assertions="0">
+    </testcase>
+  
+    <testcase name="Pre-condition: Delete image" classname="medias.adminMediaAddTest" time="0.09000" assertions="0">
+>>>>>>> t-refactor
     </testcase>
   
 

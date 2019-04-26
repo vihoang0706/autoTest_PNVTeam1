@@ -1,15 +1,10 @@
-const util = require('../../tests/src/utils/utils');
 module.exports = {
     commands: [{
         goToPage(mainlink, sublink) {
             this
-                .click(mainlink)
-                .click(sublink)
+                .click('@' + mainlink)
+                .click('@' + sublink)
             return this.api;
-        },
-        el: function (elementName, data) {
-            var element = this.elements[elementName.slice(1)];
-            return util.format(element.selector, data);
         },
         goToActionUser(element) {
             return this
@@ -24,37 +19,106 @@ module.exports = {
     }],
     elements: {
         // Post
-        linkMainMenu: {
-            selector: '//div[@class="wp-menu-name" and text()= "' + '%s' + '"]',
+        linkPosts: {
+            selector: '//div[@class="wp-menu-name" and text()= "Posts"]',
             locateStrategy: 'xpath'
         },
-        linkSubMenuPosts: {
-            selector: '//li[@id="menu-posts"]//a[text()= "' + '%s' + '"]',
+        linkAllPosts: {
+            selector: '//li[@id="menu-posts"]//a[text()="All Posts"]',
+            locateStrategy: 'xpath'
+        },
+        linkNewPost: {
+            selector: '//li[@id="menu-posts"]//a[text()="Add New"]',
+            locateStrategy: 'xpath'
+        },
+        linkCategories: {
+            selector: '//li[@id="menu-posts"]//a[text()="Categories"]',
+            locateStrategy: 'xpath'
+        },
+        linkTags: {
+            selector: '//li[@id="menu-posts"]//a[text()="Tags"]',
             locateStrategy: 'xpath'
         },
         // Media
-        linkSubMenuMedia: {
-            selector: '//li[@id="menu-media"]//a[text()="' + '%s' + '"]',
+        linkMedia: {
+            selector: '//div[@class="wp-menu-name" and text()= "Media"]',
+            locateStrategy: 'xpath'
+        },
+        linkLibrary: {
+            selector: '//li[@id="menu-media"]//a[text()="Library"]',
+            locateStrategy: 'xpath'
+        },
+        linkAddNewMedia: {
+            selector: '//div[@id="wpbody-content"]/div/a',
             locateStrategy: 'xpath'
         },
         //Pages
-        linkSubMenuPage: {
-            selector: '//li[@id="menu-pages"]//a[text()="' + '%s' + '"]',
+        linkPages: {
+            selector: '//div[@class="wp-menu-name" and text()= "Pages"]',
+            locateStrategy: 'xpath'
+        },
+        linkAllPages: {
+            selector: '//li[@id="menu-pages"]//a[text()="All Pages"]',
+            locateStrategy: 'xpath'
+        },
+        linkAddNewPages: {
+            selector: '//li[@id="menu-pages"]//a[text()="Add New"]',
+            locateStrategy: 'xpath'
+        },
+        //Comments
+        linkComments: {
+            selector: '//div[@class="wp-menu-name" and text()= "Comments "]',
             locateStrategy: 'xpath'
         },
         //Appearance
-        linkSubMenuAppearence: {
-            selector: '//li[@id="menu-appearance"]//a[text()="' + '%s' + '"]',
+        linkAppearance: {
+            selector: '//div[@class="wp-menu-name" and text()= "Appearance"]',
+            locateStrategy: 'xpath'
+        },
+        linkThemes: {
+            selector: '//li[@id="menu-appearance"]//a[text()="Themes"]',
+            locateStrategy: 'xpath'
+        },
+        linkCustomize: {
+            selector: '//li[@id="menu-appearance"]//a[text()="Customize"]',
+            locateStrategy: 'xpath'
+        },
+        linkWidgets: {
+            selector: '//li[@id="menu-appearance"]//a[text()="Widgets"]',
+            locateStrategy: 'xpath'
+        },
+        linkMenus: {
+            selector: '//li[@id="menu-appearance"]//a[text()="Menus"]',
             locateStrategy: 'xpath'
         },
         //Plugins
-        linkSubMenuPlugins: {
-            selector: '//li[@id="menu-plugins"]//a[text()="' + '%s' + '"]',
+        linkPlugins: {
+            selector: '//div[@class="wp-menu-name" and text()= "Plugins "]',
+            locateStrategy: 'xpath'
+        },
+        linkInstalledPlugins: {
+            selector: '//li[@id="menu-plugins"]//a[text()="Installed Plugins"]',
+            locateStrategy: 'xpath'
+        },
+        linkAddNewPlugins: {
+            selector: '//li[@id="menu-plugins"]//a[text()="Add New"]',
             locateStrategy: 'xpath'
         },
         //Users
-        linkSubMenuUsers: {
-            selector: '//li[@id="menu-users"]//a[text()="' + '%s' + '"]',
+        linkUsers: {
+            selector: '//div[@class="wp-menu-name" and text()= "Users"]',
+            locateStrategy: 'xpath'
+        },
+        linkAllUsers: {
+            selector: '//li[@id="menu-users"]//a[text()="All Users"]',
+            locateStrategy: 'xpath'
+        },
+        linkAddNewUser: {
+            selector: '//li[@id="menu-users"]//a[text()="Add New"]',
+            locateStrategy: 'xpath'
+        },
+        linkYourProfile: {
+            selector: '//li[@id="menu-users"]//a[text()="Your Profile"]',
             locateStrategy: 'xpath'
         },
         //Header

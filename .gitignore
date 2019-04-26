@@ -1,13 +1,2 @@
-.project
-*.DS_Store
-*.idea
-/*.logs
-/nightwatch.json
-.logs/
 node_modules
-.reports/
-*~
-\#*
-\.#*
-# The reports folder
-reports/*.*
+.vscode/ 

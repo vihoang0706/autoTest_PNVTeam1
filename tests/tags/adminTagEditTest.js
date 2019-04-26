@@ -10,12 +10,12 @@ module.exports = {
     '@tags': ['edit-tag'],
     'Pre-condition: Delete all tags and Create a new tag': function (browser) {
         login = browser.page.adminUserLoginPage();
+        dashboard = browser.page.adminBasePage();
+        tagPage = browser.page.adminTagAddPage();
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
         login.login(username, password);
-        dashboard = browser.page.adminBasePage();
-        dashboard.goToPage(dashboard.el('@linkMainMenu', 'Posts'),dashboard.el('@linkSubMenuPosts', 'Tags'));
-        tagPage = browser.page.adminTagAddPage();
+        dashboard.goToPage('linkPosts', 'linkTags');
         tagPage
             .deleteAllTags()
             .addNewTag(nameTag, slugTag, descriptionTag);

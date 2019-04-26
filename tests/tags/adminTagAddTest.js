@@ -7,16 +7,16 @@ module.exports = {
     '@tags': ['add-tag'],
     'Pre-condition: Login with valid account and Delete all tags': function (browser) {
         login = browser.page.adminUserLoginPage();
+        dashboard = browser.page.adminBasePage();
+        tagPage = browser.page.adminTagAddPage();
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
         login.login(username, password);
-        dashboard = browser.page.adminBasePage();
-        dashboard.goToPage(dashboard.el('@linkMainMenu', 'Posts'), dashboard.el('@linkSubMenuPosts', 'Tags'));
-        tagPage = browser.page.adminTagAddPage();
+        dashboard.goToPage('linkPosts', 'linkTags');
         tagPage.deleteAllTags();
     },
     'Step 1: Go to tag page': function () {
-        dashboard.goToPage(dashboard.el('@linkMainMenu', 'Posts'), dashboard.el('@linkSubMenuPosts', 'Tags'));
+        dashboard.goToPage('linkPosts', 'linkTags');
     },
     'Step 2: Add new tag with valid data': function (browser) {
         tagPage.addNewTag(nameTag, slugTag, descriptionTag);

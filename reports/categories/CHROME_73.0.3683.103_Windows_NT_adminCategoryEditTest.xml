@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="0"
+            failures="1"
             tests="3">
 
   <testsuite name="categories.adminCategoryEditTest"
-    errors="0" failures="0" hostname="" id="" package="adminCategoryEditTest" skipped="0"
-    tests="3" time="5.492" timestamp="">
+    errors="0" failures="1" hostname="" id="" package="adminCategoryEditTest" skipped="0"
+    tests="3" time="17.29" timestamp="">
   
-    <testcase name="Pre-condition: Login to the admin page, delete all category and add a new category " classname="categories.adminCategoryEditTest" time="2.990" assertions="0">
+    <testcase name="Pre-condition: Login to the admin page, delete all category and add a new category " classname="categories.adminCategoryEditTest" time="9.661" assertions="2">
+
+    
+
+    
     </testcase>
   
-    <testcase name="Step 1: Go to the Edit Category page" classname="categories.adminCategoryEditTest" time="0.9140" assertions="0">
+    <testcase name="Step 1: Go to the Edit Category page" classname="categories.adminCategoryEditTest" time="0.7410" assertions="0">
     </testcase>
   
-    <testcase name="Step 2: Edit category" classname="categories.adminCategoryEditTest" time="1.588" assertions="4">
+    <testcase name="Step 2: Edit category" classname="categories.adminCategoryEditTest" time="6.892" assertions="2">
 
-    
+      <failure message="Testing if element &lt;Element [name=@columnActualName]&gt; contains text: &#34;clothes store&#34; in 1000 ms. - expected [0;32m&#34;clothes store&#34;[0m but got: [0;31m&#34;clothes&#34;[0m">    at Page.checkContainsText (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\categories\adminCategoryPage.js:36:32)
+    at Object.Step 2: Edit category (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\categories\adminCategoryEditTest.js:30:14)</failure>
 
-    
-
-    
-
-    
+    <failure message="    at Page.checkContainsText (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\categories\adminCategoryPage.js:36:32)">    at Object.Step 2: Edit category (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\categories\adminCategoryEditTest.js:30:14)</failure>
     </testcase>
   
 

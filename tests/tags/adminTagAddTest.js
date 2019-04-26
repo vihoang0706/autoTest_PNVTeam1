@@ -6,8 +6,8 @@ module.exports = {
     '@tags': ['add-tag'],
     'Pre-condition: Login with valid account and Delete all tags': function (browser) {
         login = browser.page.adminUserLoginPage();
-        tagPage = browser.page.adminTagAddPage();
         dashboard = browser.page.adminBasePage();
+        tagPage = browser.page.adminTagAddPage();
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
         login.login(username, password);
@@ -17,12 +17,20 @@ module.exports = {
     'Step 1: Go to tag page': function () {
         dashboard.goToPage('linkPosts', 'linkTags');
     },
-    'Step 2: Add new tag with valid data': function () {
+    'Step 2: Add new tag with valid data': function (browser) {
         tagPage.addNewTag(nameTag, slugTag, descriptionTag);
+        tagPage.waitUntilElementVisible('columnActualTitle');
         tagPage
-            .waitUntilElementVisible('columnActualTitle')
-            .checkContainsText('columnActualTitle', nameTag)
-            .checkContainsText('columnActualSlug', slugTag)
-            .checkContainsText('columnActualDescription', descriptionTag);
+            .getContainsText('columnActualTitle', function (result) {
+                browser.assert.equal(result, nameTag);
+        });
+        tagPage
+            .getContainsText('columnActualSlug', function (result) {
+                browser.assert.equal(result, slugTag);
+        });
+        tagPage
+            .getContainsText('columnActualDescription', function (result) {
+                browser.assert.equal(result, descriptionTag);
+        });
     },
 };

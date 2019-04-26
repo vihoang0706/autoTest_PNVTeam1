@@ -4,16 +4,23 @@ module.exports = {
             return this
                 .setValue('@inputImage', require('path').resolve(__dirname+image))
                 .click('@buttonUpload')
-                // .pause('1000')
         },
-        checkImageExist(element, nameImage) {
-            return this.assert.containsText('@'+element, nameImage)
+        checkImageExist(element, callback) {
+            this.getContentValue(element, callback)
         },
-        deleteAllImages() {
+        goToHideLink(element) {
             return this
-                .click('@checkboxSelectAll')
-                .click('@buttonDeleteBulkAction')
-                .click('@buttonApply');
+                .moveToElement('@columnTitleActual', 0, 0)
+                .click(element);
+        },
+        deleteImage() {
+            return this
+            .goToHideLink('@linkDeleteImage')
+        },
+        getContentValue(element, callback) {
+            this.getText('@'+element, function(result){
+                callback(result.value)
+            });
         }
     }],
     elements: {
@@ -37,8 +44,16 @@ module.exports = {
             selector: '//span[@class="edit"]/a[@class="submitdelete aria-button-if-js" and text() ="Delete Permanently"]',
             locateStrategy: 'xpath'
         },
+        linkDeleteImage: {
+            selector: '//tr/td[1]/div[@class="row-actions"]/span[@class="delete"]/a[@class="submitdelete aria-button-if-js" and text()="Delete Permanently"]',
+            locateStrategy: 'xpath'
+        },
+        columnTitleActual: {
+            selector: '//tbody[@id="the-list"]/tr[1]/td[1]',
+            locateStrategy: 'xpath'
+        },
         checkboxSelectAll: '#cb-select-all-2',
         buttonDeleteBulkAction: '#bulk-action-selector-bottom > option:nth-child(2)',
-        buttonApply: '#doaction2',
+        buttonApply: '#doaction2'
     }
 }

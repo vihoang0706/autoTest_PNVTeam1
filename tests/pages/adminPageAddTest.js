@@ -1,5 +1,6 @@
 const nameTitle = 'Hello summer';
 const description = 'I like swimming.';
+const assert = require('assert');
 var dashboard, viewAllPage, addNewPage, login, username, password;
 module.exports = {
     '@tags': ['add-newPage'],
@@ -17,14 +18,29 @@ module.exports = {
     'Step 1: Go to add new page': function () {
         dashboard.goToPage('linkPages', 'linkAddNewPages');
     },
-    'Step 2: Add new Page with valid data': function () {
+    'Step 2: Add new Page with valid data': function (browser) {
         addNewPage
-            .dismissTip()
             .addNewPage(nameTitle, description)
-            .waitForElementVisible('@labelMessageSuccess');
+            .waitUtilForElementVisible('labelMessageSuccess');
         dashboard.goToPage('linkPages', 'linkAllPages');
         viewAllPage
-            .waitForElementVisible('@columnActualTitle')
-            .checkContainsText('columnActualTitle', nameTitle);
+            .waitUtilForElementVisible('columnActualTitle')
+            .getContainValue('columnActualTitle',function(value)
+                {
+                    browser.assert.equal(value, nameTitle);
+                });
+        viewAllPage.gotoAddPages();
+        addNewPage
+            .waitUtilForElementVisible('inputTitle')
+            .waitUtilForElementVisible('inputDescription')
+            .getContainValue('inputTitle',function(value)
+                {
+                    browser.assert.equal(value, nameTitle);
+                });
+        addNewPage
+            .getContainValue('inputDescription',function(value)
+                {
+                    browser.assert.equal(value, description);
+                });
     }
 };

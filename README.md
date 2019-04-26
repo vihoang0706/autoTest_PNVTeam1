@@ -1,2 +1,8 @@
-# nightwatch
-Research for nightwatch framework and write test scripts by using nightwatch with Ecommerce site 
+# **nightwatch**
+## How to install Nightwatch.js framework
+- Install npm *npm install npm -g*
+- Install node.js *[1]*
+
+
+
+[1]: https://nodejs.org/en/download/current/

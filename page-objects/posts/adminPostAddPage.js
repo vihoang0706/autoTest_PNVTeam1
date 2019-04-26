@@ -4,6 +4,7 @@ module.exports = {
             return this
                 .click('@buttonCancelTip')
                 .setValue('@inputTitlePost', title)
+                // .click('@pEditor')
                 .setValue('@contentPost', content)
                 .click('@buttonPublish')
                 .waitForElementVisible('@subButtonPublish')
@@ -39,7 +40,7 @@ module.exports = {
             this.getText('@'+element, function(result){
                 callback(result.value)
             });
-        }
+        },
     }],
     elements: {
         buttonCancelTip: {
@@ -88,6 +89,10 @@ module.exports = {
         },
         linkDeletePost: {
             selector: '//tr/td[1]/div[@class="row-actions"]/span[@class="trash"]/a[@class="submitdelete" and text()="Trash"]',
+            locateStrategy: 'xpath'
+        },
+        pEditor: {
+            selector: '//p[@class="wp-block-paragraph editor-rich-text__tinymce mce-content-body"]',
             locateStrategy: 'xpath'
         },
         checkboxSelectAll: '#cb-select-all-2',

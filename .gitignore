@@ -2,3 +2,4 @@
 *.DS_Store
 /nightwatch.json
 node_modules
+.vscode

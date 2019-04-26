@@ -1,5 +1,4 @@
 var dashboard, category, login;
-const action = require('../../page-objects/utils/action');
 const assert = require('assert');
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
@@ -22,8 +21,9 @@ module.exports = {
         category.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
     },
     'Step 1: Go to the Edit Category page': function () {
-        category.pause(500)
-        action.goToHideLink('linkEditCategory');
+        category
+            .pause(500)
+            .goToHideLink('linkEditCategory');
     },
     'Step 2: Edit category': function (browser) {
         category.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);

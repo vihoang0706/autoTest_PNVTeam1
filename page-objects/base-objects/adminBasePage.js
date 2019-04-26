@@ -1,4 +1,3 @@
-const util = require('../../tests/src/Utilities/Utilis');
 module.exports = {
     commands: [{
         el: function(elementName, data) {

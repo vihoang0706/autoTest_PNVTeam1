@@ -1,20 +1,22 @@
 module.exports = {
     commands: [{
-        checkContainsText(element, expectedContain) {
-            return this.assert.containsText('@' + element, expectedContain)
-        },
+        getContainValue(element, callback){
+            this.getText('@' + element, function(result){
+              callback(result.value);
+            })
+          },
         deleteAllPages() {
             return this
                 .click('@checkboxSelectAllPage')
                 .click('@selectOptionTrash')
                 .click('@buttonApply');
         },
-        goToAction(element) {
+        waitUtilForElementVisible(element) {
+            return this.waitForElementVisible('@' + element);
+        },
+        gotoAddPages(){
             return this
-                .waitForElementVisible('@columnActualTitle')
-                .moveToElement('@columnActualTitle', 0, 0)
-                .waitForElementVisible('@' + element)
-                .click('@' + element);
+                .click('@columnActualTitle');
         }
     }],
     elements: {

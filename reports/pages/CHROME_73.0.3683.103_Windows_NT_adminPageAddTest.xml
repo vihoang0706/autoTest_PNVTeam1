@@ -5,19 +5,27 @@
 
   <testsuite name="pages.adminPageAddTest"
     errors="0" failures="0" hostname="" id="" package="adminPageAddTest" skipped="0"
-    tests="3" time="18.82" timestamp="">
+    tests="3" time="10.57" timestamp="">
   
-    <testcase name="Pre-condition: Login with valid account and Delete all tags" classname="pages.adminPageAddTest" time="8.998" assertions="2">
+    <testcase name="Pre-condition: Login with valid account and Delete all tags" classname="pages.adminPageAddTest" time="3.483" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Step 1: Go to add new page" classname="pages.adminPageAddTest" time="6.367" assertions="0">
+    <testcase name="Step 1: Go to add new page" classname="pages.adminPageAddTest" time="2.783" assertions="0">
     </testcase>
   
-    <testcase name="Step 2: Add new Page with valid data" classname="pages.adminPageAddTest" time="3.457" assertions="3">
+    <testcase name="Step 2: Add new Page with valid data" classname="pages.adminPageAddTest" time="4.306" assertions="7">
+
+    
+
+    
+
+    
+
+    
 
     
 

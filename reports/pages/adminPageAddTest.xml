@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="0">
+
+  <testsuite name="pages.adminPageAddTest"
+    errors="1" failures="0" hostname="" id="" package="adminPageAddTest" skipped="3"
+    tests="0" time="0.000" timestamp="">
+  
+
+  
+
+  
+    
+    <testcase
+      name="Pre-condition: Login with valid account and Delete all tags" classname="pages.adminPageAddTest">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Step 1: Go to add new page" classname="pages.adminPageAddTest">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Step 2: Add new Page with valid data" classname="pages.adminPageAddTest">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

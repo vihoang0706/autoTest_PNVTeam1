@@ -10,7 +10,7 @@
     "globals_path" : "globals.js",
     "webdriver": {
       "start_process" : true,
-      "server_path": "libraries/drivers/chromedriver.exe",
+      "server_path": "node_modules/chromedriver/lib/chromedriver/chromedriver.exe",
       "cli_args": [
         "--log", "debug"
       ],
@@ -23,7 +23,7 @@
       "host" : "127.0.0.1",
       "port" : 4444,
       "cli_args" : {
-        "webdriver.chrome.driver" : "libraries/drivers/chromedriver.exe"
+        "webdriver.chrome.driver" : "node_modules/chromedriver/lib/chromedriver/chromedriver.exe"
       }
     },
     "test_workers": {
@@ -32,14 +32,14 @@
     },
     "test_settings" : {
       "default" : {
-        "skip_testcases_on_fail": false,
+        "skip_testcases_on_fail": true,
         "launch_url" : "http://192.168.189.70/wordpress/wp-login.php",
         "selenium_port"  : 4444,
         "selenium_host"  : "localhost",
         "silent": true,
         "use_xpath":true,
         "screenshots" : {
-          "enabled" : false,
+          "enabled" : true,
           "path" : "screenshorts/"
         },
       "globals": {

@@ -4,7 +4,7 @@ const descriptionTag = 'To learn Automation testing';
 var login, dashboard, tag, username, password;
 module.exports = {
     '@tags': ['add-tag'],
-    'Pre-condition: Login with valid account and Delete all tags': function (browser) {
+    'Verify that admin can add new tag successfully': function (browser) {
         login = browser.page.adminUserLoginPage();
         dashboard = browser.page.adminBasePage();
         tag = browser.page.adminTagAddPage();
@@ -12,22 +12,17 @@ module.exports = {
         password = browser.globals.userNames.password;
         login.login(username, password);
         dashboard.goToPage('linkPosts', 'linkTags');
-        tag.deleteAllTags();
-    },
-    'Step 1: Go to tag page': function () {
-        dashboard.goToPage('linkPosts', 'linkTags');
-    },
-    'Step 2: Add new tag with valid data': function (browser) {
         tag.addNewTag(nameTag, slugTag, descriptionTag);
-        tag.waitUntilElementVisible('columnActualTitle');
-        tag.getContainsText('columnActualTitle', function (actualTitle) {
+        tag.getColumnValueActual('Actual Title', function (actualTitle) {
             browser.assert.equal(actualTitle, nameTag);
         });
-        tag.getContainsText('columnActualSlug', function (actualSlug) {
+        tag.getColumnValueActual('Actual Slug', function (actualSlug) {
             browser.assert.equal(actualSlug, slugTag);
         });
-        tag.getContainsText('columnActualDescription', function (actualDescription) {
+        tag.getColumnValueActual('Actual Description', function (actualDescription) {
             browser.assert.equal(actualDescription, descriptionTag);
         });
-    },
+        tag.goToHideLink('Delete');
+        browser.acceptAlert();
+    }
 };

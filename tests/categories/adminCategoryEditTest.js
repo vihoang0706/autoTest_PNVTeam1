@@ -23,21 +23,21 @@ module.exports = {
     'Step 1: Go to the Edit Category page': function () {
         category
             .pause(500)
-            .goToHideLink('linkEditCategory');
+            .goToEditCategoryPage('Category');
     },
     'Step 2: Edit category': function (browser) {
         category.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
-        category.getContainValue('strongMessageEditSuccessful',function(actualMessage) {
+        category.getActualMessageValue(function(actualMessage) {
             browser.assert.equal(actualMessage, editMessageSuccessful);
         });
-        category.goBackToCategory('linkBackToCategories')
-        category.getContainValue('columnActualName',function(actualName) {
+        category.goBackToCategory();
+        category.getCollumnValue('Actual Name',function(actualName) {
             browser.assert.equal(actualName, nameEditCategory);
         });
-        category.getContainValue('columnActualDescription',function(actualDescription) {
+        category.getCollumnValue('Actual Description',function(actualDescription) {
             browser.assert.equal(actualDescription, descriptionEditCategory);
         });
-        category.getContainValue('columnActualSlug',function(actualSlug) {
+        category.getCollumnValue('Actual Slug',function(actualSlug) {
             browser.assert.equal(actualSlug, slugEditCategory);
         });
     },

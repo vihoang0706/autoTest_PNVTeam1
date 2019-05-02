@@ -1,35 +1,53 @@
 var category, login, dashboard, username, password;
-const assert = require('assert');
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
 const parentCategory = 'None';
 const descriptionCategory = 'Clothes on the store';
 module.exports = {
     '@tags': ['add-category'],
-    'Pre-condition: Login to the admin page and delete all categories': function (browser) {
+    before: function(browser) {
         login = browser.page.adminUserLoginPage();
         dashboard = browser.page.adminBasePage();
         category = browser.page.adminCategoryPage();
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
         login.login(username, password);
-        dashboard.goToPage('linkPosts', 'linkCategories');
+    },
+    'Verify that user can create a new category with valid data': function (browser) {
+        dashboard.goToPage('Category');
         category.deleteAllCategories();
-    },
-    'Step 1: Go to Category page': function () {
-        dashboard.goToPage('linkPosts', 'linkCategories');
-    },
-    'Step 2: Add a new category': function (browser) {
         category.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
         category.pause(500);
-        category.getContainValue('columnActualName',function(actualName) {
+        category.getCollumnValue('Actual Name',function(actualName) {
             browser.assert.equal(actualName, nameCategory);
         });
-        category.getContainValue('columnActualDescription',function(actualDescription) {
+        category.getCollumnValue('Actual Description',function(actualDescription) {
             browser.assert.equal(actualDescription, descriptionCategory);
         });
-        category.getContainValue('columnActualSlug',function(actualSlug) {
+        category.getCollumnValue('Actual Slug',function(actualSlug) {
             browser.assert.equal(actualSlug, slugCategory);
         });
-    }
+    },
+    // 'Verify that user can edit category with valid data': function (browser) {
+    //     dashboard.goToPage('linkPosts', 'linkCategories');
+    //     category.deleteAllCategories();
+    //     category.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
+    //     category
+    //         .pause(500)
+    //         .goToEditCategoryPage('Category');
+    //     category.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
+    //     category.getActualMessageValue(function(actualMessage) {
+    //         browser.assert.equal(actualMessage, editMessageSuccessful);
+    //     });
+    //     category.goBackToCategory();
+    //     category.getCollumnValue('Actual Name',function(actualName) {
+    //         browser.assert.equal(actualName, nameEditCategory);
+    //     });
+    //     category.getCollumnValue('Actual Description',function(actualDescription) {
+    //         browser.assert.equal(actualDescription, descriptionEditCategory);
+    //     });
+    //     category.getCollumnValue('Actual Slug',function(actualSlug) {
+    //         browser.assert.equal(actualSlug, slugEditCategory);
+    //     });
+    // }
 }

@@ -3,4 +3,4 @@ node_modules
 # ignore reports folder
 reports
 # ignore logs
-logs
+*.log

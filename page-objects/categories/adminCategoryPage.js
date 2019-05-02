@@ -22,20 +22,34 @@ module.exports = {
                 .click('@inputUpdateCategory')
             return this.api;
         },
-        goBackToCategory(element) {
-            return this
-                .click('@' + element);
+        goBackToCategory() {
+            return this.click('@linkBackToCategories');
         },
-        goToHideLink(element) {
+        goToEditCategoryPage(element) {
             return this
                 .moveToElement('@rowFirstTable', 0, 0)
-                .click('@' + element)
-            return this.api;
+                .click('@linkEdit' + element)
         },
-        getContainValue(element,callback){
-            this.getText('@' + element, function(result){
+        getContainValue(element, callback) {
+            this.getText(element, function (result) {
                 callback(result.value);
             });
+        },
+        getActualMessageValue(callback){
+            this.getContainValue('@strongMessageEditSuccessful', callback);
+        },
+        getCollumnValue(type, callback) {
+            switch (type) {
+                case "Actual Name":
+                    this.getContainValue('@columnActualName', callback);
+                    break;
+                case "Actual Description":
+                    this.getContainValue('@columnActualDescription', callback);
+                    break;
+                case "Actual Slug":
+                    this.getContainValue('@columnActualSlug', callback);
+                    break;
+            }
         },
         deleteAllCategories() {
             this
@@ -43,6 +57,9 @@ module.exports = {
                 .setValue('@selectDelete', 'Delete')
                 .click('@inputApply')
             return this.api;
+        },
+        deleteCategory() {
+
         }
     }],
     elements: {

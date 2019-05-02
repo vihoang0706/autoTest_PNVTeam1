@@ -8,7 +8,7 @@ const messageTagUpdated = 'Tag updated.';
 var login, dashboard, tag, username, password;
 module.exports = {
     '@tags': ['edit-tag'],
-    'Pre-condition: Delete all tags and Create a new tag': function (browser) {
+    'Verify that Admin can edit tag ': function (browser) {
         login = browser.page.adminUserLoginPage();
         dashboard = browser.page.adminBasePage();
         tag = browser.page.adminTagAddPage();
@@ -16,27 +16,23 @@ module.exports = {
         password = browser.globals.userNames.password;
         login.login(username, password);
         dashboard.goToPage('linkPosts', 'linkTags');
-        tag
-            .deleteAllTags()
-            .addNewTag(nameTag, slugTag, descriptionTag);
-    },
-    'Step 1: Go to edit tag': function () {
-        tag.goToHideLink('linkEdit');
-    },
-    'Step 2: Edit Tag': function (browser) {
+        tag.addNewTag(nameTag, slugTag, descriptionTag);
+        tag.goToHideLink('Edit');
         tag.editTag(editNameTag, editSlugTag, editDescriptionTag)
-        tag.getContainsText('strongMessageSuccess', function (actualMessage) {
+        tag.getColumnValueActual('Success Message', function (actualMessage) {
             browser.assert.equal(actualMessage, messageTagUpdated);
         });
         tag.goBackToTagPage();
-        tag.getContainsText('columnActualTitle', function (actualTitle) {
+        tag.getColumnValueActual('Actual Title', function (actualTitle) {
             browser.assert.equal(actualTitle, editNameTag);
         });
-        tag.getContainsText('columnActualSlug', function (actualSlug) {
+        tag.getColumnValueActual('Actual Slug', function (actualSlug) {
             browser.assert.equal(actualSlug, editSlugTag);
         });
-        tag.getContainsText('columnActualDescription', function (actualDescription) {
+        tag.getColumnValueActual('Actual Description', function (actualDescription) {
             browser.assert.equal(actualDescription, editDescriptionTag);
         });
+        tag.goToHideLink('Delete');
+        browser.acceptAlert();
     },
 };

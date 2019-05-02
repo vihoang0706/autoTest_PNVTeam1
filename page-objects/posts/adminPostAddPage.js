@@ -1,3 +1,4 @@
+goToPage = require('./../base-objects/adminBasePage')
 module.exports = {
     commands: [{
         addNewPost(title, content) {
@@ -10,6 +11,7 @@ module.exports = {
                 .click('@subButtonPublish')
                 .waitForElementVisible('@messagePublishedSuccess');
         },
+
         goToHideLink(element) {
             return this
                 .moveToElement('@columnTitleActual', 0, 0)
@@ -28,11 +30,19 @@ module.exports = {
         deletePost() {
             return this.goToHideLink('@linkDeletePost');
         },
-        getContainText(element, callback) {
-            this.getText('@'+element, function(result){
+        getTitleValue(callback) {
+            this.getText('@actualTitle', function(result){
                 callback(result.value);
             });
-        }
+        },
+        getId(browser) {
+            browser.url(function(result){
+            var savedUrl=result.value;
+            var output = savedUrl.split("=");
+            var a = output[1].substr(0,4);
+            console.log("ID: "+a);
+            })
+        },
     }],
     elements: {
         buttonCancelTip: {

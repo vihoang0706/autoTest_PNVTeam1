@@ -4,7 +4,7 @@ const updatecontent = 'I have some best friends their names are: Delia and Sofia
 var dashboard, addPost, login, username, password, editPost;
 module.exports = {
     tags: ['edit-post'],
-    'Pre-condition: Login with valid account, create a new post': function (browser) {
+    'Pre-condition: Login with valid account, create a new post': async function (browser) {
         login = browser.page.adminUserLoginPage();
         addPost = browser.page.adminPostAddPage();
         editPost = browser.page.adminPostEditPage();
@@ -13,23 +13,20 @@ module.exports = {
         password = browser.globals.userNames.password;
         login.login(username, password);
         dashboard.goToPage('linkPosts', 'linkNewPost');
-        addPost.addNewPost(titleName, content);
-    },
-    'Step 1: Go to edit post': function () {
+         addPost.addNewPost(titleName, content);
+    
         addPost.goToEditPost();
-    },
-    'Step 2: Edit Information in post': function (browser) {
+    
         editPost.editPost('', updatecontent);
         dashboard.goToPage('linkPosts', 'linkAllPosts');
-        addPost.getContainText('actualTitle', function (actualTitle) {
+        addPost.getTitleValue(function (actualTitle){
             browser.assert.equal(actualTitle, titleName);
         });
-        addPost.goToDetailPost();
-        editPost.getContainText('actualContent', function (actualContent) {
+        addPost.goToDetailPost();   
+        editPost.getContentValue(function (actualContent){
             browser.assert.equal(actualContent, updatecontent);
         });
-    },
-    'Pre-condition: Delete Post': function () {
+    
         dashboard.goToPage('linkPosts', 'linkAllPosts');
         addPost.deletePost();
     }

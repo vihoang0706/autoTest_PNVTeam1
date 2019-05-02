@@ -1,4 +1,3 @@
-var Q = require('q');
 module.exports = {
     commands: [{
         addNewTag(tagName, slugName, description) {
@@ -12,14 +11,34 @@ module.exports = {
             return this
                 .click('@linkBackToTag');
         },
-        getContainsText(selector,callback){
-            this.getText('@'+ selector,function(result){
+        getContainsText(selector, callback) {
+            return this.getText(selector, function (result) {
                 callback(result.value);
             });
         },
-        waitUntilElementVisible(element) {
-            return this
-                .waitForElementVisible('@' + element);
+        getColumnValueActual(type, callback) {
+            switch (type) {
+                case "Actual Title":
+                    this
+                        .waitForElementVisible('@columnActualTitle')
+                        .getContainsText('@columnActualTitle', callback);
+                    break;
+                case "Actual Slug":
+                    this
+                        .waitForElementVisible('@columnActualSlug')
+                        .getContainsText('@columnActualSlug', callback);
+                    break;
+                case "Actual Description":
+                    this
+                        .waitForElementVisible('@columnActualDescription')
+                        .getContainsText('@columnActualDescription', callback);
+                    break;
+                case "Success Message": 
+                    this
+                        .waitForElementVisible('@strongMessageSuccess')
+                        .getContainsText('@strongMessageSuccess',callback);
+                    break;
+            }
         },
         editTag(tagName, slugName, description) {
             return this
@@ -37,13 +56,24 @@ module.exports = {
                 .click('@buttonDeleteBulkAction')
                 .click('@inputApply');
         },
-        goToHideLink(element) {
-            return this
-                .waitForElementVisible('@columnActualTitle')
-                .moveToElement('@columnActualTitle', 0, 0)
-                .waitForElementVisible('@' + element)
-                .click('@' + element);
-        }
+        goToHideLink(type) {
+            switch(type) {
+                case 'Edit' : 
+                    this
+                        .waitForElementVisible('@columnActualTitle')
+                        .moveToElement('@columnActualTitle', 0, 0)
+                        .waitForElementVisible('@linkEdit')
+                        .click('@linkEdit');
+                break;
+                case 'Delete' :
+                    this
+                        .waitForElementVisible('@columnActualTitle')
+                        .moveToElement('@columnActualTitle', 0, 0)
+                        .waitForElementVisible('@linkDelete')
+                        .click('@linkDelete');
+                break;
+            }
+        },
     }],
     elements: {
         // Add Tag Form

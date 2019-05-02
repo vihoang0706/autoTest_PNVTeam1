@@ -7,29 +7,16 @@ module.exports = {
         .click('@buttonPublish')
         .click('@subButtonPublish');
     },
-    waitUtilForElementVisible(element) {
+    waitUntilForElementVisible(element) {
       return this.waitForElementVisible('@' + element);
     },
-    gotToCodeEdit(){
-      return this
-        .click('@buttonOption')
-        .click('@buttonCodeEditor');
-    },
-    getContainValue(element, callback){
-      this.getText('@' + element, function(result){
+    getContainText(element, callback) {
+      this.getText('@' + element, function (result) {
         callback(result.value);
-      })
+      });
     }
   }],
   elements: {
-    buttonOption: {
-      selector: '//div[@class="edit-post-more-menu"]//button[@class="components-button components-icon-button"]',
-      locateStrategy: 'xpath'
-    },
-    buttonCodeEditor: {
-      selector: '//button[@class="components-button components-menu-item__button"][text()="Code Editor"]',
-      locateStrategy: 'xpath'
-    },
     inputTitle: {
       selector: '//div[@class="edit-post-text-editor__body"]//textarea[@class="editor-post-title__input"]',
       locateStrategy: 'xpath'
@@ -48,10 +35,6 @@ module.exports = {
     },
     linkViewPage: {
       selector: '//a[@class="components-button is-button is-default"]',
-      locateStrategy: 'xpath'
-    },
-    blockTip: {
-      selector: '//div[@class="components-popover__content"]/button[@class="components-button components-icon-button nux-dot-tip__disable"]',
       locateStrategy: 'xpath'
     },
     labelMessageSuccess: {

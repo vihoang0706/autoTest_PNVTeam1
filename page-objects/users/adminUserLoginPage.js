@@ -9,9 +9,6 @@ module.exports = {
                 .click('@inputLogin')
             return this;
         },
-        checkContainsText(element, expectedContain) {
-            return this.assert.containsText('@' + element, expectedContain);
-        }
     }],
     elements: {
         inputUsername: 'input[id=user_login]',

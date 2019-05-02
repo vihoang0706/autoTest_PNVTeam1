@@ -1,12 +1,11 @@
 const nameMenu = 'Comments';
-var dashboard, login, username, password, addNewMenu;
-const assert = require('assert');
+var dashboard, login, username, password, menu;
 module.exports = {
-    '@tags': ['add-newMenu'],
+    '@tags': ['add-menu'],
     'Pre-condition: Login with valid account': function (browser) {
         login = browser.page.adminUserLoginPage();
         dashboard = browser.page.adminBasePage();
-        addNewMenu = browser.page.adminMenuAddMenuPage();
+        menu = browser.page.adminMenuAddMenuPage();
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
         login.login(username, password);
@@ -15,23 +14,16 @@ module.exports = {
         dashboard.goToPage('linkAppearance', 'linkMenus');
     },
     'Step 2: Go to link create Menu': function(){
-        addNewMenu.gotoCreateNewMenu();
+        menu.goToMenuPage();
     },
     'Step 3: Add new Menu with valid data': function (browser) {
-        addNewMenu
-            .addNewMenuStruct(nameMenu)
-            .addMenuSetting()
+        menu
+            .addNewMenu(nameMenu)
             .selectMenu()
-            .getContainValue('inputNameMenu',function(value)
-            {
+            .getContainValue('inputNameMenu',function(value){
                 browser.assert.equal(value, nameMenu);
             });
-        addNewMenu
-            .checkSelectedOption('inputAutoAddPages')
-            .checkSelectedOption('inputLocationPrimary')
-            .checkSelectedOption('inputLocationFooter')
-            .checkSelectedOption('inputLocationSocialLink')
-            .deleteMenu();
+        menu.deleteMenu();
         browser.acceptAlert();
     }
 };

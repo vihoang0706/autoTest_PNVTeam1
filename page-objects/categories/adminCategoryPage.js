@@ -28,10 +28,17 @@ module.exports = {
         goToEditCategoryPage(element) {
             return this
                 .moveToElement('@rowFirstTable', 0, 0)
+<<<<<<< HEAD
                 .click('@linkEdit' + element)
         },
         getContainValue(element, callback) {
             this.getText(element, function (result) {
+=======
+                .click('@' + element);
+        },
+        getContainText(element, callback) {
+            this.getText('@' + element, function (result) {
+>>>>>>> hotfix
                 callback(result.value);
             });
         },
@@ -58,26 +65,19 @@ module.exports = {
                 .click('@inputApply')
             return this.api;
         },
+<<<<<<< HEAD
         deleteCategory() {
 
         }
+=======
+>>>>>>> hotfix
     }],
     elements: {
-        inputName: {
-            selector: 'input[id=tag-name]',
-        },
-        inputSlug: {
-            selector: 'input[id=tag-slug]',
-        },
-        selectParent: {
-            selector: 'select[id=parent]',
-        },
-        textareaDescription: {
-            selector: 'textarea[id=tag-description]',
-        },
-        inputAddCategory: {
-            selector: 'input[id=submit]',
-        },
+        inputName: 'input[id=tag-name]',
+        inputSlug: 'input[id=tag-slug]',
+        selectParent: 'select[id=parent]',
+        textareaDescription: 'textarea[id=tag-description]',
+        inputAddCategory: 'input[id=submit]',
         columnActualName: {
             selector: '(//table//tbody/tr//td[@data-colname="Name"]/strong/a)[1]',
             locateStrategy: 'xpath'
@@ -91,21 +91,11 @@ module.exports = {
             locateStrategy: 'xpath'
         },
         // Edit category
-        inputEditName: {
-            selector: 'input[id=name]'
-        },
-        inputEditSlug: {
-            selector: 'input[id=slug]'
-        },
-        selectEditParent: {
-            selector: 'select[id=parent]'
-        },
-        textareaEditDescription: {
-            selector: 'textarea[id=description]'
-        },
-        inputUpdateCategory: {
-            selector: 'input[type=submit]'
-        },
+        inputEditName: 'input[id=name]',
+        inputEditSlug: 'input[id=slug]',
+        selectEditParent: 'select[id=parent]',
+        textareaEditDescription: 'textarea[id=description]',
+        inputUpdateCategory: 'input[type=submit]',
         strongMessageEditSuccessful: {
             selector: '//div[@id="message"]//strong',
             locateStrategy: 'xpath'
@@ -122,9 +112,7 @@ module.exports = {
             selector: '//span[@class="delete"]/a[@class="delete-tag aria-button-if-js"]',
             locateStrategy: 'xpath'
         },
-        linkEditCategory: {
-            selector: 'div.row-actions > span.edit > a',
-        },
+        linkEditCategory: 'div.row-actions > span.edit > a',
         checkboxCategory: {
             selector: '(//table//input[@type="checkbox"])[last()]',
             locateStrategy: 'xpath'

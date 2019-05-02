@@ -1,25 +1,16 @@
 module.exports = {
     commands: [{
-        getContainValue(element,callback){
+        getContainText(element,callback){
             this.getText('@' + element, function(result){
                 callback(result.value);
             });
-        },
-        deleteAllUser() {
-            this
-                .click('@checkboxUser')
-                .setValue('@selectDelete', 'Delete')
-                .click('@inputApply')
-                .click('@inputDeleteAll')
-                .click('@inputConfirmDeletion') 
-            return this.api
         },
         deleteUser() {
             this
                 .moveToElement('@columnLastName', 0, 0) 
                 .click('@linkDelete')
-                .click('@inputConfirmDeletion')
-            return this.api
+                .click('@inputConfirmDeletion');
+            return this.api;
         }
     }],
     elements: {

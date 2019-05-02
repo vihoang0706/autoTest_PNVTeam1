@@ -52,11 +52,8 @@ module.exports = {
                 .waitForElementVisible('@' + element)
                 .click('@' + element);
         },
-        checkElementVisible(element) {
-            return this.assert.visible('@' + element);
-        },
-        getContainValue(element, callback) {
-            this.getText('@' + element, function (result) {
+        getElementIsVisible(element, callback) {
+            this.isVisible('@' + element, function (result) {
                 callback(result.value);
             });
         },
@@ -67,7 +64,7 @@ module.exports = {
             selector: '//div[@class="wp-menu-name" and text()= "Posts"]',
             locateStrategy: 'xpath'
         },
-        linkAllUsers: {
+        linkAllPosts: {
             selector: '//li[@id="menu-posts"]//a[text()="All Posts"]',
             locateStrategy: 'xpath'
         },

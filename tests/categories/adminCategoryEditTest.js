@@ -1,5 +1,4 @@
 var dashboard, category, login;
-const assert = require('assert');
 const nameCategory = 'clothes';
 const slugCategory = 'shopping';
 const parentCategory = 'None';

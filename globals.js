@@ -3,10 +3,6 @@ var userNames = {
   password: '123456789',
 };
 module.exports = {
-  //  default the done invocation timeout is 
-  // set to 10 seconds (2 seconds for unit tests)
-  //  controls the timeout value for async hooks.
-  //  Expects the done() callback to be invoked within this time
   asyncHookTimeout: 10000,
   userNames: userNames,
   beforeEach: function (browser, done) {

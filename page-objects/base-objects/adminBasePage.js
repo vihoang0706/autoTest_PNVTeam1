@@ -1,5 +1,9 @@
 module.exports = {
     commands: [{
+        el: function (elementName, data) {
+            var element = this.elements[elementName.slice(1)];
+            return util.format(element.selector, data);
+        },
         goToPage(mainlink, sublink) {
             this
                 .click('@' + mainlink)
@@ -13,12 +17,14 @@ module.exports = {
                 .waitForElementVisible('@' + element)
                 .click('@' + element);
         },
-        checkElementVisible(element) {
-            return this.assert.visible('@' + element);
+        getElementIsVisible(element, callback) {
+            this.isVisible('@' + element, function (result) {
+                callback(result.value);
+            });
         },
     }],
     elements: {
-        // Post
+        // Post, Media, Pages, Comments
         linkPosts: {
             selector: '//div[@class="wp-menu-name" and text()= "Posts"]',
             locateStrategy: 'xpath'

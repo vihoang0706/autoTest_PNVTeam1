@@ -1,4 +1,3 @@
-var Q = require('q');
 module.exports = {
     commands: [{
         addNewTag(tagName, slugName, description) {
@@ -12,14 +11,13 @@ module.exports = {
             return this
                 .click('@linkBackToTag');
         },
-        getContainsText(selector,callback){
-            this.getText('@'+ selector,function(result){
+        getContainsText(selector, callback) {
+            this.getText('@' + selector, function (result) {
                 callback(result.value);
             });
         },
         waitUntilElementVisible(element) {
-            return this
-                .waitForElementVisible('@' + element);
+            return this.waitForElementVisible('@' + element);
         },
         editTag(tagName, slugName, description) {
             return this

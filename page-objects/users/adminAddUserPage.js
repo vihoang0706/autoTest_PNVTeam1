@@ -1,6 +1,6 @@
 module.exports = {
     commands: [{
-        addUser(username, email, firstName, lastName, website, password, role) {
+        addNewUser(username, email, firstName, lastName, website, password, role) {
             this
                 .setValue('@inputUsername', username)
                 .setValue('@inputEmail', email)
@@ -17,21 +17,11 @@ module.exports = {
         }
     }],
     elements: {
-        inputUsername: {
-            selector: 'input[id=user_login]',
-        },
-        inputEmail: {
-            selector: 'input[id=email]',
-        },
-        inputFirstName: {
-            selector: 'input[id=first_name]',
-        },
-        inputLastName: {
-            selector: 'input[id=last_name]',
-        },
-        inputWebsite: {
-            selector: 'input[id=url]',
-        },
+        inputUsername: 'input[id=user_login]',
+        inputEmail: 'input[id=email]',
+        inputFirstName: 'input[id=first_name]',
+        inputLastName: 'input[id=last_name]',
+        inputWebsite: 'input[id=url]',
         buttonShowPassword: {
             selector: '//button[@type="button" and text()="Show password"]',
             locateStrategy: 'xpath'
@@ -44,14 +34,8 @@ module.exports = {
             selector: '//input[@class="pw-checkbox"]',
             locateStrategy: 'xpath'
         },
-        inputSendNotification: {
-            selector: 'input[id=send_user_notification]',
-        },
-        selectRole: {
-            selector: 'select[id=role]',
-        },
-        inputAddNewUser: {
-            selector: 'input[id=createusersub]',
-        },
+        inputSendNotification: 'input[id=send_user_notification]',
+        selectRole: 'select[id=role]',
+        inputAddNewUser: 'input[id=createusersub]',
     }
 }

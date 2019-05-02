@@ -5,51 +5,30 @@ module.exports = {
                 .setValue('@inputImage', require('path').resolve(__dirname+image))
                 .click('@buttonUpload')
         },
-        checkImageExist(element, callback) {
-            this.getContentValue(element, callback)
-        },
         goToHideLink(element) {
             return this
-                .moveToElement('@columnTitleActual', 0, 0)
-                .click(element);
+                .moveToElement('@columnActualTitle', 0, 0)
+                .click('@'+ element);
         },
-        deleteImage() {
-            return this
-            .goToHideLink('@linkDeleteImage')
-        },
-        getContentValue(element, callback) {
+        getContainText(element, callback) {
             this.getText('@'+element, function(result){
                 callback(result.value)
             });
         }
     }],
     elements: {
-        inputImage: {
-            selector: '//input[@id="async-upload"]',
-            locateStrategy: 'xpath'
-        },
-        buttonUpload: {
-            selector: '//input[@id="html-upload"]',
-            locateStrategy: 'xpath'
-        },
+        inputImage: 'input[id=async-upload]',
+        buttonUpload: 'input[id=html-upload]',
         image: {
             selector: '//tr[1]/td/strong[@class="has-media-icon"]/a',
             locateStrategy: 'xpath'
         },
-        fristTableRow: {
+        columnActualTitle: {
             selector: '//tbody[@id="the-list"]/tr[1]/td[1]',
-            locateStrategy: 'xpath'
-        },
-        linkDeleteImage: {
-            selector: '//span[@class="edit"]/a[@class="submitdelete aria-button-if-js" and text() ="Delete Permanently"]',
             locateStrategy: 'xpath'
         },
         linkDeleteImage: {
             selector: '//tr/td[1]/div[@class="row-actions"]/span[@class="delete"]/a[@class="submitdelete aria-button-if-js" and text()="Delete Permanently"]',
-            locateStrategy: 'xpath'
-        },
-        columnTitleActual: {
-            selector: '//tbody[@id="the-list"]/tr[1]/td[1]',
             locateStrategy: 'xpath'
         },
         checkboxSelectAll: '#cb-select-all-2',

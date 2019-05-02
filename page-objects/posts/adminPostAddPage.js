@@ -8,7 +8,7 @@ module.exports = {
                 .click('@buttonPublish')
                 .waitForElementVisible('@subButtonPublish')
                 .click('@subButtonPublish')
-                .waitForElementVisible('@messagePublishedSuccess')
+                .waitForElementVisible('@messagePublishedSuccess');
         },
         goToHideLink(element) {
             return this
@@ -18,26 +18,19 @@ module.exports = {
         goToEditPost() {
             return this
                 .click('@linkAllPosts')
-                .goToHideLink('@linkEditPost')
+                .goToHideLink('@linkEditPost');
         },
-        clickPostItem(){
+        goToDetailPost(){
             return this
             .waitForElementVisible('@actualTitle')
             .click('@actualTitle');
         },
-        deleteAllPosts() {
-            return this
-                .click('@checkboxSelectAll')
-                .click('@buttonDeleteBulkAction')
-                .click('@buttonApply');
-        },
         deletePost() {
-            return this
-            .goToHideLink('@linkDeletePost')
+            return this.goToHideLink('@linkDeletePost');
         },
-        getContentValue(element, callback) {
+        getContainText(element, callback) {
             this.getText('@'+element, function(result){
-                callback(result.value)
+                callback(result.value);
             });
         }
     }],

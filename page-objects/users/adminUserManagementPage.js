@@ -1,23 +1,16 @@
 module.exports = {
     commands: [{
-        checkContainsText(element, expectedContain) {
-            return this.assert.containsText('@' + element, expectedContain)
-        },
-        deleteAllUser() {
-            this
-                .click('@checkboxUser')
-                .setValue('@selectDelete', 'Delete')
-                .click('@inputApply')
-                .click('@inputDeleteAll')
-                .click('@inputConfirmDeletion') 
-            return this.api
+        getContainText(element,callback){
+            this.getText('@' + element, function(result){
+                callback(result.value);
+            });
         },
         deleteUser() {
             this
                 .moveToElement('@columnLastName', 0, 0) 
                 .click('@linkDelete')
-                .click('@inputConfirmDeletion')
-            return this.api
+                .click('@inputConfirmDeletion');
+            return this.api;
         }
     }],
     elements: {

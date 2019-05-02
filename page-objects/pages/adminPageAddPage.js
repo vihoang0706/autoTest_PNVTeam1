@@ -7,12 +7,29 @@ module.exports = {
         .click('@buttonPublish')
         .click('@subButtonPublish');
     },
-    dismissTip() {
+    waitUtilForElementVisible(element) {
+      return this.waitForElementVisible('@' + element);
+    },
+    gotToCodeEdit(){
       return this
-        .click('@blockTip');
+        .click('@buttonOption')
+        .click('@buttonCodeEditor');
+    },
+    getContainValue(element, callback){
+      this.getText('@' + element, function(result){
+        callback(result.value);
+      })
     }
   }],
   elements: {
+    buttonOption: {
+      selector: '//div[@class="edit-post-more-menu"]//button[@class="components-button components-icon-button"]',
+      locateStrategy: 'xpath'
+    },
+    buttonCodeEditor: {
+      selector: '//button[@class="components-button components-menu-item__button"][text()="Code Editor"]',
+      locateStrategy: 'xpath'
+    },
     inputTitle: {
       selector: '//div[@class="edit-post-text-editor__body"]//textarea[@class="editor-post-title__input"]',
       locateStrategy: 'xpath'

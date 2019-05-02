@@ -1,4 +1,6 @@
-.project
-*.DS_Store
-/nightwatch.json
+# ignore node_modules
 node_modules
+# ignore reports folder
+reports
+# ignore logs
+*.log

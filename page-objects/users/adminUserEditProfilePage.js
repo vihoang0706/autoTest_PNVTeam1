@@ -21,16 +21,29 @@ module.exports = {
                     .setValue('@inputEditDescription', userInfor)
                     .click('@inputUpdateProfile');
             },
-            checkContainsText(element, expectedContain) {
-                return this
-                    .assert.containsText('@' + element, expectedContain)
+            getContainsText(selector,callback){
+                this.getText('@'+ selector,function(result){
+                    callback(result.value);
+                });
+            },
+            getContainsValue(selector,callback){
+                this.getValue('@'+ selector,function(result){
+                    callback(result.value);
+                });
+            },
+            optionIsSelected(selector,callback) {
+                var self = this;
+                return this.getAttribute('@'+selector, "checked", function (result) {
+                  let isSelected = result.value;
+                  callback.call(self, isSelected);
+                });
             },
             checkSelectedOption(element) {
                 return this
                     .assert.attributeEquals('@' + element, "checked", 'true');
             },
             checkContainsValue(element, expectedValue) {
-                return this.useCss().getValue('@' + element, function (result) {
+                return this.getValue('@' + element, function (result) {
                     this.assert.equal(result.value, expectedValue);
                 });
             },

@@ -25,52 +25,56 @@ module.exports = {
         goBackToCategory() {
             return this.click('@linkBackToCategories');
         },
-        goToEditCategoryPage(element) {
-            return this
-                .moveToElement('@rowFirstTable', 0, 0)
-<<<<<<< HEAD
-                .click('@linkEdit' + element)
-        },
         getContainValue(element, callback) {
-            this.getText(element, function (result) {
-=======
-                .click('@' + element);
-        },
-        getContainText(element, callback) {
-            this.getText('@' + element, function (result) {
->>>>>>> hotfix
-                callback(result.value);
-            });
+            this
+                .useXpath()
+                .getText(element, function (result) {
+                    callback(result.value);
+                });
         },
         getActualMessageValue(callback){
             this.getContainValue('@strongMessageEditSuccessful', callback);
         },
-        getCollumnValue(type, callback) {
+        getCollumnValue(categoryName, type, callback) {
+            var columnActualName ='//table//tbody/tr//td[@data-colname="Name"]/strong/a[text()="'+ categoryName +'"]';
+            var columnActualDescription ='//td[@class="description column-description"]/p[ancestor::tr/td[@data-colname="Name"]/strong/a[text()="'+ categoryName +'"]]';
+            var columnActualSlug ='//td[@class="slug column-slug" and ancestor::tr/td[@data-colname="Name"]/strong/a[text()="'+ categoryName +'"]]';
             switch (type) {
                 case "Actual Name":
-                    this.getContainValue('@columnActualName', callback);
+                    this.getContainValue(columnActualName, callback);
                     break;
                 case "Actual Description":
-                    this.getContainValue('@columnActualDescription', callback);
+                    this.getContainValue(columnActualDescription, callback);
                     break;
                 case "Actual Slug":
-                    this.getContainValue('@columnActualSlug', callback);
+                    this.getContainValue(columnActualSlug, callback);
                     break;
             }
         },
-        deleteAllCategories() {
-            this
-                .click('@checkboxCategory')
-                .setValue('@selectDelete', 'Delete')
-                .click('@inputApply')
-            return this.api;
+        clickHideLink(elementContainHideLink, hideLink) {
+            return this
+                .moveToElement(elementContainHideLink, 0, 0)
+                .click(hideLink)
         },
-<<<<<<< HEAD
-        deleteCategory() {
-
-        }
-=======
->>>>>>> hotfix
+        goToActionHiddenLink(categoryName, action) {
+            var linkDeleteCategory = '//div[@class="row-actions"]/span[@class="delete" and ancestor::td[@data-colname="Name"]/strong/a[text()="'+ categoryName +'"]]';
+            var columnNameCategory = '//td[@data-colname="Name" and child::strong/a[text()="'+ categoryName +'"]]'
+            switch(action) {
+                case 'Edit' : 
+                    this
+                        .useXpath()
+                        .waitForElementVisible(columnNameCategory)
+                        .clickHideLink(columnNameCategory,'@linkEditCategory');
+                break;
+                case 'Delete' :
+                    this
+                        .useXpath()
+                        .waitForElementVisible(columnNameCategory)
+                        .clickHideLink(columnNameCategory, linkDeleteCategory);
+                    this.api.acceptAlert();
+                break;
+            }
+        },
     }],
     elements: {
         inputName: 'input[id=tag-name]',
@@ -78,18 +82,6 @@ module.exports = {
         selectParent: 'select[id=parent]',
         textareaDescription: 'textarea[id=tag-description]',
         inputAddCategory: 'input[id=submit]',
-        columnActualName: {
-            selector: '(//table//tbody/tr//td[@data-colname="Name"]/strong/a)[1]',
-            locateStrategy: 'xpath'
-        },
-        columnActualDescription: {
-            selector: '(//table//tr/td[@class="description column-description"]/p)[1]',
-            locateStrategy: 'xpath'
-        },
-        columnActualSlug: {
-            selector: '(//table//tr/td[@class="slug column-slug"])[1]',
-            locateStrategy: 'xpath'
-        },
         // Edit category
         inputEditName: 'input[id=name]',
         inputEditSlug: 'input[id=slug]',
@@ -104,26 +96,6 @@ module.exports = {
             selector: '//div[@id="message"]//a',
             locateStrategy: 'xpath'
         },
-        rowFirstTable: {
-            selector: '//tbody[@id="the-list"]/tr[1]/td[1]',
-            locateStrategy: 'xpath'
-        },
-        linkDeleteCategory: {
-            selector: '//span[@class="delete"]/a[@class="delete-tag aria-button-if-js"]',
-            locateStrategy: 'xpath'
-        },
         linkEditCategory: 'div.row-actions > span.edit > a',
-        checkboxCategory: {
-            selector: '(//table//input[@type="checkbox"])[last()]',
-            locateStrategy: 'xpath'
-        },
-        selectDelete: {
-            selector: '//select[@id="bulk-action-selector-bottom"]',
-            locateStrategy: 'xpath'
-        },
-        inputApply: {
-            selector: '//input[@id="doaction2"]',
-            locateStrategy: 'xpath'
-        },
     }
 };

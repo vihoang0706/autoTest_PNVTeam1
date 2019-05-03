@@ -1,8 +1,15 @@
 var category, login, dashboard, username, password;
-const nameCategory = 'clothes';
-const slugCategory = 'shopping';
-const parentCategory = 'None';
-const descriptionCategory = 'Clothes on the store';
+var nameCategory = 'clothes';
+var slugCategory = 'shopping';
+var parentCategory = 'None';
+var descriptionCategory = 'Clothes on the store';
+var nameEditCategory = 'clothes store';
+var nameAfterEditCategory = '— clothes store';
+var slugEditCategory = 'shoppingstore';
+var parentEditCategory = 'Uncategory';
+var descriptionEditCategory = 'Clothes on the Team 1 store';
+var editMessageSuccessful = 'Category updated.';
+const util = require('util');
 module.exports = {
     '@tags': ['add-category'],
     before: function(browser) {
@@ -13,41 +20,39 @@ module.exports = {
         password = browser.globals.userNames.password;
         login.login(username, password);
     },
-    'Verify that user can create a new category with valid data': function (browser) {
+    'Verify that user can create a new category with valid information': function (browser) {
         dashboard.goToPage('Category');
-        category.deleteAllCategories();
         category.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
         category.pause(500);
-        category.getCollumnValue('Actual Name',function(actualName) {
+        category.getCollumnValue(nameCategory,'Actual Name',function(actualName) {
             browser.assert.equal(actualName, nameCategory);
         });
-        category.getCollumnValue('Actual Description',function(actualDescription) {
+        category.getCollumnValue(nameCategory,'Actual Description',function(actualDescription) {
             browser.assert.equal(actualDescription, descriptionCategory);
         });
-        category.getCollumnValue('Actual Slug',function(actualSlug) {
+        category.getCollumnValue(nameCategory,'Actual Slug',function(actualSlug) {
             browser.assert.equal(actualSlug, slugCategory);
         });
+        category.goToActionHiddenLink(nameCategory, 'Delete');
     },
-    // 'Verify that user can edit category with valid data': function (browser) {
-    //     dashboard.goToPage('linkPosts', 'linkCategories');
-    //     category.deleteAllCategories();
-    //     category.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
-    //     category
-    //         .pause(500)
-    //         .goToEditCategoryPage('Category');
-    //     category.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
-    //     category.getActualMessageValue(function(actualMessage) {
-    //         browser.assert.equal(actualMessage, editMessageSuccessful);
-    //     });
-    //     category.goBackToCategory();
-    //     category.getCollumnValue('Actual Name',function(actualName) {
-    //         browser.assert.equal(actualName, nameEditCategory);
-    //     });
-    //     category.getCollumnValue('Actual Description',function(actualDescription) {
-    //         browser.assert.equal(actualDescription, descriptionEditCategory);
-    //     });
-    //     category.getCollumnValue('Actual Slug',function(actualSlug) {
-    //         browser.assert.equal(actualSlug, slugEditCategory);
-    //     });
-    // }
+    'Verify that user can edit category with valid data information': function (browser) {
+        dashboard.goToPage('Category');
+        category.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
+        category.goToActionHiddenLink(nameCategory, 'Edit');
+        category.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
+        category.getActualMessageValue(function(actualMessage) {
+            browser.assert.equal(actualMessage, editMessageSuccessful);
+        });
+        category.goBackToCategory();
+        category.getCollumnValue(nameAfterEditCategory,'Actual Name',function(actualName) {
+            browser.assert.equal(actualName, nameAfterEditCategory);
+        });
+        category.getCollumnValue(nameAfterEditCategory,'Actual Description',function(actualDescription) {
+            browser.assert.equal(actualDescription, descriptionEditCategory);
+        });
+        category.getCollumnValue(nameAfterEditCategory,'Actual Slug',function(actualSlug) {
+            browser.assert.equal(actualSlug, slugEditCategory);
+        });
+        category.goToActionHiddenLink(nameAfterEditCategory, 'Delete');
+    }
 }

@@ -1,4 +1,3 @@
-const linkAccount = '//li[@id="wp-admin-bar-my-account"]/a[@class="ab-item"]';
 var login, dashboard, username, password;
 module.exports = {
     '@tags': ['login'],
@@ -8,7 +7,6 @@ module.exports = {
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
         login.login(username, password);
-        browser.assert.visible(linkAccount);
-        dashboard.goToActionUser('linkLogOut');
+        dashboard.logout();
     }
 };

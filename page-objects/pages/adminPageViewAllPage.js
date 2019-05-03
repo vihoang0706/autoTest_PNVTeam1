@@ -1,9 +1,18 @@
 module.exports = {
     commands: [{
-        getContainText(element, callback){
-            this.getText('@' + element, function(result){
-              callback(result.value);
-            });
+        getContainText(selector, callback){
+            this
+                .waitForElementVisible(selector)
+                .getText(selector, function(result){
+                    callback(result.value);
+            })
+        },
+        getColumActual(type, callback){
+            switch(type){
+              case 'Actual Title':
+              this.getContainText('@columnActualTitle', callback); 
+              break;
+            }
         },
         deleteAllPages() {
             return this
@@ -11,12 +20,27 @@ module.exports = {
                 .click('@selectOptionTrash')
                 .click('@buttonApply');
         },
-        waitUntilForElementVisible(element) {
-            return this.waitForElementVisible('@' + element);
-        },
         goToDetailPage(){
             return this
                 .click('@columnActualTitle');
+        },
+        goToActionHideLink(type) {
+            switch(type) {
+                case 'Edit' : 
+                    this
+                        .waitForElementVisible('@columnActualTitle')
+                        .moveToElement('@columnActualTitle', 0, 0)
+                        .waitForElementVisible('@linkEdit')
+                        .click('@linkEdit');
+                break;
+                case 'Delete' :
+                    this
+                        .waitForElementVisible('@columnActualTitle')
+                        .moveToElement('@columnActualTitle', 0, 0)
+                        .waitForElementVisible('@linkDelete')
+                        .click('@linkDelete');
+                break;
+            }
         }
     }],
     elements: {
@@ -37,5 +61,13 @@ module.exports = {
             locateStrategy: 'xpath'
         },
         buttonApply: 'input[id=doaction2]',
+        linkDelete: {
+            selector: '(//a[text()="Trash"])[1]',
+            locateStrategy: 'xpath'
+        },
+        linkEdit: {
+            selector: '(//a[text()="Edit"])[1]',
+            locateStrategy: 'xpath'
+        },
     }
 };

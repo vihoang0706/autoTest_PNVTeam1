@@ -45,18 +45,12 @@ module.exports = {
                     break;
             }
         },
-        goToActionUser(element) {
+        logout() {
             return this
-                .waitForElementVisible('@linkYourAccount')
                 .moveToElement('@linkYourAccount', 0, 0)
-                .waitForElementVisible('@' + element)
-                .click('@' + element);
-        },
-        getElementIsVisible(element, callback) {
-            this.isVisible('@' + element, function (result) {
-                callback(result.value);
-            });
-        },
+                .waitForElementVisible('@linkLogOut')
+                .click('@linkLogOut');
+        }
     }],
     elements: {
         // Post

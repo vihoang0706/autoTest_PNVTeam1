@@ -38,9 +38,11 @@
         "selenium_host"  : "localhost",
         "silent": true,
         "use_xpath":true,
-        "screenshots" : {
-          "enabled" : true,
-          "path" : "screenshorts/"
+        "screenshots": {
+          "enabled": true,
+          "path": "./reports",
+          "on_failure": true,
+          "on_error": true
         },
       "globals": {
         "waitForConditionTimeout": 5000 

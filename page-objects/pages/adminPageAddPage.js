@@ -5,15 +5,25 @@ module.exports = {
         .setValue('@inputTitle', titlePage)
         .setValue('@inputDescription', description)
         .click('@buttonPublish')
-        .click('@subButtonPublish');
+        .click('@subButtonPublish')
+        .waitForElementVisible('@labelMessageSuccess');
     },
-    waitUntilForElementVisible(element) {
-      return this.waitForElementVisible('@' + element);
-    },
-    getContainText(element, callback) {
-      this.getText('@' + element, function (result) {
+    getContainText(selector, callback){
+      this
+        .waitForElementVisible(selector)
+        .getText(selector, function(result){
         callback(result.value);
       });
+    },
+    getColumActual(type, callback){
+      switch(type){
+        case 'Actual Title':
+        this.getContainText('@inputTitle', callback); 
+        break;
+      case 'Actual Description':
+        this.getContainText('@inputDescription', callback); 
+        break;
+      }
     }
   }],
   elements: {

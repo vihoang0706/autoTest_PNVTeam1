@@ -43,6 +43,24 @@ module.exports = {
             console.log("ID: "+a);
             })
         },
+        goToHideLink(type) {
+            switch(type) {
+                case 'Edit' : 
+                    this
+                        .waitForElementVisible('@columnActualTitle')
+                        .moveToElement('@columnActualTitle', 0, 0)
+                        .waitForElementVisible('@linkEdit')
+                        .click('@linkEdit');
+                break;
+                case 'Delete' :
+                    this
+                        .waitForElementVisible('@columnActualTitle')
+                        .moveToElement('@columnActualTitle', 0, 0)
+                        .waitForElementVisible('@linkDelete')
+                        .click('@linkDelete');
+                break;
+            }
+        },
     }],
     elements: {
         buttonCancelTip: {

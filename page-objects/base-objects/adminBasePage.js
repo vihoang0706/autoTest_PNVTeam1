@@ -10,6 +10,51 @@ module.exports = {
                 .click('@' + sublink)
             return this.api;
         },
+        selectMenu (mainMenu, subMenu) {
+            return this
+                    .click(mainMenu)
+                    .click(subMenu);
+        },
+        goToPage(pageName) {
+            switch (pageName) {
+                case "Post":
+                    this.selectMenu('@linkPosts', '@linkNewPost');
+                    break;
+                case "Category":
+                    this.selectMenu('@linkPosts', '@linkCategories');
+                    break;
+                case "Tag":
+                    this.selectMenu('@linkPosts', '@linkTags');
+                    break;
+                case "Manage Post":
+                    this.selectMenu('@linkPosts', '@linkAllUsers');
+                    break;
+                case "Media":
+                    this.selectMenu('@linkMedia', '@linkAddNewMedia');
+                    break;
+                case "Library":
+                    this.selectMenu('@linkMedia', '@linkLibrary');
+                    break;
+                case "Manage Page":
+                    this.selectMenu('@linkPages', '@linkAllPages');
+                    break;
+                case "Add New Page":
+                    this.selectMenu('@linkPosts', '@linkAddNewPages');
+                    break;
+                case "Menu":
+                    this.selectMenu('@linkAppearance', '@linkMenus');
+                    break;
+                case "Manage User":
+                    this.selectMenu('@linkUsers', '@linkAllUsers');
+                    break;
+                case "Add New User":
+                    this.selectMenu('@linkUsers', '@linkAddNewUser');
+                    break;
+                case "Library":
+                    this.selectMenu('@linkUsers', '@linkYourProfile');
+                    break;
+            }
+        },
         goToActionUser(element) {
             return this
                 .waitForElementVisible('@linkYourAccount')

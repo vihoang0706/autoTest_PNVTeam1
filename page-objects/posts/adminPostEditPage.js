@@ -9,11 +9,6 @@ module.exports = {
                 .click('@buttonUpdatePost')
                 .waitForElementVisible('@messagePublishedSuccess')
         },
-        // getContentValue(element, callback) {
-        //     this.getText('@'+element, function(result){
-        //         callback(result.value)
-        //     });
-        // },
         getContentValue(callback) {
             this.getText('@actualContent', function(result){
                 callback(result.value);

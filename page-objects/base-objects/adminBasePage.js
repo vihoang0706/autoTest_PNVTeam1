@@ -27,7 +27,7 @@ module.exports = {
                     this.selectMenu('@linkPosts', '@linkTags');
                     break;
                 case "Manage Post":
-                    this.selectMenu('@linkPosts', '@linkAllUsers');
+                    this.selectMenu('@linkPosts', '@linkAllPosts');
                     break;
                 case "Media":
                     this.selectMenu('@linkMedia', '@linkAddNewMedia');

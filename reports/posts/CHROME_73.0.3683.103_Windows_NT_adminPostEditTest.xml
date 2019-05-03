@@ -5,9 +5,13 @@
 
   <testsuite name="posts.adminPostEditTest"
     errors="0" failures="0" hostname="" id="" package="adminPostEditTest" skipped="0"
-    tests="1" time="17.88" timestamp="">
+    tests="1" time="16.64" timestamp="">
   
-    <testcase name="Pre-condition: Login with valid account, create a new post" classname="posts.adminPostEditTest" time="17.88" assertions="9">
+    <testcase name="Verify that User Admin is able edit post with valid data" classname="posts.adminPostEditTest" time="16.64" assertions="11">
+
+    
+
+    
 
     
 

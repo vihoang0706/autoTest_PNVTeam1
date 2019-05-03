@@ -11,24 +11,15 @@ module.exports = {
                 .click('@subButtonPublish')
                 .waitForElementVisible('@messagePublishedSuccess');
         },
-
-        goToHideLink(element) {
-            return this
-                .moveToElement('@columnTitleActual', 0, 0)
-                .click(element);
-        },
-        goToEditPost() {
+        goToEditPost(postName) {
             return this
                 .click('@linkAllPosts')
-                .goToHideLink('@linkEditPost');
+                . goToActionHiddenLink(postName, "Edit");
         },
         goToDetailPost(){
             return this
             .waitForElementVisible('@actualTitle')
             .click('@actualTitle');
-        },
-        deletePost() {
-            return this.goToHideLink('@linkDeletePost');
         },
         getTitleValue(callback) {
             this.getText('@actualTitle', function(result){
@@ -43,21 +34,26 @@ module.exports = {
             console.log("ID: "+a);
             })
         },
-        goToHideLink(type) {
-            switch(type) {
+        clickHideLink(elementContainHideLink, hideLink) {
+            return this
+                .moveToElement(elementContainHideLink, 0, 0)
+                .click(hideLink)
+        },
+        goToActionHiddenLink(postName, action) {
+            var linkDeletePost = '//div[@class="row-actions"]/span[@class="trash" and ancestor::td[@data-colname="Title"]/strong/a[text()="'+postName+'"]]';
+            var columnNamePost = '//td[@data-colname="Title" and child::strong/a[text()="'+postName+'"]]'
+            switch(action) {
                 case 'Edit' : 
                     this
-                        .waitForElementVisible('@columnActualTitle')
-                        .moveToElement('@columnActualTitle', 0, 0)
-                        .waitForElementVisible('@linkEdit')
-                        .click('@linkEdit');
+                        .useXpath()
+                        .waitForElementVisible(columnNamePost)
+                        .clickHideLink(columnNamePost,'@linkEditPost');
                 break;
                 case 'Delete' :
                     this
-                        .waitForElementVisible('@columnActualTitle')
-                        .moveToElement('@columnActualTitle', 0, 0)
-                        .waitForElementVisible('@linkDelete')
-                        .click('@linkDelete');
+                        .useXpath()
+                        .waitForElementVisible(columnNamePost)
+                        .clickHideLink(columnNamePost, linkDeletePost);
                 break;
             }
         },

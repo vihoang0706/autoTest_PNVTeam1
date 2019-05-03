@@ -23,6 +23,7 @@
     "chai": "^4.2.0",
     "chromedriver": "^73.0.0",
     "fs": "0.0.1-security",
+    "geckodriver": "^1.16.2",
     "handlebars": "^4.1.1",
     "mocha": "^6.1.4",
     "moment": "^2.24.0",

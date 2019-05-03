@@ -2,19 +2,20 @@ module.exports = {
     commands: [{
         addNewMedia(image) {
             return this
-                .setValue('@inputImage', require('path').resolve(__dirname+image))
+                .setValue('@inputImage', require('path').resolve(__dirname + image))
                 .click('@buttonUpload')
-        },
-        goToHideLink(element) {
-            return this
+        },          
+        deleteImage() {
+            this
                 .moveToElement('@columnActualTitle', 0, 0)
-                .click('@'+ element);
+                .click('@linkDeleteImage');
+            this.api.acceptAlert();
         },
-        getContainText(element, callback) {
-            this.getText('@'+element, function(result){
-                callback(result.value)
+        getTitleValue(callback) {
+            this.getText('@image', function (result) {
+                callback(result.value);
             });
-        }
+        },
     }],
     elements: {
         inputImage: 'input[id=async-upload]',

@@ -13,12 +13,11 @@ module.exports = {
         password = browser.globals.userNames.password;
         login.login(username, password);
 
-        dashboard.goToPage('linkPosts', 'linkNewPost');
+        dashboard.goToPage('Post');
 
         addPost.addNewPost(titleName, content);
-        addPost.getId(browser);
 
-        dashboard.goToPage('linkPosts', 'linkAllPosts');
+        dashboard.goToPage('Manage Post');
         addPost.getTitleValue(function (actualTitle){
             browser.assert.equal(actualTitle, titleName);
         });
@@ -27,9 +26,7 @@ module.exports = {
             browser.assert.equal(actualContent, content);
         });
  
-        dashboard.goToPage('linkPosts', 'linkAllPosts')
-        dashboard.goToHideLink('Delete')
-        // addPost.deletePost();
-
+        dashboard.goToPage('Manage Post');
+        addPost.goToActionHiddenLink( titleName, 'Delete');
     },
 };

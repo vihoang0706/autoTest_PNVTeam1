@@ -5,19 +5,31 @@ const editNameTag = 'automation';
 const editSlugTag = 'automation-testing';
 const editDescriptionTag = 'To learn Automation testing by using nightwatch';
 const messageTagUpdated = 'Tag updated.';
-var login, dashboard, tag, username, password;
+var dashboard, tag;
 module.exports = {
-    '@tags': ['edit-tag'],
-    'Verify that Admin can edit tag ': function (browser) {
-        login = browser.page.adminUserLoginPage();
+    '@tags': ['tag'],
+    'Verify that admin can add new tag successfully': function (browser) {
         dashboard = browser.page.adminBasePage();
         tag = browser.page.adminTagAddPage();
-        username = browser.globals.userNames.username;
-        password = browser.globals.userNames.password;
-        login.login(username, password);
         dashboard.goToPage('linkPosts', 'linkTags');
         tag.addNewTag(nameTag, slugTag, descriptionTag);
-        tag.goToHideLink('Edit');
+        tag.getColumnValueActual('Actual Title', function (actualTitle) {
+            browser.assert.equal(actualTitle, nameTag);
+        });
+        tag.getColumnValueActual('Actual Slug', function (actualSlug) {
+            browser.assert.equal(actualSlug, slugTag);
+        });
+        tag.getColumnValueActual('Actual Description', function (actualDescription) {
+            browser.assert.equal(actualDescription, descriptionTag);
+        });
+        tag.goToActionHiddenLink(nameTag,'Delete');
+    },
+    'Verify that Admin can edit tag ': function (browser) {
+        dashboard = browser.page.adminBasePage();
+        tag = browser.page.adminTagAddPage();
+        dashboard.goToPage('linkPosts', 'linkTags');
+        tag.addNewTag(nameTag, slugTag, descriptionTag);
+        tag.goToActionHiddenLink(nameTag,'Edit');
         tag.editTag(editNameTag, editSlugTag, editDescriptionTag)
         tag.getColumnValueActual('Success Message', function (actualMessage) {
             browser.assert.equal(actualMessage, messageTagUpdated);
@@ -32,7 +44,6 @@ module.exports = {
         tag.getColumnValueActual('Actual Description', function (actualDescription) {
             browser.assert.equal(actualDescription, editDescriptionTag);
         });
-        tag.goToHideLink('Delete');
-        browser.acceptAlert();
+        tag.goToActionHiddenLink(editNameTag,'Delete');
     },
 };

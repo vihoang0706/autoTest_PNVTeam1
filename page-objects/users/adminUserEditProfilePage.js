@@ -21,28 +21,92 @@ module.exports = {
                     .setValue('@inputEditDescription', userInfor)
                     .click('@inputUpdateProfile');
             },
-            getContainsText(selector,callback){
-                this.getText('@'+ selector,function(result){
+            getContainsText(selector, callback) {
+                this.getText(selector, function (result) {
                     callback(result.value);
                 });
             },
-            getContainsValue(selector,callback){
-                this.getValue('@'+ selector,function(result){
+            getValueActual(type, callback) {
+                switch (type) {
+                    case "Actual First Name":
+                        this
+                            .waitForElementVisible('@inputEditFirstName')
+                            .getContainsValue('@inputEditFirstName', callback);
+                        break;
+                    case "Actual Last Name":
+                        this
+                            .waitForElementVisible('@inputEditLastName')
+                            .getContainsValue('@inputEditLastName', callback);
+                        break;
+                    case "Actual Nick Name":
+                        this
+                            .waitForElementVisible('@inputEditNickName')
+                            .getContainsValue('@inputEditNickName', callback);
+                        break;
+                    case "Actual Description":
+                        this
+                            .waitForElementVisible('@inputEditDescription')
+                            .getContainsValue('@inputEditDescription', callback);
+                        break;
+                    case "Actual Website":
+                        this
+                            .waitForElementVisible('@inputEditWebsite')
+                            .getContainsValue('@inputEditWebsite', callback);
+                        break;
+                    case "Success Message":
+                        this
+                            .waitForElementVisible('@strongMessProfileUpdated')
+                            .getContainsText('@strongMessProfileUpdated', callback);
+                        break;
+                }
+            },
+            getContainsValue(selector, callback) {
+                this.getValue(selector, function (result) {
                     callback(result.value);
                 });
             },
-            getElementIsSelected(selector,callback) {
-                return this.getAttribute('@'+selector, "checked", function (result) {
-                  callback(result.value);
+            getElementIsSelected(type, selector, callback) {
+                var self = this;
+                self.api.element(type, selector, function (response) {
+                    self.api.elementIdSelected(response.value.ELEMENT, function (result) {
+                        if (result.value == true) {
+                            callback(result.value);
+                        }
+                        else callback(result.value);
+                    });
                 });
             },
-            uncheckedCheckbox() {
-                return this
-                    .click('@checkboxRichEditing')
-                    .click('@checkboxSyntaxHightlight')
-                    .click('@checkboxCommentShortcut')
-                    .click('@checkboxShowToolBar')
-                    .click('@inputUpdateProfile');
+            IsElementSelected(callback) {
+                this.getElementIsSelected('id', 'rich_editing', callback);
+                this.getElementIsSelected('id', 'syntax_highlighting', callback);
+                this.getElementIsSelected('id', 'admin_color_fresh', callback);
+                this.getElementIsSelected('id', 'comment_shortcuts', callback);
+                this.getElementIsSelected('id', 'admin_bar_front', callback);
+            },
+            setDefaultValue() {
+                var self = this;
+                self.getElementIsSelected('id', 'rich_editing', function (result) {
+                    if (result == true) {
+                        self.click('@checkboxRichEditing');
+                    }
+                });
+                self.getElementIsSelected('id', 'syntax_highlighting', function (result) {
+                    if (result == true) {
+                        self.click('@checkboxSyntaxHightlight');
+                    }
+                });
+                self.getElementIsSelected('id', 'comment_shortcuts', function (result) {
+                    if (result == true) {
+                        self.click('@checkboxCommentShortcut');
+                    }
+                });
+                self.getElementIsSelected('id', 'admin_bar_front', function (result) {
+                    if (result == true) {
+                        self.click('@checkboxShowToolBar');
+                    }
+                });
+                self.click('@inputUpdateProfile');
+                return self;
             }
         }
     ],

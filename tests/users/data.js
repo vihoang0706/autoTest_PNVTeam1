@@ -1,5 +1,6 @@
-import {config} from '../configs/config';
 import  DataDrivenTest from 'nightwatch-data-driven';
+import config from '../configs/config';
+
 module.exports = {
     'Valid credentials => successfull login': function (browser) {
         // . Initialize DataDrivenTest with browser and AAA function

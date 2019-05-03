@@ -10,9 +10,9 @@ module.exports = {
     'Verify that Admin can edit user profile successfully': function (browser) {
         dashboard = browser.page.adminBasePage();
         userProfile = browser.page.adminUserEditProfilePage();
-        dashboard.goToActionUser('linkEditProfile');
+        dashboard.goToPage('Edit User Profile');
         userProfile.setDefaultValue();
-        dashboard.goToActionUser('linkEditProfile');
+        dashboard.goToPage('Edit User Profile');
         userProfile.updateUserProfile(firstName, lastName, nickName, linkWebsite, description);
         userProfile.IsElementSelected(function (result) {
             browser.assert.equal(result, true);
@@ -20,7 +20,7 @@ module.exports = {
         userProfile.getValueActual('Success Message', function (actualMessage) {
             browser.assert.equal(actualMessage, messageProfileUpdated);
         });
-        dashboard.goToActionUser('linkViewUserInfor');
+        dashboard.goToPage('Edit User Profile');
         userProfile.getValueActual('Actual First Name', function (actualFirstName) {
             browser.assert.equal(actualFirstName, firstName);
         });

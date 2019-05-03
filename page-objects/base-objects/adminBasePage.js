@@ -40,6 +40,9 @@ module.exports = {
                 case "Add New User":
                     this.selectMenu('@linkUsers', '@linkAddNewUser');
                     break;
+                case "Edit User Profile":
+                    this.selectMenu('@linkUsers','@linkYourProfile');
+                    break;
                 case "Library":
                     this.selectMenu('@linkUsers', '@linkYourProfile');
                     break;

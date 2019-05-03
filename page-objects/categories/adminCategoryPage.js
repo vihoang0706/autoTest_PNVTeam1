@@ -6,8 +6,7 @@ module.exports = {
                 .setValue('@inputSlug', slug)
                 .setValue('@selectParent', parent)
                 .setValue('@textareaDescription', description)
-                .click('@inputAddCategory')
-            return this.api;
+                .click('@inputAddCategory');
         },
         editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory) {
             this
@@ -19,11 +18,10 @@ module.exports = {
                 .setValue('@inputEditSlug', slugEditCategory)
                 .setValue('@selectEditParent', parentEditCategory)
                 .setValue('@textareaEditDescription', descriptionEditCategory)
-                .click('@inputUpdateCategory')
-            return this.api;
+                .click('@inputUpdateCategory');
         },
         goBackToCategory() {
-            return this.click('@linkBackToCategories');
+            this.click('@linkBackToCategories');
         },
         getContainValue(element, callback) {
             this
@@ -51,14 +49,20 @@ module.exports = {
                     break;
             }
         },
+        waitUntilCategoryVisible(categoryName) {
+            var columnNameCategory = '//td[@data-colname="Name" and child::strong/a[text()="'+ categoryName +'"]]'
+            this
+                .useXpath()
+                .waitForElementVisible(columnNameCategory);
+        },
         clickHideLink(elementContainHideLink, hideLink) {
-            return this
+            this
                 .moveToElement(elementContainHideLink, 0, 0)
-                .click(hideLink)
+                .click(hideLink);
         },
         goToActionHiddenLink(categoryName, action) {
             var linkDeleteCategory = '//div[@class="row-actions"]/span[@class="delete" and ancestor::td[@data-colname="Name"]/strong/a[text()="'+ categoryName +'"]]';
-            var columnNameCategory = '//td[@data-colname="Name" and child::strong/a[text()="'+ categoryName +'"]]'
+            var columnNameCategory = '//td[@data-colname="Name" and child::strong/a[text()="'+ categoryName +'"]]';
             switch(action) {
                 case 'Edit' : 
                     this
@@ -88,14 +92,8 @@ module.exports = {
         selectEditParent: 'select[id=parent]',
         textareaEditDescription: 'textarea[id=description]',
         inputUpdateCategory: 'input[type=submit]',
-        strongMessageEditSuccessful: {
-            selector: '//div[@id="message"]//strong',
-            locateStrategy: 'xpath'
-        },
-        linkBackToCategories: {
-            selector: '//div[@id="message"]//a',
-            locateStrategy: 'xpath'
-        },
+        strongMessageEditSuccessful: '#message > p:nth-child(1) > strong',
+        linkBackToCategories: '#message > p:nth-child(2) > a',
         linkEditCategory: 'div.row-actions > span.edit > a',
     }
 };

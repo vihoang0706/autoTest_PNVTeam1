@@ -9,9 +9,8 @@ var slugEditCategory = 'shoppingstore';
 var parentEditCategory = 'Uncategory';
 var descriptionEditCategory = 'Clothes on the Team 1 store';
 var editMessageSuccessful = 'Category updated.';
-const util = require('util');
 module.exports = {
-    '@tags': ['add-category'],
+    '@tags': ['category'],
     before: function(browser) {
         login = browser.page.adminUserLoginPage();
         dashboard = browser.page.adminBasePage();
@@ -23,7 +22,7 @@ module.exports = {
     'Verify that user can create a new category with valid information': function (browser) {
         dashboard.goToPage('Category');
         category.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
-        category.pause(500);
+        category.waitUntilCategoryVisible(nameCategory);
         category.getCollumnValue(nameCategory,'Actual Name',function(actualName) {
             browser.assert.equal(actualName, nameCategory);
         });

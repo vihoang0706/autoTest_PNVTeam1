@@ -45,12 +45,11 @@ module.exports = {
                     break;
             }
         },
-        goToActionUser(element) {
-            return this
-                .waitForElementVisible('@linkYourAccount')
+        logout() {
+            this
                 .moveToElement('@linkYourAccount', 0, 0)
-                .waitForElementVisible('@' + element)
-                .click('@' + element);
+                .waitForElementVisible('@linkLogOut')
+                .click('@linkLogOut');
         },
         getElementIsVisible(element, callback) {
             this.isVisible('@' + element, function (result) {

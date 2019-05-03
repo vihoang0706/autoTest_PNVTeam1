@@ -28,7 +28,8 @@ module.exports = {
         });
  
         dashboard.goToPage('linkPosts', 'linkAllPosts')
-        addPost.deletePost();
+        dashboard.goToHideLink('Delete')
+        // addPost.deletePost();
 
     },
 };

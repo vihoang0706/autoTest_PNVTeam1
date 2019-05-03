@@ -13,7 +13,6 @@ module.exports = {
                 .click('@inputConfirmPassword')
                 .setValue('@selectRole', role)
                 .click('@inputAddNewUser')
-            return this.api;
         }
     }],
     elements: {
@@ -26,16 +25,17 @@ module.exports = {
             selector: '//button[@type="button" and text()="Show password"]',
             locateStrategy: 'xpath'
         },
-        inputPassword: {
-            selector: '//input[@id="pass1-text"]',
+        inputPassword: '#pass1-text',
+        inputSendNotification: 'input[id=send_user_notification]',
+        selectRole: 'select[id=role]',
+        inputAddNewUser: 'input[id=createusersub]',
+        buttonShowPassword: {
+            selector: '//button[@type="button" and text()="Show password"]',
             locateStrategy: 'xpath'
         },
         inputConfirmPassword: {
             selector: '//input[@class="pw-checkbox"]',
             locateStrategy: 'xpath'
         },
-        inputSendNotification: 'input[id=send_user_notification]',
-        selectRole: 'select[id=role]',
-        inputAddNewUser: 'input[id=createusersub]',
     }
 }

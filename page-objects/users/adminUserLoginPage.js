@@ -7,8 +7,18 @@ module.exports = {
                 .waitForElementVisible('@inputPassword')
                 .setValue('@inputPassword', password)
                 .click('@inputLogin')
+                .clearValue('@inputUsername')
+                .clearValue('@inputPassword');
             return this;
         },
+        getContainsText(selector, callback) {
+            this.getText(selector, function (result) {
+                callback(result.value);
+            });
+        },
+        getErrorMessage(callback) {
+            this.getContainsText('@labelErrorMessage',callback);
+        }
     }],
     elements: {
         inputUsername: 'input[id=user_login]',

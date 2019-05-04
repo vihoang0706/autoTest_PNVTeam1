@@ -2,7 +2,7 @@ module.exports = {
     commands: [
         {
             updateUserProfile(firstName, lastName, nickName, linkWebsite, userInfor) {
-                return this
+                this
                     .click('@checkboxRichEditing')
                     .click('@checkboxSyntaxHightlight')
                     .click('@radioAdminColor')
@@ -106,7 +106,6 @@ module.exports = {
                     }
                 });
                 self.click('@inputUpdateProfile');
-                return self;
             }
         }
     ],

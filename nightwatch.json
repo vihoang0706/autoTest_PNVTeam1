@@ -2,7 +2,7 @@
     "src_folders" : ["tests/categories","tests/posts",
       "tests/tags","tests/users","tests/pages","tests/medias", "tests/menus"],
     "output_folder" : "reports",
-    "custom_commands_path" : "",
+    "custom_commands_path" : ["commands/commons"],
     "custom_assertions_path" : "",
     "page_objects_path" : ["page-objects/categories","page-objects/posts",
       "page-objects/tags","page-objects/users","page-objects/pages","page-objects/base-objects",
@@ -38,9 +38,11 @@
         "selenium_host"  : "localhost",
         "silent": true,
         "use_xpath":true,
-        "screenshots" : {
-          "enabled" : true,
-          "path" : "screenshorts/"
+        "screenshots": {
+          "enabled": true,
+          "path": "./reports",
+          "on_failure": true,
+          "on_error": true
         },
       "globals": {
         "waitForConditionTimeout": 5000 

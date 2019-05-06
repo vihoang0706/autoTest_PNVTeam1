@@ -29,7 +29,7 @@ module.exports = {
                     this.selectMenu('@linkPages', '@linkAllPages');
                     break;
                 case "Add New Page":
-                    this.selectMenu('@linkPosts', '@linkAddNewPages');
+                    this.selectMenu('@linkPages', '@linkAddNewPages');
                     break;
                 case "Menu":
                     this.selectMenu('@linkAppearance', '@linkMenus');

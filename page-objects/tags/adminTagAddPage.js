@@ -1,47 +1,46 @@
 module.exports = {
     commands: [{
         addNewTag(tagName, slugName, description) {
-            return this
+            this
                 .setValue('@inputTagName', tagName)
                 .setValue('@inputSlugName', slugName)
                 .setValue('@inputDescription', description)
                 .click('@inputAddNewTag');
         },
         goBackToTagPage() {
-            return this
-                .click('@linkBackToTag');
+            this.click('@linkBackToTag');
         },
-        getContainsText(selector, callback) {
-            return this.getText(selector, function (result) {
-                callback(result.value);
-            });
-        },
+        // getContainsText(selector, callback) {
+        //     this.getText(selector, function (result) {
+        //         callback(result.value);
+        //     });
+        // },
         getColumnValueActual(type, callback) {
             switch (type) {
                 case "Actual Title":
                     this
                         .waitForElementVisible('@columnActualTitle')
-                        .getContainsText('@columnActualTitle', callback);
+                        .getContains('@columnActualTitle', callback);
                     break;
                 case "Actual Slug":
                     this
                         .waitForElementVisible('@columnActualSlug')
-                        .getContainsText('@columnActualSlug', callback);
+                        .getContains('@columnActualSlug', callback);
                     break;
                 case "Actual Description":
                     this
                         .waitForElementVisible('@columnActualDescription')
-                        .getContainsText('@columnActualDescription', callback);
+                        .getContains('@columnActualDescription', callback);
                     break;
                 case "Success Message": 
                     this
                         .waitForElementVisible('@strongMessageSuccess')
-                        .getContainsText('@strongMessageSuccess',callback);
+                        .getContains('@strongMessageSuccess',callback);
                     break;
             }
         },
         editTag(tagName, slugName, description) {
-            return this
+            this
                 .clearValue('@inputEditName')
                 .setValue('@inputEditName', tagName)
                 .clearValue('@inputEditSlug')
@@ -51,26 +50,31 @@ module.exports = {
                 .click('@inputUpdate');
         },
         deleteAllTags() {
-            return this
+            this
                 .click('@checkboxSelectAll')
                 .click('@buttonDeleteBulkAction')
                 .click('@inputApply');
         },
-        goToHideLink(type) {
-            switch(type) {
+        clickHideLink(elementContainHideLink, hideLink) {
+            this
+                .moveToElement(elementContainHideLink, 0, 0)
+                .click(hideLink)
+        },
+        goToActionHiddenLink(tagName,action) {
+            const columnNameTag = '//td[@data-colname="Name" and child::strong/a[text()="'+ tagName +'"]]';
+            switch(action) {
                 case 'Edit' : 
                     this
-                        .waitForElementVisible('@columnActualTitle')
-                        .moveToElement('@columnActualTitle', 0, 0)
-                        .waitForElementVisible('@linkEdit')
-                        .click('@linkEdit');
+                        .useXpath()
+                        .waitForElementVisible(columnNameTag)
+                        .clickHideLink(columnNameTag,'@linkEdit');
                 break;
                 case 'Delete' :
                     this
-                        .waitForElementVisible('@columnActualTitle')
-                        .moveToElement('@columnActualTitle', 0, 0)
-                        .waitForElementVisible('@linkDelete')
-                        .click('@linkDelete');
+                        .useXpath()
+                        .waitForElementVisible(columnNameTag)
+                        .clickHideLink(columnNameTag,'@linkDelete');
+                    this.api.acceptAlert();
                 break;
             }
         },

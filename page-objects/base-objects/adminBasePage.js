@@ -40,22 +40,21 @@ module.exports = {
                 case "Add New User":
                     this.selectMenu('@linkUsers', '@linkAddNewUser');
                     break;
+                case "Edit User Profile":
+                    this.selectMenu('@linkUsers','@linkYourProfile');
+                    break;
                 case "Library":
                     this.selectMenu('@linkUsers', '@linkYourProfile');
                     break;
             }
         },
         logout() {
-            this
+            return this
+                .waitForElementVisible('@linkYourAccount')
                 .moveToElement('@linkYourAccount', 0, 0)
                 .waitForElementVisible('@linkLogOut')
                 .click('@linkLogOut');
-        },
-        getElementIsVisible(element, callback) {
-            this.isVisible('@' + element, function (result) {
-                callback(result.value);
-            });
-        },
+        }
     }],
     elements: {
         // Post

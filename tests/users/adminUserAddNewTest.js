@@ -36,9 +36,6 @@ module.exports = {
         // A new user can log in to admin page
         dashboard.logout();
         login.login(username, password);
-        dashboard.getElementIsVisible('linkYourAccount', function (result) {
-            browser.assert.equal(result, true);
-        });
         dashboard.logout();
         // delete user has just create 
         login.login(userAdmin, passwordAdmin);

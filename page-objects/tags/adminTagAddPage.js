@@ -10,32 +10,32 @@ module.exports = {
         goBackToTagPage() {
             this.click('@linkBackToTag');
         },
-        getContainsText(selector, callback) {
-            this.getText(selector, function (result) {
-                callback(result.value);
-            });
-        },
+        // getContainsText(selector, callback) {
+        //     this.getText(selector, function (result) {
+        //         callback(result.value);
+        //     });
+        // },
         getColumnValueActual(type, callback) {
             switch (type) {
                 case "Actual Title":
                     this
                         .waitForElementVisible('@columnActualTitle')
-                        .getContainsText('@columnActualTitle', callback);
+                        .getContains('@columnActualTitle', callback);
                     break;
                 case "Actual Slug":
                     this
                         .waitForElementVisible('@columnActualSlug')
-                        .getContainsText('@columnActualSlug', callback);
+                        .getContains('@columnActualSlug', callback);
                     break;
                 case "Actual Description":
                     this
                         .waitForElementVisible('@columnActualDescription')
-                        .getContainsText('@columnActualDescription', callback);
+                        .getContains('@columnActualDescription', callback);
                     break;
                 case "Success Message": 
                     this
                         .waitForElementVisible('@strongMessageSuccess')
-                        .getContainsText('@strongMessageSuccess',callback);
+                        .getContains('@strongMessageSuccess',callback);
                     break;
             }
         },

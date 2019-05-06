@@ -49,16 +49,11 @@ module.exports = {
             }
         },
         logout() {
-            this
+            return this
                 .moveToElement('@linkYourAccount', 0, 0)
                 .waitForElementVisible('@linkLogOut')
                 .click('@linkLogOut');
-        },
-        getElementIsVisible(element, callback) {
-            this.isVisible('@' + element, function (result) {
-                callback(result.value);
-            });
-        },
+        }
     }],
     elements: {
         // Post

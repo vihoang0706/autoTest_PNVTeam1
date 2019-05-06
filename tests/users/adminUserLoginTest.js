@@ -8,7 +8,7 @@ module.exports = {
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
         login.login(username, password);
-        browser.assert.visible(linkAccount);
-        dashboard.goToActionUser('linkLogOut');
+        // browser.assert.visible(linkAccount);
+        // dashboard.goToActionUser('linkLogOut');
     }
 };

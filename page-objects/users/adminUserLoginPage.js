@@ -9,7 +9,6 @@ module.exports = {
                 .click('@inputLogin')
                 .clearValue('@inputUsername')
                 .clearValue('@inputPassword');
-            return this;
         },
         getContainsText(selector, callback) {
             this.getText(selector, function (result) {
@@ -17,7 +16,9 @@ module.exports = {
             });
         },
         getErrorMessage(callback) {
-            this.getContainsText('@labelErrorMessage',callback);
+            this
+                .waitForElementVisible('@labelErrorMessage')
+                .getContainsText('@labelErrorMessage',callback);
         }
     }],
     elements: {

@@ -8,10 +8,17 @@ const messageTagUpdated = 'Tag updated.';
 var dashboard, tag;
 module.exports = {
     '@tags': ['tag'],
-    'Verify that admin can add new tag successfully': function (browser) {
+    before: function(browser) {
+        username = browser.globals.userNames.username;
+        password = browser.globals.userNames.password;
+        var login = browser.page.adminUserLoginPage();
+        login.login(username,password);
+    },
+    // Verify that admin can add new tag successfully
+    'Test 1': function (browser) {
         dashboard = browser.page.adminBasePage();
         tag = browser.page.adminTagAddPage();
-        dashboard.goToPage('linkPosts', 'linkTags');
+        dashboard.goToPage('Tag');
         tag.addNewTag(nameTag, slugTag, descriptionTag);
         tag.getColumnValueActual('Actual Title', function (actualTitle) {
             browser.assert.equal(actualTitle, nameTag);
@@ -27,7 +34,7 @@ module.exports = {
     'Verify that Admin can edit tag ': function (browser) {
         dashboard = browser.page.adminBasePage();
         tag = browser.page.adminTagAddPage();
-        dashboard.goToPage('linkPosts', 'linkTags');
+        dashboard.goToPage('Tag');
         tag.addNewTag(nameTag, slugTag, descriptionTag);
         tag.goToActionHiddenLink(nameTag,'Edit');
         tag.editTag(editNameTag, editSlugTag, editDescriptionTag)

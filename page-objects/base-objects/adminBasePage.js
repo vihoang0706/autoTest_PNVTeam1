@@ -8,7 +8,7 @@ module.exports = {
             this
                 .click('@' + mainlink)
                 .click('@' + sublink)
-            return this.api;
+            return this;
         },
         selectMenu (mainMenu, subMenu) {
             return this

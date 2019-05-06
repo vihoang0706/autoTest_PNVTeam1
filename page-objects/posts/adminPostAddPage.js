@@ -3,7 +3,6 @@ module.exports = {
     commands: [{
         addNewPost(title, content) {
             return this
-                .click('@buttonCancelTip')
                 .setValue('@inputTitlePost', title)
                 .setValue('@contentPost', content)
                 .click('@buttonPublish')
@@ -25,14 +24,6 @@ module.exports = {
             this.getText('@actualTitle', function(result){
                 callback(result.value);
             });
-        },
-        getId(browser) {
-            browser.url(function(result){
-            var savedUrl=result.value;
-            var output = savedUrl.split("=");
-            var a = output[1].substr(0,4);
-            console.log("ID: "+a);
-            })
         },
         clickHideLink(elementContainHideLink, hideLink) {
             return this

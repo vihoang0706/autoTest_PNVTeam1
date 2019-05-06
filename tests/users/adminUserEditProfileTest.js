@@ -4,57 +4,37 @@ const nickName = 'administrator';
 const description = 'I am final year student at Passerellesnumeriques Viet Nam, with major is Testing and Software Development';
 const linkWebsite = 'http://pnvteam1.com';
 const messageProfileUpdated = 'Profile updated.';
-var userProfile, dashboard, login, username, password;
+var userProfile, dashboard;
 module.exports = {
     '@tags': 'edit-user-profile',
-    'Step 1: Login with valid account and Unchecked all checkboxs': function (browser) {
-        login = browser.page.adminUserLoginPage();
+    'Verify that Admin can edit user profile successfully': function (browser) {
         dashboard = browser.page.adminBasePage();
         userProfile = browser.page.adminUserEditProfilePage();
-        username = browser.globals.userNames.username;
-        password = browser.globals.userNames.password;
-        login.login(username, password);
-        dashboard.goToActionUser('linkEditProfile');
-        userProfile.uncheckedCheckbox();
-    },
-    'Step 2: Go to Edit Profile page': function () {
-        dashboard.goToActionUser('linkEditProfile');
-    },
-    'Step 3: Edit user profile with valid data': function (browser) {
+        dashboard.goToPage('Edit User Profile');
+        userProfile.setDefaultValue();
+        dashboard.goToPage('Edit User Profile');
         userProfile.updateUserProfile(firstName, lastName, nickName, linkWebsite, description);
-        userProfile.getElementIsSelected('checkboxRichEditing',function(result){
-            browser.assert.equal(result,'true');
+        userProfile.IsElementSelected(function (result) {
+            browser.assert.equal(result, true);
         });
-        userProfile.getElementIsSelected('checkboxSyntaxHightlight',function(result){
-            browser.assert.equal(result,'true');
+        userProfile.getValueActual('Success Message', function (actualMessage) {
+            browser.assert.equal(actualMessage, messageProfileUpdated);
         });
-        userProfile.getElementIsSelected('radioAdminColor',function(result){
-            browser.assert.equal(result,'true');
+        dashboard.goToPage('Edit User Profile');
+        userProfile.getValueActual('Actual First Name', function (actualFirstName) {
+            browser.assert.equal(actualFirstName, firstName);
         });
-        userProfile.getElementIsSelected('checkboxCommentShortcut',function(result){
-            browser.assert.equal(result,'true');
+        userProfile.getValueActual('Actual Last Name', function (actualLastName) {
+            browser.assert.equal(actualLastName, lastName);
         });
-        userProfile.getElementIsSelected('checkboxShowToolBar',function(result){
-            browser.assert.equal(result,'true');
+        userProfile.getValueActual('Actual Nick Name', function (actualNickName) {
+            browser.assert.equal(actualNickName, nickName);
         });
-        userProfile.getContainsText('strongMessProfileUpdated',function(actualMessage){
-            browser.assert.equal(actualMessage,messageProfileUpdated);
+        userProfile.getValueActual('Actual Website', function (actualLinkWebsite) {
+            browser.assert.equal(actualLinkWebsite, linkWebsite);
         });
-        dashboard.goToActionUser('linkViewUserInfor');
-        userProfile.getContainsValue('inputEditFirstName',function(actualFirstName){
-            browser.assert.equal(actualFirstName,firstName);
-        });
-        userProfile.getContainsValue('inputEditLastName',function(actualLastName){
-            browser.assert.equal(actualLastName,lastName);
-        });
-        userProfile.getContainsValue('inputEditNickName',function(actualNickName){
-            browser.assert.equal(actualNickName,nickName);
-        });
-        userProfile.getContainsValue('inputEditWebsite',function(actualLinkWebsite){
-            browser.assert.equal(actualLinkWebsite,linkWebsite);
-        });
-        userProfile.getContainsValue('inputEditDescription',function(actualDescription){
-            browser.assert.equal(actualDescription,description);
+        userProfile.getValueActual('Actual Description', function (actualDescription) {
+            browser.assert.equal(actualDescription, description);
         });
     },
 };

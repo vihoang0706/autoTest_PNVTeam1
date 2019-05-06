@@ -16,10 +16,19 @@ module.exports = {
         deleteMenu() {
             return this.click('@linkDeleteMenu');
         },
-        getContainValue(element, callback) {
-            this.getValue('@' + element, function (result) {
-                callback(result.value);
+        getContainValue(selector, callback){
+            this
+              .waitForElementVisible(selector)
+              .getValue(selector, function(result){
+              callback(result.value);
             });
+          },
+          getColumActual(type, callback){
+            switch(type){
+              case 'Actual Name Menu':
+              this.getContainValue('@inputNameMenu', callback); 
+              break;
+            }
         }
     }],
     elements: {
@@ -46,6 +55,5 @@ module.exports = {
         inputLocationPrimary: 'input[id=locations-menu-1]',
         inputLocationFooter: 'input[id=locations-footer]',
         inputLocationSocialLink: 'input[id=locations-social]',
-
     }
 };

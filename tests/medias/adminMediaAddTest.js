@@ -16,9 +16,8 @@ module.exports = {
         addMedia
             .addNewMedia(image)
             .getTitleValue(function(actualImageName){
-                browser.assert.equal(actualImageName, imageName)
+                browser.assert.equal(actualImageName, imageName);
             });
-
         addMedia.deleteImage();
     }
 }

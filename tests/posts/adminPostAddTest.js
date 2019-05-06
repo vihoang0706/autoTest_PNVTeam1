@@ -14,7 +14,6 @@ module.exports = {
         login.login(username, password);
 
         dashboard.goToPage('Post');
-        status = 1;
         addPost.addNewPost(titleName, content);
 
         dashboard.goToPage('Manage Post');

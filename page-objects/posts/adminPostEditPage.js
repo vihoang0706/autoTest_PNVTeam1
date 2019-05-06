@@ -7,7 +7,7 @@ module.exports = {
                 .setValue('@contentPost', content)
                 .waitForElementVisible('@buttonUpdatePost')
                 .click('@buttonUpdatePost')
-                .waitForElementVisible('@messagePublishedSuccess')
+                .waitForElementVisible('@messagePublishedSuccess');
         },
         getContentValue(callback) {
             this.getText('@actualContent', function(result){

@@ -1,4 +1,3 @@
-goToPage = require('./../base-objects/adminBasePage')
 module.exports = {
     commands: [{
         addNewPost(title, content) {
@@ -28,7 +27,7 @@ module.exports = {
         clickHideLink(elementContainHideLink, hideLink) {
             return this
                 .moveToElement(elementContainHideLink, 0, 0)
-                .click(hideLink)
+                .click(hideLink);
         },
         goToActionHiddenLink(postName, action) {
             var linkDeletePost = '//div[@class="row-actions"]/span[@class="trash" and ancestor::td[@data-colname="Title"]/strong/a[text()="'+postName+'"]]';

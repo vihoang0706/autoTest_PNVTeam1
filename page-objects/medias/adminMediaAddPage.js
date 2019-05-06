@@ -3,7 +3,7 @@ module.exports = {
         addNewMedia(image) {
             return this
                 .setValue('@inputImage', require('path').resolve(__dirname + image))
-                .click('@buttonUpload')
+                .click('@buttonUpload');
         },          
         deleteImage() {
             this

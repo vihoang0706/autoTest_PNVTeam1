@@ -1,6 +1,6 @@
 {
     "src_folders" : ["tests/categories","tests/posts",
-      "tests/tags","tests/users","tests/pages","tests/medias", "tests/menus"],
+      "tests/tags","tests/users","tests/pages","tests/medias", "tests/menus", "tests/demo"],
     "output_folder" : "reports",
     "custom_commands_path" : "",
     "custom_assertions_path" : "",
@@ -23,7 +23,8 @@
       "host" : "127.0.0.1",
       "port" : 4444,
       "cli_args" : {
-        "webdriver.chrome.driver" : "node_modules/chromedriver/lib/chromedriver/chromedriver.exe"
+        "webdriver.chrome.driver" : "node_modules/chromedriver/lib/chromedriver/chromedriver.exe",
+        "webdriver.gecko.driver" : "node_modules/geckodriver/geckodriver.exe"
       }
     },
     "test_workers": {

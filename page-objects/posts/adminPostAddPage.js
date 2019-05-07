@@ -2,12 +2,17 @@ module.exports = {
     commands: [{
         addNewPost(title, content) {
             return this
+               
                 .setValue('@inputTitlePost', title)
                 .setValue('@contentPost', content)
                 .click('@buttonPublish')
                 .waitForElementVisible('@subButtonPublish')
                 .click('@subButtonPublish')
                 .waitForElementVisible('@messagePublishedSuccess');
+        },
+        cancelTip() {
+            this
+            .click('@buttonCancelTip')
         },
         goToEditPost(postName) {
             return this
@@ -22,6 +27,14 @@ module.exports = {
         getTitleValue(callback) {
             this.getText('@actualTitle', function(result){
                 callback(result.value);
+            });
+        },
+        getId(browser) {
+                browser.url(function(result){
+                var savedUrl=result.value;
+                var output= savedUrl.split("=");
+                var a = output[1].substr(0,4);
+                console.log("ID: "+a)
             });
         },
         clickHideLink(elementContainHideLink, hideLink) {
@@ -70,7 +83,7 @@ module.exports = {
             locateStrategy: 'xpath'
         },
         actualTitle: {
-            selector: '//tbody[@id="the-list"]/tr[1]/td[1]/strong/a',
+            selector: '//tbody[@id="the-list"]/tr/td[1]/strong/a',
             locateStrategy: 'xpath'
         },
         columnTitleActual: {

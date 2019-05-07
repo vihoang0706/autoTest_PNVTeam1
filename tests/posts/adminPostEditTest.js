@@ -13,6 +13,7 @@ module.exports = {
         password = browser.globals.userNames.password;
         login.login(username, password);
         dashboard.goToPage('Post');
+        addPost.cancelTip();
         addPost.addNewPost(titleName, content);
 
         addPost.goToEditPost(titleName);

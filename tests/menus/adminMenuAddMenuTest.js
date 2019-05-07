@@ -10,14 +10,10 @@ module.exports = {
         password = browser.globals.userNames.password;
         login.login(username, password);
         dashboard.goToPage('Menu');
-        menu.goToMenuPage();
-        menu
-            .addNewMenu(nameMenu)
-            .selectMenu();
-        menu.getColumActual('Actual Name Menu',function(actualNameMenu){
-                browser.assert.equal(actualNameMenu, nameMenu);
-            });
+        menu.addNewMenu(nameMenu);
+        menu.getNameMenu(function (actualNameMenu) {
+            browser.assert.equal(actualNameMenu, nameMenu);
+        });
         menu.deleteMenu();
-        browser.acceptAlert();
     }
 };

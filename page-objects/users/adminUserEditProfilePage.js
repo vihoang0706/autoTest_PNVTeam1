@@ -21,11 +21,11 @@ module.exports = {
                     .setValue('@inputEditDescription', userInfor)
                     .click('@inputUpdateProfile');
             },
-            getContainsText(selector, callback) {
-                this.getText(selector, function (result) {
-                    callback(result.value);
-                });
-            },
+            // getContainsText(selector, callback) {
+            //     this.getText(selector, function (result) {
+            //         callback(result.value);
+            //     });
+            // },
             getValueActual(type, callback) {
                 switch (type) {
                     case "Actual First Name":

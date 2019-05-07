@@ -10,12 +10,10 @@ module.exports = {
         password = browser.globals.userNames.password;
         login.login(username, password);
         dashboard.goToPage('Library');
-
         dashboard.goToPage('Media');
-
         addMedia
             .addNewMedia(image)
-            .getTitleValue(function(actualImageName){
+            .getTitleImage(function(actualImageName){
                 browser.assert.equal(actualImageName, imageName);
             });
         addMedia.deleteImage();

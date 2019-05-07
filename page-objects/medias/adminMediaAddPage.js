@@ -11,10 +11,8 @@ module.exports = {
                 .click('@linkDeleteImage');
             this.api.acceptAlert();
         },
-        getTitleValue(callback) {
-            this.getText('@image', function (result) {
-                callback(result.value);
-            });
+        getTitleImage(callback) {
+            this.getContainText('@image',callback);
         },
     }],
     elements: {

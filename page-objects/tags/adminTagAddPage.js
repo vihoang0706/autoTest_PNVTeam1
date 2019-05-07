@@ -10,11 +10,6 @@ module.exports = {
         goBackToTagPage() {
             this.click('@linkBackToTag');
         },
-        // getContainsText(selector, callback) {
-        //     this.getText(selector, function (result) {
-        //         callback(result.value);
-        //     });
-        // },
         getColumnValueActual(type, callback) {
             switch (type) {
                 case "Actual Title":

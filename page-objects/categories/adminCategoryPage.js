@@ -23,15 +23,8 @@ module.exports = {
         goBackToCategory() {
             this.click('@linkBackToCategories');
         },
-        getContainValue(element, callback) {
-            this
-                .useXpath()
-                .getText(element, function (result) {
-                    callback(result.value);
-                });
-        },
         getActualMessageValue(callback){
-            this.getContainValue('@strongMessageEditSuccessful', callback);
+            this.getContainText('@strongMessageEditSuccessful', callback);
         },
         getCollumnValue(categoryName, type, callback) {
             var columnActualName ='//table//tbody/tr//td[@data-colname="Name"]/strong/a[text()="'+ categoryName +'"]';
@@ -39,13 +32,13 @@ module.exports = {
             var columnActualSlug ='//td[@class="slug column-slug" and ancestor::tr/td[@data-colname="Name"]/strong/a[text()="'+ categoryName +'"]]';
             switch (type) {
                 case "Actual Name":
-                    this.getContainValue(columnActualName, callback);
+                    this.getContainText(columnActualName, callback);
                     break;
                 case "Actual Description":
-                    this.getContainValue(columnActualDescription, callback);
+                    this.getContainText(columnActualDescription, callback);
                     break;
                 case "Actual Slug":
-                    this.getContainValue(columnActualSlug, callback);
+                    this.getContainText(columnActualSlug, callback);
                     break;
             }
         },

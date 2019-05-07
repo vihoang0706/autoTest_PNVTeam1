@@ -1,50 +1,66 @@
-const titleName = 'Post: ' + (Math.floor(Math.random() * 50)) + ' Where were you';
-const content = 'When you were in trouble and you needed a hand I was always there. When your legs got shaky and you could not stand I was always there. I was always there when you needed me the most. When trouble comes a-knocking and I needed a hand. Where will you be then? When you needed a hand, I am always ready and when I tired you, you where were you place?';
-const updatecontent = 'I have some best friends their names are: Delia and Sofia. They are all really nice we all get along very well I only fought with Laura once and with Delia none! But I’ve fought with Sofia a few times (she is my sister). Anyway we get along very well and we have a lot of fun tougher, we all like music, playing and so on, we really enjoy spending time with each other.';
-var dashboard, addPost, login, username, password, editPost, status;
+const nameTitle = 'Post: ' + (Math.floor(Math.random() * 50)) + ' Where were you';
+const description = 'When you were in trouble and you needed a hand I was always there.';
+const updateDescription = 'I have some best friends their names are: Delia and Sofia.';
+var dashboard, addPost, login, username, password, editPost, postID;
+var expectedMessage = "Post published.\nView Post";
+var expectedUpdateSuccessMessage = "Post updated.\nView Post";
 module.exports = {
     tags: ['add-post'],
-    'Verify that use is able add new post with valid data': function (browser) {
+    before: function (browser) {
         login = browser.page.adminUserLoginPage();
         addPost = browser.page.adminPostAddPage();
         dashboard = browser.page.adminBasePage();
         editPost = browser.page.adminPostEditPage();
+        viewAllPost = browser.page.adminPostViewAllPage();
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
         login.login(username, password);
-
-        dashboard.goToPage('Post');
-        addPost.addNewPost(titleName, content);
-
-        dashboard.goToPage('Manage Post');
-        addPost.getTitleValue(function (actualTitle){
-            browser.assert.equal(actualTitle, titleName);
-        });
-        addPost.goToDetailPost();
-        editPost.getContentValue(function (actualContent) {
-            browser.assert.equal(actualContent, content);
-        });
- 
-        dashboard.goToPage('Manage Post');
-        addPost.goToActionHiddenLink( titleName, 'Delete');
     },
-    'Verify that User Admin is able edit post with valid data': async function (browser) {
+    'Verify that use can add new post with valid data': function (browser) {
         dashboard.goToPage('Post');
-        addPost.addNewPost(titleName, content);
-
-        addPost.goToEditPost(titleName);
-    
-        editPost.editPost('', updatecontent);
-        dashboard.goToPage('Manage Post');
-        addPost.getTitleValue(function (actualTitle){
-            browser.assert.equal(actualTitle, titleName);
+        addPost.addNewPost(nameTitle, description);
+        addPost.getActualMessageValue(function (actualMesssage) {
+            browser.assert.equal(actualMesssage, expectedMessage);
         });
-        addPost.goToDetailPost();   
-        editPost.getContentValue(function (actualContent){
-            browser.assert.equal(actualContent, updatecontent);
+        browser.getID(function (id) {
+            postID = id;
+        }).perform(function (browser, done) {
+            dashboard.goToPage('Manage Post');
+            viewAllPost.goToDetailPost(postID);
+            addPost.getColumActual('Actual Title', function (actualTitle) {
+                browser.assert.equal(actualTitle, nameTitle);
+            });
+            addPost.getColumActual('Actual Description', function (actualDescription) {
+                browser.assert.equal(actualDescription, description);
+            });
+            dashboard.goToPage('Manage Post');
+            viewAllPost.goToActionHiddenLink('Delete', postID);
+            done();
         });
-    
-        dashboard.goToPage('Manage Post');
-        addPost.goToActionHiddenLink( titleName, 'Delete');
     },
+    'Verify that user can edit post with valid data': function (browser) {
+        dashboard.goToPage('Post');
+        addPost.addNewPost(nameTitle, description);
+        browser.getID(function (id) {
+            postID = id;
+        }).perform(function (browser, done) {
+            dashboard.goToPage('Manage Post');
+            viewAllPost.goToActionHiddenLink('Edit', postID);
+            editPost.editPost('', updateDescription);
+            editPost.getActualUpdateMessageValue(function (actualMesssage) {
+                browser.assert.equal(actualMesssage, expectedUpdateSuccessMessage);
+            });
+            dashboard.goToPage('Manage Post');
+            viewAllPost.goToDetailPost(postID);
+            addPost.getColumActual('Actual Title', function (actualTitle) {
+                browser.assert.equal(actualTitle, nameTitle);
+            });
+            addPost.getColumActual('Actual Description', function (actualDescription) {
+                browser.assert.equal(actualDescription, updateDescription);
+            });
+            dashboard.goToPage('Manage Post');
+            viewAllPost.goToActionHiddenLink('Delete', postID);
+            done();
+        });
+    }
 };

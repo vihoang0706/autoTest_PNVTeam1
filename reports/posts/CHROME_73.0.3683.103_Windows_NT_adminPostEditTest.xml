@@ -5,9 +5,9 @@
 
   <testsuite name="posts.adminPostEditTest"
     errors="0" failures="0" hostname="" id="" package="adminPostEditTest" skipped="0"
-    tests="1" time="15.96" timestamp="">
+    tests="1" time="20.99" timestamp="">
   
-    <testcase name="Verify that User Admin is able edit post with valid data" classname="posts.adminPostEditTest" time="15.96" assertions="11">
+    <testcase name="Verify that User Admin is able edit post with valid data" classname="posts.adminPostEditTest" time="20.99" assertions="11">
 
     
 
@@ -33,6 +33,11 @@
     </testcase>
   
 
+  
+    <system-err>
+      [0;31m  Cannot read property &#39;screenshots&#39; of undefined[0m
+[0;90m       at FSReqCallback.args [as oncomplete] (fs.js:145:20)[0m
+    </system-err>
   
 
   

@@ -1,12 +1,12 @@
 module.exports = {
     commands: [{
-        getContainValue(element, callback) {
-            this
-                .useXpath()
-                .getText(element, function (result) {
-                    callback(result.value);
-                });
-        },
+        // getContainValue(element, callback) {
+        //     this
+        //         .useXpath()
+        //         .getText(element, function (result) {
+        //             callback(result.value);
+        //         });
+        // },
         getCollumnValue(username, type, callback) {
             var collumnActualUsername ='//table//tbody/tr//td[@data-colname="Username"]/strong/a[text()="'+ username +'"]';
             var collumnActualName ='//td[@class="name column-name"  and ancestor::tr/td[@data-colname="Username"]/strong/a[text()="'+ username +'"]]';

@@ -1,9 +1,9 @@
 module.exports = {
     commands: [{
-        selectMenu (mainMenu, subMenu) {
-            return this
-                    .click(mainMenu)
-                    .click(subMenu);
+        selectMenu(mainMenu, subMenu) {
+            this
+                .click(mainMenu)
+                .click(subMenu);
         },
         goToPage(pageName) {
             switch (pageName) {
@@ -41,7 +41,7 @@ module.exports = {
                     this.selectMenu('@linkUsers', '@linkAddNewUser');
                     break;
                 case "Edit User Profile":
-                    this.selectMenu('@linkUsers','@linkYourProfile');
+                    this.selectMenu('@linkUsers', '@linkYourProfile');
                     break;
                 case "Library":
                     this.selectMenu('@linkUsers', '@linkYourProfile');
@@ -49,7 +49,7 @@ module.exports = {
             }
         },
         logout() {
-            return this
+            this
                 .moveToElement('@linkYourAccount', 0, 0)
                 .waitForElementVisible('@linkLogOut')
                 .click('@linkLogOut');

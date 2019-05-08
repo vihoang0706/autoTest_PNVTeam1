@@ -5,28 +5,11 @@
 
   <testsuite name="posts.adminPostAddTest"
     errors="0" failures="0" hostname="" id="" package="adminPostAddTest" skipped="0"
-    tests="2" time="28.08" timestamp="">
+    tests="2" time="20.25" timestamp="">
   
-    <testcase name="Verify that User Admin is able add new post with valid data" classname="posts.adminPostAddTest" time="17.02" assertions="8">
+    <testcase name="Verify that use can add new post with valid data" classname="posts.adminPostAddTest" time="9.033" assertions="10">
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Verify that User Admin is able edit post with valid data" classname="posts.adminPostAddTest" time="11.06" assertions="9">
 
     
 
@@ -47,12 +30,38 @@
     
     </testcase>
   
+    <testcase name="Verify that user can edit post with valid data" classname="posts.adminPostAddTest" time="11.21" assertions="14">
 
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
   
-    <system-err>
-      [0;31m  Cannot read property &#39;screenshots&#39; of undefined[0m
-[0;90m       at FSReqCallback.args [as oncomplete] (fs.js:145:20)[0m
-    </system-err>
+
   
 
   

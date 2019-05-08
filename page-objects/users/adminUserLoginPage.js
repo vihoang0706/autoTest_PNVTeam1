@@ -3,18 +3,16 @@ module.exports = {
         login(username, password) {
             this
                 .waitForElementVisible('@inputUsername')
-                .clearValue('@inputUsername')
                 .setValue('@inputUsername', username)
                 .waitForElementVisible('@inputPassword')
-                .clearValue('@inputPassword')
                 .setValue('@inputPassword', password)
                 .click('@inputLogin');
         },
-        getContainsText(selector, callback) {
-            this.getText(selector, function (result) {
-                callback(result.value);
-            });
-        },
+        // getContainsText(selector, callback) {
+        //     this.getText(selector, function (result) {
+        //         callback(result.value);
+        //     });
+        // },
         getErrorMessage(callback) {
             this
                 .waitForElementVisible('@labelErrorMessage')

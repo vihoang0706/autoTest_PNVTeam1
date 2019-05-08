@@ -1,9 +1,9 @@
 module.exports = {
     commands: [{
-        selectMenu (mainMenu, subMenu) {
-            return this
-                    .click(mainMenu)
-                    .click(subMenu);
+        selectMenu(mainMenu, subMenu) {
+            this
+                .click(mainMenu)
+                .click(subMenu);
         },
         goToPage(pageName) {
             switch (pageName) {
@@ -17,7 +17,7 @@ module.exports = {
                     this.selectMenu('@linkPosts', '@linkTags');
                     break;
                 case "Manage Post":
-                    this.selectMenu('@linkPosts', '@linkAllUsers');
+                    this.selectMenu('@linkPosts', '@linkAllPosts');
                     break;
                 case "Media":
                     this.selectMenu('@linkMedia', '@linkAddNewMedia');
@@ -29,7 +29,7 @@ module.exports = {
                     this.selectMenu('@linkPages', '@linkAllPages');
                     break;
                 case "Add New Page":
-                    this.selectMenu('@linkPosts', '@linkAddNewPages');
+                    this.selectMenu('@linkPages', '@linkAddNewPages');
                     break;
                 case "Menu":
                     this.selectMenu('@linkAppearance', '@linkMenus');
@@ -41,7 +41,7 @@ module.exports = {
                     this.selectMenu('@linkUsers', '@linkAddNewUser');
                     break;
                 case "Edit User Profile":
-                    this.selectMenu('@linkUsers','@linkYourProfile');
+                    this.selectMenu('@linkUsers', '@linkYourProfile');
                     break;
                 case "Library":
                     this.selectMenu('@linkUsers', '@linkYourProfile');
@@ -49,8 +49,7 @@ module.exports = {
             }
         },
         logout() {
-            return this
-                .waitForElementVisible('@linkYourAccount')
+            this
                 .moveToElement('@linkYourAccount', 0, 0)
                 .waitForElementVisible('@linkLogOut')
                 .click('@linkLogOut');

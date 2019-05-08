@@ -1,4 +1,5 @@
 var category, login, dashboard, username, password;
+var util = require("util");
 var nameCategory = 'clothes';
 var slugCategory = 'shopping';
 var parentCategory = 'None';

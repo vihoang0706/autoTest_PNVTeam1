@@ -1,72 +1,32 @@
+const util = require('util');
 module.exports = {
     commands: [{
-        getContainText(selector, callback){
+        formatElement(elementName,data) {
+            var element = this.elements[elementName.slice(1)];
+              return util.format(element.selector, data);
+        },
+        goToDetailPage(idPage) {
+            var self = this;
+            this.click(self.formatElement('@columnActualTitle', idPage));
+        },
+        deletePage(idPage) {
+            var self = this;
+            var formatColumnActualTitle = self.formatElement('@columnActualTitle', idPage);
+            var formatLinkDelete = self.formatElement('@linkDelete', idPage);
             this
-                .waitForElementVisible(selector)
-                .getText(selector, function(result){
-                    callback(result.value);
-            })
-        },
-        getColumActual(type, callback){
-            switch(type){
-              case 'Actual Title':
-              this.getContainText('@columnActualTitle', callback); 
-              break;
-            }
-        },
-        deleteAllPages() {
-            return this
-                .click('@checkboxSelectAllPage')
-                .click('@selectOptionTrash')
-                .click('@buttonApply');
-        },
-        goToDetailPage(){
-            return this
-                .click('@columnActualTitle');
-        },
-        goToActionHideLink(type) {
-            switch(type) {
-                case 'Edit' : 
-                    this
-                        .waitForElementVisible('@columnActualTitle')
-                        .moveToElement('@columnActualTitle', 0, 0)
-                        .waitForElementVisible('@linkEdit')
-                        .click('@linkEdit');
-                break;
-                case 'Delete' :
-                    this
-                        .waitForElementVisible('@columnActualTitle')
-                        .moveToElement('@columnActualTitle', 0, 0)
-                        .waitForElementVisible('@linkDelete')
-                        .click('@linkDelete');
-                break;
-            }
+                .waitForElementVisible(formatColumnActualTitle)
+                .moveToElement(formatColumnActualTitle, 0, 0)
+                .waitForElementVisible(formatLinkDelete)
+                .click(formatLinkDelete);
         }
     }],
     elements: {
         columnActualTitle: {
-            selector: '(//table[@class="wp-list-table widefat fixed striped pages"]//tbody/tr//td[@class="title column-title has-row-actions column-primary page-title"]/strong/a)[1]',
+            selector: '//strong/a[ancestor::tr[@id="post-' + '%s' + '"]]',
             locateStrategy: 'xpath'
         },
-        linkTrashPage: {
-            selector: '//div[@class="row-actions"]//span[@class="trash"]/a[@class="submitdelete"]',
-            locateStrategy: 'xpath'
-        },
-        checkboxSelectAllPage: {
-            selector: '//input[@id="cb-select-all-2"]',
-            locateStrategy: 'xpath'
-        },
-        selectOptionTrash: {
-            selector: '//select[@id="bulk-action-selector-bottom"]/option[@value="trash"]',
-            locateStrategy: 'xpath'
-        },
-        buttonApply: 'input[id=doaction2]',
         linkDelete: {
-            selector: '(//a[text()="Trash"])[1]',
-            locateStrategy: 'xpath'
-        },
-        linkEdit: {
-            selector: '(//a[text()="Edit"])[1]',
+            selector: '//span[@class="trash"]/a[ancestor::tr[@id="post-' + '%s' + '"]]',
             locateStrategy: 'xpath'
         },
     }

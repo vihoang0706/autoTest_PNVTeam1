@@ -1,59 +1,30 @@
 module.exports = {
     commands: [{
-        goToMenuPage() {
-            return this.click('@linkCreateNewMenu');
+        clickNewMenuLink() {
+            this.click('@linkCreateNewMenu');
         },
         addNewMenu(nameMenu) {
-            return this
+            this.clickNewMenuLink();
+            this
                 .setValue('@inputNameMenu', nameMenu)
-                .click('@inputSaveMenuHeader')
-        },
-        selectMenu() {
-            return this
-                .click('@selectMenu')
-                .click('@inputSelectMenu');
+                .click('@inputSaveMenu');
         },
         deleteMenu() {
-            return this.click('@linkDeleteMenu');
-        },
-        getContainValue(selector, callback){
             this
-              .waitForElementVisible(selector)
-              .getValue(selector, function(result){
-              callback(result.value);
-            });
-          },
-          getColumActual(type, callback){
-            switch(type){
-              case 'Actual Name Menu':
-              this.getContainValue('@inputNameMenu', callback); 
-              break;
-            }
+                .click('@linkDeleteMenu')
+                .api.acceptAlert();
+        },
+        getNameMenu(callback) {
+            this
+                .waitForElementVisible('@selectMenu')
+                .getContainValue('@inputNameMenu', callback);
         }
     }],
     elements: {
-        inputSelectMenu: {
-            selector: '//input[@class="button"]',
-            locateStrategy: 'xpath'
-        },
-        linkCreateNewMenu: {
-            selector: '//a[text()="create a new menu"]',
-            locateStrategy: 'xpath'
-        },
-        linkDeleteMenu: {
-            selector: '//a[@class="submitdelete deletion menu-delete"]',
-            locateStrategy: 'xpath'
-        },
-        selectMenu: {
-            selector: '//select[@id="select-menu-to-edit"]//option[contains(text(), "Comments")]',
-            locateStrategy: 'xpath'
-        },
+        linkCreateNewMenu: 'span[class=add-new-menu-action]>a',
+        linkDeleteMenu: 'span[class=delete-action]>a',
+        selectMenu: 'select[id=select-menu-to-edit]',
         inputNameMenu: 'input[id=menu-name]',
-        inputSaveMenuHeader: 'input[id=save_menu_header]',
-        inputSaveMenuFooter: 'input[id=save_menu_footer]',
-        inputAutoAddPages: 'input[id=auto-add-pages]',
-        inputLocationPrimary: 'input[id=locations-menu-1]',
-        inputLocationFooter: 'input[id=locations-footer]',
-        inputLocationSocialLink: 'input[id=locations-social]',
+        inputSaveMenu: 'input[id=save_menu_header]'
     }
 };

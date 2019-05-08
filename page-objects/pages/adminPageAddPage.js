@@ -1,55 +1,39 @@
 module.exports = {
   commands: [{
     addNewPage(titlePage, description) {
-      return this
+      this
         .setValue('@inputTitle', titlePage)
         .setValue('@inputDescription', description)
         .click('@buttonPublish')
-        .click('@subButtonPublish')
-        .waitForElementVisible('@labelMessageSuccess');
+        .click('@subButtonPublish');
     },
-    getContainText(selector, callback){
+    getActualMessageValue(callback) {
       this
-        .waitForElementVisible(selector)
-        .getText(selector, function(result){
-        callback(result.value);
-      });
+        .waitForElementVisible('@labelMessageSuccess')
+        .getContainText('@labelMessageSuccess', callback);
     },
-    getColumActual(type, callback){
-      switch(type){
+    getColumActual(type, callback) {
+      switch (type) {
         case 'Actual Title':
-        this.getContainText('@inputTitle', callback); 
-        break;
-      case 'Actual Description':
-        this.getContainText('@inputDescription', callback); 
-        break;
+          this
+            .waitForElementVisible('@inputTitle')
+            .getContainText('@inputTitle', callback);
+          break;
+        case 'Actual Description':
+          this
+            .waitForElementVisible('@inputDescription')
+            .getContainText('@inputDescription', callback);
+          break;
       }
-    }
+    },
   }],
   elements: {
-    inputTitle: {
-      selector: '//div[@class="edit-post-text-editor__body"]//textarea[@class="editor-post-title__input"]',
-      locateStrategy: 'xpath'
-    },
-    inputDescription: {
-      selector: '//div[@class="edit-post-text-editor__body"]//textarea[@class="editor-post-text-editor"]',
-      locateStrategy: 'xpath'
-    },
-    buttonPublish: {
-      selector: '//button[@class="components-button editor-post-publish-panel__toggle is-button is-primary"]',
-      locateStrategy: 'xpath'
-    },
-    subButtonPublish: {
-      selector: '//button[@class="components-button editor-post-publish-button is-button is-default is-primary is-large"]',
-      locateStrategy: 'xpath'
-    },
-    linkViewPage: {
-      selector: '//a[@class="components-button is-button is-default"]',
-      locateStrategy: 'xpath'
-    },
-    labelMessageSuccess: {
-      selector: '//div[@class="components-notice__content"]',
-      locateStrategy: 'xpath'
-    }
+    inputTitle: 'textarea[class=editor-post-title__input]',
+    inputDescription: 'textarea[class=editor-post-text-editor]',
+    buttonPublish: 'button.editor-post-publish-panel__toggle   ',
+    subButtonPublish: 'button.editor-post-publish-button',
+    linkViewPage: 'a.components-notice__action',
+    labelMessageSuccess: 'div.components-notice__content',
+    inputPageID: 'input[id=post_ID]'
   }
 };

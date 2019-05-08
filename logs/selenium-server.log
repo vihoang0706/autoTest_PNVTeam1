@@ -1,25 +1,55 @@
-15:12:37.510 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
-15:12:37.573 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
-2019-05-08 15:12:37.606:INFO::main: Logging initialized @268ms to org.seleniumhq.jetty9.util.log.StdErrLog
-15:12:37.779 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
-15:12:37.883 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
-15:12:38.214 INFO [ActiveSessionFactory.apply] - Capabilities are: {
-  "acceptSslCerts": true,
-  "browserName": "chrome",
-  "chromeOptions": {
-    "args": [
-      "disable-web-security",
-      "ignore-certificate-errors",
-      "--test-type"
-    ]
-  },
-  "javascriptEnabled": true,
-  "name": "Posts\\admin Post Add Test"
-}
-15:12:38.215 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
-Starting ChromeDriver 73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017) on port 20306
-Only local connections are allowed.
-Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-15:12:40.688 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
-15:12:40.918 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session fa34bb802450a168ebb8cdf314d29ca4 (org.openqa.selenium.chrome.ChromeDriverService)
-15:13:04.366 INFO [ActiveSessions$1.onStop] - Removing session fa34bb802450a168ebb8cdf314d29ca4 (org.openqa.selenium.chrome.ChromeDriverService)
+16:59:37.554 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
+16:59:37.642 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+2019-05-08 16:59:37.679:INFO::main: Logging initialized @355ms to org.seleniumhq.jetty9.util.log.StdErrLog
+16:59:37.961 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+16:59:38.039 ERROR [BaseServer.start] - Port 4444 is busy, please choose a free port and specify it using -port option
+Exception in thread "main" java.lang.RuntimeException: java.net.BindException: Address already in use: bind
+	at org.openqa.selenium.grid.server.BaseServer.start(BaseServer.java:221)
+	at org.openqa.selenium.remote.server.SeleniumServer.boot(SeleniumServer.java:131)
+	at org.openqa.grid.selenium.GridLauncherV3.lambda$buildLaunchers$3(GridLauncherV3.java:249)
+	at org.openqa.grid.selenium.GridLauncherV3.lambda$launch$0(GridLauncherV3.java:86)
+	at java.util.Optional.map(Unknown Source)
+	at org.openqa.grid.selenium.GridLauncherV3.launch(GridLauncherV3.java:86)
+	at org.openqa.grid.selenium.GridLauncherV3.main(GridLauncherV3.java:70)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source)
+	at org.seleniumhq.jetty9.server.ServerConnector.openAcceptChannel(ServerConnector.java:339)
+	at org.seleniumhq.jetty9.server.ServerConnector.open(ServerConnector.java:307)
+	at org.seleniumhq.jetty9.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.seleniumhq.jetty9.server.ServerConnector.doStart(ServerConnector.java:235)
+	at org.seleniumhq.jetty9.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.seleniumhq.jetty9.server.Server.doStart(Server.java:395)
+	at org.seleniumhq.jetty9.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.openqa.selenium.grid.server.BaseServer.start(BaseServer.java:202)
+	... 6 more
+ test frameworks to prevent access by malicious code.
+1557309579475	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\INTERN~1.05\\AppData\\Local\\Temp\\rust_mozprofile.KFkYdlpOqaHo"
+16:59:39.991 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+16:59:40.025 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 7b7e3d1b-d892-4b74-b0e2-55bf7e7192eb (org.openqa.selenium.ie.InternetExplorerDriverService)
+16:59:41.962 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
+16:59:42.165 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session ead6aea2530d683b0acecc05121b5c35 (org.openqa.selenium.chrome.ChromeDriverService)
+1557309583948	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1557309583949	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1557309583949	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+[Parent 3548, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 20968, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 20968, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+1557309586800	Marionette	INFO	Listening on port 52164
+16:59:46.920 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+16:59:46.984 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 01ff6b6c-24eb-40a3-96b3-4512ed986ac6 (org.openqa.selenium.firefox.GeckoDriverService)
+16:59:53.654 INFO [ActiveSessions$1.onStop] - Removing session ead6aea2530d683b0acecc05121b5c35 (org.openqa.selenium.chrome.ChromeDriverService)
+16:59:54.632 INFO [ActiveSessions$1.onStop] - Removing session 7b7e3d1b-d892-4b74-b0e2-55bf7e7192eb (org.openqa.selenium.ie.InternetExplorerDriverService)
+1557309598041	Marionette	INFO	Stopped listening on port 52164
+[Child 656, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 656, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+GPU 20032, Chrome_ChildThread] 
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+16:59:59.448 INFO [ActiveSessions$1.onStop] - Removing session 01ff6b6c-24eb-40a3-96b3-4512ed986ac6 (org.openqa.selenium.firefox.GeckoDriverService)

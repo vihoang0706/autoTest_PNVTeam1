@@ -9,7 +9,6 @@ module.exports = {
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
         login.login(username, password);
-        dashboard.goToPage('Library');
         dashboard.goToPage('Media');
         addMedia
             .addNewMedia(image)

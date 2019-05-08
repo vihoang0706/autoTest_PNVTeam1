@@ -1,3 +1,4 @@
+// Can not clear value title when edit post  
 const nameTitle = 'Post: ' + (Math.floor(Math.random() * 50)) + ' Where were you';
 const description = 'When you were in trouble and you needed a hand I was always there.';
 const updateDescription = 'I have some best friends their names are: Delia and Sofia.';
@@ -5,7 +6,7 @@ var dashboard, addPost, login, username, password, editPost, postID;
 var expectedMessage = "Post published.\nView Post";
 var expectedUpdateSuccessMessage = "Post updated.\nView Post";
 module.exports = {
-    tags: ['add-post'],
+    tags: ['post'],
     before: function (browser) {
         login = browser.page.adminUserLoginPage();
         addPost = browser.page.adminPostAddPage();

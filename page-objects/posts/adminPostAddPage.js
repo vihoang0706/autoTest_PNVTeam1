@@ -10,9 +10,7 @@ module.exports = {
                 .waitForElementVisible('@labelMessageSuccess');
         },
         getActualMessageValue(callback) {
-            this
-              .waitForElementVisible('@labelMessageSuccess')
-              .getContainText('@labelMessageSuccess', callback);
+            this.getContainText('@labelMessageSuccess', callback);
         },
         getColumActual(type, callback) {
             switch (type) {
@@ -35,6 +33,5 @@ module.exports = {
         buttonPublish: 'button.editor-post-publish-panel__toggle',
         subButtonPublish: 'button.editor-post-publish-button',
         labelMessageSuccess: 'div[class=components-notice__content]',
-        
     }
 }

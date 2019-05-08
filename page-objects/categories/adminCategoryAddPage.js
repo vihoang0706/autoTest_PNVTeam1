@@ -1,21 +1,22 @@
 const util = require("util");
 module.exports = {
     commands: [{
-        addNewTag(tagName, slugName, description) {
+        addNewCategory(name, slug, parent, description) {
             this
-                .setValue('@inputTagName', tagName)
-                .setValue('@inputSlugName', slugName)
-                .setValue('@inputDescription', description)
-                .click('@inputAddNewTag');
+                .setValue('@inputName', name)
+                .setValue('@inputSlug', slug)
+                .setValue('@selectParent', parent)
+                .setValue('@textareaDescription', description)
+                .click('@inputAddCategory');
         },
         formatElement(elementName, data) {
             var element = this.elements[elementName.slice(1)];
             return util.format(element.selector, data);
         },
-        getColumnValueActual(type, nameTag, callback) {
-            var formatColumnActualTitle = this.formatElement('@columnActualTitle', nameTag);
-            var formatColumnActualSlug = this.formatElement('@columnActualSlug', nameTag);
-            var formatColumnActualDescription = this.formatElement('@columnActualDescription', nameTag);
+        getColumnValueActual(type, categoryName, callback) {
+            var formatColumnActualTitle = this.formatElement('@columnActualTitle', categoryName);
+            var formatColumnActualSlug = this.formatElement('@columnActualSlug', categoryName);
+            var formatColumnActualDescription = this.formatElement('@columnActualDescription', categoryName);
             switch (type) {
                 case "Actual Title":
                     this
@@ -34,31 +35,32 @@ module.exports = {
                     break;
             }
         },
-        clickLink(elementContainHideLink, hideLink, nameTag) {
+        clickLink(elementContainHideLink, hideLink, categoryName) {
             var self = this;
             this
-                .waitForElementVisible(self.formatElement(elementContainHideLink, nameTag))
-                .moveToElement(self.formatElement(elementContainHideLink, nameTag), 0, 0)
-                .waitForElementVisible(self.formatElement(hideLink, nameTag))
-                .click(self.formatElement(hideLink, nameTag));
+                .waitForElementVisible(self.formatElement(elementContainHideLink, categoryName))
+                .moveToElement(self.formatElement(elementContainHideLink, categoryName), 0, 0)
+                .waitForElementVisible(self.formatElement(hideLink, categoryName))
+                .click(self.formatElement(hideLink, categoryName));
         },
-        goToActionHiddenLink(action, nameTag) {
+        goToActionHiddenLink(action, categoryName) {
             switch (action) {
                 case 'Edit':
-                    this.clickLink('@columnActualTitle', '@linkEdit', nameTag);
+                    this.clickLink('@columnActualTitle', '@linkEdit', categoryName);
                     break;
                 case 'Delete':
-                    this.clickLink('@columnActualTitle', '@linkDelete', nameTag);
+                    this.clickLink('@columnActualTitle', '@linkDelete', categoryName);
                     this.api.acceptAlert();
                     break;
             }
-        },
+        }
     }],
     elements: {
-        inputTagName: 'input[id=tag-name]',
-        inputSlugName: 'input[id=tag-slug]',
-        inputDescription: 'textarea[id=tag-description]',
-        inputAddNewTag: 'input[id=submit]',
+        inputName: 'input[id=tag-name]',
+        inputSlug: 'input[id=tag-slug]',
+        selectParent: 'select[id=parent]',
+        textareaDescription: 'textarea[id=tag-description]',
+        inputAddCategory: 'input[id=submit]',
         linkDelete: {
             selector: '//span[@class="delete"]/a[ancestor::td//a[text()="' + '%s' + '"]]',
             locateStrategy: 'xpath'

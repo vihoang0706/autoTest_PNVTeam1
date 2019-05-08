@@ -1,39 +1,49 @@
+const util = require("util");
 module.exports = {
     commands: [{
-        // getContainValue(element, callback) {
-        //     this
-        //         .useXpath()
-        //         .getText(element, function (result) {
-        //             callback(result.value);
-        //         });
-        // },
-        getCollumnValue(username, type, callback) {
-            var collumnActualUsername ='//table//tbody/tr//td[@data-colname="Username"]/strong/a[text()="'+ username +'"]';
-            var collumnActualName ='//td[@class="name column-name"  and ancestor::tr/td[@data-colname="Username"]/strong/a[text()="'+ username +'"]]';
-            var collumnActualEmail ='//td[@class="email column-email" ]/a[ancestor::tr/td[@data-colname="Username"]/strong/a[text()="'+ username +'"]]';
-            var collumnActualRole ='//td[@class="role column-role"  and ancestor::tr/td[@data-colname="Username"]/strong/a[text()="'+ username +'"]]';
+        formatElement(elementName, data) {
+            var element = this.elements[elementName.slice(1)];
+            return util.format(element.selector, data);
+        },
+        getColumnValueActual(type, username, callback) {
+            var formatColumnActualUsername = this.formatElement('@columnActualUsername', username);
+            var formatColumnActualName = this.formatElement('@columnActualName', username);
+            var formatColumnActualEmail = this.formatElement('@columnActualEmail', username);
+            var formatColumnActualRole = this.formatElement('@columnActualRole', username);
             switch (type) {
-                case "Username":
-                    this.getContainValue(collumnActualUsername, callback);
+                case "Actual Username":
+                    this
+                        .waitForElementVisible(formatColumnActualUsername)
+                        .getContainText(formatColumnActualUsername, callback);
                     break;
-                case "Name":
-                    this.getContainValue(collumnActualName, callback);
+                case "Actual Name":
+                    this
+                        .waitForElementVisible(formatColumnActualName)
+                        .getContainText(formatColumnActualName, callback);
                     break;
-                case "Email":
-                    this.getContainValue(collumnActualEmail, callback);
+                case "Actual Email":
+                    this
+                        .waitForElementVisible(formatColumnActualEmail)
+                        .getContainText(formatColumnActualEmail, callback);
                     break;
-                case "Role":
-                    this.getContainValue(collumnActualRole, callback);
+                case "Actual Role":
+                    this
+                        .waitForElementVisible(formatColumnActualRole)
+                        .getContainText(formatColumnActualRole, callback);
                     break;
             }
         },
+        clickLink(elementContainHideLink, hideLink, nameTag) {
+            var self = this;
+            this
+                .waitForElementVisible(self.formatElement(elementContainHideLink, nameTag))
+                .moveToElement(self.formatElement(elementContainHideLink, nameTag), 0, 0)
+                .waitForElementVisible(self.formatElement(hideLink, nameTag))
+                .click(self.formatElement(hideLink, nameTag));
+        },
         deleteUser(username) {
             var self = this;
-            var collumnActualUsername ='//table//tbody/tr//td[@data-colname="Username"]/strong/a[text()="'+ username +'"]';
-            self
-                .useXpath()
-                .moveToElement(collumnActualUsername, 0, 0) 
-                .click('@linkDelete');
+            this.clickLink('@columnActualUsername', '@linkDelete', username);
             self.getAttribute('@inputConfirmDeletion','disabled',function(result){
                 if(result.value == "true"){
                     self
@@ -46,11 +56,31 @@ module.exports = {
         }
     }],
     elements: {
-        linkDelete: {
-            selector: '(//span[@class="delete"]/a[@class="submitdelete"])[last()]',
-            locateStrategy: 'xpath'
-        },
         inputConfirmDeletion: 'input[id=submit]',
         inputDeleteAllContent: 'input[id=delete_option0]',
+        linkDelete: {
+            selector: '//span[@class="delete"]/a[ancestor::td//a[text()="' + '%s' + '"]]',
+            locateStrategy: 'xpath'
+        },
+        linkEdit: {
+            selector: '//span[@class="edit"]/a[ancestor::td//a[text()="' + '%s' + '"]]',
+            locateStrategy: 'xpath'
+        },
+        columnActualUsername: {
+            selector: '//strong/a[text()="' + '%s' + '"]',
+            locateStrategy: 'xpath'
+        },
+        columnActualName: {
+            selector: '//td[@class="name column-name" and ancestor::tr//a[text()="' + '%s' + '"]]',
+            locateStrategy: 'xpath'
+        },
+        columnActualEmail: {
+            selector: '//td[@class="email column-email"]/a[ancestor::tr//a[text()="' + '%s' + '"]]',
+            locateStrategy: 'xpath'
+        },
+        columnActualRole: {
+            selector: '//td[@class="role column-role" and ancestor::tr//a[text()="' + '%s' + '"]]',
+            locateStrategy: 'xpath'
+        }
     }
 }

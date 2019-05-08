@@ -21,26 +21,26 @@ module.exports = {
     'Verify that user can add a new user with valid information': function (browser) {
         dashboard.goToPage('Add New User');
         user.addNewUser(username, email, firstName, lastName, website, password, role);
-        userManage.getCollumnValue(username, 'Username', function (actualUserName) {
+        userManage.getColumnValueActual('Actual Username', username, function (actualUserName) {
             browser.assert.equal(actualUserName, username);
         });
-        userManage.getCollumnValue(username, 'Name', function (actualName) {
+        userManage.getColumnValueActual('Actual Name', username, function (actualName) {
             browser.assert.equal(actualName, name);
         });
-        userManage.getCollumnValue(username, 'Email', function (actualEmail) {
+        userManage.getColumnValueActual('Actual Email', username, function (actualEmail) {
             browser.assert.equal(actualEmail, email);
         });
-        userManage.getCollumnValue(username, 'Role', function (actualRole) {
+        userManage.getColumnValueActual('Actual Role', username, function (actualRole) {
             browser.assert.equal(actualRole, role);
         });
         // A new user can log in to admin page
         dashboard.logout();
         login.login(username, password);
-        dashboard.getElementIsVisible('linkYourAccount', function (result) {
+        dashboard.IsLogOutVisible(function(result){
             browser.assert.equal(result, true);
         });
         dashboard.logout();
-        // delete user has just create 
+        // delete user has just created 
         login.login(userAdmin, passwordAdmin);
         dashboard.goToPage('Manage User');
         userManage.deleteUser(username);

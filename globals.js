@@ -4,11 +4,6 @@ var userNames = {
   password: '123456789',
 };
 module.exports = {
-  asyncHookTimeout: 10000,
-  abortOnAssertionFailure : false,
-  waitForConditionPollInterval : 300,
-  waitForConditionTimeout : 10000,
-  retryAssertionTimeout: 5000,
   userNames: userNames,
   paths: {
     data: path.resolve(__dirname, './data/data.csv')

@@ -1,71 +1,92 @@
 {
-    "src_folders" : ["tests/categories","tests/posts",
-      "tests/tags","tests/users","tests/pages","tests/medias", "tests/menus"],
-    "output_folder" : "reports",
-    "custom_commands_path" : ["commands/commons"],
-    "custom_assertions_path" : "",
-    "page_objects_path" : ["page-objects/categories","page-objects/posts",
-      "page-objects/tags","page-objects/users","page-objects/pages","page-objects/base-objects",
-    "page-objects/medias", "page-objects/menus"],
-    "globals_path" : "globals.js",
-    "webdriver": {
-      "start_process" : true,
-      "server_path": "node_modules/chromedriver/lib/chromedriver/chromedriver.exe",
-      "cli_args": [
-        "--log", "debug"
-      ],
-      "port": 4444
-    },
-    "selenium" : {
-      "start_process" : true,
-      "server_path" : "libraries/selenium/selenium-server-standalone-3.141.59.jar",
-      "log_path" : "logs/",
-      "host" : "127.0.0.1",
-      "port" : 4444,
-      "cli_args" : {
-        "webdriver.chrome.driver" : "node_modules/chromedriver/lib/chromedriver/chromedriver.exe"
+  "src_folders": [
+    "tests/categories",
+    "tests/posts",
+    "tests/tags",
+    "tests/users",
+    "tests/pages",
+    "tests/medias",
+    "tests/menus"
+  ],
+  "output_folder": "reports",
+  "custom_commands_path": [
+    "commons/commands"
+  ],
+  "custom_assertions_path": "",
+  "page_objects_path": [
+    "page-objects/categories",
+    "page-objects/posts",
+    "page-objects/tags",
+    "page-objects/users",
+    "page-objects/pages",
+    "page-objects/base-objects",
+    "page-objects/medias",
+    "page-objects/menus"
+  ],
+  "globals_path": "globals.js",
+  "webdriver": {
+    "start_process": true,
+    "server_path": "node_modules/chromedriver/lib/chromedriver/chromedriver.exe",
+    "cli_args": [
+      "--log",
+      "debug"
+    ],
+    "port": 4444
+  },
+  "selenium": {
+    "start_process": true,
+    "server_path": "libraries/selenium/selenium-server-standalone-3.141.59.jar",
+    "log_path": "logs/",
+    "host": "127.0.0.1",
+    "port": 4444,
+    "cli_args": {
+      "webdriver.chrome.driver": "node_modules/chromedriver/lib/chromedriver/chromedriver.exe"
+    }
+  },
+  "test_workers": {
+    "enabled": true,
+    "workers": "auto"
+  },
+  "test_settings": {
+    "default": {
+      "skip_testcases_on_fail": true,
+      "launch_url": "http://192.168.189.70/wordpress/wp-login.php",
+      "selenium_port": 4444,
+      "selenium_host": "localhost",
+      "silent": true,
+      "use_xpath": true,
+      "screenshots": {
+        "enabled": true,
+        "path": "./reports",
+        "on_failure": true,
+        "on_error": true
+      },
+      "globals": {
+        "waitForConditionTimeout": 5000,
+        "asyncHookTimeout": 10000,
+        "abortOnAssertionFailure": false,
+        "waitForConditionPollInterval": 300,
+        "retryAssertionTimeout": 5000
+      },
+      "desiredCapabilities": {
+        "browserName": "firefox",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
       }
     },
-    "test_workers": {
-      "enabled": true,
-      "workers": "auto"
-    },
-    "test_settings" : {
-      "default" : {
-        "skip_testcases_on_fail": true,
-        "launch_url" : "http://192.168.189.70/wordpress/wp-login.php",
-        "selenium_port"  : 4444,
-        "selenium_host"  : "localhost",
-        "silent": true,
-        "use_xpath":true,
-        "screenshots": {
-          "enabled": true,
-          "path": "./reports",
-          "on_failure": true,
-          "on_error": true
-        },
-      "globals": {
-        "waitForConditionTimeout": 5000 
-      },
-        "desiredCapabilities": {
-          "browserName": "firefox",
-          "javascriptEnabled": true,
-          "acceptSslCerts": true
-        }
-      },    
-      "chrome" : {
-        "desiredCapabilities": {
-          "browserName": "chrome",
-          "javascriptEnabled": true,
-          "acceptSslCerts": true,
-          "chromeOptions": {
-            "args": [
-              "disable-web-security",
-             "ignore-certificate-errors",
-             "--test-type"
-            ]
-          }
+    "chrome": {
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "chromeOptions": {
+          "args": [
+            "disable-web-security",
+            "ignore-certificate-errors",
+            "--test-type"
+          ]
         }
       }
     }
   }
+}

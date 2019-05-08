@@ -21,51 +21,41 @@ module.exports = {
                     .setValue('@inputEditDescription', userInfor)
                     .click('@inputUpdateProfile');
             },
-            // getContainsText(selector, callback) {
-            //     this.getText(selector, function (result) {
-            //         callback(result.value);
-            //     });
-            // },
-            getValueActual(type, callback) {
+            getActualValue(type, callback) {
                 switch (type) {
                     case "Actual First Name":
                         this
                             .waitForElementVisible('@inputEditFirstName')
-                            .getContainsValue('@inputEditFirstName', callback);
+                            .getContainValue('@inputEditFirstName', callback);
                         break;
                     case "Actual Last Name":
                         this
                             .waitForElementVisible('@inputEditLastName')
-                            .getContainsValue('@inputEditLastName', callback);
+                            .getContainValue('@inputEditLastName', callback);
                         break;
                     case "Actual Nick Name":
                         this
                             .waitForElementVisible('@inputEditNickName')
-                            .getContainsValue('@inputEditNickName', callback);
+                            .getContainValue('@inputEditNickName', callback);
                         break;
                     case "Actual Description":
                         this
                             .waitForElementVisible('@inputEditDescription')
-                            .getContainsValue('@inputEditDescription', callback);
+                            .getContainValue('@inputEditDescription', callback);
                         break;
                     case "Actual Website":
                         this
                             .waitForElementVisible('@inputEditWebsite')
-                            .getContainsValue('@inputEditWebsite', callback);
-                        break;
-                    case "Success Message":
-                        this
-                            .waitForElementVisible('@strongMessProfileUpdated')
-                            .getContainsText('@strongMessProfileUpdated', callback);
+                            .getContainValue('@inputEditWebsite', callback);
                         break;
                 }
             },
-            getContainsValue(selector, callback) {
-                this.getValue(selector, function (result) {
-                    callback(result.value);
-                });
+            getActualUpdatedUserProfileMessage(callback) {
+                this
+                  .waitForElementVisible('@labelUpdatedUserProfileMessageSuccess')
+                  .getContainText('@labelUpdatedUserProfileMessageSuccess', callback);
             },
-            getElementIsSelected(type, selector, callback) {
+            getCheckboxSelected(type, selector, callback) {
                 var self = this;
                 self.api.element(type, selector, function (response) {
                     self.api.elementIdSelected(response.value.ELEMENT, function (result) {
@@ -76,31 +66,31 @@ module.exports = {
                     });
                 });
             },
-            IsElementSelected(callback) {
-                this.getElementIsSelected('id', 'rich_editing', callback);
-                this.getElementIsSelected('id', 'syntax_highlighting', callback);
-                this.getElementIsSelected('id', 'admin_color_fresh', callback);
-                this.getElementIsSelected('id', 'comment_shortcuts', callback);
-                this.getElementIsSelected('id', 'admin_bar_front', callback);
+            IsCheckboxesSelected(callback) {
+                this.getCheckboxSelected('id', 'rich_editing', callback);
+                this.getCheckboxSelected('id', 'syntax_highlighting', callback);
+                this.getCheckboxSelected('id', 'admin_color_fresh', callback);
+                this.getCheckboxSelected('id', 'comment_shortcuts', callback);
+                this.getCheckboxSelected('id', 'admin_bar_front', callback);
             },
-            setDefaultValue() {
+            setDefaultCheckboxes() {
                 var self = this;
-                self.getElementIsSelected('id', 'rich_editing', function (result) {
+                self.getCheckboxSelected('id', 'rich_editing', function (result) {
                     if (result == true) {
                         self.click('@checkboxRichEditing');
                     }
                 });
-                self.getElementIsSelected('id', 'syntax_highlighting', function (result) {
+                self.getCheckboxSelected('id', 'syntax_highlighting', function (result) {
                     if (result == true) {
                         self.click('@checkboxSyntaxHightlight');
                     }
                 });
-                self.getElementIsSelected('id', 'comment_shortcuts', function (result) {
+                self.getCheckboxSelected('id', 'comment_shortcuts', function (result) {
                     if (result == true) {
                         self.click('@checkboxCommentShortcut');
                     }
                 });
-                self.getElementIsSelected('id', 'admin_bar_front', function (result) {
+                self.getCheckboxSelected('id', 'admin_bar_front', function (result) {
                     if (result == true) {
                         self.click('@checkboxShowToolBar');
                     }
@@ -139,7 +129,7 @@ module.exports = {
             selector: '//tr[@id="password"]//td//div//button[@class="button wp-cancel-pw hide-if-no-js"]',
             locateStrategy: 'xpath'
         },
-        strongMessProfileUpdated: {
+        labelUpdatedUserProfileMessageSuccess: {
             selector: '//div[@id="message"] // strong',
             locateStrategy: 'xpath'
         }

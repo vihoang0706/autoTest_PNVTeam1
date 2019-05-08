@@ -43,10 +43,15 @@ module.exports = {
                 case "Edit User Profile":
                     this.selectMenu('@linkUsers', '@linkYourProfile');
                     break;
-                case "Library":
-                    this.selectMenu('@linkUsers', '@linkYourProfile');
-                    break;
             }
+        },
+        IsLogOutVisible(callback) {
+            this
+                .moveToElement('@linkYourAccount', 0, 0)
+                .waitForElementVisible('@linkLogOut')
+                .isVisible('@linkLogOut',function(result){
+                    callback(result.value);
+                });
         },
         logout() {
             this
@@ -87,7 +92,7 @@ module.exports = {
             locateStrategy: 'xpath'
         },
         linkAddNewMedia: {
-            selector: '//div[@id="wpbody-content"]/div/a',
+            selector: '//li[@id="menu-media"]//a[text()="Add New"]',
             locateStrategy: 'xpath'
         },
         //Pages
@@ -131,7 +136,7 @@ module.exports = {
         },
         //Header
         linkYourAccount: {
-            selector: '//li[@id="wp-admin-bar-my-account"]/a[@class="ab-item"]',
+            selector: '//li[@id="wp-admin-bar-my-account"]/a/span[@class="display-name"]',
             locateStrategy: 'xpath'
         },
         linkLogOut: {

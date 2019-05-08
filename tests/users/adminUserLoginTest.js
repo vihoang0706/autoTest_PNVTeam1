@@ -7,6 +7,9 @@ module.exports = {
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
         login.login(username, password);
+        dashboard.IsLogOutVisible(function(result){
+            browser.assert.equal(result, true);
+        });
         dashboard.logout();
     }
 };

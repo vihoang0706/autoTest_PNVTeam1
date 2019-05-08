@@ -6,35 +6,41 @@ const linkWebsite = 'http://pnvteam1.com';
 const messageProfileUpdated = 'Profile updated.';
 var userProfile, dashboard;
 module.exports = {
-    '@tags': 'edit-user-profile',
-    'Verify that Admin can edit user profile successfully': function (browser) {
+    '@tags': 'edit-admin-profile',
+    before: function(browser) {
+        username = browser.globals.userNames.username;
+        password = browser.globals.userNames.password;
+        login = browser.page.adminUserLoginPage();
         dashboard = browser.page.adminBasePage();
         userProfile = browser.page.adminUserEditProfilePage();
+        login.login(username, password);
+    },
+    'Verify that Admin can edit the profile of admin successfully': function (browser) {
         dashboard.goToPage('Edit User Profile');
-        userProfile.setDefaultValue();
+        userProfile.setDefaultCheckboxes();
         dashboard.goToPage('Edit User Profile');
         userProfile.updateUserProfile(firstName, lastName, nickName, linkWebsite, description);
-        userProfile.IsElementSelected(function (result) {
+        userProfile.IsCheckboxesSelected(function (result) {
             browser.assert.equal(result, true);
         });
-        userProfile.getValueActual('Success Message', function (actualMessage) {
+        userProfile.getActualUpdatedUserProfileMessage(function (actualMessage) {
             browser.assert.equal(actualMessage, messageProfileUpdated);
         });
         dashboard.goToPage('Edit User Profile');
-        userProfile.getValueActual('Actual First Name', function (actualFirstName) {
+        userProfile.getActualValue('Actual First Name', function (actualFirstName) {
             browser.assert.equal(actualFirstName, firstName);
         });
-        userProfile.getValueActual('Actual Last Name', function (actualLastName) {
+        userProfile.getActualValue('Actual Last Name', function (actualLastName) {
             browser.assert.equal(actualLastName, lastName);
         });
-        userProfile.getValueActual('Actual Nick Name', function (actualNickName) {
+        userProfile.getActualValue('Actual Nick Name', function (actualNickName) {
             browser.assert.equal(actualNickName, nickName);
         });
-        userProfile.getValueActual('Actual Website', function (actualLinkWebsite) {
+        userProfile.getActualValue('Actual Website', function (actualLinkWebsite) {
             browser.assert.equal(actualLinkWebsite, linkWebsite);
         });
-        userProfile.getValueActual('Actual Description', function (actualDescription) {
+        userProfile.getActualValue('Actual Description', function (actualDescription) {
             browser.assert.equal(actualDescription, description);
         });
-    },
+    }
 };

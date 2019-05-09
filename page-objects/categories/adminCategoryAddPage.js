@@ -36,14 +36,13 @@ module.exports = {
             }
         },
         clickLink(elementContainHideLink, hideLink, categoryName) {
-            var self = this;
             this
-                .waitForElementVisible(self.formatElement(elementContainHideLink, categoryName))
-                .moveToElement(self.formatElement(elementContainHideLink, categoryName), 0, 0)
-                .waitForElementVisible(self.formatElement(hideLink, categoryName))
-                .click(self.formatElement(hideLink, categoryName));
+                .waitForElementVisible(this.formatElement(elementContainHideLink, categoryName))
+                .moveToElement(this.formatElement(elementContainHideLink, categoryName), 0, 0)
+                .waitForElementVisible(this.formatElement(hideLink, categoryName))
+                .click(this.formatElement(hideLink, categoryName));
         },
-        goToActionHiddenLink(action, categoryName) {
+        goToAction(action, categoryName) {
             switch (action) {
                 case 'Edit':
                     this.clickLink('@columnActualTitle', '@linkEdit', categoryName);

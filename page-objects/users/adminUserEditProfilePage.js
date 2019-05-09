@@ -66,7 +66,7 @@ module.exports = {
                     });
                 });
             },
-            IsCheckboxesSelected(callback) {
+            isCheckboxesSelected(callback) {
                 this.getCheckboxSelected('id', 'rich_editing', callback);
                 this.getCheckboxSelected('id', 'syntax_highlighting', callback);
                 this.getCheckboxSelected('id', 'admin_color_fresh', callback);

@@ -10,7 +10,7 @@
   ],
   "output_folder": "reports",
   "custom_commands_path": [
-    "commons/commands"
+    "commons/custom-commands"
   ],
   "custom_assertions_path": "",
   "page_objects_path": [

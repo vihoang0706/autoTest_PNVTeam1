@@ -34,12 +34,11 @@ module.exports = {
             }
         },
         clickLink(elementContainHideLink, hideLink, nameTag) {
-            var self = this;
             this
-                .waitForElementVisible(self.formatElement(elementContainHideLink, nameTag))
-                .moveToElement(self.formatElement(elementContainHideLink, nameTag), 0, 0)
-                .waitForElementVisible(self.formatElement(hideLink, nameTag))
-                .click(self.formatElement(hideLink, nameTag));
+                .waitForElementVisible(this.formatElement(elementContainHideLink, nameTag))
+                .moveToElement(this.formatElement(elementContainHideLink, nameTag), 0, 0)
+                .waitForElementVisible(this.formatElement(hideLink, nameTag))
+                .click(this.formatElement(hideLink, nameTag));
         },
         deleteUser(username) {
             var self = this;

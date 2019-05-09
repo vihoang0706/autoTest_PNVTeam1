@@ -17,8 +17,8 @@ module.exports = {
         },
         getActualUpdatedCategoryMessage(callback){
             this
-                .waitForElementVisible('@labelUpdatedTagMessageSuccess')
-                .getContainText('@labelUpdatedTagMessageSuccess', callback);
+                .waitForElementVisible('@labelUpdatedCategoryMessageSuccess')
+                .getContainText('@labelUpdatedCategoryMessageSuccess', callback);
         },
     }],
     elements: {
@@ -27,7 +27,7 @@ module.exports = {
         selectEditParent: 'select[id=parent]',
         textareaEditDescription: 'textarea[id=description]',
         inputUpdateCategory: 'input[type=submit]',
-        labelUpdatedTagMessageSuccess: '#message > p:nth-child(1) > strong',
+        labelUpdatedCategoryMessageSuccess: '#message > p:nth-child(1) > strong',
         linkBackToCategories: '#message > p:nth-child(2) > a',
     }
 }

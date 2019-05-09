@@ -23,7 +23,6 @@ module.exports = {
         }).perform(function(browser, done){
             dashboard.goToPage('Manage Page');
             viewAllPage.goToDetailPage(pageID);
-            console.log("Test globals:"+pageID);
             page.getColumActual('Actual Title', function (actualTitle) {
                 browser.assert.equal(actualTitle, nameTitle);
             });

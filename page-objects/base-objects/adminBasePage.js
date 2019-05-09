@@ -45,11 +45,11 @@ module.exports = {
                     break;
             }
         },
-        IsLogOutVisible(callback) {
+        isLogOutVisible(callback) {
             this
                 .moveToElement('@linkYourAccount', 0, 0)
                 .waitForElementVisible('@linkLogOut')
-                .isVisible('@linkLogOut',function(result){
+                .isVisible('@linkLogOut', function (result) {
                     callback(result.value);
                 });
         },

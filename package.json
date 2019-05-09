@@ -5,7 +5,7 @@
   "main": "global.js",
   "scripts": {
     "lint": "eslint .",
-    "debug": "node --inspect-brk node_modules/nightwatch",
+    "debug": "node --inspect-brk node_modules/nightwatch/bin/runner.js --env chrome",
     "test": "nightwatch"
   },
   "dependencies": {

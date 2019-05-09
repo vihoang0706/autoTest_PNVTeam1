@@ -13,7 +13,7 @@ module.exports = {
         goBackToTagPage() {
             this.click('@linkBackToTag');
         },
-        getActualUpdatedTagMessageValue(callback) {
+        getActualUpdatedTagMessage(callback) {
             this
               .waitForElementVisible('@labelUpdatedTagMessageSuccess')
               .getContainText('@labelUpdatedTagMessageSuccess', callback);

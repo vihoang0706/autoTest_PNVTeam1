@@ -5,9 +5,9 @@
 
   <testsuite name="medias.adminMediaAddTest"
     errors="0" failures="0" hostname="" id="" package="adminMediaAddTest" skipped="0"
-    tests="1" time="7.794" timestamp="">
+    tests="1" time="4.276" timestamp="">
   
-    <testcase name="Verify that User Admin is able add new image" classname="medias.adminMediaAddTest" time="7.794" assertions="1">
+    <testcase name="Verify that User Admin is able add new image" classname="medias.adminMediaAddTest" time="4.276" assertions="1">
 
     
     </testcase>

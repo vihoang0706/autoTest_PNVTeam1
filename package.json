@@ -9,6 +9,7 @@
     "test": "nightwatch"
   },
   "dependencies": {
+    "@rpii/nightwatch-html-reporter": "^0.9.3",
     "allure": "0.0.0",
     "allure-commandline": "^2.9.0",
     "babel-core": "^6.26.3",

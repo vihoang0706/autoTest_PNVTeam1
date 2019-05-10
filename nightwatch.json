@@ -46,7 +46,7 @@
     }
   },
   "test_workers": {
-    "enabled": true,
+    "disabled": true,
     "workers": "auto"
   },
   "detailed_output": true,

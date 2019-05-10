@@ -11,7 +11,7 @@ module.exports = {
         getErrorMessage(callback) {
             this
                 .waitForElementVisible('@labelErrorMessage')
-                .getContainsText('@labelErrorMessage',callback);
+                .getContainsText('@labelErrorMessage', callback);
         }
     }],
     elements: {

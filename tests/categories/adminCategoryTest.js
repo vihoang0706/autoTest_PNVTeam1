@@ -20,38 +20,44 @@ module.exports = {
         password = browser.globals.userNames.password;
         login.login(username, password);
     },
-    'Verify that user can create a new category with valid information': function (browser) {
-        dashboard.goToPage('Category');
-        addCategory.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
-        addCategory.getColumnValueActual('Actual Title', nameCategory, function (actualName) {
-            browser.assert.equal(actualName, nameCategory);
+    'Verify that user can create a new category with valid information': (browser) => {
+        browser.perform(function (browser, done) {
+            dashboard.goToPage('Category');
+            addCategory.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
+            addCategory.getColumnValueActual('Actual Title', nameCategory, function (actualName) {
+                browser.assert.equal(actualName, nameCategory);
+            });
+            addCategory.getColumnValueActual('Actual Description', nameCategory, function (actualDescription) {
+                browser.assert.equal(actualDescription, descriptionCategory);
+            });
+            addCategory.getColumnValueActual('Actual Slug', nameCategory, function (actualSlug) {
+                browser.assert.equal(actualSlug, slugCategory);
+            });
+            addCategory.goToAction('Delete', nameCategory);
+            done();
         });
-        addCategory.getColumnValueActual('Actual Description', nameCategory, function (actualDescription) {
-            browser.assert.equal(actualDescription, descriptionCategory);
-        });
-        addCategory.getColumnValueActual('Actual Slug', nameCategory, function (actualSlug) {
-            browser.assert.equal(actualSlug, slugCategory);
-        });
-        addCategory.goToActionHiddenLink('Delete', nameCategory);
     },
-    'Verify that user can edit category with valid data information': function (browser) {
-        dashboard.goToPage('Category');
-        addCategory.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
-        addCategory.goToActionHiddenLink('Edit', nameCategory);
-        editCategory.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
-        editCategory.getActualUpdatedCategoryMessage(function (actualMessage) {
-            browser.assert.equal(actualMessage, editMessageSuccessful);
+    'Verify that user can edit category with valid data information': (browser) => {
+        browser.perform(function (browser, done) {
+            dashboard.goToPage('Category');
+            addCategory.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
+            addCategory.goToAction('Edit', nameCategory);
+            editCategory.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
+            editCategory.getActualUpdatedCategoryMessage(function (actualMessage) {
+                browser.assert.equal(actualMessage, editMessageSuccessful);
+            });
+            editCategory.goBackToCategory();
+            addCategory.getColumnValueActual('Actual Title', nameAfterEditCategory, function (actualName) {
+                browser.assert.equal(actualName, nameAfterEditCategory);
+            });
+            addCategory.getColumnValueActual('Actual Description', nameAfterEditCategory, function (actualDescription) {
+                browser.assert.equal(actualDescription, descriptionEditCategory);
+            });
+            addCategory.getColumnValueActual('Actual Slug', nameAfterEditCategory, function (actualSlug) {
+                browser.assert.equal(actualSlug, slugEditCategory);
+            });
+            addCategory.goToAction('Delete', nameAfterEditCategory);
+            done();
         });
-        editCategory.goBackToCategory();
-        addCategory.getColumnValueActual('Actual Title', nameAfterEditCategory, function (actualName) {
-            browser.assert.equal(actualName, nameAfterEditCategory);
-        });
-        addCategory.getColumnValueActual('Actual Description', nameAfterEditCategory, function (actualDescription) {
-            browser.assert.equal(actualDescription, descriptionEditCategory);
-        });
-        addCategory.getColumnValueActual('Actual Slug', nameAfterEditCategory, function (actualSlug) {
-            browser.assert.equal(actualSlug, slugEditCategory);
-        });
-        addCategory.goToActionHiddenLink('Delete', nameAfterEditCategory);
     }
 }

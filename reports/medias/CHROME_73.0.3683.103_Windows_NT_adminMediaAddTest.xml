@@ -1,36 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="1"
+            failures="0"
             tests="1">
 
   <testsuite name="medias.adminMediaAddTest"
-    errors="0" failures="1" hostname="" id="" package="adminMediaAddTest" skipped="0"
-    tests="1" time="0.1650" timestamp="">
+    errors="0" failures="0" hostname="" id="" package="adminMediaAddTest" skipped="0"
+    tests="1" time="2.439" timestamp="">
   
-    <testcase name="Verify that User Admin is able add new image" classname="medias.adminMediaAddTest" time="0.1650" assertions="1">  <failure message="Failed [equal]: ({
-  error: [
-    &#39;  (Session info: chrome=73.0.3683.103)&#39;,
-    &#39;  (Driver info: chromedriver=73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017),platform=Windows NT 10.0.17134 x86_64)&#39;
-  ],
-  message: &#39;no such element: Unable to locate element: {&#34;method&#34;:&#34;xpath&#34;,&#34;selector&#34;:&#34;//tr[1]/td/strong[@class=&#34;has-media-icon&#34;]/a&#34;}&#39;
-} == &#39;girl&#39;) - expected [0;32m&#34;girl&#34;[0m but got: [0;31m&#34;[object Object]&#34;[0m">  error: [
-    &#39;  (Session info: chrome=73.0.3683.103)&#39;,
-    &#39;  (Driver info: chromedriver=73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017),platform=Windows NT 10.0.17134 x86_64)&#39;
-  ],
-  message: &#39;no such element: Unable to locate element: {&#34;method&#34;:&#34;xpath&#34;,&#34;selector&#34;:&#34;//tr[1]/td/strong[@class=&#34;has-media-icon&#34;]/a&#34;}&#39;
-} == &#39;girl&#39;
-    at C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\medias\adminMediaAddTest.js:18:32
-    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\commons\commands\getContainText.js:3:9)
-    at processTicksAndRejections (internal/process/task_queues.js:86:5)</failure>
-<system-out>[[ATTACHMENT|C:\Users\InternDN19.01.04\autoTest_PNVTeam1\reports\medias\adminMediaAddTest\Verify-that-User-Admin-is-able-add-new-image_FAILED_May-09-2019-143549-GMT+0700-(Indochina.png]]</system-out>
-    <failure message="  error: [">    &#39;  (Session info: chrome=73.0.3683.103)&#39;,
-    &#39;  (Driver info: chromedriver=73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017),platform=Windows NT 10.0.17134 x86_64)&#39;
-  ],
-  message: &#39;no such element: Unable to locate element: {&#34;method&#34;:&#34;xpath&#34;,&#34;selector&#34;:&#34;//tr[1]/td/strong[@class=&#34;has-media-icon&#34;]/a&#34;}&#39;
-} == &#39;girl&#39;
-    at C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\medias\adminMediaAddTest.js:18:32
-    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\commons\commands\getContainText.js:3:9)
-    at processTicksAndRejections (internal/process/task_queues.js:86:5)</failure>
+    <testcase name="Verify that admin can add new image" classname="medias.adminMediaAddTest" time="2.439" assertions="1">
+
+    
     </testcase>
   
 

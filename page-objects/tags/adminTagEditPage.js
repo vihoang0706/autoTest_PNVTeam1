@@ -15,8 +15,8 @@ module.exports = {
         },
         getActualUpdatedTagMessage(callback) {
             this
-              .waitForElementVisible('@labelUpdatedTagMessageSuccess')
-              .getContainText('@labelUpdatedTagMessageSuccess', callback);
+                .waitForElementVisible('@labelUpdatedTagMessageSuccess')
+                .getContainText('@labelUpdatedTagMessageSuccess', callback);
         },
     }],
     elements: {

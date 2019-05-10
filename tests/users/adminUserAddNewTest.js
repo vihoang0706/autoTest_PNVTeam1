@@ -9,7 +9,7 @@ var role = 'Subscriber';
 var name = 'NightWatch' + ' Team 1';
 module.exports = {
     '@tags': ['add-user'],
-    before : function (browser) {
+    before: (browser) => {
         login = browser.page.adminUserLoginPage();
         dashboard = browser.page.adminBasePage();
         userManage = browser.page.adminUserManagementPage();
@@ -18,32 +18,35 @@ module.exports = {
         passwordAdmin = browser.globals.userNames.password;
         login.login(userAdmin, passwordAdmin);
     },
-    'Verify that user can add a new user with valid information': function (browser) {
-        dashboard.goToPage('Add New User');
-        user.addNewUser(username, email, firstName, lastName, website, password, role);
-        userManage.getColumnValueActual('Actual Username', username, function (actualUserName) {
-            browser.assert.equal(actualUserName, username);
+    'Verify that user can add a new user with valid information': (browser) => {
+        browser.perform(function (browser, done) {
+            dashboard.goToPage('Add New User');
+            user.addNewUser(username, email, firstName, lastName, website, password, role);
+            userManage.getColumnValueActual('Actual Username', username, function (actualUserName) {
+                browser.assert.equal(actualUserName, username);
+            });
+            userManage.getColumnValueActual('Actual Name', username, function (actualName) {
+                browser.assert.equal(actualName, name);
+            });
+            userManage.getColumnValueActual('Actual Email', username, function (actualEmail) {
+                browser.assert.equal(actualEmail, email);
+            });
+            userManage.getColumnValueActual('Actual Role', username, function (actualRole) {
+                browser.assert.equal(actualRole, role);
+            });
+            // A new user can log in to admin page
+            dashboard.logout();
+            login.login(username, password);
+            dashboard.isLogOutVisible(function (result) {
+                browser.assert.equal(result, true);
+            });
+            dashboard.logout();
+            // delete user has just created 
+            login.login(userAdmin, passwordAdmin);
+            dashboard.goToPage('Manage User');
+            userManage.deleteUser(username);
+            dashboard.logout();
+            done();
         });
-        userManage.getColumnValueActual('Actual Name', username, function (actualName) {
-            browser.assert.equal(actualName, name);
-        });
-        userManage.getColumnValueActual('Actual Email', username, function (actualEmail) {
-            browser.assert.equal(actualEmail, email);
-        });
-        userManage.getColumnValueActual('Actual Role', username, function (actualRole) {
-            browser.assert.equal(actualRole, role);
-        });
-        // A new user can log in to admin page
-        dashboard.logout();
-        login.login(username, password);
-        dashboard.isLogOutVisible(function(result){
-            browser.assert.equal(result, true);
-        });
-        dashboard.logout();
-        // delete user has just created 
-        login.login(userAdmin, passwordAdmin);
-        dashboard.goToPage('Manage User');
-        userManage.deleteUser(username);
-        dashboard.logout();
     },
 }

@@ -12,10 +12,10 @@ module.exports = {
                 .waitForElementVisible('@buttonUpdatePost')
                 .click('@buttonUpdatePost')
         },
-        getActualUpdateMessageValue(callback) {
+        getActualUpdatedPostMessage(callback) {
             this
-              .waitForElementVisible('@labelUpdateMessageSuccess')
-              .getContainText('@labelUpdateMessageSuccess', callback);
+                .waitForElementVisible('@labelUpdateMessageSuccess')
+                .getContainText('@labelUpdateMessageSuccess', callback);
         },
     }],
     elements: {
@@ -26,18 +26,3 @@ module.exports = {
         buttonDismiss: 'button.nux-dot-tip__disable'
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

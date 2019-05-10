@@ -4,7 +4,7 @@ module.exports = {
             this
                 .setValue('@inputImage', require('path').resolve(__dirname + image))
                 .click('@buttonUpload');
-        },          
+        },
         deleteImage() {
             this
                 .moveToElement('@columnActualTitle', 0, 0)
@@ -12,7 +12,7 @@ module.exports = {
             this.api.acceptAlert();
         },
         getTitleImage(callback) {
-            this.getContainText('@image',callback);
+            this.getContainText('@image', callback);
         },
     }],
     elements: {

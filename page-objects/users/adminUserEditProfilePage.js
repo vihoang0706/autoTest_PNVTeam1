@@ -52,8 +52,8 @@ module.exports = {
             },
             getActualUpdatedUserProfileMessage(callback) {
                 this
-                  .waitForElementVisible('@labelUpdatedUserProfileMessageSuccess')
-                  .getContainText('@labelUpdatedUserProfileMessageSuccess', callback);
+                    .waitForElementVisible('@labelUpdatedUserProfileMessageSuccess')
+                    .getContainText('@labelUpdatedUserProfileMessageSuccess', callback);
             },
             getCheckboxSelected(type, selector, callback) {
                 var self = this;

@@ -7,7 +7,7 @@ var expectedMessage = "Post published.\nView Post";
 var expectedUpdateSuccessMessage = "Post updated.\nView Post";
 module.exports = {
     tags: ['post'],
-    before: function (browser) {
+    before: (browser) => {
         login = browser.page.adminUserLoginPage();
         addPost = browser.page.adminPostAddPage();
         dashboard = browser.page.adminBasePage();
@@ -17,50 +17,56 @@ module.exports = {
         password = browser.globals.userNames.password;
         login.login(username, password);
     },
-    'Verify that use can add new post with valid data': function (browser) {
-        dashboard.goToPage('Post');
-        addPost.addNewPost(nameTitle, description);
-        addPost.getActualMessageValue(function (actualMesssage) {
-            browser.assert.equal(actualMesssage, expectedMessage);
-        });
-        browser.getID(function (id) {
-            postID = id;
-        }).perform(function (browser, done) {
-            dashboard.goToPage('Manage Post');
-            viewAllPost.goToDetailPost(postID);
-            addPost.getColumActual('Actual Title', function (actualTitle) {
-                browser.assert.equal(actualTitle, nameTitle);
+    'Verify that use can add new post with valid data': (browser) => {
+        browser.perform(function (browser, done) {
+            dashboard.goToPage('Post');
+            addPost.addNewPost(nameTitle, description);
+            addPost.getActualAddPostMessage(function (actualMesssage) {
+                browser.assert.equal(actualMesssage, expectedMessage);
             });
-            addPost.getColumActual('Actual Description', function (actualDescription) {
-                browser.assert.equal(actualDescription, description);
+            browser.getID(function (id) {
+                postID = id;
+            }).perform(function (browser, done) {
+                dashboard.goToPage('Manage Post');
+                viewAllPost.goToDetailPost(postID);
+                addPost.getColumActual('Actual Title', function (actualTitle) {
+                    browser.assert.equal(actualTitle, nameTitle);
+                });
+                addPost.getColumActual('Actual Description', function (actualDescription) {
+                    browser.assert.equal(actualDescription, description);
+                });
+                dashboard.goToPage('Manage Post');
+                viewAllPost.goToAction('Delete', postID);
+                done();
             });
-            dashboard.goToPage('Manage Post');
-            viewAllPost.goToActionHiddenLink('Delete', postID);
             done();
         });
     },
-    'Verify that user can edit post with valid data': function (browser) {
-        dashboard.goToPage('Post');
-        addPost.addNewPost(nameTitle, description);
-        browser.getID(function (id) {
-            postID = id;
-        }).perform(function (browser, done) {
-            dashboard.goToPage('Manage Post');
-            viewAllPost.goToActionHiddenLink('Edit', postID);
-            editPost.editPost('', updateDescription);
-            editPost.getActualUpdateMessageValue(function (actualMesssage) {
-                browser.assert.equal(actualMesssage, expectedUpdateSuccessMessage);
+    'Verify that user can edit post with valid data': (browser) => {
+        browser.perform(function (browser, done) {
+            dashboard.goToPage('Post');
+            addPost.addNewPost(nameTitle, description);
+            browser.getID(function (id) {
+                postID = id;
+            }).perform(function (browser, done) {
+                dashboard.goToPage('Manage Post');
+                viewAllPost.goToAction('Edit', postID);
+                editPost.editPost('', updateDescription);
+                editPost.getActualUpdatedPostMessage(function (actualMesssage) {
+                    browser.assert.equal(actualMesssage, expectedUpdateSuccessMessage);
+                });
+                dashboard.goToPage('Manage Post');
+                viewAllPost.goToDetailPost(postID);
+                addPost.getColumActual('Actual Title', function (actualTitle) {
+                    browser.assert.equal(actualTitle, nameTitle);
+                });
+                addPost.getColumActual('Actual Description', function (actualDescription) {
+                    browser.assert.equal(actualDescription, updateDescription);
+                });
+                dashboard.goToPage('Manage Post');
+                viewAllPost.goToAction('Delete', postID);
+                done();
             });
-            dashboard.goToPage('Manage Post');
-            viewAllPost.goToDetailPost(postID);
-            addPost.getColumActual('Actual Title', function (actualTitle) {
-                browser.assert.equal(actualTitle, nameTitle);
-            });
-            addPost.getColumActual('Actual Description', function (actualDescription) {
-                browser.assert.equal(actualDescription, updateDescription);
-            });
-            dashboard.goToPage('Manage Post');
-            viewAllPost.goToActionHiddenLink('Delete', postID);
             done();
         });
     }

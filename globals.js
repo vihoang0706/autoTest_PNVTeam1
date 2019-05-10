@@ -26,7 +26,7 @@ module.exports = {
     });
     htmlReporter.setBrowserOptions( browser.options);
   },
-  afterEach: function (browser, done) {
+  afterEach: function (browser,done) {
     browser.end(function () {
       done();
     });

@@ -1,9 +1,9 @@
 const util = require('util');
 module.exports = {
     commands: [{
-        formatElement(elementName,data) {
+        formatElement(elementName, data) {
             var element = this.elements[elementName.slice(1)];
-              return util.format(element.selector, data);
+            return util.format(element.selector, data);
         },
         goToDetailPost(idPost) {
             this.click(this.formatElement('@columnActualTitle', idPost));
@@ -15,28 +15,28 @@ module.exports = {
                 .waitForElementVisible(this.formatElement(hideLink, idPost))
                 .click(this.formatElement(hideLink, idPost));
         },
-        goToActionHiddenLink(action, idPost) {
-            switch(action) {
-                case 'Edit' : 
-                    this.clickLink('@columnActualTitle','@linkEditPost', idPost);
-                break;
-                case 'Delete' :
+        goToAction(action, idPost) {
+            switch (action) {
+                case 'Edit':
+                    this.clickLink('@columnActualTitle', '@linkEditPost', idPost);
+                    break;
+                case 'Delete':
                     this.clickLink('@columnActualTitle', '@linkDeletePost', idPost);
-                break;
+                    break;
             }
         }
     }],
     elements: {
         columnActualTitle: {
-            selector: '//strong/a[ancestor::tr[@id="post-'+'%s'+'"]]',
+            selector: '//strong/a[ancestor::tr[@id="post-' + '%s' + '"]]',
             locateStrategy: 'xpath'
         },
         linkEditPost: {
-            selector: '//span[@class="edit"]/a[ancestor::tr[@id="post-'+'%s'+'"]]',
+            selector: '//span[@class="edit"]/a[ancestor::tr[@id="post-' + '%s' + '"]]',
             locateStrategy: 'xpath'
         },
         linkDeletePost: {
-            selector: '//span[@class="trash"]/a[ancestor::tr[@id="post-'+'%s'+'"]]',
+            selector: '//span[@class="trash"]/a[ancestor::tr[@id="post-' + '%s' + '"]]',
             locateStrategy: 'xpath'
         }
     }

@@ -15,7 +15,7 @@ module.exports = {
         goBackToCategory() {
             this.click('@linkBackToCategories');
         },
-        getActualUpdatedCategoryMessage(callback){
+        getActualUpdatedCategoryMessage(callback) {
             this
                 .waitForElementVisible('@labelUpdatedCategoryMessageSuccess')
                 .getContainText('@labelUpdatedCategoryMessageSuccess', callback);

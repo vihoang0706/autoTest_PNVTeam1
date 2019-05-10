@@ -43,8 +43,8 @@ module.exports = {
         deleteUser(username) {
             var self = this;
             this.clickLink('@columnActualUsername', '@linkDelete', username);
-            self.getAttribute('@inputConfirmDeletion','disabled',function(result){
-                if(result.value == "true"){
+            self.getAttribute('@inputConfirmDeletion', 'disabled', function (result) {
+                if (result.value == "true") {
                     self
                         .click('inputDeleteAllContent')
                         .click('@inputConfirmDeletion');

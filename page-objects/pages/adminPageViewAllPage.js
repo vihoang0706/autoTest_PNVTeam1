@@ -1,9 +1,9 @@
 const util = require('util');
 module.exports = {
     commands: [{
-        formatElement(elementName,data) {
+        formatElement(elementName, data) {
             var element = this.elements[elementName.slice(1)];
-              return util.format(element.selector, data);
+            return util.format(element.selector, data);
         },
         goToDetailPage(idPage) {
             var self = this;

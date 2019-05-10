@@ -11,6 +11,9 @@ module.exports = {
         },
         getActualMessageValue(callback) {
             this.getContainText('@labelMessageSuccess', callback);
+            var a = this.getContainText('@labelMessageSuccess', callback);
+            console.log("getcontaintesx: "+a)
+
         },
         getColumActual(type, callback) {
             switch (type) {

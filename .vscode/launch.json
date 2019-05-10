@@ -1,24 +1,24 @@
 
-{
-  "configurations": [
-    {
-        "type": "node",
-        "request": "launch",
-        "name": "Nightwatch",
-        "program": "${workspaceRoot}/node_modules/nightwatch/bin/runner.js",
-        "stopOnEntry": false,
-        "args": [
-            "--test",
-            "tests/categories/adminCategoryTest.js"
-        ],
-        "runtimeExecutable": null,
-        "sourceMaps": false
-    },
-    {
-        "type": "node",
-        "request": "attach",
-        "name": "Attach to Process",
-        "port": 5858
-    }
-  ]
-}
+// {
+//   "configurations": [
+//     {
+//         "type": "node",
+//         "request": "launch",
+//         "name": "Nightwatch",
+//         "program": "${workspaceRoot}/node_modules/nightwatch/bin/runner.js",
+//         "stopOnEntry": false,
+//         "args": [
+//             "--test",
+//             "tests/categories/adminCategoryTest.js"
+//         ],
+//         "runtimeExecutable": null,
+//         "sourceMaps": false
+//     },
+//     {
+//         "type": "node",
+//         "request": "attach",
+//         "name": "Attach to Process",
+//         "port": 5858
+//     }
+//   ]
+// }

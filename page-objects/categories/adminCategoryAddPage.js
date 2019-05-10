@@ -9,10 +9,14 @@ module.exports = {
                 .setValue('@textareaDescription', description)
                 .click('@inputAddCategory');
         },
+
+
         formatElement(elementName, data) {
             var element = this.elements[elementName.slice(1)];
             return util.format(element.selector, data);
         },
+
+        
         getColumnValueActual(type, categoryName, callback) {
             var formatColumnActualTitle = this.formatElement('@columnActualTitle', categoryName);
             var formatColumnActualSlug = this.formatElement('@columnActualSlug', categoryName);
@@ -60,6 +64,7 @@ module.exports = {
         selectParent: 'select[id=parent]',
         textareaDescription: 'textarea[id=tag-description]',
         inputAddCategory: 'input[id=submit]',
+
         linkDelete: {
             selector: '//span[@class="delete"]/a[ancestor::td//a[text()="' + '%s' + '"]]',
             locateStrategy: 'xpath'
@@ -68,6 +73,7 @@ module.exports = {
             selector: '//span[@class="edit"]/a[ancestor::td//a[text()="' + '%s' + '"]]',
             locateStrategy: 'xpath'
         },
+
         columnActualTitle: {
             selector: '//td[@class="name column-name has-row-actions column-primary"]/strong/a[text()="' + '%s' + '"]',
             locateStrategy: 'xpath'

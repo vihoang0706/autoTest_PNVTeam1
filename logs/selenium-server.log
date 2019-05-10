@@ -1,74 +1,25 @@
-<<<<<<< HEAD
-08:07:17.092 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
-08:07:17.154 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
-2019-05-10 08:07:17.186:INFO::main: Logging initialized @287ms to org.seleniumhq.jetty9.util.log.StdErrLog
-08:07:17.352 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
-08:07:17.440 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
-08:07:17.946 INFO [ActiveSessionFactory.apply] - Capabilities are: {
-=======
-16:59:44.311 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
-16:59:44.381 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
-2019-05-09 16:59:44.398:INFO::main: Logging initialized @255ms to org.seleniumhq.jetty9.util.log.StdErrLog
-16:59:44.562 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
-16:59:44.659 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
-16:59:45.051 INFO [ActiveSessionFactory.apply] - Capabilities are: {
->>>>>>> 1601d857a8b6fa914deeac3508884e4ba01f463a
+08:30:51.010 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
+08:30:51.072 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+2019-05-10 08:30:51.104:INFO::main: Logging initialized @263ms to org.seleniumhq.jetty9.util.log.StdErrLog
+08:30:51.260 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+08:30:51.360 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+08:30:52.459 INFO [ActiveSessionFactory.apply] - Capabilities are: {
   "acceptSslCerts": true,
-  "browserName": "firefox",
+  "browserName": "chrome",
+  "chromeOptions": {
+    "args": [
+      "disable-web-security",
+      "ignore-certificate-errors",
+      "--test-type"
+    ]
+  },
   "javascriptEnabled": true,
-<<<<<<< HEAD
-  "name": "Categories\\admin Category Test"
-}
-08:07:17.946 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.firefox.GeckoDriverService)
-1557450438704	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\INTERN~1.05\\AppData\\Local\\Temp\\rust_mozprofile.a6WmZdtxKrT3"
-1557450439964	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
-1557450439964	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
-1557450439965	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
-1557450442436	Marionette	INFO	Listening on port 54086
-08:07:22.693 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
-08:07:22.931 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 5841a2a8-5c0c-45ff-84d1-cfe5317bd54c (org.openqa.selenium.firefox.GeckoDriverService)
-console.error: BroadcastService: 
-  receivedBroadcastMessage: handler for
-  remote-settings/monitor_changes
-  threw error:
-  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
-  Stack:
-    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:190:13
-
-1557450464230	Marionette	INFO	Stopped listening on port 54086
-IPDL protocol error: Handler returned error code!
-
-###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
-
-IPDL protocol error: Handler returned error code!
-
-###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
-
-IPDL protocol error: Handler returned error code!
-
-###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
-
-IPDL protocol error: Handler returned error code!
-
-###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
-
-[Parent 15648, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
-[Child 9556, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
-[Child 9556, Chrome_ChildThread] WARNING: pipe error: 109:
-###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
-
-[GPU 20684, Chrome_ChildThread] WARNING: pipe er
-###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
-
-08:07:45.654 INFO [ActiveSessions$1.onStop] - Removing session 5841a2a8-5c0c-45ff-84d1-cfe5317bd54c (org.openqa.selenium.firefox.GeckoDriverService)
-=======
   "name": "Posts\\admin Post Test"
 }
-16:59:45.052 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
-Starting ChromeDriver 73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017) on port 40621
+08:30:52.460 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+Starting ChromeDriver 73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017) on port 35336
 Only local connections are allowed.
 Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-16:59:47.407 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
-16:59:47.591 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 46b1309abcb536ca9d09a723667c1836 (org.openqa.selenium.chrome.ChromeDriverService)
-17:00:10.119 INFO [ActiveSessions$1.onStop] - Removing session 46b1309abcb536ca9d09a723667c1836 (org.openqa.selenium.chrome.ChromeDriverService)
->>>>>>> 1601d857a8b6fa914deeac3508884e4ba01f463a
+08:30:54.908 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
+08:30:55.205 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 7e9a922247d2ce40176eb10aecd67e01 (org.openqa.selenium.chrome.ChromeDriverService)
+08:31:18.471 INFO [ActiveSessions$1.onStop] - Removing session 7e9a922247d2ce40176eb10aecd67e01 (org.openqa.selenium.chrome.ChromeDriverService)

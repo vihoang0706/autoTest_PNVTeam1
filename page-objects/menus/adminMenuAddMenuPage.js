@@ -1,7 +1,7 @@
 module.exports = {
     commands: [{
         clickNewMenuLink() {
-            this.click('@linkCreateNewMenu');
+            return this.click('@linkCreateNewMenu');
         },
         addNewMenu(nameMenu) {
             this.clickNewMenuLink();
@@ -11,6 +11,7 @@ module.exports = {
         },
         deleteMenu() {
             this
+                .waitForElementVisible('@linkDeleteMenu')
                 .click('@linkDeleteMenu')
                 .api.acceptAlert();
         },

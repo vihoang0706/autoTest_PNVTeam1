@@ -2,6 +2,8 @@ module.exports = {
     commands: [{
         editPost(title, content) {
             this
+                .waitForElementVisible('@buttonDismiss')
+                .click('@buttonDismiss')
                 .waitForElementVisible('@titlePost')
                 .clearValue('@titlePost')
                 .setValue('@titlePost', title)
@@ -10,10 +12,10 @@ module.exports = {
                 .waitForElementVisible('@buttonUpdatePost')
                 .click('@buttonUpdatePost')
         },
-        getActualUpdateMessageValue(callback) {
+        getActualUpdatedPostMessage(callback) {
             this
-              .waitForElementVisible('@labelUpdateMessageSuccess')
-              .getContainText('@labelUpdateMessageSuccess', callback);
+                .waitForElementVisible('@labelUpdateMessageSuccess')
+                .getContainText('@labelUpdateMessageSuccess', callback);
         },
     }],
     elements: {
@@ -21,20 +23,6 @@ module.exports = {
         desciprtionPost: 'textarea[class=editor-post-text-editor]',
         buttonUpdatePost: 'button.editor-post-publish-button',
         labelUpdateMessageSuccess: 'div[class=components-notice__content]',
+        buttonDismiss: 'button.nux-dot-tip__disable'
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

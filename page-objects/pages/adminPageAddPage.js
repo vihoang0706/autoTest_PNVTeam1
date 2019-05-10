@@ -7,7 +7,7 @@ module.exports = {
         .click('@buttonPublish')
         .click('@subButtonPublish');
     },
-    getActualMessageValue(callback) {
+    getActualAddPageMessage(callback) {
       this
         .waitForElementVisible('@labelMessageSuccess')
         .getContainText('@labelMessageSuccess', callback);
@@ -30,7 +30,7 @@ module.exports = {
   elements: {
     inputTitle: 'textarea[class=editor-post-title__input]',
     inputDescription: 'textarea[class=editor-post-text-editor]',
-    buttonPublish: 'button.editor-post-publish-panel__toggle   ',
+    buttonPublish: 'button.editor-post-publish-panel__toggle',
     subButtonPublish: 'button.editor-post-publish-button',
     linkViewPage: 'a.components-notice__action',
     labelMessageSuccess: 'div.components-notice__content',

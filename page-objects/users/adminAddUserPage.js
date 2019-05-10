@@ -21,21 +21,11 @@ module.exports = {
         inputFirstName: 'input[id=first_name]',
         inputLastName: 'input[id=last_name]',
         inputWebsite: 'input[id=url]',
-        buttonShowPassword: {
-            selector: '//button[@type="button" and text()="Show password"]',
-            locateStrategy: 'xpath'
-        },
+        buttonShowPassword: 'button.wp-generate-pw',
         inputPassword: '#pass1-text',
         inputSendNotification: 'input[id=send_user_notification]',
         selectRole: 'select[id=role]',
         inputAddNewUser: 'input[id=createusersub]',
-        buttonShowPassword: {
-            selector: '//button[@type="button" and text()="Show password"]',
-            locateStrategy: 'xpath'
-        },
-        inputConfirmPassword: {
-            selector: '//input[@class="pw-checkbox"]',
-            locateStrategy: 'xpath'
-        },
+        inputConfirmPassword: 'input[name=pw_weak]'
     }
 }

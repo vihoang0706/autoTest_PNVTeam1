@@ -5,54 +5,56 @@ const editNameTag = 'automation';
 const editSlugTag = 'automation-testing';
 const editDescriptionTag = 'To learn Automation testing by using nightwatch';
 const messageTagUpdated = 'Tag updated.';
-var dashboard, tag, username, password;
+var dashboard, addTag, username, password, login, editTag;
 module.exports = {
     '@tags': ['tag'],
-    before: function (browser) {
+    before: (browser) => {
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
-        var login = browser.page.adminUserLoginPage();
+        login = browser.page.adminUserLoginPage();
+        dashboard = browser.page.adminBasePage();
+        addTag = browser.page.adminTagAddPage();
+        editTag = browser.page.adminTagEditPage();
         login.login(username, password);
     },
-    'Verify that admin can add new tag successfully': function (browser) {
-        dashboard = browser.page.adminBasePage();
-        tag = browser.page.adminTagAddPage();
-        dashboard.goToPage('Tag');
-        tag.addNewTag(nameTag, slugTag, descriptionTag);
-        tag.getColumnValueActual('Actual Title', function (actualTitle) {
-            browser.assert.equal(actualTitle, nameTag);
+    'Verify that admin can add new tag successfully': (browser) => {
+        browser.perform(function (browser, done) {
+            dashboard.goToPage('Tag');
+            addTag.addNewTag(nameTag, slugTag, descriptionTag);
+            addTag.getColumnValueActual('Actual Title', nameTag, function (actualTitle) {
+                browser.assert.equal(actualTitle, nameTag);
+            });
+            addTag.getColumnValueActual('Actual Slug', nameTag, function (actualSlug) {
+                browser.assert.equal(actualSlug, slugTag);
+            });
+            addTag.getColumnValueActual('Actual Description', nameTag, function (actualDescription) {
+                browser.assert.equal(actualDescription, descriptionTag);
+            });
+            addTag.goToActionHiddenLink('Delete', nameTag);
+            done();
         });
-        tag.getColumnValueActual('Actual Slug', function (actualSlug) {
-            browser.assert.equal(actualSlug, slugTag);
-        });
-        tag.getColumnValueActual('Actual Description', function (actualDescription) {
-            browser.assert.equal(actualDescription, descriptionTag);
-        });
-        tag.goToActionHiddenLink(nameTag, 'Delete');
     },
-    'Verify that Admin can edit tag ': function (browser) {
-        dashboard = browser.page.adminBasePage();
-        tag = browser.page.adminTagAddPage();
-        dashboard.goToPage('Tag');
-        tag.addNewTag(nameTag, slugTag, descriptionTag);
-        tag.goToActionHiddenLink(nameTag, 'Edit');
-        tag.editTag(editNameTag, editSlugTag, editDescriptionTag)
-        tag.getColumnValueActual('Success Message', function (actualMessage) {
-            browser.assert.equal(actualMessage, messageTagUpdated);
+    'Verify that Admin can edit tag ': (browser) => {
+        browser.perform(function (browser, done) {
+            dashboard.goToPage('Tag');
+            addTag.addNewTag(nameTag, slugTag, descriptionTag);
+            addTag.goToActionHiddenLink('Edit', nameTag);
+            editTag.editTag(editNameTag, editSlugTag, editDescriptionTag)
+            editTag.getActualUpdatedTagMessageValue(function (actualMessage) {
+                browser.assert.equal(actualMessage, messageTagUpdated);
+            });
+            editTag.goBackToTagPage();
+            addTag.getColumnValueActual('Actual Title', editNameTag, function (actualTitle) {
+                browser.assert.equal(actualTitle, editNameTag);
+            });
+            addTag.getColumnValueActual('Actual Slug', editNameTag, function (actualSlug) {
+                browser.assert.equal(actualSlug, editSlugTag);
+            });
+            addTag.getColumnValueActual('Actual Description', editNameTag, function (actualDescription) {
+                browser.assert.equal(actualDescription, editDescriptionTag);
+            });
+            addTag.goToActionHiddenLink('Delete', editNameTag);
+            done();
         });
-        tag.goBackToTagPage();
-        tag.getColumnValueActual('Actual Title', function (actualTitle) {
-            browser.assert.equal(actualTitle, editNameTag);
-        });
-        tag.getColumnValueActual('Actual Slug', function (actualSlug) {
-            browser.assert.equal(actualSlug, editSlugTag);
-        });
-        tag.getColumnValueActual('Actual Description', function (actualDescription) {
-            browser.assert.equal(actualDescription, editDescriptionTag);
-        });
-        tag.goToActionHiddenLink(editNameTag, 'Delete');
-    },
-    after: function (browser) {
-        browser.end();
     }
 };

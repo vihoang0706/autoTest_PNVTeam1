@@ -4,7 +4,7 @@
   "description": "Research for nightwatch Framework and write test scripts to execute end-to-end test case by using nightwatch with Ecommerce site",
   "main": "index.js",
   "directories": {
-    "test": "tests"
+    "test": ""
   },
   "dependencies": {
     "nightwatch": "^1.0.19"

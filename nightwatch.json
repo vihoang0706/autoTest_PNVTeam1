@@ -66,7 +66,7 @@
       "globals": {
         "waitForConditionTimeout": 5000,
         "asyncHookTimeout": 10000,
-        "abortOnAssertionFailure": false,
+        "abortOnAssertionFailure": true,
         "waitForConditionPollInterval": 300,
         "retryAssertionTimeout": 5000
       },

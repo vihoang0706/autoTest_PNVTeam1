@@ -36,7 +36,7 @@ module.exports = {
                     browser.assert.equal(actualDescription, description);
                 });
                 dashboard.goToPage('Manage Post');
-                viewAllPost.goToActionHiddenLink('Delete', postID);
+                viewAllPost.goToAction('Delete', postID);
                 done();
             });
             done();
@@ -50,7 +50,7 @@ module.exports = {
                 postID = id;
             }).perform(function (browser, done) {
                 dashboard.goToPage('Manage Post');
-                viewAllPost.goToActionHiddenLink('Edit', postID);
+                viewAllPost.goToAction('Edit', postID);
                 editPost.editPost('', updateDescription);
                 editPost.getActualUpdatedPostMessage(function (actualMesssage) {
                     browser.assert.equal(actualMesssage, expectedUpdateSuccessMessage);
@@ -64,7 +64,7 @@ module.exports = {
                     browser.assert.equal(actualDescription, updateDescription);
                 });
                 dashboard.goToPage('Manage Post');
-                viewAllPost.goToActionHiddenLink('Delete', postID);
+                viewAllPost.goToAction('Delete', postID);
                 done();
             });
             done();

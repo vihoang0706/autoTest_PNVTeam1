@@ -10,12 +10,11 @@ module.exports = {
         password = browser.globals.userNames.password;
         login.login(username, password);
     },
-    'Verify that User Admin is able add new image': (browser) => {
+    'Verify that admin can add new image': (browser) => {
         browser.perform(function (browser, done) {
             dashboard.goToPage('Media');
-            addMedia
-                .addNewMedia(image)
-                .getTitleImage(function (actualImageName) {
+            addMedia.addNewMedia(image);
+            addMedia.getTitleImage(function (actualImageName) {
                     browser.assert.equal(actualImageName, imageName);
                 });
             addMedia.deleteImage();

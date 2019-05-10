@@ -45,7 +45,7 @@ module.exports = {
                     break;
             }
         },
-        IsLogOutVisible(callback) {
+        isLogOutVisible(callback) {
             this
                 .moveToElement('@linkYourAccount', 0, 0)
                 .waitForElementVisible('@linkLogOut')

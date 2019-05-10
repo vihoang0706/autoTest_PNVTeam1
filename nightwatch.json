@@ -10,7 +10,7 @@
   ],
   "output_folder": "reports",
   "custom_commands_path": [
-    "commons/commands"
+    "commons/custom-commands"
   ],
   "custom_assertions_path": "",
   "page_objects_path": [
@@ -41,12 +41,13 @@
     "port": 4444,
     "cli_args": {
       "webdriver.chrome.driver": "node_modules/chromedriver/lib/chromedriver/chromedriver.exe",
-      "webdriver.gecko.driver": "node_modules/geckodriver/geckodriver.exe"
+      "webdriver.gecko.driver": "node_modules/geckodriver/geckodriver.exe",
+      "webdriver.ie.driver": "node_modules/iedriver/lib/iedriver/IEDriverServer.exe"
     }
   },
   "test_workers": {
     "enabled": true,
-    "workers": 3
+    "workers": "auto"
   },
   "test_settings": {
     "default": {
@@ -87,6 +88,14 @@
             "--test-type"
           ]
         }
+      }
+    },
+    "ie": {
+      "desiredCapabilities": {
+        "browserName": "internet explorer",
+        "marionette": true,
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
       }
     }
   }

@@ -1,4 +1,6 @@
-const nameMenu = 'Comments';
+var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+var charactersLength = characters.length;
+const nameMenu = 'Comments' + Math.floor(Math.random() * charactersLength);
 var dashboard, login, username, password, menu;
 module.exports = {
     '@tags': ['add-menu'],

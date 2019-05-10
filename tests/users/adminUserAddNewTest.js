@@ -37,7 +37,7 @@ module.exports = {
             // A new user can log in to admin page
             dashboard.logout();
             login.login(username, password);
-            dashboard.IsLogOutVisible(function (result) {
+            dashboard.isLogOutVisible(function (result) {
                 browser.assert.equal(result, true);
             });
             dashboard.logout();

@@ -1,25 +1,20 @@
-08:27:22.052 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
-08:27:22.112 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
-2019-05-10 08:27:22.144:INFO::main: Logging initialized @268ms to org.seleniumhq.jetty9.util.log.StdErrLog
-08:27:22.303 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
-08:27:22.400 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
-08:27:22.731 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+09:33:10.417 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
+09:33:10.480 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+2019-05-10 09:33:10.511:INFO::main: Logging initialized @251ms to org.seleniumhq.jetty9.util.log.StdErrLog
+09:33:10.661 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+09:33:10.758 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+09:33:11.103 INFO [ActiveSessionFactory.apply] - Capabilities are: {
   "acceptSslCerts": true,
-  "browserName": "chrome",
-  "chromeOptions": {
-    "args": [
-      "disable-web-security",
-      "ignore-certificate-errors",
-      "--test-type"
-    ]
-  },
+  "browserName": "internet explorer",
   "javascriptEnabled": true,
-  "name": "Pages\\admin Page Add Test"
+  "marionette": true,
+  "name": "Categories\\admin Category Test"
 }
-08:27:22.732 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
-Starting ChromeDriver 73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017) on port 19347
-Only local connections are allowed.
-Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-08:27:25.052 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
-08:27:25.250 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 8c24d8780cca248a87a5856f60705609 (org.openqa.selenium.chrome.ChromeDriverService)
-08:27:34.177 INFO [ActiveSessions$1.onStop] - Removing session 8c24d8780cca248a87a5856f60705609 (org.openqa.selenium.chrome.ChromeDriverService)
+09:33:11.104 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.ie.InternetExplorerDriverService)
+Started InternetExplorerDriver server (32-bit)
+3.14.0.0
+Listening on port 11741
+Only local connections are allowed
+09:33:12.412 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+09:33:12.437 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 46cd5a49-5b23-47e1-9a14-4964937fc822 (org.openqa.selenium.ie.InternetExplorerDriverService)
+09:33:34.264 INFO [ActiveSessions$1.onStop] - Removing session 46cd5a49-5b23-47e1-9a14-4964937fc822 (org.openqa.selenium.ie.InternetExplorerDriverService)

@@ -21,7 +21,7 @@ module.exports = {
             userProfile.setDefaultCheckboxes();
             dashboard.goToPage('Edit User Profile');
             userProfile.updateUserProfile(firstName, lastName, nickName, linkWebsite, description);
-            userProfile.IsCheckboxesSelected(function (result) {
+            userProfile.isCheckboxesSelected(function (result) {
                 browser.assert.equal(result, true);
             });
             userProfile.getActualUpdatedUserProfileMessage(function (actualMessage) {

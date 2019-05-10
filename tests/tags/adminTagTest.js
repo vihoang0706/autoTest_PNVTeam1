@@ -30,7 +30,7 @@ module.exports = {
             addTag.getColumnValueActual('Actual Description', nameTag, function (actualDescription) {
                 browser.assert.equal(actualDescription, descriptionTag);
             });
-            addTag.goToActionHiddenLink('Delete', nameTag);
+            addTag.goToAction('Delete', nameTag);
             done();
         });
     },
@@ -38,9 +38,9 @@ module.exports = {
         browser.perform(function (browser, done) {
             dashboard.goToPage('Tag');
             addTag.addNewTag(nameTag, slugTag, descriptionTag);
-            addTag.goToActionHiddenLink('Edit', nameTag);
+            addTag.goToAction('Edit', nameTag);
             editTag.editTag(editNameTag, editSlugTag, editDescriptionTag)
-            editTag.getActualUpdatedTagMessageValue(function (actualMessage) {
+            editTag.getActualUpdatedTagMessage(function (actualMessage) {
                 browser.assert.equal(actualMessage, messageTagUpdated);
             });
             editTag.goBackToTagPage();
@@ -53,7 +53,7 @@ module.exports = {
             addTag.getColumnValueActual('Actual Description', editNameTag, function (actualDescription) {
                 browser.assert.equal(actualDescription, editDescriptionTag);
             });
-            addTag.goToActionHiddenLink('Delete', editNameTag);
+            addTag.goToAction('Delete', editNameTag);
             done();
         });
     }

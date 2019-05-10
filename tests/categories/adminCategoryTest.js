@@ -33,7 +33,7 @@ module.exports = {
             addCategory.getColumnValueActual('Actual Slug', nameCategory, function (actualSlug) {
                 browser.assert.equal(actualSlug, slugCategory);
             });
-            addCategory.goToActionHiddenLink('Delete', nameCategory);
+            addCategory.goToAction('Delete', nameCategory);
             done();
         });
     },
@@ -41,7 +41,7 @@ module.exports = {
         browser.perform(function (browser, done) {
             dashboard.goToPage('Category');
             addCategory.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
-            addCategory.goToActionHiddenLink('Edit', nameCategory);
+            addCategory.goToAction('Edit', nameCategory);
             editCategory.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
             editCategory.getActualUpdatedCategoryMessage(function (actualMessage) {
                 browser.assert.equal(actualMessage, editMessageSuccessful);
@@ -56,7 +56,7 @@ module.exports = {
             addCategory.getColumnValueActual('Actual Slug', nameAfterEditCategory, function (actualSlug) {
                 browser.assert.equal(actualSlug, slugEditCategory);
             });
-            addCategory.goToActionHiddenLink('Delete', nameAfterEditCategory);
+            addCategory.goToAction('Delete', nameAfterEditCategory);
             done();
         });
     }

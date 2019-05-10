@@ -5,10 +5,11 @@
   "main": "global.js",
   "scripts": {
     "lint": "eslint .",
-    "debug": "node --inspect-brk node_modules/nightwatch",
+    "debug": "node --inspect-brk node_modules/nightwatch/bin/runner.js --env chrome",
     "test": "nightwatch"
   },
   "dependencies": {
+    "@rpii/nightwatch-html-reporter": "^0.9.3",
     "allure": "0.0.0",
     "allure-commandline": "^2.9.0",
     "babel-core": "^6.26.3",
@@ -18,6 +19,7 @@
     "exceljs": "^1.9.0",
     "express": "^4.16.4",
     "geckodriver": "^1.16.2",
+    "iedriver": "^3.14.1",
     "jasmine-data-provider": "^2.2.0",
     "mocha-allure-reporter": "^1.4.0",
     "nightwatch": "^1.0.19",

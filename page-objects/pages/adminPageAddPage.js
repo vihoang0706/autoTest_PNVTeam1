@@ -33,7 +33,6 @@ module.exports = {
     buttonPublish: 'button.editor-post-publish-panel__toggle',
     subButtonPublish: 'button.editor-post-publish-button',
     linkViewPage: 'a.components-notice__action',
-    labelMessageSuccess: 'div.components-notice__content',
-    inputPageID: 'input[id=post_ID]'
+    labelMessageSuccess: 'div.components-notice__content'
   }
 };

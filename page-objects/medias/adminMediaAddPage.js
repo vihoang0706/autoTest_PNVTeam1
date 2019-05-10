@@ -1,7 +1,7 @@
 module.exports = {
     commands: [{
         addNewMedia(image) {
-            return this
+            this
                 .setValue('@inputImage', require('path').resolve(__dirname + image))
                 .click('@buttonUpload');
         },

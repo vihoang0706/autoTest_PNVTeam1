@@ -10,6 +10,7 @@ const htmlReporter = new HtmlReporter({
     reportsDirectory: __dirname + '/reports',               
     uniqueFilename: true,
     themeName: 'default',
+    customTheme: 'html-reporter.html'
 });
 module.exports = {
   userNames: userNames,

@@ -18,7 +18,7 @@ module.exports = {
         passwordAdmin = browser.globals.userNames.password;
         login.login(userAdmin, passwordAdmin);
     },
-    'Verify that user can add a new user with valid information': function (browser) {
+    'Verify that user can add a new user with valid information':function (browser) {
         dashboard.goToPage('Add New User');
         user.addNewUser(username, email, firstName, lastName, website, password, role);
         userManage.getColumnValueActual('Actual Username', username, function (actualUserName) {

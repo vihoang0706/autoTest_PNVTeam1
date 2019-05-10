@@ -17,7 +17,7 @@ module.exports = {
     data: path.resolve(__dirname, './data/data.csv')
   },
   "reporter" : htmlReporter.fn,
-  beforeEach: function (browser, done) {
+  beforeEach: async function (browser, done) {
     browser
       .maximizeWindow()
       .url('http://192.168.189.70/wordpress/wp-login.php');

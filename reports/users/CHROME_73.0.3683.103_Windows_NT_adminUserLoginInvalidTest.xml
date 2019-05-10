@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="1">
+
+  <testsuite name="users.adminUserLoginInvalidTest"
+    errors="0" failures="0" hostname="" id="" package="adminUserLoginInvalidTest" skipped="0"
+    tests="1" time="2.283" timestamp="">
+  
+    <testcase name="Verify that user can not login with invalid account" classname="users.adminUserLoginInvalidTest" time="2.283" assertions="16">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

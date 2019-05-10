@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="1">
+
+  <testsuite name="users.demo"
+    errors="1" failures="0" hostname="" id="" package="demo" skipped="0"
+    tests="1" time="0.003000" timestamp="">
+  
+    <testcase name="Valid credentials =&gt; successfull login" classname="users.demo" time="0.003000" assertions="0">
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

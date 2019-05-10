@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="3">
+
+  <testsuite name="categories.adminCategoryEditTest"
+    errors="0" failures="0" hostname="" id="" package="adminCategoryEditTest" skipped="0"
+    tests="3" time="5.941" timestamp="">
+  
+    <testcase name="Pre-condition: Login to the admin page, delete all category and add a new category " classname="categories.adminCategoryEditTest" time="3.236" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Step 1: Go to the Edit Category page" classname="categories.adminCategoryEditTest" time="0.9120" assertions="0">
+    </testcase>
+  
+    <testcase name="Step 2: Edit category" classname="categories.adminCategoryEditTest" time="1.793" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

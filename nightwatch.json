@@ -49,6 +49,7 @@
     "disabled": true,
     "workers": "auto"
   },
+  "detailed_output": true,
   "test_settings": {
     "default": {
       "skip_testcases_on_fail": true,

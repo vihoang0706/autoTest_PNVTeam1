@@ -2,7 +2,7 @@ var addMedia, dashboard, login, username, password, imageName = 'girl';
 var image = '../../../images/girl.jpg';
 module.exports = {
     tags: ['add-media'],
-    before: function (browser) {
+    before:  function(browser){
         login = browser.page.adminUserLoginPage();
         dashboard = browser.page.adminBasePage();
         addMedia = browser.page.adminMediaAddPage();

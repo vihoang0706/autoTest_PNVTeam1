@@ -1,12 +1,22 @@
+<<<<<<< HEAD
 08:07:17.092 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
 08:07:17.154 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
 2019-05-10 08:07:17.186:INFO::main: Logging initialized @287ms to org.seleniumhq.jetty9.util.log.StdErrLog
 08:07:17.352 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
 08:07:17.440 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
 08:07:17.946 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+=======
+16:59:44.311 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
+16:59:44.381 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+2019-05-09 16:59:44.398:INFO::main: Logging initialized @255ms to org.seleniumhq.jetty9.util.log.StdErrLog
+16:59:44.562 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+16:59:44.659 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+16:59:45.051 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+>>>>>>> 1601d857a8b6fa914deeac3508884e4ba01f463a
   "acceptSslCerts": true,
   "browserName": "firefox",
   "javascriptEnabled": true,
+<<<<<<< HEAD
   "name": "Categories\\admin Category Test"
 }
 08:07:17.946 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.firefox.GeckoDriverService)
@@ -51,3 +61,14 @@ IPDL protocol error: Handler returned error code!
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
 08:07:45.654 INFO [ActiveSessions$1.onStop] - Removing session 5841a2a8-5c0c-45ff-84d1-cfe5317bd54c (org.openqa.selenium.firefox.GeckoDriverService)
+=======
+  "name": "Posts\\admin Post Test"
+}
+16:59:45.052 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+Starting ChromeDriver 73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017) on port 40621
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+16:59:47.407 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
+16:59:47.591 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 46b1309abcb536ca9d09a723667c1836 (org.openqa.selenium.chrome.ChromeDriverService)
+17:00:10.119 INFO [ActiveSessions$1.onStop] - Removing session 46b1309abcb536ca9d09a723667c1836 (org.openqa.selenium.chrome.ChromeDriverService)
+>>>>>>> 1601d857a8b6fa914deeac3508884e4ba01f463a

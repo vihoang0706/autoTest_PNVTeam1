@@ -1,7 +1,7 @@
 module.exports = {
     commands: [{
         addNewMedia(image) {
-            return this
+            this
                 .setValue('@inputImage', require('path').resolve(__dirname + image))
                 .click('@buttonUpload');
         },          
@@ -30,8 +30,5 @@ module.exports = {
             selector: '//tr/td[1]/div[@class="row-actions"]/span[@class="delete"]/a[@class="submitdelete aria-button-if-js" and text()="Delete Permanently"]',
             locateStrategy: 'xpath'
         },
-        checkboxSelectAll: '#cb-select-all-2',
-        buttonDeleteBulkAction: '#bulk-action-selector-bottom > option:nth-child(2)',
-        buttonApply: '#doaction2'
     }
 }

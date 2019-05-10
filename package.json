@@ -5,10 +5,11 @@
   "main": "global.js",
   "scripts": {
     "lint": "eslint .",
-    "debug": "node --inspect-brk node_modules/nightwatch",
+    "debug": "node --inspect-brk node_modules/nightwatch/bin/runner.js --env chrome",
     "test": "nightwatch"
   },
   "dependencies": {
+    "@rpii/nightwatch-html-reporter": "^0.9.3",
     "allure": "0.0.0",
     "allure-commandline": "^2.9.0",
     "babel-core": "^6.26.3",
@@ -23,7 +24,8 @@
     "nightwatch": "^1.0.19",
     "nightwatch-data-driven": "0.0.8",
     "npm-package-json-lint": "^3.6.0",
-    "q": "^1.5.1"
+    "q": "^1.5.1",
+    "selenium-standalone": "^6.16.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",

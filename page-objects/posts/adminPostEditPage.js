@@ -2,6 +2,8 @@ module.exports = {
     commands: [{
         editPost(title, content) {
             this
+                .waitForElementVisible('@buttonDismiss')
+                .click('@buttonDismiss')
                 .waitForElementVisible('@titlePost')
                 .clearValue('@titlePost')
                 .setValue('@titlePost', title)
@@ -21,6 +23,7 @@ module.exports = {
         desciprtionPost: 'textarea[class=editor-post-text-editor]',
         buttonUpdatePost: 'button.editor-post-publish-button',
         labelUpdateMessageSuccess: 'div[class=components-notice__content]',
+        buttonDismiss: 'button.nux-dot-tip__disable'
     }
 }
 

@@ -6,7 +6,7 @@
     "custom_assertions_path" : "",
     "page_objects_path" : ["page-objects/categories","page-objects/posts",
       "page-objects/tags","page-objects/users","page-objects/pages","page-objects/base-objects",
-    "page-objects/medias", "page-objects/menus"],
+    "page-objects/medias", "page-objects/menus"], 
     "globals_path" : "globals.js",
     "webdriver": {
       "start_process" : true,

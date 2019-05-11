@@ -1,38 +1,38 @@
 const nameTitle = 'Hello summer';
 const expectedMessage = 'Page published.\nView Page';
 const description = 'I like swimming on the beach.';
-var dashboard, viewAllPage, page, login, username, password, pageID;
+var dashboardPage, viewAllPage, addPage, loginPage, username, password, pageID;
 module.exports = {
     '@tags': ['add-page'],
     before: (browser) => {
-        login = browser.page.adminUserLoginPage();
-        page = browser.page.adminPageAddPage();
-        dashboard = browser.page.adminBasePage();
+        loginPage = browser.page.adminUserLoginPage();
+        addPage = browser.page.adminPageAddPage();
+        dashboardPage = browser.page.adminBasePage();
         viewAllPage = browser.page.adminPageViewAllPage();
         username = browser.globals.userNames.username;
         password = browser.globals.userNames.password;
-        login.login(username, password);
+        loginPage.login(username, password);
     },
     'Verify that admin can add new page with valid data successfully': (browser) => {
         browser.perform(function (browser, done) {
-            dashboard.goToPage('Add New Page');
-            page.addNewPage(nameTitle, description);
-            page.getActualAddPageMessage(function (actualMessage) {
+            dashboardPage.goToPage('Add New Page');
+            addPage.addNewPage(nameTitle, description);
+            addPage.getActualAddPageMessage(function (actualMessage) {
                 browser.assert.equal(actualMessage, expectedMessage);
             });
             browser.getID(function (id) {
                 pageID = id;
             }).perform(function (browser, done) {
-                dashboard.goToPage('Manage Page');
+                dashboardPage.goToPage('Manage Page');
                 viewAllPage.goToDetailPage(pageID);
                 console.log("Test globals:" + pageID);
-                page.getColumActual('Actual Title', function (actualTitle) {
+                addPage.getColumActual('Actual Title', function (actualTitle) {
                     browser.assert.equal(actualTitle, nameTitle);
                 });
-                page.getColumActual('Actual Description', function (actualDescription) {
+                addPage.getColumActual('Actual Description', function (actualDescription) {
                     browser.assert.equal(actualDescription, description);
                 });
-                dashboard.goToPage('Manage Page');
+                dashboardPage.goToPage('Manage Page');
                 viewAllPage.deletePage(pageID);
                 done();
             });

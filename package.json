@@ -18,6 +18,7 @@
     "csvtojson": "^2.0.8",
     "exceljs": "^1.9.0",
     "express": "^4.16.4",
+    "galenframework-cli": "^2.4.4",
     "iedriver": "^3.14.1",
     "jasmine-data-provider": "^2.2.0",
     "mocha-allure-reporter": "^1.4.0",

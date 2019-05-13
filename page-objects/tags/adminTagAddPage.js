@@ -1,4 +1,9 @@
 const util = require("util");
+var linkHidden = "//span[@class='%s']/a[ancestor::td//a[text()='%s']]";
+var linkHidden = "";
+var linkHidden = "";
+var linkHidden = "";
+var linkHidden = "";
 module.exports = {
     commands: [{
         addNewTag(tagName, slugName, description) {

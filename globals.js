@@ -1,7 +1,7 @@
 const path = require('path');
 var userNames = {
-  username: 'admin',
-  password: '123456789',
+  username: 'hien.nguyen',
+  password: 'Hien@12345',
 };
 const HtmlReporter = require('@rpii/nightwatch-html-reporter');
  
@@ -9,7 +9,7 @@ const htmlReporter = new HtmlReporter({
     openBrowser: true,
     reportsDirectory: __dirname + '/reports',               
     uniqueFilename: true,
-    themeName: 'default',
+    customTheme: 'html-reporter.html',
 });
 module.exports = {
   userNames: userNames,
@@ -17,10 +17,10 @@ module.exports = {
     data: path.resolve(__dirname, './data/data.csv')
   },
   "reporter" : htmlReporter.fn,
-  beforeEach: function (browser, done) {
+  beforeEach: async function (browser, done) {
     browser
       .maximizeWindow()
-      .url('http://192.168.189.70/wordpress/wp-login.php');
+      .url('http://localhost/team1_theme2/wordpress/wp-login.php');
     browser.perform(function () {
       done();
     });

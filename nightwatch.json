@@ -49,10 +49,11 @@
     "enabled": true,
     "workers": "auto"
   },
+  "detailed_output": true,
   "test_settings": {
     "default": {
       "skip_testcases_on_fail": true,
-      "launch_url": "http://192.168.189.70/wordpress/wp-login.php",
+      "launch_url": "http://localhost/team1_theme2/wordpress/wp-login.php",
       "selenium_port": 4444,
       "selenium_host": "localhost",
       "silent": true,

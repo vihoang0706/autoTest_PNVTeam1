@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 13:56:44.344 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
 13:56:44.407 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
 2019-05-10 13:56:44.422:INFO::main: Logging initialized @252ms to org.seleniumhq.jetty9.util.log.StdErrLog
 13:56:44.576 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
 13:56:44.684 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
 13:56:45.057 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+=======
+11:37:56.185 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
+11:37:56.275 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+2019-05-11 11:37:56.322:INFO::main: Logging initialized @354ms to org.seleniumhq.jetty9.util.log.StdErrLog
+11:37:56.533 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+11:37:56.683 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+11:37:56.958 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+>>>>>>> 71424f6ae9f46496fe43c24bde540077d6df5329
   "acceptSslCerts": true,
   "browserName": "chrome",
   "chromeOptions": {
@@ -14,6 +23,7 @@
     ]
   },
   "javascriptEnabled": true,
+<<<<<<< HEAD
   "name": "Menus\\admin Menu Add Menu Test"
 }
 13:56:45.058 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
@@ -23,3 +33,14 @@ Please protect ports used by ChromeDriver and related test frameworks to prevent
 13:56:47.930 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
 13:56:48.144 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session fcc1dfc1cad3f668f7cb8cb6f16c2086 (org.openqa.selenium.chrome.ChromeDriverService)
 13:56:54.248 INFO [ActiveSessions$1.onStop] - Removing session fcc1dfc1cad3f668f7cb8cb6f16c2086 (org.openqa.selenium.chrome.ChromeDriverService)
+=======
+  "name": "Categories\\admin Category Test"
+}
+11:37:56.958 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+Starting ChromeDriver 73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017) on port 48039
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+11:37:59.471 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
+11:37:59.749 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session c900e6135fd038ec187508a44bc19ce8 (org.openqa.selenium.chrome.ChromeDriverService)
+11:38:05.016 INFO [ActiveSessions$1.onStop] - Removing session c900e6135fd038ec187508a44bc19ce8 (org.openqa.selenium.chrome.ChromeDriverService)
+>>>>>>> 71424f6ae9f46496fe43c24bde540077d6df5329

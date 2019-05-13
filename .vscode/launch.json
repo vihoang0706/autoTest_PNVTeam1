@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-
-// {
-//   "configurations": [
-//     {
-//         "type": "node",
-//         "request": "launch",
-//         "name": "Nightwatch",
-//         "program": "${workspaceRoot}/node_modules/nightwatch/bin/runner.js",
-//         "stopOnEntry": false,
-//         "args": [
-//             "--test",
-//             "tests/categories/adminCategoryTest.js"
-//         ],
-//         "runtimeExecutable": null,
-//         "sourceMaps": false
-//     },
-//     {
-//         "type": "node",
-//         "request": "attach",
-//         "name": "Attach to Process",
-//         "port": 5858
-//     }
-//   ]
-// }
-=======
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
@@ -51,4 +25,3 @@
         }
     ]
 }
->>>>>>> cbaa5a34589ccddd5d58c5e34ad81852f7a3cad4

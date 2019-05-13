@@ -1,4 +1,4 @@
-module.exports = function (callback) {
+exports.command = function (callback) {
     this.url(function (result) {
         var savedUrl = result.value;
         var partURL1 = savedUrl.split("=");

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Results</title>
+
+  <style>
+    html, body {
+      font-family:Arial,sans-serif;
+      margin:0;
+      padding:0;
+    }
+    body {
+      padding:10px 40px;
+    }
+    table {
+      width:100%;
+      margin-bottom:20px;
+    }
+      td {
+        padding:7px;
+        border-top:none;
+        border-left:1px black solid;
+        border-bottom:1px black solid;
+        border-right:none;
+      }
+      td.pass {
+        color:#003b07;
+        background:#86e191;
+      }
+      td.skip {
+        color:#7d3a00;
+        background:#ffd24a;
+      }
+      td.fail {
+        color:#5e0e00;
+        background:#ff9c8a;
+      }
+      tr:last-child {
+        border-top:1px black solid;
+      }
+      tr:last-child td {
+        border-top:1px black solid;
+      }
+      tr:first-child td {
+        border-top:1px black solid;
+      }
+      td:last-child {
+        border-right:1px black solid;
+      }
+      tr.overview td {
+        padding-bottom:0px;
+        border-bottom:none;
+      }
+      tr.overview.last td {
+        padding-bottom: 3px;
+      }
+    ul.assertions   { list-style-type: none; }
+      span.error      { color: #AD2B2B; }
+      span.success    { color: #53891E; }
+    .stacktrace { display: inline; }
+      .stacktrace code { display: none; }
+      #nightwatch-logo {
+        position: absolute;
+        width: 70px;
+        height: 75px;
+        background-size: 70px 75px;
+        background-repeat: no-repeat;
+        top: 20px;
+        right: 33px;
+        background-image: url('http://nightwatchjs.org/img/logo-nightwatch.png');
+      }
+  </style>
+</head>
+
+<body>
+  <h1>Test Results</h1>
+
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr class="overview">
+      <td colspan="3" title="CHROME 73.0.3683.103 Windows NT "><strong>Browser:</strong> CHROME 73.0.3683.103 Windows NT </td>
+    </tr>
+    <tr class="overview">
+      <td colspan="3"><strong>Timestamp:</strong> Mon May 13 2019 09:51:50 GMT+0700 (Indochina Time)</td>
+    </tr>
+    <tr class="overview last">
+      <td colspan="3"><strong>Tests:</strong> 0<br></td>
+    </tr>
+    <tr>
+      <td class="pass"><strong>0</strong> passed</td>
+      <td class="skip"><strong>0</strong> errors</td>
+      <td class="fail"><strong>1</strong> failures</td>
+    </tr>
+  </table>
+
+      <h2>demo</h2>
+
+        <h3>Demo test Google</h3>
+        <ul class="assertions">
+            <li>
+                <span class="error">&#10006;</span>
+
+              Timed out while waiting for element &lt;body&gt; to be present for 5000 milliseconds. - expected [0;32m&quot;visible&quot;[0m but got: [0;31m&quot;not found&quot;[0m
+
+                Expected &quot;visible&quot; but got: &quot;not found&quot;
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="error"><strong>FAILED:</strong></span> <span class="error"><strong>1</strong></span>
+             assertions failed and <span class="success"><strong>0</span></strong> passed. (6.231s)
+        </p>
+
+  <hr>
+
+
+  <div id="nightwatch-logo"></div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+$(function() {
+  $('div.stacktrace a').on('click', function(evt) {
+    evt.preventDefault();
+    var $link = $(this);
+    var $stacktrace = $link.parent();
+    var $code = $stacktrace.find('code');
+    if ( $code.is(':visible') ) {
+      $link
+        .text('view stacktrace')
+        .prependTo($stacktrace);
+      $code.hide();
+    } else {
+      $link
+        .text('hide stacktrace')
+        .appendTo($stacktrace);
+      $code.show();
+    }
+  });
+});
+</script>
+</body>
+</html>

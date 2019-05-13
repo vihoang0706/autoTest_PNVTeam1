@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="2"
+            tests="1">
+
+  <testsuite name="users.adminUserLoginTest"
+    errors="0" failures="2" hostname="" id="" package="adminUserLoginTest" skipped="0"
+    tests="1" time="7.777" timestamp="">
+  
+    <testcase name="Verify that admin can login with valid account" classname="users.adminUserLoginTest" time="7.777" assertions="4">
+
+    
+
+      <failure message="Timed out while waiting for element &lt;//li[@id=&#34;wp-admin-bar-logout&#34;]/a[text()=&#34;Log Out&#34;]&gt; to be visible for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not visible&#34;[0m">    at Page.isLogOutVisible (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\base-objects\adminBasePage.js:51:18)
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\users\adminUserLoginTest.js:11:23)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
+
+      <failure message="Failed [equal]: (false == true) - expected [0;32m&#34;true&#34;[0m but got: [0;31m&#34;false&#34;[0m">    at C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\users\adminUserLoginTest.js:12:32
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\base-objects\adminBasePage.js:53:21)
+    at processTicksAndRejections (internal/process/task_queues.js:86:5)</failure>
+<system-out>[[ATTACHMENT|C:\Users\InternDN19.01.04\autoTest_PNVTeam1\reports\users\adminUserLoginTest\Verify-that-admin-can-login-with-valid-account_FAILED_May-10-2019-113342-GMT+0700-(Indochina.png]]</system-out>
+    <failure message="    at C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\users\adminUserLoginTest.js:12:32">    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\base-objects\adminBasePage.js:53:21)
+    at processTicksAndRejections (internal/process/task_queues.js:86:5)</failure>
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

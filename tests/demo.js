@@ -1,9 +1,11 @@
-const login1 = require('../pages/utils/setUp');
 module.exports = {
-    '@tags': ['login1'],
-    'Demo': function(browser){
-        login1.openBrowser(browser);
-        browser.useXpath();
-        login1.selectMainMenu(browser,'//li/a[contains(text(),"Tiếng Anh")]');
+    'Demo test Google' : function (browser) {
+      browser
+        .url('https://www.google.com')
+        .waitForElementVisible('body')
+        .setValue('input[name=q]', 'nightwatch')
+        .pause(1000)
+        .assert.containsText('#main', 'Night Watch')
+        .end();
     }
-}
+  };

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="2"
+            tests="1">
+
+  <testsuite name="tags.adminTagTest"
+    errors="1" failures="2" hostname="" id="" package="adminTagTest" skipped="1"
+    tests="1" time="9.364" timestamp="">
+  
+    <testcase name="Verify that admin can add new tag successfully" classname="tags.adminTagTest" time="9.364" assertions="2">  <failure message="Timed out while waiting for element &lt;//td[@class=&#34;name column-name has-row-actions column-primary&#34;]/strong/a[text()=&#34;automation testing&#34;]&gt; to be present for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.getColumnValueActual (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\tags\adminTagAddPage.js:22:26)
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\tags\adminTagTest.js:24:20)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
+
+      <failure message="Failed [equal]: ({
+  error: [
+    &#39;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#39;,
+    &#34;Build info: version: &#39;3.141.59&#39;, revision: &#39;e82be7d358&#39;, time: &#39;2018-11-14T08:25:53&#39;&#34;,
+    &#34;System info: host: &#39;LGDN18-1210-W10&#39;, ip: &#39;192.168.189.70&#39;, os.name: &#39;Windows 10&#39;, os.arch: &#39;amd64&#39;, os.version: &#39;10.0&#39;, java.version: &#39;1.8.0_201&#39;&#34;,
+    &#39;Driver info: driver.version: unknown&#39;
+  ],
+  message: &#39;Unable to find element with xpath == //td[@class=&#34;name column-name has-row-ac... == &#39;automation testing&#39;) - expected [0;32m&#34;automation testing&#34;[0m but got: [0;31m&#34;[object Object]&#34;[0m">  error: [
+    &#39;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#39;,
+    &#34;Build info: version: &#39;3.141.59&#39;, revision: &#39;e82be7d358&#39;, time: &#39;2018-11-14T08:25:53&#39;&#34;,
+    &#34;System info: host: &#39;LGDN18-1210-W10&#39;, ip: &#39;192.168.189.70&#39;, os.name: &#39;Windows 10&#39;, os.arch: &#39;amd64&#39;, os.version: &#39;10.0&#39;, java.version: &#39;1.8.0_201&#39;&#34;,
+    &#39;Driver info: driver.version: unknown&#39;
+  ],
+  message: &#39;Unable to find element with xpath == //td[@class=&#34;name column-name has-row-ac... == &#39;automation testing&#39;
+    at C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\tags\adminTagTest.js:25:32
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\commons\custom-commands\getContainText.js:3:9)
+    at processTicksAndRejections (internal/process/task_queues.js:86:5)</failure>
+<system-out>[[ATTACHMENT|C:\Users\InternDN19.01.04\autoTest_PNVTeam1\reports\tags\adminTagTest\Verify-that-admin-can-add-new-tag-successfully_FAILED_May-10-2019-124805-GMT+0700-(Indochina.png]]</system-out>
+    <failure message="  error: [">    &#39;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#39;,
+    &#34;Build info: version: &#39;3.141.59&#39;, revision: &#39;e82be7d358&#39;, time: &#39;2018-11-14T08:25:53&#39;&#34;,
+    &#34;System info: host: &#39;LGDN18-1210-W10&#39;, ip: &#39;192.168.189.70&#39;, os.name: &#39;Windows 10&#39;, os.arch: &#39;amd64&#39;, os.version: &#39;10.0&#39;, java.version: &#39;1.8.0_201&#39;&#34;,
+    &#39;Driver info: driver.version: unknown&#39;
+  ],
+  message: &#39;Unable to find element with xpath == //td[@class=&#34;name column-name has-row-ac... == &#39;automation testing&#39;
+    at C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\tags\adminTagTest.js:25:32
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\commons\custom-commands\getContainText.js:3:9)
+    at processTicksAndRejections (internal/process/task_queues.js:86:5)</failure>
+    </testcase>
+  
+
+  
+
+  
+    
+    <testcase
+      name="Verify that Admin can edit tag " classname="tags.adminTagTest">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

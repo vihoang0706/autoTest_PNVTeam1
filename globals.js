@@ -1,7 +1,7 @@
 const path = require('path');
 var userNames = {
-  username: 'hien.nguyen',
-  password: 'Hien@12345',
+  username: 'admin',
+  password: '123456789',
 };
 // const HtmlReporter = require('@rpii/nightwatch-html-reporter');
  
@@ -20,7 +20,7 @@ module.exports = {
   beforeEach: async function (browser, done) {
     browser
       .maximizeWindow()
-      .url('http://localhost/team1_theme2/wordpress/wp-login.php');
+      .url('http://192.168.189.70/wordpress/wp-login.php');
     browser.perform(function () {
       done();
     });

@@ -1,39 +1,9 @@
-<<<<<<< HEAD
-09:13:43.565 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
-09:13:43.631 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
-2019-05-13 09:13:43.665:INFO::main: Logging initialized @278ms to org.seleniumhq.jetty9.util.log.StdErrLog
-09:13:43.833 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
-09:13:43.953 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
-09:13:44.360 INFO [ActiveSessionFactory.apply] - Capabilities are: {
-  "acceptSslCerts": true,
-  "browserName": "firefox",
-  "javascriptEnabled": true,
-  "name": "Categories\\admin Category Test"
-}
-09:13:44.361 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.firefox.GeckoDriverService)
-1557713625081	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\INTERN~1.05\\AppData\\Local\\Temp\\rust_mozprofile.JZKJ48R7O7F1"
-1557713628506	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
-1557713628507	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
-1557713628507	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
-1557713642231	Marionette	INFO	Listening on port 54413
-[Parent 5756, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
-[Child 18168, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
-[Child 18168, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build09:14:02.793 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
-09:14:02.962 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 912fc81a-e134-476c-8cb5-8e2d49ccb6e5 (org.openqa.selenium.firefox.GeckoDriverService)
-1557713660342	Marionette	INFO	Stopped listening on port 54413
-[Child 9632, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
-[Child 9632, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/[Child 21064, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
-[Child 21064, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_wi
-###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
-
-[GPU 18312, Chrome_ChildTh09:14:21.904 INFO [ActiveSessions$1.onStop] - Removing session 912fc81a-e134-476c-8cb5-8e2d49ccb6e5 (org.openqa.selenium.firefox.GeckoDriverService)
-=======
-09:06:46.056 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
-09:06:46.118 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
-2019-05-14 09:06:46.150:INFO::main: Logging initialized @259ms to org.seleniumhq.jetty9.util.log.StdErrLog
-09:06:46.306 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
-09:06:46.408 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
-09:06:46.724 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+14:33:22.407 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
+14:33:22.477 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+2019-05-14 14:33:22.508:INFO::main: Logging initialized @261ms to org.seleniumhq.jetty9.util.log.StdErrLog
+14:33:22.661 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+14:33:22.764 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+14:33:23.139 INFO [ActiveSessionFactory.apply] - Capabilities are: {
   "acceptSslCerts": true,
   "browserName": "chrome",
   "chromeOptions": {
@@ -44,13 +14,12 @@
     ]
   },
   "javascriptEnabled": true,
-  "name": "Users\\admin Edit Admin Profile Test"
+  "name": "Medias\\admin Media Add Test"
 }
-09:06:46.725 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
-Starting ChromeDriver 73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017) on port 18135
+14:33:23.140 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+Starting ChromeDriver 73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017) on port 21498
 Only local connections are allowed.
 Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-09:06:49.074 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
-09:06:49.270 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session fbbfefdf3fd414a470a49d99f016af5f (org.openqa.selenium.chrome.ChromeDriverService)
-09:06:57.167 INFO [ActiveSessions$1.onStop] - Removing session fbbfefdf3fd414a470a49d99f016af5f (org.openqa.selenium.chrome.ChromeDriverService)
->>>>>>> 397fb1f89dd2339e09d9dda24e38a2cd787e6053
+14:33:25.534 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
+14:33:25.727 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 791fbc4fae40c772347b67b6779281da (org.openqa.selenium.chrome.ChromeDriverService)
+14:33:30.654 INFO [ActiveSessions$1.onStop] - Removing session 791fbc4fae40c772347b67b6779281da (org.openqa.selenium.chrome.ChromeDriverService)

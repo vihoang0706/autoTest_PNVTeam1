@@ -1,0 +1,4 @@
+@objects
+    linkAddNew         xpath     //li[@id="menu-media"]//a[text()="Add New"]
+    inputFile          id        #async-upload
+    buttonUpload       id        #html-upload

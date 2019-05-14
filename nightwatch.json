@@ -1,27 +1,32 @@
 {
+  "test_workers": true,
+  "live_output" : false,
+  "parallel_process_delay" : 10,
+  "skip_testcases_on_fail" : false,
+  "end_session_on_fail": false,
   "src_folders": [
-    "tests/categories",
-    "tests/posts",
-    "tests/tags",
-    "tests/users",
-    "tests/pages",
-    "tests/medias",
-    "tests/menus"
+    "tests/nightwatch/categories",
+    "tests/nightwatch/posts",
+    "tests/nightwatch/tags",
+    "tests/nightwatch/users",
+    "tests/nightwatch/pages",
+    "tests/nightwatch/medias",
+    "tests/nightwatch/menus"
   ],
-  "output_folder": "reports",
+  "output_folder": "reports/nightwatch/",
   "custom_commands_path": [
     "commons/custom-commands"
   ],
   "custom_assertions_path": "",
   "page_objects_path": [
-    "page-objects/categories",
-    "page-objects/posts",
-    "page-objects/tags",
-    "page-objects/users",
-    "page-objects/pages",
-    "page-objects/base-objects",
-    "page-objects/medias",
-    "page-objects/menus"
+    "page-objects/nightwatch/categories",
+    "page-objects/nightwatch/posts",
+    "page-objects/nightwatch/tags",
+    "page-objects/nightwatch/users",
+    "page-objects/nightwatch/pages",
+    "page-objects/nightwatch/base-objects",
+    "page-objects/nightwatch/medias",
+    "page-objects/nightwatch/menus"
   ],
   "globals_path": "globals.js",
   "webdriver": {
@@ -44,10 +49,6 @@
       "webdriver.gecko.driver": "node_modules/geckodriver/geckodriver.exe",
       "webdriver.ie.driver": "node_modules/iedriver/lib/iedriver/IEDriverServer.exe"
     }
-  },
-  "test_workers": {
-    "disabled": true,
-    "workers": "auto"
   },
   "detailed_output": true,
   "test_settings": {

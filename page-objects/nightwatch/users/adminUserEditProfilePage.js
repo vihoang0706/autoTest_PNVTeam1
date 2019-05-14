@@ -8,6 +8,7 @@ module.exports = {
                     .click('@radioAdminColor')
                     .click('@checkboxCommentShortcut')
                     .click('@checkboxShowToolBar')
+                    // .getLocationInView('@inputUpdateProfile')
                     .clearValue('@inputEditFirstName')
                     .setValue('@inputEditFirstName', firstName)
                     .clearValue('@inputEditLastName')

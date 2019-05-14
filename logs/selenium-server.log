@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 09:13:43.565 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
 09:13:43.631 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
 2019-05-13 09:13:43.665:INFO::main: Logging initialized @278ms to org.seleniumhq.jetty9.util.log.StdErrLog
@@ -26,3 +27,30 @@
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
 [GPU 18312, Chrome_ChildTh09:14:21.904 INFO [ActiveSessions$1.onStop] - Removing session 912fc81a-e134-476c-8cb5-8e2d49ccb6e5 (org.openqa.selenium.firefox.GeckoDriverService)
+=======
+09:06:46.056 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
+09:06:46.118 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+2019-05-14 09:06:46.150:INFO::main: Logging initialized @259ms to org.seleniumhq.jetty9.util.log.StdErrLog
+09:06:46.306 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+09:06:46.408 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+09:06:46.724 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "acceptSslCerts": true,
+  "browserName": "chrome",
+  "chromeOptions": {
+    "args": [
+      "disable-web-security",
+      "ignore-certificate-errors",
+      "--test-type"
+    ]
+  },
+  "javascriptEnabled": true,
+  "name": "Users\\admin Edit Admin Profile Test"
+}
+09:06:46.725 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+Starting ChromeDriver 73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017) on port 18135
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+09:06:49.074 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
+09:06:49.270 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session fbbfefdf3fd414a470a49d99f016af5f (org.openqa.selenium.chrome.ChromeDriverService)
+09:06:57.167 INFO [ActiveSessions$1.onStop] - Removing session fbbfefdf3fd414a470a49d99f016af5f (org.openqa.selenium.chrome.ChromeDriverService)
+>>>>>>> 397fb1f89dd2339e09d9dda24e38a2cd787e6053

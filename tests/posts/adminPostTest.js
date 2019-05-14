@@ -19,7 +19,7 @@ module.exports = {
     },
     'Verify that use can add new post with valid data': (browser) => {
         browser.perform(function (browser, done) {
-            dashboardPage.goToPage('Post');
+            dashboardPage.goToPage('Add New Post');
             addPostPage.addNewPost(nameTitle, description);
             addPostPage.getActualAddPostMessage(function (actualMesssage) {
                 browser.assert.equal(actualMesssage, expectedMessage);
@@ -29,10 +29,10 @@ module.exports = {
             }).perform(function (browser, done) {
                 dashboardPage.goToPage('Manage Post');
                 viewAllPostPage.goToDetailPost(postID);
-                addPostPage.getColumActual('Actual Title', function (actualTitle) {
+                editPostPage.getColumActual('Actual Title', function (actualTitle) {
                     browser.assert.equal(actualTitle, nameTitle);
                 });
-                addPostPage.getColumActual('Actual Description', function (actualDescription) {
+                editPostPage.getColumActual('Actual Description', function (actualDescription) {
                     browser.assert.equal(actualDescription, description);
                 });
                 dashboardPage.goToPage('Manage Post');
@@ -44,7 +44,7 @@ module.exports = {
     },
     'Verify that user can edit post with valid data': (browser) => {
         browser.perform(function (browser, done) {
-            dashboardPage.goToPage('Post');
+            dashboardPage.goToPage('Add New Post');
             addPostPage.addNewPost(nameTitle, description);
             browser.getID(function (id) {
                 postID = id;
@@ -57,10 +57,10 @@ module.exports = {
                 });
                 dashboardPage.goToPage('Manage Post');
                 viewAllPostPage.goToDetailPost(postID);
-                addPostPage.getColumActual('Actual Title', function (actualTitle) {
+                editPostPage.getColumActual('Actual Title', function (actualTitle) {
                     browser.assert.equal(actualTitle, nameTitle);
                 });
-                addPostPage.getColumActual('Actual Description', function (actualDescription) {
+                editPostPage.getColumActual('Actual Description', function (actualDescription) {
                     browser.assert.equal(actualDescription, updateDescription);
                 });
                 dashboardPage.goToPage('Manage Post');

@@ -16,7 +16,7 @@ module.exports = {
         goToAction(action, idPost) {
             switch (action) {
                 case 'Edit':
-                    this.clickLink(columnActualTitle, linkHidden, 'edit',  idPost);
+                    this.clickLink(columnActualTitle, linkHidden, 'edit', idPost);
                     break;
                 case 'Delete':
                     this.clickLink(columnActualTitle, linkHidden, 'trash', idPost);

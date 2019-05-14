@@ -49,10 +49,10 @@ module.exports = {
         goToAction(action, categoryName) {
             switch (action) {
                 case 'Edit':
-                    this.clickLink(columnActualTitle, linkHidden, 'edit' , categoryName);
+                    this.clickLink(columnActualTitle, linkHidden, 'edit', categoryName);
                     break;
                 case 'Delete':
-                    this.clickLink(columnActualTitle, linkHidden, 'delete' , categoryName);
+                    this.clickLink(columnActualTitle, linkHidden, 'delete', categoryName);
                     this.api.acceptAlert();
                     break;
             }

@@ -2,7 +2,7 @@ var addMediaPage, dashboardPage, loginPage, username, password, imageName = 'gir
 var image = '../../../images/girl.jpg';
 module.exports = {
     tags: ['add-media'],
-    before:  function(browser){
+    before: function (browser) {
         loginPage = browser.page.adminUserLoginPage();
         dashboardPage = browser.page.adminBasePage();
         addMediaPage = browser.page.adminMediaAddPage();
@@ -12,11 +12,11 @@ module.exports = {
     },
     'Verify that admin can add new image': (browser) => {
         browser.perform(function (browser, done) {
-            dashboardPage.goToPage('Media');
+            dashboardPage.goToPage('Add New Media');
             addMediaPage.addNewMedia(image);
             addMediaPage.getTitleImage(function (actualImageName) {
-                    browser.assert.equal(actualImageName, imageName);
-                });
+                browser.assert.equal(actualImageName, imageName);
+            });
             addMediaPage.deleteImage();
             done();
         });

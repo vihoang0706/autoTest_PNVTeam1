@@ -10,7 +10,7 @@ module.exports = {
                 .click('@inputLogin');
         },
         getErrorMessage(callback) {
-            this
+            return this
                 .waitForElementVisible('@labelErrorMessage')
                 .getContainsText('@labelErrorMessage', callback);
         }

@@ -1,8 +1,10 @@
-const nameTag = 'automation testing';
-const slugTag = 'automation-test';
+var characters = 'abcdefghijklmnopqrstuvwxyz';
+var charactersLength = characters.length;
+const nameTag = 'automation testing'+ Math.random().toString(36).substr(2, charactersLength);
+const slugTag = 'automation-test'+ Math.random().toString(36).substr(2, charactersLength);
 const descriptionTag = 'To learn Automation testing';
-const editNameTag = 'automation';
-const editSlugTag = 'automation-testing';
+const editNameTag = 'automation'+ Math.random().toString(36).substr(2, charactersLength);
+const editSlugTag = 'automation-testing'+Math.random().toString(36).substr(2, charactersLength);
 const editDescriptionTag = 'To learn Automation testing by using nightwatch';
 const messageTagUpdated = 'Tag updated.';
 var dashboardPage, addTagPage, username, password, loginPage, editTagPage;

@@ -7,7 +7,9 @@
     "lint": "eslint .",
     "debug": "node --inspect-brk node_modules/nightwatch/bin/runner.js --env chrome",
     "start-server": "./node_modules/.bin/light-server -s . -p 500 -w ./reports/*.html",
-    "test": "node nightwatch ./tests -r ./html-reporter.js -e chrome"
+    "test": "node nightwatch ./tests -r ./html-reporter.js -e chrome",
+    "galen": "galen",
+    "test-galen": "galen test tests/galen/demo/homepage.test.js --htmlreport reports "
   },
   "dependencies": {
     "@rpii/nightwatch-html-reporter": "^0.9.3",

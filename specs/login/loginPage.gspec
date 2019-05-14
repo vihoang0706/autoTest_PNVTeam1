@@ -1,0 +1,17 @@
+@objects
+    login_box           #login
+    login_form          #loginform
+    username_label      label[for='user_login']
+    password_label      label[for="user_pass"]
+    username_textfield  input[id='user_login']
+    password_textfield  input[id='user_pass']
+    rememberMe_label    label[for='rememberme']
+    rememberMe_checkbox input[id='rememberme']
+    login_button        input[id='wp-submit']
+
+@set
+    content_vertical_margin 
+    login_username_label_text Username or Email Address
+    login_password_lable_text Password
+    login_remember_me_text    Remember Me       
+     

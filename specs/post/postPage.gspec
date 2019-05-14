@@ -1,0 +1,40 @@
+@objects
+    heading_title             .wp-heading-inline
+    form_caption              .form-wrap h2
+    term_name_wrap            .term-name-wrap
+        tag_name_label         label[for='tag-name']
+        tag_name_textfield     input[id='tag-name']
+        tag_name_caption       p
+    term-slug-wrap             .term-slug-wrap
+        tag_slug_label         label[for='slug-name']
+        tag_slug_textfield     input[id='slug-name']
+        tag_slug_caption       p
+    term-description-wrap      .term-description-wrap
+        tag_description_label  label[for='tag-description']
+        tag_description_textfield   textarea[id='tag-description']
+        tag_description_caption p
+    addTagbutton                input[id='submit']
+    search_box                  .search-box
+        search_label            label[for='tag-search-input']
+        search_textfield        #tag-search-input
+        searchButton            #search-submit
+
+@set
+    heading_title_text          Tags
+    form_caption_text           Add New Tag
+    tag_name_label_text         Name
+    tag_slug_lable_text         Slug
+
+= Post =
+
+    heading_title:
+        text is "${heading_title_text}"
+
+    form_caption:
+        text is "${form_caption_text}"
+    
+
+
+
+
+

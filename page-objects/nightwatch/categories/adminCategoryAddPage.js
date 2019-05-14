@@ -64,28 +64,5 @@ module.exports = {
         selectParent: 'select[id=parent]',
         textareaDescription: 'textarea[id=tag-description]',
         inputAddCategory: 'input[id=submit]',
-<<<<<<< HEAD:page-objects/categories/adminCategoryAddPage.js
-=======
-        linkDelete: {
-            selector: "//span[@class='delete']/a[ancestor::td//a[text()='%s']]",
-            locateStrategy: 'xpath'
-        },
-        linkEdit: {
-            selector: '//span[@class="edit"]/a[ancestor::td//a[text()="' + '%s' + '"]]',
-            locateStrategy: 'xpath'
-        },
-        columnActualTitle: {
-            selector: '//td[@class="name column-name has-row-actions column-primary"]/strong/a[text()="' + '%s' + '"]',
-            locateStrategy: 'xpath'
-        },
-        columnActualDescription: {
-            selector: '//td[@class="description column-description"]/p[ancestor::tr//a[text()="' + '%s' + '"]]',
-            locateStrategy: 'xpath'
-        },
-        columnActualSlug: {
-            selector: '//td[@class="slug column-slug" and ancestor::tr//a[text()="' + '%s' + '"]]',
-            locateStrategy: 'xpath'
-        }
->>>>>>> master:page-objects/nightwatch/categories/adminCategoryAddPage.js
     }
 };

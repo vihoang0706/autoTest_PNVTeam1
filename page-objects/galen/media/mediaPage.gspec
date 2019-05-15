@@ -2,3 +2,10 @@
     linkAddNew         xpath     //li[@id="menu-media"]//a[text()="Add New"]
     inputFile          id        #async-upload
     buttonUpload       id        #html-upload
+
+    inputUsername      id        #user_login
+    inputPassword      id        #user_pass
+    buttonLogin        id        #wp-submit
+    checkboxRemember   id        #rememberme
+
+    messageError       id        #login_error

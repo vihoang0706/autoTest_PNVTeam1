@@ -16,7 +16,7 @@
  - specs file for declaring objects (elements) and .test.js file are the test case
 
 ## Working command line
-galen check specs/homepage.gspec --url http://testapp.galenframework.com/ --size 1024x768 --htmlreport reports
+galen check page-objects/galen/demo/homepage.gspec --url http://testapp.galenframework.com/ --size 1024x768 --htmlreport reports
 
 
 [1]: https://nodejs.org/en/download/current/

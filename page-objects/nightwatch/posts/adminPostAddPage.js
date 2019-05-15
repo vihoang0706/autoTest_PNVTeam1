@@ -11,21 +11,7 @@ module.exports = {
     },
     getActualAddPostMessage(callback) {
       this.getContainText('@labelMessageSuccess', callback);
-    },
-    getColumActual(type, callback) {
-      switch (type) {
-        case 'Actual Title':
-          this
-            .waitForElementVisible('@inputTitle')
-            .getContainText('@inputTitle', callback);
-          break;
-        case 'Actual Description':
-          this
-            .waitForElementVisible('@inputDescription')
-            .getContainText('@inputDescription', callback);
-          break;
-      }
-    },
+    }
   }],
   elements: {
     inputTitle: 'textarea[id=post-title-0]',

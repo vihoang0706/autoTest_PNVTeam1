@@ -1,33 +1,27 @@
 const util = require('util');
+var columnActualTitle = "//strong/a[ancestor::tr[@id='post-%s']]";
+var linkHidden = "//span[@class='%s']/a[ancestor::tr[@id='post-%s']]";
 module.exports = {
     commands: [{
-        formatElement(elementName, data) {
-            var element = this.elements[elementName.slice(1)];
-            return util.format(element.selector, data);
-        },
         goToDetailPage(idPage) {
-            var self = this;
-            this.click(self.formatElement('@columnActualTitle', idPage));
+            this.click(util.format(columnActualTitle, idPage));
         },
-        deletePage(idPage) {
-            var self = this;
-            var formatColumnActualTitle = self.formatElement('@columnActualTitle', idPage);
-            var formatLinkDelete = self.formatElement('@linkDelete', idPage);
+        clickLink(elementContainHideLink, hideLink, action, idPage) {
             this
-                .waitForElementVisible(formatColumnActualTitle)
-                .moveToElement(formatColumnActualTitle, 0, 0)
-                .waitForElementVisible(formatLinkDelete)
-                .click(formatLinkDelete);
-        }
+                .waitForElementVisible(util.format(elementContainHideLink, idPage))
+                .moveToElement(util.format(elementContainHideLink, idPage), 0, 0)
+                .waitForElementVisible(util.format(hideLink, action, idPage))
+                .click(util.format(hideLink, action, idPage));
+        },
+        goToAction(action, idPage) {
+            switch (action) {
+                case 'Edit':
+                    this.clickLink(columnActualTitle, linkHidden, 'edit', idPage);
+                    break;
+                case 'Delete':
+                    this.clickLink(columnActualTitle, linkHidden, 'trash', idPage);
+                    break;
+            }
+        },
     }],
-    elements: {
-        columnActualTitle: {
-            selector: '//strong/a[ancestor::tr[@id="post-' + '%s' + '"]]',
-            locateStrategy: 'xpath'
-        },
-        linkDelete: {
-            selector: '//span[@class="trash"]/a[ancestor::tr[@id="post-' + '%s' + '"]]',
-            locateStrategy: 'xpath'
-        },
-    }
 };

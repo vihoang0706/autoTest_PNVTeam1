@@ -101,5 +101,6 @@ function testOnDevice(device, testNamePrefix, url, callback) {
     exports.devices = devices;
     exports.openDriver = openDriver;
     exports.testOnAllDevices = testOnAllDevices;
+    exports.testOnDevice = testOnDevice;
     exports.TEST_USER = TEST_USER;
 })(this);

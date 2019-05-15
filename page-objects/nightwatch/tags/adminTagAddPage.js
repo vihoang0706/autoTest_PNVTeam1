@@ -1,4 +1,8 @@
 const util = require("util");
+var linkHidden = "//span[@class='%s']/a[ancestor::td//a[text()='%s']]";
+var columnActualTitle = "//td[@class='name column-name has-row-actions column-primary']/strong/a[text()='%s']";
+var columnActualDescription = "//td[@class='description column-description']/p[ancestor::tr//a[text()='%s']]";
+var columnActualSlug = "//td[@class='slug column-slug' and ancestor::tr//a[text()='%s']]";
 module.exports = {
     commands: [{
         addNewTag(tagName, slugName, description) {
@@ -8,14 +12,10 @@ module.exports = {
                 .setValue('@inputDescription', description)
                 .click('@inputAddNewTag');
         },
-        formatElement(elementName, data) {
-            var element = this.elements[elementName.slice(1)];
-            return util.format(element.selector, data);
-        },
         getColumnValueActual(type, nameTag, callback) {
-            var formatColumnActualTitle = this.formatElement('@columnActualTitle', nameTag);
-            var formatColumnActualSlug = this.formatElement('@columnActualSlug', nameTag);
-            var formatColumnActualDescription = this.formatElement('@columnActualDescription', nameTag);
+            var formatColumnActualTitle = util.format(columnActualTitle, nameTag);
+            var formatColumnActualSlug = util.format(columnActualSlug, nameTag);
+            var formatColumnActualDescription = util.format(columnActualDescription, nameTag);
             switch (type) {
                 case "Actual Title":
                     this
@@ -34,20 +34,20 @@ module.exports = {
                     break;
             }
         },
-        clickLink(elementContainHideLink, hideLink, nameTag) {
+        clickLink(elementContainHideLink, linkHidden, action, nameTag) {
             this
-                .waitForElementVisible(this.formatElement(elementContainHideLink, nameTag))
-                .moveToElement(this.formatElement(elementContainHideLink, nameTag), 0, 0)
-                .waitForElementVisible(this.formatElement(hideLink, nameTag))
-                .click(this.formatElement(hideLink, nameTag));
+                .waitForElementVisible(util.format(elementContainHideLink, nameTag))
+                .moveToElement(util.format(elementContainHideLink, nameTag), 0, 0)
+                .waitForElementVisible(util.format(linkHidden, action, nameTag))
+                .click(util.format(linkHidden, action, nameTag));
         },
         goToAction(action, nameTag) {
             switch (action) {
                 case 'Edit':
-                    this.clickLink('@columnActualTitle', '@linkEdit', nameTag);
+                    this.clickLink(columnActualTitle, linkHidden, 'edit', nameTag);
                     break;
                 case 'Delete':
-                    this.clickLink('@columnActualTitle', '@linkDelete', nameTag);
+                    this.clickLink(columnActualTitle, linkHidden, 'delete', nameTag);
                     this.api.acceptAlert();
                     break;
             }
@@ -58,25 +58,5 @@ module.exports = {
         inputSlugName: 'input[id=tag-slug]',
         inputDescription: 'textarea[id=tag-description]',
         inputAddNewTag: 'input[id=submit]',
-        linkDelete: {
-            selector: '//span[@class="delete"]/a[ancestor::td//a[text()="' + '%s' + '"]]',
-            locateStrategy: 'xpath'
-        },
-        linkEdit: {
-            selector: '//span[@class="edit"]/a[ancestor::td//a[text()="' + '%s' + '"]]',
-            locateStrategy: 'xpath'
-        },
-        columnActualTitle: {
-            selector: '//td[@class="name column-name has-row-actions column-primary"]/strong/a[text()="' + '%s' + '"]',
-            locateStrategy: 'xpath'
-        },
-        columnActualDescription: {
-            selector: '//td[@class="description column-description"]/p[ancestor::tr//a[text()="' + '%s' + '"]]',
-            locateStrategy: 'xpath'
-        },
-        columnActualSlug: {
-            selector: '//td[@class="slug column-slug" and ancestor::tr//a[text()="' + '%s' + '"]]',
-            locateStrategy: 'xpath'
-        }
     }
 };

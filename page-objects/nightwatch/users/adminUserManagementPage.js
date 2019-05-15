@@ -1,15 +1,16 @@
 const util = require("util");
+var linkHidden = "//span[@class='delete']/a[ancestor::td//a[text()='%s']]";
+var columnActualUsername = "//strong/a[text()='%s']";
+var columnActualName = "//td[@class='name column-name' and ancestor::tr//a[text()='%s']]";
+var columnActualEmail = "//td[@class='email column-email']/a[ancestor::tr//a[text()='%s']]";
+var columnActualRole = "//td[@class='role column-role' and ancestor::tr//a[text()='%s']]";
 module.exports = {
     commands: [{
-        formatElement(elementName, data) {
-            var element = this.elements[elementName.slice(1)];
-            return util.format(element.selector, data);
-        },
         getColumnValueActual(type, username, callback) {
-            var formatColumnActualUsername = this.formatElement('@columnActualUsername', username);
-            var formatColumnActualName = this.formatElement('@columnActualName', username);
-            var formatColumnActualEmail = this.formatElement('@columnActualEmail', username);
-            var formatColumnActualRole = this.formatElement('@columnActualRole', username);
+            var formatColumnActualUsername = util.format(columnActualUsername, username);
+            var formatColumnActualName = util.format(columnActualName, username);
+            var formatColumnActualEmail = util.format(columnActualEmail, username);
+            var formatColumnActualRole = util.format(columnActualRole, username);
             switch (type) {
                 case "Actual Username":
                     this
@@ -33,16 +34,16 @@ module.exports = {
                     break;
             }
         },
-        clickLink(elementContainHideLink, hideLink, nameTag) {
+        clickLink(elementContainHideLink, linkHidden, nameTag) {
             this
-                .waitForElementVisible(this.formatElement(elementContainHideLink, nameTag))
-                .moveToElement(this.formatElement(elementContainHideLink, nameTag), 0, 0)
-                .waitForElementVisible(this.formatElement(hideLink, nameTag))
-                .click(this.formatElement(hideLink, nameTag));
+                .waitForElementVisible(util.format(elementContainHideLink, nameTag))
+                .moveToElement(util.format(elementContainHideLink, nameTag), 0, 0)
+                .waitForElementVisible(util.format(linkHidden, nameTag))
+                .click(util.format(linkHidden, nameTag));
         },
         deleteUser(username) {
             var self = this;
-            this.clickLink('@columnActualUsername', '@linkDelete', username);
+            this.clickLink(columnActualUsername, linkHidden, username);
             self.getAttribute('@inputConfirmDeletion', 'disabled', function (result) {
                 if (result.value == "true") {
                     self
@@ -57,29 +58,5 @@ module.exports = {
     elements: {
         inputConfirmDeletion: 'input[id=submit]',
         inputDeleteAllContent: 'input[id=delete_option0]',
-        linkDelete: {
-            selector: '//span[@class="delete"]/a[ancestor::td//a[text()="' + '%s' + '"]]',
-            locateStrategy: 'xpath'
-        },
-        linkEdit: {
-            selector: '//span[@class="edit"]/a[ancestor::td//a[text()="' + '%s' + '"]]',
-            locateStrategy: 'xpath'
-        },
-        columnActualUsername: {
-            selector: '//strong/a[text()="' + '%s' + '"]',
-            locateStrategy: 'xpath'
-        },
-        columnActualName: {
-            selector: '//td[@class="name column-name" and ancestor::tr//a[text()="' + '%s' + '"]]',
-            locateStrategy: 'xpath'
-        },
-        columnActualEmail: {
-            selector: '//td[@class="email column-email"]/a[ancestor::tr//a[text()="' + '%s' + '"]]',
-            locateStrategy: 'xpath'
-        },
-        columnActualRole: {
-            selector: '//td[@class="role column-role" and ancestor::tr//a[text()="' + '%s' + '"]]',
-            locateStrategy: 'xpath'
-        }
     }
 }

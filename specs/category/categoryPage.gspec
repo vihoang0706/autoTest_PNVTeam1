@@ -1,0 +1,10 @@
+@objects
+    form          #addtag
+        name            #tag-name
+        slug            #tag-slug
+        parent          #parent
+        description     #tag-description
+
+= Form =
+    form.slug:
+        below form.name

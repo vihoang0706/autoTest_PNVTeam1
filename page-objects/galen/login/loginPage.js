@@ -7,6 +7,5 @@ this.LoginPage = $page("Login page", {
       this.email.typeText(userName);
       this.password.typeText(password);
       this.submitButton.click();
-    },
-    
+    }
   });

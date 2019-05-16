@@ -1,6 +1,4 @@
 var domain = "192.168.189.70/wordpress";
-
-
 /*
 A list of all devices that will be used in our tests
 */

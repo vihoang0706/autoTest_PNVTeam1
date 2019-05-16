@@ -1,5 +1,5 @@
 var addMediaPage, dashboardPage, loginPage, username, password, imageName = 'girl';
-var image = '../../../images/girl.jpg';
+var image = '../../../../images/girl.jpg';
 module.exports = {
     tags: ['add-media'],
     before: function (browser) {

@@ -1,0 +1,50 @@
+@objects
+    post_title_label             .editor-post-title__block div label
+    post_title_textfield         #post-title-0
+    post_content_label           label
+    post_content_textfield       .editor-post-text-editor
+    post_setting_button          button[aria-label='Settings']
+        img_setting                 .dashicons-admin-generic
+    post_show_more_tool_button   button[aria-label='Show more tools & options']
+    post_sidebar                 .edit-post-sidebar
+        panel_tab                   .edit-post-sidebar__panel-tabs
+    components_panel_item-*       .components-panel__body h2 button   
+@set
+    post_title_label_text       Add title
+   
+= Form Add Post =
+
+    post_title_label:
+        inside post_title_textfield
+    
+    post_title_label:
+        text is "${post_title_label_text}"
+        css font-size is "16px" 
+        css font-family starts "-apple-system"
+        css font-family ends "serif"
+        css color is "rgba(68, 68, 68, 1)"
+        css border-color is "rgb(68, 68, 68)"
+
+    post_title_textfield:
+        width 588 px
+        height 84 px
+
+    post_content_textfield:
+        width 588 px
+        height 200 px
+        below post_title_textfield 4 px
+
+= Post Header Setting =
+
+    post_setting_button.img_setting:
+        visible
+        left-of post_show_more_tool_button 12 px
+
+= Side bar =
+    components_panel_item-#:
+        width 279 px 
+        height 47 px 
+
+
+
+

@@ -1,7 +1,8 @@
 module.exports = {
     commands: [{
         login(username, password) {
-            return this
+            this
+                .waitForElementVisible('@body')
                 .waitForElementVisible('@inputUsername')
                 .setValue('@inputUsername', username)
                 .waitForElementVisible('@inputPassword')
@@ -15,6 +16,7 @@ module.exports = {
         }
     }],
     elements: {
+        body: 'body',
         inputUsername: 'input[id=user_login]',
         inputPassword: 'input[id=user_pass]',
         inputLogin: 'input[id=wp-submit]',

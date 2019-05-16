@@ -5,27 +5,13 @@ module.exports = {
         .setValue('@inputTitle', titlePage)
         .setValue('@inputDescription', description)
         .click('@buttonPublish')
-        .click('@subButtonPublish');
+        .waitForElementVisible('@subButtonPublish')
+        .click('@subButtonPublish')
+        .waitForElementVisible('@labelMessageSuccess');
     },
     getActualAddPageMessage(callback) {
-      this
-        .waitForElementVisible('@labelMessageSuccess')
-        .getContainText('@labelMessageSuccess', callback);
-    },
-    getColumActual(type, callback) {
-      switch (type) {
-        case 'Actual Title':
-          this
-            .waitForElementVisible('@inputTitle')
-            .getContainText('@inputTitle', callback);
-          break;
-        case 'Actual Description':
-          this
-            .waitForElementVisible('@inputDescription')
-            .getContainText('@inputDescription', callback);
-          break;
-      }
-    },
+      this.getContainText('@labelMessageSuccess', callback);
+    }
   }],
   elements: {
     inputTitle: 'textarea[class=editor-post-title__input]',

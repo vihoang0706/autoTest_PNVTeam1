@@ -3,7 +3,7 @@ var domain = "192.168.189.70/wordpress";
 A list of all devices that will be used in our tests
 */
 var devices = {
-    // mobile: {
+    //   mobile: {
     //     deviceName: "mobile",
     //     size: "450x800",
     //     tags: ["mobile"]
@@ -99,5 +99,6 @@ function testOnDevice(device, testNamePrefix, url, callback) {
     exports.devices = devices;
     exports.openDriver = openDriver;
     exports.testOnAllDevices = testOnAllDevices;
+    exports.testOnDevice = testOnDevice;
     exports.TEST_USER = TEST_USER;
 })(this);

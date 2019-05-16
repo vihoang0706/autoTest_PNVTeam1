@@ -11,13 +11,13 @@
 
 3- Once it sees that something is wrong it’s report the error and makes a screenshot and highlights the misbehaviour element on it.
 ## How to install Galen framwork
- - Install npm install galenframework-cli
+ - Install npm install galenframework-cli *[2]*
  - Generate galen.config (run command line: galen config)
  - specs file for declaring objects (elements) and .test.js file are the test case
 
 ## Working command line
-galen check page-objects/galen/demo/homepage.gspec --url http://testapp.galenframework.com/ --size 1024x768 --htmlreport reports
-
+ - Test UI Media: run it on cmd * galen test tests/galen/media/media.test.js --htmlreport reports *
 
 [1]: https://nodejs.org/en/download/current/
 [2]: http://galenframework.com/docs/getting-started-install-galen/
+

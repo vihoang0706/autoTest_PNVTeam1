@@ -4,4 +4,4 @@ this.CategoryPage = $page("Category Page", {
     selectParent: 'select#parent',
     textareaDescription: 'textarea#tag-description',
     inputAddCategory: 'input#submit',
-})
+});

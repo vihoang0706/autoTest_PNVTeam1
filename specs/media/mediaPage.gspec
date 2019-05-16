@@ -1,28 +1,29 @@
 @objects
-    help_button         #contextual-help-link
-    title                         .wrap h1
-    media_upload_form        #file-form
-        upload_input       #async-upload
-        upload_button      #html-upload
-        multi_file_link               p[class="upload-html-bypass hide-if-no-js"] a
-        caption_size_upload_file      p.max-upload-size
-@groups
-    element_form media_upload_form.upload_button, media_upload_form.multi_file_link, media_upload_form.caption_size_upload_file
-@set
-    common_margin 10 to 30px
-    common_font_size 13px
-    title_text Upload New Media
-    upload_button_text Upload
-    caption_size_upload_file_text Maximum upload file size: 2 MB.
-    multi_file_link_text Switch to the multi-file uploader
-    upload_button_desktop_width ~63 px
-    upload_button_border_color rgb(0, 115, 170) rgb(0, 103, 153) rgb(0, 103, 153)
+    help_button             #contextual-help-link
+    title                   .wrap h1
+    media_upload_form       #file-form
+        upload_input                    #async-upload
+        upload_button                   #html-upload
+        multi_file_link                 p[class="upload-html-bypass hide-if-no-js"] a
+        upload_file_size        p.max-upload-size
 
+@set
+    common_margin                   10 to 30px
+    common_font_size                13px
+    title_text                      Upload New Media
+    upload_button_text              Upload
+    upload_file_size_text           Maximum upload file size: 2 MB.
+    multi_file_link_text            Switch to the multi-file uploader
+    upload_button_desktop_width     ~63 px
+    upload_button_border_color      rgb(0, 115, 170) rgb(0, 103, 153) rgb(0, 103, 153)
+
+@groups
+    form_elements media_upload_form.upload_button, media_upload_form.multi_file_link, media_upload_form.upload_file_size
 
 = Help =
     help_button:
-        width ~73
-        height ~28
+        width ~73px
+        height ~28px
         inside screen 939px left 
 
 = Title =
@@ -50,11 +51,11 @@
         text is "${multi_file_link_text}"
         below media_upload_form.multi_file_link -36 px
         visible 
-    media_upload_form.caption_size_upload_file:
-        text is "${caption_size_upload_file_text}"
+    media_upload_form.upload_file_size:
+        text is "${upload_file_size_text}"
         below media_upload_form.multi_file_link ${common_margin}
         visible
 
 = Skeleton =
-    &element_form:
+    &form_elements:
         css font-size is "${common_font_size}" 

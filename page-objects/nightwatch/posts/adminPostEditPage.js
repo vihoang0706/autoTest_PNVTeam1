@@ -4,39 +4,39 @@ module.exports = {
       this
         .waitForElementVisible('@buttonDismiss')
         .click('@buttonDismiss')
-        .waitForElementVisible('@titlePost')
-        .clearValue('@titlePost')
-        .setValue('@titlePost', title)
-        .clearValue('@desciprtionPost')
-        .setValue('@desciprtionPost', content)
-        .waitForElementVisible('@buttonUpdatePost')
-        .click('@buttonUpdatePost')
+        .waitForElementVisible('@inputTitle')
+        .clearValue('@inputTitle')
+        .setValue('@inputTitle', title)
+        .clearValue('@inputDesciprtion')
+        .setValue('@inputDesciprtion', content)
+        .waitForElementVisible('@buttonUpdate')
+        .click('@buttonUpdate')
     },
-    getActualUpdatedPostMessage(callback) {
+    getMessageSuccessfully(callback) {
       this
-        .waitForElementVisible('@labelUpdateMessageSuccess')
-        .getContainText('@labelUpdateMessageSuccess', callback);
+        .waitForElementVisible('@labelMessageSuccessful')
+        .getContainText('@labelMessageSuccessful', callback);
     },
     getColumActual(type, callback) {
       switch (type) {
         case 'Actual Title':
           this
-            .waitForElementVisible('@titlePost')
-            .getContainText('@titlePost', callback);
+            .waitForElementVisible('@inputTitle')
+            .getContainText('@inputTitle', callback);
           break;
         case 'Actual Description':
           this
-            .waitForElementVisible('@desciprtionPost')
-            .getContainText('@desciprtionPost', callback);
+            .waitForElementVisible('@inputDesciprtion')
+            .getContainText('@inputDesciprtion', callback);
           break;
       }
     }
   }],
   elements: {
-    titlePost: 'textarea[id=post-title-0]',
-    desciprtionPost: 'textarea[class=editor-post-text-editor]',
-    buttonUpdatePost: 'button.editor-post-publish-button',
-    labelUpdateMessageSuccess: 'div[class=components-notice__content]',
+    inputTitle: 'textarea[id=post-title-0]',
+    inputDesciprtion: 'textarea[class=editor-post-text-editor]',
+    buttonUpdate: 'button.editor-post-publish-button',
+    labelMessageSuccessful: 'div[class=components-notice__content]',
     buttonDismiss: 'button.nux-dot-tip__disable'
   }
 }

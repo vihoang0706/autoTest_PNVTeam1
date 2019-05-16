@@ -43,7 +43,7 @@ module.exports = {
             addCategoryPage.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
             addCategoryPage.goToAction('Edit', nameCategory);
             editCategoryPage.editCategory(nameEditCategory, slugEditCategory, parentEditCategory, descriptionEditCategory);
-            editCategoryPage.getActualUpdatedCategoryMessage(function (actualMessage) {
+            editCategoryPage.getMessageSuccessfully(function (actualMessage) {
                 browser.assert.equal(actualMessage, editMessageSuccessful);
             });
             editCategoryPage.goBackToCategory();

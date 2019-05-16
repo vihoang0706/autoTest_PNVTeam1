@@ -1,38 +1,36 @@
 @import ../galen-extras/galen-extras-rules.gspec
 
 @objects
-    editor_body             div.edit-post-text-editor__body
-        title_label             .editor-post-title__block div label
-        title_textfield         #post-title-0
-        content_label           label
-        content_textfield       .editor-post-text-editor
-    setting_button          button[aria-label='Settings']
-        img_setting                 .dashicons-admin-generic
-    show_more_tool_button   button[aria-label='Show more tools & options']
-     sidebar                 .edit-post-sidebar
+    editor_body                 div.edit-post-text-editor__body
+        title_label                 .editor-post-title__block div label
+        title_textfield             #post-title-0
+        content_label               label
+        content_textfield           .editor-post-text-editor
+    setting_button              button[aria-label='Settings']
+        icon_setting                .dashicons-admin-generic
+    show_more_tool_button       button[aria-label='Show more tools & options']
+    sidebar                     .edit-post-sidebar
     panel_tab                   .edit-post-sidebar__panel-tabs
-        tab_item-*                  ul li
-    components_panel_item-*        .components-panel__body h2 button   
+        tab_item-*                   ul li
+    components_panel_item-*     .components-panel__body h2 button   
 @set
-    title_label_text            Add title
-    components_status_text      Status & Visibility
-    components_category_text    Categories
-    components_tag_text         Tags
-    components_fearture_image_text  Featured Image
-    components_excerpt_text     Excerpt
-    components_discussion_text  Discussion
-    tab_item_document_text      Document
-    tab_item_block_text         Block
+    title_label_text               Add title
+    component_status_text          Status & Visibility
+    component_category_text        Categories
+    component_tag_text             Tags
+    component_fearture_image_text  Featured Image
+    component_excerpt_text         Excerpt
+    component_discussion_text      Discussion
+    tab_item_document_text         Document
+    tab_item_block_text            Block
 
 @groups
-    layout_add_post     editor__body.title_textfield, editor__body.title_label,editor__body.content_label, editor__body.content_textfield
+    components_add_post     editor__body.title_textfield, editor__body.title_label,editor__body.content_label, editor__body.content_textfield
     (tab_item, tab_items)     panel_tab.tab_item-*
 
 = Form Add Post =
-
     editor_body.title_label:
         inside editor_body.title_textfield
-    
     editor_body.title_label:
         text is "${title_label_text}"
         css font-size is "16px" 
@@ -40,57 +38,44 @@
         css font-family ends "serif"
         css color is "rgba(68, 68, 68, 1)"
         css border-color is "rgb(68, 68, 68)"
-
     editor_body.title_textfield:
         width 588 px
         height 84 px
-
     editor_body.content_textfield:
         width 588 px
         height 200 px
         below editor_body.title_textfield 4 px
 
 = Post Header Setting =
-
-    setting_button.img_setting:
+    setting_button.icon_setting:
         visible
         left-of show_more_tool_button 12 px
 
 = Side bar =
     | amount of visible &tab_items should be 2
     | every &tab_item has height ~ 48px 
-
-     panel_tab:
+    panel_tab:
         contains panel_tab.tab_item-*
-
     panel_tab.tab_item-1:
         text is "${tab_item_document_text}"
-
     panel_tab.tab_item-2:
         text is "${tab_item_block_text}"
-
     components_panel_item-*:
         width 279 px 
         height 47 px 
     | amount of visible components_panel_item-* should be 6
-
     components_panel_item-1:
-        text is "${components_status_text}"
-    
+        text is "${component_status_text}"
     components_panel_item-2:
-        text is "${components_category_text}"
-    
+        text is "${component_category_text}"
     components_panel_item-3:
-        text is "${components_tag_text}"
-    
+        text is "${component_tag_text}"
     components_panel_item-4:
-        text is "${components_fearture_image_text}"
-    
+        text is "${component_fearture_image_text}"
     components_panel_item-5:
-        text is "${components_excerpt_text}"
-    
+        text is "${component_excerpt_text}"
     components_panel_item-6:
-        text is "${components_discussion_text}"
+        text is "${component_discussion_text}"
 
 
 

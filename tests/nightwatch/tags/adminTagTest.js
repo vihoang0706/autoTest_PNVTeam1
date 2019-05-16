@@ -4,7 +4,7 @@ const nameTag = 'automation testing'+ Math.random().toString(36).substr(2, chara
 const slugTag = 'automation-test'+ Math.random().toString(36).substr(2, charactersLength);
 const descriptionTag = 'To learn Automation testing';
 const editNameTag = 'automation'+ Math.random().toString(36).substr(2, charactersLength);
-const editSlugTag = 'automation-testing'+Math.random().toString(36).substr(2, charactersLength);
+const editSlugTag = 'automation-testing'+ Math.random().toString(36).substr(2, charactersLength);
 const editDescriptionTag = 'To learn Automation testing by using nightwatch';
 const messageTagUpdated = 'Tag updated.';
 var dashboardPage, addTagPage, username, password, loginPage, editTagPage;
@@ -42,7 +42,7 @@ module.exports = {
             addTagPage.addNewTag(nameTag, slugTag, descriptionTag);
             addTagPage.goToAction('Edit', nameTag);
             editTagPage.editTag(editNameTag, editSlugTag, editDescriptionTag)
-            editTagPage.getActualUpdatedTagMessage(function (actualMessage) {
+            editTagPage.getMessageSuccessfully(function (actualMessage) {
                 browser.assert.equal(actualMessage, messageTagUpdated);
             });
             editTagPage.goBackToTagPage();

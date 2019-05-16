@@ -13,10 +13,10 @@ module.exports = {
         goBackToTagPage() {
             this.click('@linkBackToTag');
         },
-        getActualUpdatedTagMessage(callback) {
+        getMessageSuccessfully(callback) {
             this
-                .waitForElementVisible('@labelUpdatedTagMessageSuccess')
-                .getContainText('@labelUpdatedTagMessageSuccess', callback);
+                .waitForElementVisible('@labelMessageSuccessful')
+                .getContainText('@labelMessageSuccessful', callback);
         },
     }],
     elements: {
@@ -28,6 +28,6 @@ module.exports = {
             selector: '//div[@id="message"]/p/a[contains(text(),"Back to Tags")]',
             locateStrategy: 'xpath'
         },
-        labelUpdatedTagMessageSuccess: 'div#message>p>strong',
+        labelMessageSuccessful: 'div#message>p>strong',
     }
 }

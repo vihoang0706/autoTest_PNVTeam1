@@ -1,8 +1,8 @@
 const util = require("util");
 var linkHidden = "//span[@class='%s']/a[ancestor::td//a[text()='%s']]";
-var columnActualTitle = "//td[@class='name column-name has-row-actions column-primary']/strong/a[text()='%s']";
-var columnActualDescription = "//td[@class='description column-description']/p[ancestor::tr//a[text()='%s']]";
-var columnActualSlug = "//td[@class='slug column-slug' and ancestor::tr//a[text()='%s']]";
+var columnTitle = "//td[@class='name column-name has-row-actions column-primary']/strong/a[text()='%s']";
+var columnDescription = "//td[@class='description column-description']/p[ancestor::tr//a[text()='%s']]";
+var columnSlug = "//td[@class='slug column-slug' and ancestor::tr//a[text()='%s']]";
 module.exports = {
     commands: [{
         addNewCategory(name, slug, parent, description) {
@@ -14,45 +14,45 @@ module.exports = {
                 .click('@inputAddCategory');
         },
         getColumnValueActual(type, categoryName, callback) {
-            var formatColumnActualTitle = util.format(columnActualTitle, categoryName);
-            var formatColumnActualSlug = util.format(columnActualSlug, categoryName);
-            var formatColumnActualDescription = util.format(columnActualDescription, categoryName);
+            var formatColumnTitle = util.format(columnTitle, categoryName);
+            var formatColumnSlug = util.format(columnSlug, categoryName);
+            var formatColumnDescription = util.format(columnDescription, categoryName);
             switch (type) {
                 case "Actual Title":
                     this
                         .useXpath()
-                        .waitForElementVisible(formatColumnActualTitle)
-                        .getContainText(formatColumnActualTitle, callback);
+                        .waitForElementVisible(formatColumnTitle)
+                        .getContainText(formatColumnTitle, callback);
                     break;
                 case "Actual Slug":
                     this
                         .useXpath()
-                        .waitForElementVisible(formatColumnActualSlug)
-                        .getContainText(formatColumnActualSlug, callback);
+                        .waitForElementVisible(formatColumnSlug)
+                        .getContainText(formatColumnSlug, callback);
                     break;
                 case "Actual Description":
                     this
                         .useXpath()
-                        .waitForElementVisible(formatColumnActualDescription)
-                        .getContainText(formatColumnActualDescription, callback);
+                        .waitForElementVisible(formatColumnDescription)
+                        .getContainText(formatColumnDescription, callback);
                     break;
             }
         },
-        clickLink(elementContainHideLink, linkHidden, action, categoryName) {
+        clickLink(columnName, linkHidden, action, categoryName) {
             this
                 .useXpath()
-                .waitForElementVisible(util.format(elementContainHideLink, categoryName))
-                .moveToElement(util.format(elementContainHideLink, categoryName), 0, 0)
+                .waitForElementVisible(util.format(columnName, categoryName))
+                .moveToElement(util.format(columnName, categoryName), 0, 0)
                 .waitForElementVisible(util.format(linkHidden, action, categoryName))
                 .click(util.format(linkHidden, action, categoryName));
         },
         goToAction(action, categoryName) {
             switch (action) {
                 case 'Edit':
-                    this.clickLink(columnActualTitle, linkHidden, 'edit', categoryName);
+                    this.clickLink(columnTitle, linkHidden, 'edit', categoryName);
                     break;
                 case 'Delete':
-                    this.clickLink(columnActualTitle, linkHidden, 'delete', categoryName);
+                    this.clickLink(columnTitle, linkHidden, 'delete', categoryName);
                     this.api.acceptAlert();
                     break;
             }

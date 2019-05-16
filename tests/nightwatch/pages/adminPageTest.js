@@ -20,7 +20,7 @@ module.exports = {
         browser.perform(function (browser, done) {
             dashboardPage.goToPage('Add New Page');
             addPage.addNewPage(nameTitle, description);
-            addPage.getActualAddPageMessage(function (actualMessage) {
+            addPage.getMessageSuccessfully(function (actualMessage) {
                 browser.assert.equal(actualMessage, expectedMessage);
             });
             browser.getID(function (id) {
@@ -51,7 +51,7 @@ module.exports = {
                 dashboardPage.goToPage('Manage Page');
                 viewAllPage.goToAction('Edit', pageID);
                 editPage.editPage('', updateDescription);
-                editPage.getActualUpdatedPageMessage(function (actualMesssage) {
+                editPage.getMessageSuccessfully(function (actualMesssage) {
                     browser.assert.equal(actualMesssage, expectedUpdateSuccessMessage);
                 });
                 dashboardPage.goToPage('Manage Page');

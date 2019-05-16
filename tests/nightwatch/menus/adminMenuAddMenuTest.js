@@ -16,7 +16,7 @@ module.exports = {
         browser.perform(function (browser, done) {
             dashboardPage.goToPage('Menu');
             menuPage.addNewMenu(nameMenu);
-            menuPage.getNameMenu(function (actualNameMenu) {
+            menuPage.getMenuName(function (actualNameMenu) {
                 browser.assert.equal(actualNameMenu, nameMenu);
             });
             menuPage.deleteMenu();

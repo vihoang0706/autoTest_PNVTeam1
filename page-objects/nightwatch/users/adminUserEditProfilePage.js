@@ -50,10 +50,10 @@ module.exports = {
                         break;
                 }
             },
-            getActualUpdatedUserProfileMessage(callback) {
+            getMessageSuccessfully(callback) {
                 this
-                    .waitForElementVisible('@labelUpdatedUserProfileMessageSuccess')
-                    .getContainText('@labelUpdatedUserProfileMessageSuccess', callback);
+                    .waitForElementVisible('@labelMessageSuccessful')
+                    .getContainText('@labelMessageSuccessful', callback);
             },
             getCheckboxSelected(type, selector, callback) {
                 var self = this;
@@ -117,19 +117,7 @@ module.exports = {
             selector: '//select[@id="display_name"]/option[text()="admin"]',
             locateStrategy: 'xpath'
         },
-        buttonGeneratePassword: {
-            selector: '//tr[@id="password"] //td/button',
-            locateStrategy: 'xpath'
-        },
-        buttonHidePassword: {
-            selector: '//tr[@id="password"]//td//div//button[@class="button wp-hide-pw hide-if-no-js"]',
-            locateStrategy: 'xpath'
-        },
-        buttonCancelGeneratePass: {
-            selector: '//tr[@id="password"]//td//div//button[@class="button wp-cancel-pw hide-if-no-js"]',
-            locateStrategy: 'xpath'
-        },
-        labelUpdatedUserProfileMessageSuccess: {
+        labelMessageSuccessful: {
             selector: '//div[@id="message"] // strong',
             locateStrategy: 'xpath'
         }

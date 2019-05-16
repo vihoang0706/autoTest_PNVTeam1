@@ -61,7 +61,7 @@ module.exports = {
         textareaDescription: 'textarea[id=tag-description]',
         inputAddCategory: 'input[id=submit]',
         linkDelete: {
-            selector: "//span[@class='delete']/a[ancestor::td//a[text()='%s']]",
+            selector: '//span[@class="delete"]/a[ancestor::td//a[text()="' + '%s' + '"]]',
             locateStrategy: 'xpath'
         },
         linkEdit: {

@@ -1,7 +1,7 @@
 module.exports = {
     commands: [{
         login(username, password) {
-            return this
+            this
                 .waitForElementVisible('@inputUsername')
                 .setValue('@inputUsername', username)
                 .waitForElementVisible('@inputPassword')
@@ -9,7 +9,7 @@ module.exports = {
                 .click('@inputLogin');
         },
         getErrorMessage(callback) {
-            return this
+            this
                 .waitForElementVisible('@labelErrorMessage')
                 .getContainsText('@labelErrorMessage', callback);
         }

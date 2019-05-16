@@ -7,9 +7,9 @@ const HtmlReporter = require('@rpii/nightwatch-html-reporter');
  
 const htmlReporter = new HtmlReporter({
     openBrowser: true,
-    reportsDirectory: __dirname + '/reports/nightwatch',               
+    reportsDirectory: __dirname + '/reports',               
     uniqueFilename: true,
-    customTheme: 'html-reporter.html',
+    themeName: 'default',
 });
 module.exports = {
   userNames: userNames,

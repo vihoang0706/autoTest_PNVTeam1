@@ -26,11 +26,11 @@
         css border-color is "rgb(68, 68, 68)"
 
     post_title_textfield:
-        width 588 px
+        width 548 px
         height 84 px
 
     post_content_textfield:
-        width 588 px
+        width 548 px
         height 200 px
         below post_title_textfield 4 px
 

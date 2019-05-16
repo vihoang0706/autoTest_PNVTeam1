@@ -23,8 +23,8 @@ var devices = {
 };
 
 var TEST_USER = {
-    username: "testuser@example.com",
-    password: "test123"
+    username: "admin",
+    password: "123456789"
 };
 
 /*

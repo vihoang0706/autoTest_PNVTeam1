@@ -4,12 +4,11 @@ var userNames = {
   password: '123456789',
 };
 const HtmlReporter = require('@rpii/nightwatch-html-reporter');
- 
 const htmlReporter = new HtmlReporter({
     openBrowser: true,
-    reportsDirectory: __dirname + '/reports',               
+    reportsDirectory: __dirname + '/reports/nightwatch',               
     uniqueFilename: true,
-    themeName: 'default',
+    customTheme:'html-reporter.html'
 });
 module.exports = {
   userNames: userNames,

@@ -8,7 +8,6 @@
         upload_file_size        p.max-upload-size
 
 @set
-    common_margin                   10 to 30px
     common_font_size                13px
     title_text                      Upload New Media
     upload_button_text              Upload
@@ -32,13 +31,13 @@
         width 832px
         height 42px
         text is "${title_text}"
-        above media_upload_form.upload_input ${common_margin} 
+        above media_upload_form.upload_input 21 px 
 
 = Form Upload =
     media_upload_form.upload_input:
         inside media_upload_form
         left-of media_upload_form.upload_button 4 px
-        below title ${common_margin} 
+        below title 21px 
         aligned horizontally all media_upload_form.upload_button
         width 407 % of media_upload_form.upload_button/width 
         css font-size is "14px" 
@@ -53,7 +52,7 @@
         visible 
     media_upload_form.upload_file_size:
         text is "${upload_file_size_text}"
-        below media_upload_form.multi_file_link ${common_margin}
+        below media_upload_form.multi_file_link 14 px
         visible
 
 = Skeleton =

@@ -1,25 +1,25 @@
 const util = require('util');
-var columnActualTitle = "//strong/a[ancestor::tr[@id='post-%s']]";
+var columnTitle = "//strong/a[ancestor::tr[@id='post-%s']]";
 var linkHidden = "//span[@class='%s']/a[ancestor::tr[@id='post-%s']]";
 module.exports = {
     commands: [{
         goToDetailPost(idPost) {
-            this.click(util.format(columnActualTitle, idPost));
+            this.click(util.format(columnTitle, idPost));
         },
-        clickLink(elementContainHideLink, hideLink, action, idPost) {
+        clickLink(columnName, hideLink, action, idPost) {
             this
-                .waitForElementVisible(util.format(elementContainHideLink, idPost))
-                .moveToElement(util.format(elementContainHideLink, idPost), 0, 0)
+                .waitForElementVisible(util.format(columnName, idPost))
+                .moveToElement(util.format(columnName, idPost), 0, 0)
                 .waitForElementVisible(util.format(hideLink, action, idPost))
                 .click(util.format(hideLink, action, idPost));
         },
         goToAction(action, idPost) {
             switch (action) {
                 case 'Edit':
-                    this.clickLink(columnActualTitle, linkHidden, 'edit', idPost);
+                    this.clickLink(columnTitle, linkHidden, 'edit', idPost);
                     break;
                 case 'Delete':
-                    this.clickLink(columnActualTitle, linkHidden, 'trash', idPost);
+                    this.clickLink(columnTitle, linkHidden, 'trash', idPost);
                     break;
             }
         }

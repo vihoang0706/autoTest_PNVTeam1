@@ -7,10 +7,10 @@ module.exports = {
         .click('@buttonPublish')
         .waitForElementVisible('@subButtonPublish')
         .click('@subButtonPublish')
-        .waitForElementVisible('@labelMessageSuccess');
+        .waitForElementVisible('@labelMessageSuccessful');
     },
-    getActualAddPageMessage(callback) {
-      this.getContainText('@labelMessageSuccess', callback);
+    getMessageSuccessfully(callback) {
+      this.getContainText('@labelMessageSuccessful', callback);
     }
   }],
   elements: {
@@ -18,7 +18,6 @@ module.exports = {
     inputDescription: 'textarea[class=editor-post-text-editor]',
     buttonPublish: 'button.editor-post-publish-panel__toggle',
     subButtonPublish: 'button.editor-post-publish-button',
-    linkViewPage: 'a.components-notice__action',
-    labelMessageSuccess: 'div.components-notice__content'
+    labelMessageSuccessful: 'div.components-notice__content'
   }
 };

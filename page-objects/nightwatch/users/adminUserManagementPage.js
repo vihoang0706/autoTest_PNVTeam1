@@ -1,49 +1,49 @@
 const util = require("util");
 var linkHidden = "//span[@class='delete']/a[ancestor::td//a[text()='%s']]";
-var columnActualUsername = "//strong/a[text()='%s']";
-var columnActualName = "//td[@class='name column-name' and ancestor::tr//a[text()='%s']]";
-var columnActualEmail = "//td[@class='email column-email']/a[ancestor::tr//a[text()='%s']]";
-var columnActualRole = "//td[@class='role column-role' and ancestor::tr//a[text()='%s']]";
+var columnUsername = "//strong/a[text()='%s']";
+var columnName = "//td[@class='name column-name' and ancestor::tr//a[text()='%s']]";
+var columnEmail = "//td[@class='email column-email']/a[ancestor::tr//a[text()='%s']]";
+var columnRole = "//td[@class='role column-role' and ancestor::tr//a[text()='%s']]";
 module.exports = {
     commands: [{
         getColumnValueActual(type, username, callback) {
-            var formatColumnActualUsername = util.format(columnActualUsername, username);
-            var formatColumnActualName = util.format(columnActualName, username);
-            var formatColumnActualEmail = util.format(columnActualEmail, username);
-            var formatColumnActualRole = util.format(columnActualRole, username);
+            var formatColumnUsername = util.format(columnUsername, username);
+            var formatColumnName = util.format(columnName, username);
+            var formatColumnEmail = util.format(columnEmail, username);
+            var formatColumnRole = util.format(columnRole, username);
             switch (type) {
                 case "Actual Username":
                     this
-                        .waitForElementVisible(formatColumnActualUsername)
-                        .getContainText(formatColumnActualUsername, callback);
+                        .waitForElementVisible(formatColumnUsername)
+                        .getContainText(formatColumnUsername, callback);
                     break;
                 case "Actual Name":
                     this
-                        .waitForElementVisible(formatColumnActualName)
-                        .getContainText(formatColumnActualName, callback);
+                        .waitForElementVisible(formatColumnName)
+                        .getContainText(formatColumnName, callback);
                     break;
                 case "Actual Email":
                     this
-                        .waitForElementVisible(formatColumnActualEmail)
-                        .getContainText(formatColumnActualEmail, callback);
+                        .waitForElementVisible(formatColumnEmail)
+                        .getContainText(formatColumnEmail, callback);
                     break;
                 case "Actual Role":
                     this
-                        .waitForElementVisible(formatColumnActualRole)
-                        .getContainText(formatColumnActualRole, callback);
+                        .waitForElementVisible(formatColumnRole)
+                        .getContainText(formatColumnRole, callback);
                     break;
             }
         },
-        clickLink(elementContainHideLink, linkHidden, nameTag) {
+        clickLink(columnName, linkHidden, nameTag) {
             this
-                .waitForElementVisible(util.format(elementContainHideLink, nameTag))
-                .moveToElement(util.format(elementContainHideLink, nameTag), 0, 0)
+                .waitForElementVisible(util.format(columnName, nameTag))
+                .moveToElement(util.format(columnName, nameTag), 0, 0)
                 .waitForElementVisible(util.format(linkHidden, nameTag))
                 .click(util.format(linkHidden, nameTag));
         },
         deleteUser(username) {
             var self = this;
-            this.clickLink(columnActualUsername, linkHidden, username);
+            this.clickLink(columnUsername, linkHidden, username);
             self.getAttribute('@inputConfirmDeletion', 'disabled', function (result) {
                 if (result.value == "true") {
                     self

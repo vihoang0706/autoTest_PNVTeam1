@@ -13,42 +13,47 @@ module.exports = {
                 .click(subMenu);
         },
         goToPage(pageName) {
+            var formatPostMenu = util.format(linkMainMenu, 'Posts');
+            var formatMediaMenu = util.format(linkMainMenu, 'Media');
+            var formatPageMenu = util.format(linkMainMenu, 'Pages');
+            var formatUserMenu = util.format(linkMainMenu, 'Users');
+            var formatAppearanceMenu = util.format(linkMainMenu, 'Appearance');
             switch (pageName) {
                 case "Add New Post":
-                    this.selectMenu(util.format(linkMainMenu, 'Posts'), util.format(linkSubMenuPost, 'Add New'));
+                    this.selectMenu(formatPostMenu, util.format(linkSubMenuPost, 'Add New'));
                     break;
                 case "Category":
-                    this.selectMenu(util.format(linkMainMenu, 'Posts'), util.format(linkSubMenuPost, 'Categories'));
+                    this.selectMenu(formatPostMenu, util.format(linkSubMenuPost, 'Categories'));
                     break;
                 case "Tag":
-                    this.selectMenu(util.format(linkMainMenu, 'Posts'), util.format(linkSubMenuPost, 'Tags'));
+                    this.selectMenu(formatPostMenu, util.format(linkSubMenuPost, 'Tags'));
                     break;
                 case "Manage Post":
-                    this.selectMenu(util.format(linkMainMenu, 'Posts'), util.format(linkSubMenuPost, 'All Posts'));
+                    this.selectMenu(formatPostMenu, util.format(linkSubMenuPost, 'All Posts'));
                     break;
                 case "Add New Media":
-                    this.selectMenu(util.format(linkMainMenu, 'Media'), util.format(linkSubMenuMedia, 'Add New'));
+                    this.selectMenu(formatMediaMenu, util.format(linkSubMenuMedia, 'Add New'));
                     break;
                 case "Library":
-                    this.selectMenu(util.format(linkMainMenu, 'Media'), util.format(linkSubMenuMedia, 'Library'));
+                    this.selectMenu(formatMediaMenu, util.format(linkSubMenuMedia, 'Library'));
                     break;
                 case "Manage Page":
-                    this.selectMenu(util.format(linkMainMenu, 'Pages'), util.format(linkSubMenuPage, 'All Pages'));
+                    this.selectMenu(formatPageMenu, util.format(linkSubMenuPage, 'All Pages'));
                     break;
                 case "Add New Page":
-                    this.selectMenu(util.format(linkMainMenu, 'Pages'), util.format(linkSubMenuPage, 'Add New'));
+                    this.selectMenu(formatPageMenu, util.format(linkSubMenuPage, 'Add New'));
                     break;
                 case "Menu":
-                    this.selectMenu(util.format(linkMainMenu, 'Appearance'), util.format(linkSubMenuAppearance, 'Menus'));
+                    this.selectMenu(formatAppearanceMenu, util.format(linkSubMenuAppearance, 'Menus'));
                     break;
                 case "Manage User":
-                    this.selectMenu(util.format(linkMainMenu, 'Users'), util.format(linkSubMenuUser, 'All Users'));
+                    this.selectMenu(formatUserMenu, util.format(linkSubMenuUser, 'All Users'));
                     break;
                 case "Add New User":
-                    this.selectMenu(util.format(linkMainMenu, 'Users'), util.format(linkSubMenuUser, 'Add New'));
+                    this.selectMenu(formatUserMenu, util.format(linkSubMenuUser, 'Add New'));
                     break;
                 case "Edit User Profile":
-                    this.selectMenu(util.format(linkMainMenu, 'Users'), util.format(linkSubMenuUser, 'Your Profile'));
+                    this.selectMenu(formatUserMenu, util.format(linkSubMenuUser, 'Your Profile'));
                     break;
             }
         },
@@ -68,7 +73,6 @@ module.exports = {
         }
     }],
     elements: {
-        //Header
         linkYourAccount: {
             selector: '//li[@id="wp-admin-bar-my-account"]/a/span[@class="display-name"]',
             locateStrategy: 'xpath'

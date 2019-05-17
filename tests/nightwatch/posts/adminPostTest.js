@@ -21,7 +21,7 @@ module.exports = {
         browser.perform(function (browser, done) {
             dashboardPage.goToPage('Add New Post');
             addPostPage.addNewPost(nameTitle, description);
-            addPostPage.getActualAddPostMessage(function (actualMesssage) {
+            addPostPage.getMessageSuccessfully(function (actualMesssage) {
                 browser.assert.equal(actualMesssage, expectedMessage);
             });
             browser.getID(function (id) {
@@ -52,7 +52,7 @@ module.exports = {
                 dashboardPage.goToPage('Manage Post');
                 viewAllPostPage.goToAction('Edit', postID);
                 editPostPage.editPost('', updateDescription);
-                editPostPage.getActualUpdatedPostMessage(function (actualMesssage) {
+                editPostPage.getMessageSuccessfully(function (actualMesssage) {
                     browser.assert.equal(actualMesssage, expectedUpdateSuccessMessage);
                 });
                 dashboardPage.goToPage('Manage Post');

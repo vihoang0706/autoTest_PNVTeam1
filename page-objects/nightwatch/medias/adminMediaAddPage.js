@@ -7,11 +7,11 @@ module.exports = {
         },
         deleteImage() {
             this
-                .moveToElement('@columnActualTitle', 0, 0)
+                .moveToElement('@columnTitle', 0, 0)
                 .click('@linkDeleteImage');
             this.api.acceptAlert();
         },
-        getTitleImage(callback) {
+        getImageName(callback) {
             this.getContainText('@image', callback);
         },
     }],
@@ -22,7 +22,7 @@ module.exports = {
             selector: '//tr[1]/td/strong[@class="has-media-icon"]/a',
             locateStrategy: 'xpath'
         },
-        columnActualTitle: {
+        columnTitle: {
             selector: '//tbody[@id="the-list"]/tr[1]/td[1]',
             locateStrategy: 'xpath'
         },

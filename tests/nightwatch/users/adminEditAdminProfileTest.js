@@ -24,7 +24,7 @@ module.exports = {
             userProfilePage.isCheckboxesSelected(function (result) {
                 browser.assert.equal(result, true);
             });
-            userProfilePage.getActualUpdatedUserProfileMessage(function (actualMessage) {
+            userProfilePage.getMessageSuccessfully(function (actualMessage) {
                 browser.assert.equal(actualMessage, messageProfileUpdated);
             });
             dashboardPage.goToPage('Edit User Profile');

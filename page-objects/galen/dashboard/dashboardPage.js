@@ -10,7 +10,7 @@ this.DashboardPage = $page("Dashboard Page", {
                 this.linkPost.click();
                 this.findChild(linkCategory).click();
                 break;
-            case "Post":
+            case "Add New Post":
                 this.linkPost.click();
                 this.findChild(linkNewPost).click();
                 break;

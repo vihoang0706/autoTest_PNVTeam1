@@ -43,7 +43,7 @@
     toolbar.insert_button:
         aligned horizontally all toolbar.undo_button 0px
     header__settings.preview_button:
-        left-of header__settings.publish_button 2 px
+        left-of header__settings.publish_button 7 px
     &toolbar_buttons:
         width 36 px
         height 36 px

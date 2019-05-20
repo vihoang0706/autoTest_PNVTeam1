@@ -1,5 +1,5 @@
 # **nightwatch**
-## How to install Nightwatch.js framework hiennguyen
+## How to install Nightwatch.js framework
 - Install npm *npm install npm -g*
 - Install node.js *[1]*
 

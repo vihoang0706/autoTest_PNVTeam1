@@ -10,7 +10,8 @@
   ],
   "output_folder": "reports/nightwatch",
   "custom_commands_path": [
-    "commons/custom-commands"
+    "commons/custom-commands",
+    "commons/utils"
   ],
   "custom_assertions_path": "",
   "page_objects_path": [
@@ -89,22 +90,14 @@
             "--test-type"
           ]
         }
-      },
-      "firefox": {
-        "desiredCapabilities": {
-          "browserName": "firefox",
-          "marionette": true,
-          "javascriptEnabled": true,
-          "acceptSslCerts": true
-        }
-      },
-      "ie": {
-        "desiredCapabilities": {
-          "browserName": "internet explorer",
-          "marionette": true,
-          "javascriptEnabled": true,
-          "acceptSslCerts": true
-        }
+      }
+    },
+    "firefox": {
+      "desiredCapabilities": {
+        "browserName": "firefox",
+        "marionette": true,
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
       }
     },
     "ie": {

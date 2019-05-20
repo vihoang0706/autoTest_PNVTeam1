@@ -1,10 +1,9 @@
-var characters = 'abcdefghijklmnopqrstuvwxyz';
-var charactersLength = characters.length;
-const nameTag = 'automation testing'+ Math.random().toString(36).substr(2, charactersLength);
-const slugTag = 'automation-test'+ Math.random().toString(36).substr(2, charactersLength);
+const randomString = require('../../../commons/utils/randomString.js');
+const nameTag = randomString('automation testing');
+const slugTag = randomString('automation-test');
 const descriptionTag = 'To learn Automation testing';
-const editNameTag = 'automation'+ Math.random().toString(36).substr(2, charactersLength);
-const editSlugTag = 'automation-testing'+ Math.random().toString(36).substr(2, charactersLength);
+const editNameTag = randomString('automation');
+const editSlugTag = randomString('automation-testing');
 const editDescriptionTag = 'To learn Automation testing by using nightwatch';
 const messageTagUpdated = 'Tag updated.';
 var dashboardPage, addTagPage, username, password, loginPage, editTagPage;

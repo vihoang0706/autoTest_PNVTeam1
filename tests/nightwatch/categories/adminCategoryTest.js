@@ -1,14 +1,15 @@
-let addCategoryPage, loginPage, dashboardPage, username, password, editCategoryPage;
-let nameCategory = 'clothes';
-let slugCategory = 'shopping';
-let parentCategory = 'None';
-let descriptionCategory = 'Clothes on the store';
-let nameEditCategory = 'clothes s tore';
-let nameAfterEditCategory = '— clothes store';
-let slugEditCategory = 'shoppingstore';
-let parentEditCategory = 'Uncategory';
-let descriptionEditCategory = 'Clothes on the Team 1 store';
-let editMessageSuccessful = 'Category updated.';
+const randomString = require('../../../commons/utils/randomString.js');
+var addCategoryPage, loginPage, dashboardPage, username, password, editCategoryPage;
+var nameCategory = randomString('clothes');
+var slugCategory = randomString('shopping');
+var parentCategory = 'None';
+var descriptionCategory = 'Clothes on the store';
+var nameEditCategory = randomString('clothes store');
+var nameAfterEditCategory = '— ' + nameEditCategory;
+var slugEditCategory = randomString('shoppingstore');
+var parentEditCategory = 'Uncategory';
+var descriptionEditCategory = 'Clothes on the Team 1 store';
+var editMessageSuccessful = 'Category updated.';
 module.exports = {
     '@tags': ['category'],
     before: function (browser) {

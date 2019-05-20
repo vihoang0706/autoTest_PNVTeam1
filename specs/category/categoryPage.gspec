@@ -1,12 +1,12 @@
 @import ../galen-extras/galen-extras-rules.gspec 
 
 @objects
-    heading_inline_tilte           .wp-heading-inline
+    heading_inline_title           .wp-heading-inline
     search_box                     .search-box
-        lable                           .search-box .screen-reader-text
+        label                           .search-box .screen-reader-text
         textfield                       #tag-search-input
         button                          #search-submit.button
-    form_wrap_tilte                .form-wrap h2
+    form_wrap_title                .form-wrap h2
     form_add                       #addtag
         term_name_wrap                  .term-name-wrap
             label                           .term-name-wrap label
@@ -18,7 +18,7 @@
             caption                         .term-slug-wrap p
         term_parent_wrap                .term-parent-wrap
             label                           .term-parent-wrap label
-            selector                        #parent
+            combobox                        #parent
             caption                         .term-parent-wrap p
         term_description_wrap           .term-description-wrap
             label                           .term-description-wrap label
@@ -26,57 +26,58 @@
             caption                         .term-description-wrap p
         add_new_category_button         #submit
     bulk_actions_top               .tablenav.top .bulkactions
-        selector                        #bulk-action-selector-top
+        combobox                        #bulk-action-selector-top
         button                          #doaction 
     bulk_actions_bottom            .tablenav.bottom .bulkactions 
-        selector                        #bulk-action-selector-bottom 
+        combobox                        #bulk-action-selector-bottom 
         button                          #doaction2   
     table                          .wp-list-table
-        check_column                    #cb
+        checkbox                        #cb
         column_name                     #name a span:nth-child(1)
         column_description              #description a span:nth-child(1)
         column_slug                     #slug a span:nth-child(1)
         column_count                    #posts a span:nth-child(1)
 
 @groups
-    search_box_element       search_box.lable, search_box.textfield, search_box.button
-    column_caption           form_add.term_name_wrap.caption, form_add.term_slug_wrap.caption, form_add.term_parent_wrap.caption, form_add.term_description_wrap.caption     
-    column_textfield         form_add.term_name_wrap.textfield, form_add.term_slug_wrap.textfield
-    column_label             form_add.term_name_wrap.label, form_add.term_slug_wrap.label, form_add.term_parent_wrap.label, form_add.term_description_wrap.label
+    search_box_element       search_box.label, search_box.textfield, search_box.button
+    captions           form_add.term_name_wrap.caption, form_add.term_slug_wrap.caption, form_add.term_parent_wrap.caption, form_add.term_description_wrap.caption     
+    textfields         form_add.term_name_wrap.textfield, form_add.term_slug_wrap.textfield
+    labels             form_add.term_name_wrap.label, form_add.term_slug_wrap.label, form_add.term_parent_wrap.label, form_add.term_description_wrap.label
     bulk_action_button       bulk_actions_top.button, bulk_actions_bottom.button
-    bulk_action_selector     bulk_actions_top.selector, bulk_actions_bottom.selector
+    bulk_action_combobox     bulk_actions_top.combobox, bulk_actions_bottom.combobox
 
 = Heading Inline Tilte =
-    heading_inline_tilte:
+    heading_inline_title:
         visible
         text is "Categories"
+
 = Search Box =
+@on mobile, desktop
     &search_box_element:
         inside search_box
     search_box.textfield:
-        height 28px   
+        height 27px   
         near search_box.button 4px left
     search_box.button, &bulk_action_button:
         css color is "rgba(85, 85, 85, 1)"
-        css border-color is "rgb(204, 204, 204)"
+        css border-color is "rgb(204, 204, 204)
 = Form Wrap Tilte =
-    form_wrap_tilte:
-        text is "Add New Category"
+    form_wrap_title:
+        text is "Add Newry"
+
 = Form Add Category =
-    &column_caption:
+    &captions:
         css font-size is "13px"
         css font-style is "italic"
-    #form_add_category.term_name_wrap.textfield:
-        #|has 9% width/height ratio
-    &column_textfield:
+    &textfields:
         width ~270px
         css border-width is "1px"
         css border-style is "solid"
-    &column_label:
+    &labels:
         css color is "rgba(35, 40, 45, 1)"
     form_add.term_name_wrap.textfield:
         aligned vertically all form_add.term_slug_wrap.textfield
-    form_add.term_parent_wrap.selector:
+    form_add.term_parent_wrap.combobox:
         height 28px
         below form_add.term_parent_wrap.label 1px
         aligned vertically left form_add.term_slug_wrap.textfield
@@ -85,16 +86,18 @@
         css color is "rgba(255, 255, 255, 1)"
         css background is "rgb(0, 133, 186) none repeat scroll 0% 0% / auto padding-box border-box"
         below form_add.term_description_wrap 13px
+
 = Bulk Action =
-    &bulk_action_selector, &bulk_action_selector:
+    &bulk_action_combobox, &bulk_action_combobox:
         css font-size is "14px" 
         height 28px
-    bulk_actions_top.selector:
+    bulk_actions_top.combobox:
         aligned horizontally all bulk_actions_top.button
         left-of  bulk_actions_top.button 6px
-    bulk_actions_bottom.selector:
+    bulk_actions_bottom.combobox:
         aligned horizontally all bulk_actions_bottom.button
         left-of  bulk_actions_bottom.button 6px
+
 = Table =
     table:
         css background is "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box"

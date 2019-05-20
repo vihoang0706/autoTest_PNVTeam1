@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Results - chrome</title>
+
+  <style>
+    html, body {
+      font-family: Arial,sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    body { padding: 10px 40px; }
+    header { position: relative; }
+    #expand-collapse-all {
+      position: absolute;
+      bottom: -25px;
+      right: 0;
+      padding: 3px 6px;
+      border-radius: 4px;
+      background-color: #000;
+      font-size: 0.8em;
+      color: #fff;
+      cursor: pointer;
+    }
+    table { width: 100%; margin-bottom: 20px; }
+      td {
+        padding: 7px;
+        border-top: none;
+        border-left: 1px black solid;
+        border-bottom: 1px black solid;
+        border-right: none;
+      }
+      td.pass { color: #003b07; background: #86e191; }
+      td.skip { color: #7d3a00; background: #ffd24a; }
+      td.fail { color: #5e0e00; background: #ff9c8a; }
+    tr:last-child       { border-top: 1px black solid; }
+      tr:last-child td    { border-top: 1px black solid; }
+      tr:first-child td   { border-top: 1px black solid; }
+        td:last-child       { border-right: 1px black solid; }
+    tr.overview td      { padding-bottom: 0px; border-bottom: none; }
+    tr.overview.last td { padding-bottom: 3px; }
+    .suite { cursor: pointer; }
+      .suite > .toggle-assertions { display: none; font-weight: normal; margin-left: 2px; }
+    ul.assertions     { list-style-type: none; }
+      span.error      { color: #AD2B2B; }
+      span.success    { color: #53891E; }
+    .stacktrace { display: inline; }
+      .stacktrace code { display: none; }
+    #nightwatch-logo {
+      position: absolute;
+      top: 20px;
+      right: 33px;
+      width: 70px;
+      height: 75px;
+      background: transparent url('http://nightwatchjs.org/img/logo-nightwatch.png') no-repeat;
+      background-size: 70px 75px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Test Results</h1>
+
+  <header>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr class="overview">
+        <td colspan="3" title="chrome"><strong>Browser:</strong> chrome</td>
+      </tr>
+      <tr class="overview">
+        <td colspan="3"><strong>Timestamp:</strong> Mon May 20 2019 11:25:10 GMT+0700 (Indochina Time)</td>
+      </tr>
+      <tr class="overview last">
+        <td colspan="3"><strong>Tests:</strong> 0<br></td>
+      </tr>
+      <tr>
+        <td class="pass"><strong>6</strong> passed</td>
+        <td class="skip"><strong>0</strong> errors</td>
+        <td class="fail"><strong>1</strong> failures</td>
+      </tr>
+    </table>
+
+    <div id="controls">
+      <div id="expand-collapse-all">toggle asssertions</div>
+    </div>
+  </header>
+  
+
+      <h2>users\adminUserAddNewTest</h2>
+
+        <h3 class="suite">Verify that user can add a new user with valid information <span class="toggle-assertions"></span></h3>
+        
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//strong/a[text()&#x3D;&#x27;nightwatch.team1zfhk56w038&#x27;]&gt; was visible after 27 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: nightwatch.team1zfhk56w038 &#x3D;&#x3D; nightwatch.team1zfhk56w038
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;name column-name&#x27; and ancestor::tr//a[text()&#x3D;&#x27;nightwatch.team1zfhk56w038&#x27;]]&gt; was visible after 25 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="error">&#10006;</span>
+
+              Failed [equal]: (&#x27;NightWatchmvh1e3mxsqs Team 1mg2w7o8pjmr&#x27; &#x3D;&#x3D; &#x27;NightWatchmvh1e3mxsqsTeam 1mg2w7o8pjmr&#x27;) - expected [0;32m&quot;NightWatchmvh1e3mxsqsTeam 1mg2w7o8pjmr&quot;[0m but got: [0;31m&quot;NightWatchmvh1e3mxsqs Team 1mg2w7o8pjmr&quot;[0m
+
+                Expected &quot;NightWatchmvh1e3mxsqsTeam 1mg2w7o8pjmr&quot; but got: &quot;NightWatchmvh1e3mxsqs Team 1mg2w7o8pjmr&quot;
+
+            </li>
+          <section data-featherlight-gallery data-featherlight-filter="a">
+                <div class='gallery-row-title'>
+                    <h4>Verify that user can add a new user with valid information Screenshots checkpoint fails</h4>
+                </div>
+                <div class='gallery-row'>
+                                <div class='gallery-column'><a href='C:/Users/InternDN19.01.04/autoTest_PNVTeam1/reports/users/adminUserAddNewTest/Verify-that-user-can-add-a-new-user-with-valid-information_FAILED_May-20-2019-112510-GMT+0700-(Indochina.png' class='thumbnail gallery'><img class='thumbnail' src='C:/Users/InternDN19.01.04/autoTest_PNVTeam1/reports/users/adminUserAddNewTest/Verify-that-user-can-add-a-new-user-with-valid-information_FAILED_May-20-2019-112510-GMT+0700-(Indochina.png' alt='Failed [equal]: (&#x27;NightWatchmvh1e3mxsqs Team 1mg2w7o8pjmr&#x27; &#x3D;&#x3D; &#x27;NightWatchmvh1e3mxsqsTeam 1mg2w7o8pjmr&#x27;) - expected [0;32m&quot;NightWatchmvh1e3mxsqsTeam 1mg2w7o8pjmr&quot;[0m but got: [0;31m&quot;NightWatchmvh1e3mxsqs Team 1mg2w7o8pjmr&quot;[0m' /></a></div>
+                </div>
+            </section>
+        </ul>
+
+        <p>
+            <span class="error"><strong>FAILED:</strong></span>
+            <span class="error"><strong>1</strong></span> assertions failed and
+            <span class="success"><strong>3</span></strong> passed. (5.240s)
+        </p>
+
+
+      <hr>
+
+  <div id="nightwatch-logo"></div>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script>
+  $(function() {
+    $('div.stacktrace').on('click', 'a', function(evt) {
+      evt.preventDefault();
+      var $link = $(this);
+      var $code = $link.parent().find('code');
+      $code.toggle();
+      $code.is(':visible') ? $link.text('hide stacktrace'):
+                             $link.text('view stacktrace');
+    });
+    $('h3.suite')
+      .on({
+          click: function(evt) {
+            $(this).next('ul.assertions').toggle();
+            toggleAssertions(this);
+          },
+          mouseenter: function(evt) {
+            toggleAssertions(this);
+            $(this).find('span.toggle-assertions').show();
+          },
+          mouseleave: function(evt) {
+            $(this).find('span.toggle-assertions').hide();
+          }
+      });
+    function toggleAssertions(element) {
+      if ( $(element).next('ul.assertions').is(':visible') ) {
+        $(element).find('span.toggle-assertions').text('-');
+      } else {
+        $(element).find('span.toggle-assertions').text('+');
+      }
+    }
+    $('#expand-collapse-all').on('click', function(evt) {
+      $('ul.assertions').toggle();
+    });
+   if ( $(document).height() > $(window).height()) {
+     $('ul.assertions').hide();
+   }
+  });
+  </script>
+</body>
+</html>

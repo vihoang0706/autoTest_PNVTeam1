@@ -1,6 +1,5 @@
-var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-var charactersLength = characters.length;
-const nameMenu = 'Comments' + Math.floor(Math.random() * charactersLength);
+const randomString = require('../../../commons/utils/randomString.js');
+const nameMenu = randomString('Comments');
 var dashboardPage, loginPage, username, password, menuPage;
 module.exports = {
     '@tags': ['add-menu'],
@@ -16,7 +15,7 @@ module.exports = {
         browser.perform(function (browser, done) {
             dashboardPage.goToPage('Menu');
             menuPage.addNewMenu(nameMenu);
-            menuPage.getNameMenu(function (actualNameMenu) {
+            menuPage.getMenuName(function (actualNameMenu) {
                 browser.assert.equal(actualNameMenu, nameMenu);
             });
             menuPage.deleteMenu();

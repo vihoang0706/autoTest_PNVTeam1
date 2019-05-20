@@ -1,6 +1,6 @@
 @objects
-    logo                #login h1 a
-    form                #loginform
+    logo                    #login h1 a
+    form                    #loginform
         username_label           p label[for="user_login"]
         username_textfield       #user_login
         password_label           p label[for="user_pass"]
@@ -8,15 +8,15 @@
         remember_me_label        p label[for="rememberme"]
         remember_me_checkbox     #rememberme
         login_button             #wp-submit
-    lost_password_link  #nav a
-    backto_store_link   #backtoblog a
+    lost_password_link      #nav a
+    back_to_blog_link       #backtoblog a
 
 @set
     username_label_text          Username or Email Address
     password_label_text          Password
     remember_me_text             Remember Me
     lost_password_text           Lost your password?
-    backto_store_text            ← Back to Store Front Website
+    back_to_blog_text            ← Back to Store Front Website
 
 @groups
     user_input                   form.username_textfield, form.password_textfield

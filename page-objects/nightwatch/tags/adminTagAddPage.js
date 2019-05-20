@@ -1,8 +1,8 @@
 const util = require("util");
 var linkHidden = "//span[@class='%s']/a[ancestor::td//a[text()='%s']]";
-var columnActualTitle = "//td[@class='name column-name has-row-actions column-primary']/strong/a[text()='%s']";
-var columnActualDescription = "//td[@class='description column-description']/p[ancestor::tr//a[text()='%s']]";
-var columnActualSlug = "//td[@class='slug column-slug' and ancestor::tr//a[text()='%s']]";
+var columnTitle = "//td[@class='name column-name has-row-actions column-primary']/strong/a[text()='%s']";
+var columnDescription = "//td[@class='description column-description']/p[ancestor::tr//a[text()='%s']]";
+var columnSlug = "//td[@class='slug column-slug' and ancestor::tr//a[text()='%s']]";
 module.exports = {
     commands: [{
         addNewTag(tagName, slugName, description) {
@@ -13,41 +13,41 @@ module.exports = {
                 .click('@inputAddNewTag');
         },
         getColumnValueActual(type, nameTag, callback) {
-            var formatColumnActualTitle = util.format(columnActualTitle, nameTag);
-            var formatColumnActualSlug = util.format(columnActualSlug, nameTag);
-            var formatColumnActualDescription = util.format(columnActualDescription, nameTag);
+            var formatColumnTitle = util.format(columnTitle, nameTag);
+            var formatColumnSlug = util.format(columnSlug, nameTag);
+            var formatColumnDescription = util.format(columnDescription, nameTag);
             switch (type) {
                 case "Actual Title":
                     this
-                        .waitForElementVisible(formatColumnActualTitle)
-                        .getContainText(formatColumnActualTitle, callback);
+                        .waitForElementVisible(formatColumnTitle)
+                        .getContainText(formatColumnTitle, callback);
                     break;
                 case "Actual Slug":
                     this
-                        .waitForElementVisible(formatColumnActualSlug)
-                        .getContainText(formatColumnActualSlug, callback);
+                        .waitForElementVisible(formatColumnSlug)
+                        .getContainText(formatColumnSlug, callback);
                     break;
                 case "Actual Description":
                     this
-                        .waitForElementVisible(formatColumnActualDescription)
-                        .getContainText(formatColumnActualDescription, callback);
+                        .waitForElementVisible(formatColumnDescription)
+                        .getContainText(formatColumnDescription, callback);
                     break;
             }
         },
-        clickLink(elementContainHideLink, linkHidden, action, nameTag) {
+        clickLink(columnName, linkHidden, action, nameTag) {
             this
-                .waitForElementVisible(util.format(elementContainHideLink, nameTag))
-                .moveToElement(util.format(elementContainHideLink, nameTag), 0, 0)
+                .waitForElementVisible(util.format(columnName, nameTag))
+                .moveToElement(util.format(columnName, nameTag), 0, 0)
                 .waitForElementVisible(util.format(linkHidden, action, nameTag))
                 .click(util.format(linkHidden, action, nameTag));
         },
         goToAction(action, nameTag) {
             switch (action) {
                 case 'Edit':
-                    this.clickLink(columnActualTitle, linkHidden, 'edit', nameTag);
+                    this.clickLink(columnTitle, linkHidden, 'edit', nameTag);
                     break;
                 case 'Delete':
-                    this.clickLink(columnActualTitle, linkHidden, 'delete', nameTag);
+                    this.clickLink(columnTitle, linkHidden, 'delete', nameTag);
                     this.api.acceptAlert();
                     break;
             }

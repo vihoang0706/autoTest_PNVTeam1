@@ -15,10 +15,10 @@ module.exports = {
         goBackToCategory() {
             this.click('@linkBackToCategories');
         },
-        getActualUpdatedCategoryMessage(callback) {
+        getMessageSuccessfully(callback) {
             this
-                .waitForElementVisible('@labelUpdatedCategoryMessageSuccess')
-                .getContainText('@labelUpdatedCategoryMessageSuccess', callback);
+                .waitForElementVisible('@labelMessageSuccessful')
+                .getContainText('@labelMessageSuccessful', callback);
         },
     }],
     elements: {
@@ -27,7 +27,7 @@ module.exports = {
         selectEditParent: 'select[id=parent]',
         textareaEditDescription: 'textarea[id=description]',
         inputUpdateCategory: 'input[type=submit]',
-        labelUpdatedCategoryMessageSuccess: '#message > p:nth-child(1) > strong',
+        labelMessageSuccessful: '#message > p:nth-child(1) > strong',
         linkBackToCategories: '#message > p:nth-child(2) > a',
     }
 }

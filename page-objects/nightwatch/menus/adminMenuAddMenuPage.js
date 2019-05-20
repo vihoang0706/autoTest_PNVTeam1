@@ -1,7 +1,7 @@
 module.exports = {
     commands: [{
         clickNewMenuLink() {
-            return this.click('@linkCreateNewMenu');
+            this.click('@linkCreateNewMenu');
         },
         addNewMenu(nameMenu) {
             this.clickNewMenuLink();
@@ -15,7 +15,7 @@ module.exports = {
                 .click('@linkDeleteMenu')
                 .api.acceptAlert();
         },
-        getNameMenu(callback) {
+        getMenuName(callback) {
             this
                 .waitForElementVisible('@selectMenu')
                 .getContainValue('@inputNameMenu', callback);

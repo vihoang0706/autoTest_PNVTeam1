@@ -4,19 +4,18 @@ var userNames = {
   password: '123456789',
 };
 const HtmlReporter = require('@rpii/nightwatch-html-reporter');
- 
 const htmlReporter = new HtmlReporter({
-    openBrowser: true,
-    reportsDirectory: __dirname + '/reports',               
-    uniqueFilename: true,
-    themeName: 'default',
+  openBrowser: true,
+  reportsDirectory: __dirname + '/reports/nightwatch',
+  uniqueFilename: true,
+  customTheme: 'html-reporter.html'
 });
 module.exports = {
   userNames: userNames,
   paths: {
     data: path.resolve(__dirname, './data/data.csv')
   },
-  "reporter" : htmlReporter.fn,
+  "reporter": htmlReporter.fn,
   beforeEach: async function (browser, done) {
     browser
       .maximizeWindow()
@@ -24,9 +23,9 @@ module.exports = {
     browser.perform(function () {
       done();
     });
-    htmlReporter.setBrowserOptions( browser.options);
+    htmlReporter.setBrowserOptions(browser.options);
   },
-  afterEach: function (browser,done) {
+  afterEach: function (browser, done) {
     browser.end(function () {
       done();
     });

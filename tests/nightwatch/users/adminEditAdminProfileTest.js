@@ -1,8 +1,9 @@
-const firstName = 'Hoàng';
-const lastName = 'Vi';
+const randomString = require('../../../commons/utils/randomString.js');
+const firstName = randomString('Hoàng');
+const lastName = randomString('Vi');
 const nickName = 'administrator';
-const description = 'I am final year student at Passerellesnumeriques Viet Nam, with major is Testing and Software Development';
-const linkWebsite = 'http://pnvteam1.com';
+const description = randomString('I am final year student at Passerellesnumeriques Viet Nam, with major is Testing and Software Development');
+const linkWebsite = 'http://'+ randomString('pnvteam1')+'.com';
 const messageProfileUpdated = 'Profile updated.';
 var userProfilePage, dashboardPage, loginPage;
 module.exports = {
@@ -24,7 +25,7 @@ module.exports = {
             userProfilePage.isCheckboxesSelected(function (result) {
                 browser.assert.equal(result, true);
             });
-            userProfilePage.getActualUpdatedUserProfileMessage(function (actualMessage) {
+            userProfilePage.getMessageSuccessfully(function (actualMessage) {
                 browser.assert.equal(actualMessage, messageProfileUpdated);
             });
             dashboardPage.goToPage('Edit User Profile');

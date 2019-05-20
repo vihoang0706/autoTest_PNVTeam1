@@ -1,12 +1,13 @@
+const randomString = require('../../../commons/utils/randomString.js');
 var loginPage, dashboardPage, userManagePage, userPage, userAdmin, passwordAdmin;
-var username = 'nightwatch.team1';
-var email = 'nightwatch@gmail.com';
-var firstName = 'NightWatch';
-var lastName = 'Team 1';
+var username = randomString('nightwatch.team1');
+var email = randomString('nightwatch')+'@gmail.com';
+var firstName = randomString('NightWatch');
+var lastName = randomString('Team 1');
 var password = 'Team1234';
 var website = 'Team1234';
 var role = 'Subscriber';
-var name = 'NightWatch' + ' Team 1';
+var name = firstName +' ' + lastName;
 module.exports = {
     '@tags': ['add-user'],
     before: (browser) => {

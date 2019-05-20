@@ -4,38 +4,38 @@ module.exports = {
             this
                 .waitForElementVisible('@buttonDismiss')
                 .click('@buttonDismiss')
-                .waitForElementVisible('@titlePage')
-                .clearValue('@titlePage')
-                .setValue('@titlePage', title)
-                .clearValue('@desciprtionPage')
-                .setValue('@desciprtionPage', content)
-                .waitForElementVisible('@buttonUpdatePage')
-                .click('@buttonUpdatePage')
-                .waitForElementVisible('@labelUpdateMessageSuccess');
+                .waitForElementVisible('@inputTitle')
+                .clearValue('@inputTitle')
+                .setValue('@inputTitle', title)
+                .clearValue('@inputDescription')
+                .setValue('@inputDescription', content)
+                .waitForElementVisible('@buttonUpdate')
+                .click('@buttonUpdate')
+                .waitForElementVisible('@labelMessageSuccessful');
         },
-        getActualUpdatedPageMessage(callback) {
-            this.getContainText('@labelUpdateMessageSuccess', callback);
+        getMessageSuccessfully(callback) {
+            this.getContainText('@labelMessageSuccessful', callback);
         },
         getColumActual(type, callback) {
             switch (type) {
                 case 'Actual Title':
                     this
-                        .waitForElementVisible('@titlePage')
-                        .getContainText('@titlePage', callback);
+                        .waitForElementVisible('@inputTitle')
+                        .getContainText('@inputTitle', callback);
                     break;
                 case 'Actual Description':
                     this
-                        .waitForElementVisible('@desciprtionPage')
-                        .getContainText('@desciprtionPage', callback);
+                        .waitForElementVisible('@inputDescription')
+                        .getContainText('@inputDescription', callback);
                     break;
             }
         }
     }],
     elements: {
-        titlePage: 'textarea[id=post-title-0]',
-        desciprtionPage: 'textarea[class=editor-post-text-editor]',
-        buttonUpdatePage: 'button.editor-post-publish-button',
-        labelUpdateMessageSuccess: 'div[class=components-notice__content]',
+        inputTitle: 'textarea[id=post-title-0]',
+        inputDescription: 'textarea[class=editor-post-text-editor]',
+        buttonUpdate: 'button.editor-post-publish-button',
+        labelMessageSuccessful: 'div[class=components-notice__content]',
         buttonDismiss: 'button.nux-dot-tip__disable'
     }
 }

@@ -14,7 +14,7 @@ module.exports = {
         browser.perform(function (browser, done) {
             dashboardPage.goToPage('Add New Media');
             addMediaPage.addNewMedia(image);
-            addMediaPage.getTitleImage(function (actualImageName) {
+            addMediaPage.getImageName(function (actualImageName) {
                 browser.assert.equal(actualImageName, imageName);
             });
             addMediaPage.deleteImage();

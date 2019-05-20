@@ -1,18 +1,18 @@
 {
   "tests" : [ {
     "name" : "Verify that post page displays correctly  on desktop device",
-    "startedAt" : 1558086763771,
-    "endedAt" : 1558086776215,
+    "startedAt" : 1558336846076,
+    "endedAt" : 1558336855271,
     "failed" : false,
     "statistic" : {
-      "passed" : 61,
+      "passed" : 5,
       "errors" : 0,
       "warnings" : 0,
-      "total" : 61
+      "total" : 5
     },
     "testId" : "1-verify-that-post-page-displays-correctly-on-desktop-device",
-    "duration" : 12444,
     "groups" : [ ],
+    "duration" : 9195,
     "failed" : false
   } ]
 }

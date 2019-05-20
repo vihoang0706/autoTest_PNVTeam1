@@ -15,6 +15,16 @@ testOnAllDevices("Verify that post page displays correctly ", "/wp-login.php", f
         dashboardPage.goToPage('Add New Post');
         postPage = new PostPage(driver).waitForIt();
         postPage.dissmissTip();
-        checkLayout(driver, "specs/post/postPage.gspec", device.tags);
+        dumpPage({
+            driver: driver,
+            name: "Home page",
+            spec: "specs/homepage.gspec",
+            exportPath: "dumps/homepage",
+            maxWidth: 200,
+            maxHeight: 200,
+            onlyImages: false,
+            excludedObjects: ["header", "footer"]
+        });
+        checkLayout(driver, "specs/homepage.gspec", device.tags);
     });
 });

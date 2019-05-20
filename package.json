@@ -18,6 +18,7 @@
     "csvtojson": "^2.0.8",
     "exceljs": "^1.9.0",
     "fs": "0.0.1-security",
+    "galenframework-cli": "^2.4.4",
     "geckodriver": "^1.16.2",
     "handlebars": "^4.1.2",
     "iedriver": "^3.14.1",

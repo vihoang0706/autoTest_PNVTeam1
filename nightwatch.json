@@ -1,12 +1,12 @@
 {
   "src_folders": [
-    "tests/categories",
-    "tests/posts",
-    "tests/tags",
-    "tests/users",
-    "tests/pages",
-    "tests/medias",
-    "tests/menus"
+    "tests/nightwatch/categories",
+    "tests/nightwatch/posts",
+    "tests/nightwatch/tags",
+    "tests/nightwatch/users",
+    "tests/nightwatch/pages",
+    "tests/nightwatch/medias",
+    "tests/nightwatch/menus"
   ],
   "output_folder": "reports",
   "custom_commands_path": [
@@ -14,14 +14,14 @@
   ],
   "custom_assertions_path": "",
   "page_objects_path": [
-    "page-objects/categories",
-    "page-objects/posts",
-    "page-objects/tags",
-    "page-objects/users",
-    "page-objects/pages",
-    "page-objects/base-objects",
-    "page-objects/medias",
-    "page-objects/menus"
+    "page-objects/nightwatch/categories",
+    "page-objects/nightwatch/posts",
+    "page-objects/nightwatch/tags",
+    "page-objects/nightwatch/users",
+    "page-objects/nightwatch/pages",
+    "page-objects/nightwatch/base-objects",
+    "page-objects/nightwatch/medias",
+    "page-objects/nightwatch/menus"
   ],
   "globals_path": "globals.js",
   "webdriver": {

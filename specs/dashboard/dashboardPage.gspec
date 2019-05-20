@@ -1,0 +1,10 @@
+@objects
+    navigation  #wpwrap > #wpcontent > #wpadminbar > #wp-toolbar >#wp-admin-bar-root-default > #wp-admin-bar-menu-toggle > .ab-item > .ab-icon
+= Form =
+    @on mobile,tablet
+        navigation:
+            width 52px 
+            height 46px
+    @on desktop
+        navigation:
+             absent

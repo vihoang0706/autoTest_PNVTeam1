@@ -43,6 +43,9 @@ module.exports = {
                 case "Add New Page":
                     this.selectMenu(formatPageMenu, util.format(linkSubMenuPage, 'Add New'));
                     break;
+                case "Menu":
+                    this.selectMenu(formatAppearanceMenu, util.format(linkSubMenuAppearance, 'Menus'));
+                    break;
                 case "Manage User":
                     this.selectMenu(formatUserMenu, util.format(linkSubMenuUser, 'All Users'));
                     break;

@@ -17,8 +17,6 @@ var devices = {
       browserName: "chrome"
     }
   };
-  
-  
   // run test for all devices and browsers
   forAll(devices, function () {
     forAll(browsers, function () {

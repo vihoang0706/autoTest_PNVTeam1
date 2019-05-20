@@ -89,6 +89,22 @@
             "--test-type"
           ]
         }
+      },
+      "firefox": {
+        "desiredCapabilities": {
+          "browserName": "firefox",
+          "marionette": true,
+          "javascriptEnabled": true,
+          "acceptSslCerts": true
+        }
+      },
+      "ie": {
+        "desiredCapabilities": {
+          "browserName": "internet explorer",
+          "marionette": true,
+          "javascriptEnabled": true,
+          "acceptSslCerts": true
+        }
       }
     },
     "ie": {

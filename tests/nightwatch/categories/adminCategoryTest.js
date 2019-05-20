@@ -1,14 +1,14 @@
-var addCategoryPage, loginPage, dashboardPage, username, password, editCategoryPage;
-var nameCategory = 'clothes';
-var slugCategory = 'shopping';
-var parentCategory = 'None';
-var descriptionCategory = 'Clothes on the store';
-var nameEditCategory = 'clothes store';
-var nameAfterEditCategory = '— clothes store';
-var slugEditCategory = 'shoppingstore';
-var parentEditCategory = 'Uncategory';
-var descriptionEditCategory = 'Clothes on the Team 1 store';
-var editMessageSuccessful = 'Category updated.';
+let addCategoryPage, loginPage, dashboardPage, username, password, editCategoryPage;
+let nameCategory = 'clothes';
+let slugCategory = 'shopping';
+let parentCategory = 'None';
+let descriptionCategory = 'Clothes on the store';
+let nameEditCategory = 'clothes store';
+let nameAfterEditCategory = '— clothes store';
+let slugEditCategory = 'shoppingstore';
+let parentEditCategory = 'Uncategory';
+let descriptionEditCategory = 'Clothes on the Team 1 store';
+let editMessageSuccessful = 'Category updated.';
 module.exports = {
     '@tags': ['category'],
     before: function (browser) {

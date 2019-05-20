@@ -1,0 +1,52 @@
+{
+  "testId" : "2-category-on-tablet-device",
+  "name" : "Category on tablet device",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Verify that the category page have enough elements",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "Type \"admin\" to email on Login page",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "css: input#user_login",
+          "type" : "text"
+        } ],
+        "time" : 1557827641227,
+        "type" : "node"
+      }, {
+        "name" : "Type \"123456789\" to password on Login page",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "css: input#user_pass",
+          "type" : "text"
+        } ],
+        "time" : 1557827641282,
+        "type" : "node"
+      }, {
+        "name" : "Click submitButton on Login page",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "css: input#wp-submit",
+          "type" : "text"
+        } ],
+        "time" : 1557827641320,
+        "type" : "node"
+      }, {
+        "name" : "JavaScriptException: Error: timeout waiting for Dashboard Page elements:\n  - linkPost to be displayed (<cmd>#199)",
+        "status" : "error",
+        "time" : 1557827652635,
+        "stacktrace" : "org.mozilla.javascript.JavaScriptException: Error: timeout waiting for Dashboard Page elements:\n  - linkPost to be displayed (<cmd>#199)\r\n\tat org.mozilla.javascript.gen._cmd__20._c_anonymous_12(<cmd>:199)\r\n\tat org.mozilla.javascript.gen._cmd__20.call(<cmd>)\r\n\tat org.mozilla.javascript.optimizer.OptRuntime.call1(OptRuntime.java:32)\r\n\tat org.mozilla.javascript.gen._cmd__20._c_anonymous_29(<cmd>:384)\r\n\tat org.mozilla.javascript.gen._cmd__20.call(<cmd>)\r\n\tat org.mozilla.javascript.optimizer.OptRuntime.callProp0(OptRuntime.java:85)\r\n\tat org.mozilla.javascript.gen.C__Users_InternDN19_01_06_autoTest_PNVTeam1_tests_galen_category_category_test_js_21._c_anonymous_2(C:\\Users\\InternDN19.01.06\\autoTest_PNVTeam1\\tests\\galen\\category\\category.test.js:14)\r\n\tat org.mozilla.javascript.gen.C__Users_InternDN19_01_06_autoTest_PNVTeam1_tests_galen_category_category_test_js_21.call(C:\\Users\\InternDN19.01.06\\autoTest_PNVTeam1\\tests\\galen\\category\\category.test.js)\r\n\tat org.mozilla.javascript.optimizer.OptRuntime.call1(OptRuntime.java:32)\r\n\tat org.mozilla.javascript.gen._cmd__18._c_logged_43(<cmd>:422)\r\n\tat org.mozilla.javascript.gen._cmd__18.call(<cmd>)\r\n\tat org.mozilla.javascript.optimizer.OptRuntime.callName(OptRuntime.java:63)\r\n\tat org.mozilla.javascript.gen.C__Users_InternDN19_01_06_autoTest_PNVTeam1_tests_galen_category_category_test_js_21._c_anonymous_1(C:\\Users\\InternDN19.01.06\\autoTest_PNVTeam1\\tests\\galen\\category\\category.test.js:11)\r\n\tat org.mozilla.javascript.gen.C__Users_InternDN19_01_06_autoTest_PNVTeam1_tests_galen_category_category_test_js_21.call(C:\\Users\\InternDN19.01.06\\autoTest_PNVTeam1\\tests\\galen\\category\\category.test.js)\r\n\tat org.mozilla.javascript.ScriptRuntime.applyOrCall(ScriptRuntime.java:2697)\r\n\tat org.mozilla.javascript.BaseFunction.execIdCall(BaseFunction.java:287)\r\n\tat org.mozilla.javascript.IdFunctionObject.call(IdFunctionObject.java:101)\r\n\tat org.mozilla.javascript.optimizer.OptRuntime.callN(OptRuntime.java:52)\r\n\tat org.mozilla.javascript.gen.C__Users_InternDN19_01_06_autoTest_PNVTeam1_tests_galen_category____init_js_22._c_anonymous_4(C:\\Users\\InternDN19.01.06\\autoTest_PNVTeam1\\tests\\galen\\category\\..\\init.js:74)\r\n\tat org.mozilla.javascript.gen.C__Users_InternDN19_01_06_autoTest_PNVTeam1_tests_galen_category____init_js_22.call(C:\\Users\\InternDN19.01.06\\autoTest_PNVTeam1\\tests\\galen\\category\\..\\init.js)\r\n\tat org.mozilla.javascript.ScriptRuntime.applyOrCall(ScriptRuntime.java:2697)\r\n\tat org.mozilla.javascript.BaseFunction.execIdCall(BaseFunction.java:287)\r\n\tat org.mozilla.javascript.IdFunctionObject.call(IdFunctionObject.java:101)\r\n\tat org.mozilla.javascript.optimizer.OptRuntime.call2(OptRuntime.java:42)\r\n\tat org.mozilla.javascript.gen._cmd__18._c_invokeFunc_2(<cmd>:33)\r\n\tat org.mozilla.javascript.gen._cmd__18.call(<cmd>)\r\n\tat org.mozilla.javascript.optimizer.OptRuntime.callName(OptRuntime.java:63)\r\n\tat org.mozilla.javascript.gen._cmd__18._c_anonymous_22(<cmd>:280)\r\n\tat org.mozilla.javascript.gen._cmd__18.call(<cmd>)\r\n\tat org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:399)\r\n\tat org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3452)\r\n\tat org.mozilla.javascript.gen._cmd__18.call(<cmd>)\r\n\tat org.mozilla.javascript.JavaAdapter.doCall(JavaAdapter.java:606)\r\n\tat org.mozilla.javascript.JavaAdapter.access$000(JavaAdapter.java:15)\r\n\tat org.mozilla.javascript.JavaAdapter$1.run(JavaAdapter.java:586)\r\n\tat org.mozilla.javascript.Context.call(Context.java:526)\r\n\tat org.mozilla.javascript.ContextFactory.call(ContextFactory.java:509)\r\n\tat org.mozilla.javascript.JavaAdapter.callMethod(JavaAdapter.java:583)\r\n\tat adapter2.execute(<adapter>)\r\n\tat com.galenframework.TestRunnable.runTest(TestRunnable.java:75)\r\n\tat com.galenframework.TestRunnable.run(TestRunnable.java:101)\r\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\r\n\tat java.lang.Thread.run(Unknown Source)\r\n",
+        "type" : "node"
+      }, {
+        "name" : "Screenshot",
+        "status" : "info",
+        "attachments" : [ "file-2-Screenshot" ],
+        "time" : 1557827652635,
+        "type" : "node"
+      } ],
+      "time" : 1557827641139,
+      "type" : "node"
+    } ]
+  }
+}

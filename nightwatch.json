@@ -8,7 +8,7 @@
     "tests/nightwatch/medias",
     "tests/nightwatch/menus"
   ],
-  "output_folder": "reports",
+  "output_folder": "reports/nightwatch",
   "custom_commands_path": [
     "commons/custom-commands"
   ],

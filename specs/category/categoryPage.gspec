@@ -52,15 +52,15 @@
         text is "Categories"
 
 = Search Box =
+@on mobile, desktop
     &search_box_element:
         inside search_box
     search_box.textfield:
-        height 28px   
+        height 27px   
         near search_box.button 4px left
     search_box.button, &bulk_action_button:
         css color is "rgba(85, 85, 85, 1)"
-        css border-color is "rgb(204, 204, 204)"
-
+        css border-color is "rgb(204, 204, 204)
 = Form Wrap Tilte =
     form_wrap_title:
         text is "Add Newry"

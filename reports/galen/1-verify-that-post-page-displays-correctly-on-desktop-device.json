@@ -12,7 +12,7 @@
           "name" : "css: input#user_login",
           "type" : "text"
         } ],
-        "time" : 1558086769001,
+        "time" : 1558337916732,
         "type" : "node"
       }, {
         "name" : "Type \"123456789\" to password on Login page",
@@ -21,7 +21,7 @@
           "name" : "css: input#user_pass",
           "type" : "text"
         } ],
-        "time" : 1558086769039,
+        "time" : 1558337916782,
         "type" : "node"
       }, {
         "name" : "Click submitButton on Login page",
@@ -30,7 +30,7 @@
           "name" : "css: input#wp-submit",
           "type" : "text"
         } ],
-        "time" : 1558086769079,
+        "time" : 1558337916828,
         "type" : "node"
       }, {
         "name" : "Click linkPost on Dashboard Page",
@@ -39,7 +39,7 @@
           "name" : "xpath: //div[@class='wp-menu-name' and text()= 'Posts']",
           "type" : "text"
         } ],
-        "time" : 1558086770519,
+        "time" : 1558337917726,
         "type" : "node"
       }, {
         "name" : "Click dismissButton on Post page",
@@ -48,12 +48,12 @@
           "name" : "css: .nux-dot-tip__disable",
           "type" : "text"
         } ],
-        "time" : 1558086773641,
+        "time" : 1558337920190,
         "type" : "node"
       }, {
         "name" : "Check layout: specs/post/postPage.gspec included tags: desktop",
-        "status" : "info",
-        "time" : 1558086776214,
+        "status" : "error",
+        "time" : 1558337922490,
         "includedTags" : [ "desktop" ],
         "sections" : [ {
           "name" : "Post Header Setting",
@@ -453,12 +453,13 @@
           }, {
             "name" : "editor_body.title_textfield",
             "specs" : [ {
-              "status" : "info",
+              "status" : "error",
               "place" : {
                 "filePath" : "specs/post/postPage.gspec",
                 "lineNumber" : 68
               },
               "name" : "width 588 px",
+              "errors" : [ "\"editor_body.title_textfield\" width is 610px instead of 588px" ],
               "meta" : [ {
                 "from" : {
                   "object" : "editor_body.title_textfield",
@@ -469,7 +470,7 @@
                   "edge" : "right"
                 },
                 "expectedDistance" : "588px",
-                "realDistance" : "588px"
+                "realDistance" : "610px"
               } ],
               "highlight" : [ "editor_body.title_textfield" ]
             }, {
@@ -496,12 +497,13 @@
           }, {
             "name" : "editor_body.content_textfield",
             "specs" : [ {
-              "status" : "info",
+              "status" : "error",
               "place" : {
                 "filePath" : "specs/post/postPage.gspec",
                 "lineNumber" : 71
               },
               "name" : "width 588 px",
+              "errors" : [ "\"editor_body.content_textfield\" width is 610px instead of 588px" ],
               "meta" : [ {
                 "from" : {
                   "object" : "editor_body.content_textfield",
@@ -512,7 +514,7 @@
                   "edge" : "right"
                 },
                 "expectedDistance" : "588px",
-                "realDistance" : "588px"
+                "realDistance" : "610px"
               } ],
               "highlight" : [ "editor_body.content_textfield" ]
             }, {
@@ -996,22 +998,22 @@
         } ],
         "objects" : {
           "components_panel_item-6" : {
-            "area" : [ 749, 534, 279, 47 ]
+            "area" : [ 805, 534, 279, 47 ]
           },
           "panel_tab.tab_item-1" : {
-            "area" : [ 749, 88, 92, 48 ]
+            "area" : [ 805, 88, 92, 48 ]
           },
           "panel_tab.tab_item-2" : {
-            "area" : [ 840, 88, 61, 48 ]
+            "area" : [ 896, 88, 61, 48 ]
           },
           "header__settings.preview_button" : {
-            "area" : [ 786, 43, 70, 33 ]
+            "area" : [ 842, 43, 70, 33 ]
           },
           "toolbar.undo_button" : {
             "area" : [ 204, 41, 36, 36 ]
           },
           "header__settings.setting_button.icon_setting" : {
-            "area" : [ 960, 49, 20, 20 ]
+            "area" : [ 1016, 49, 20, 20 ]
           },
           "toolbar" : {
             "area" : [ 168, 40, 180, 39 ]
@@ -1020,52 +1022,58 @@
             "area" : [ 276, 41, 36, 36 ]
           },
           "editor_body.title_textfield" : {
-            "area" : [ 160, 172, 588, 84 ]
+            "area" : [ 177, 172, 610, 84 ]
           },
           "panel_tab" : {
-            "area" : [ 749, 88, 279, 50 ]
+            "area" : [ 805, 88, 279, 50 ]
           },
           "toolbar.redo_button" : {
             "area" : [ 240, 41, 36, 36 ]
           },
           "components_panel_item-1" : {
-            "area" : [ 749, 138, 279, 47 ]
+            "area" : [ 805, 138, 279, 47 ]
           },
           "editor_body.title_label" : {
-            "area" : [ 159, 171, 1, 1 ]
+            "area" : [ 176, 171, 1, 1 ]
           },
           "toolbar.insert_button" : {
             "area" : [ 168, 41, 36, 36 ]
           },
           "components_panel_item-5" : {
-            "area" : [ 749, 486, 279, 47 ]
+            "area" : [ 805, 486, 279, 47 ]
           },
           "header__settings.publish_button" : {
-            "area" : [ 863, 43, 77, 33 ]
+            "area" : [ 919, 43, 77, 33 ]
           },
           "toolbar.block_navigation_button" : {
             "area" : [ 312, 41, 36, 36 ]
           },
           "editor_body.content_textfield" : {
-            "area" : [ 160, 260, 588, 200 ]
+            "area" : [ 177, 260, 610, 200 ]
           },
           "components_panel_item-4" : {
-            "area" : [ 749, 438, 279, 47 ]
+            "area" : [ 805, 438, 279, 47 ]
           },
           "components_panel_item-3" : {
-            "area" : [ 749, 390, 279, 47 ]
+            "area" : [ 805, 390, 279, 47 ]
           },
           "header__settings.show_more_tool_button" : {
-            "area" : [ 992, 41, 28, 36 ]
+            "area" : [ 1048, 41, 28, 36 ]
           },
           "components_panel_item-2" : {
-            "area" : [ 749, 342, 279, 47 ]
+            "area" : [ 805, 342, 279, 47 ]
           }
         },
         "screenshot" : "layout-1-screenshot.png",
         "type" : "layout"
       } ],
-      "time" : 1558086768920,
+      "time" : 1558337916647,
+      "type" : "node"
+    }, {
+      "name" : "Screenshot",
+      "status" : "info",
+      "attachments" : [ "file-2-Screenshot" ],
+      "time" : 1558337922491,
       "type" : "node"
     } ]
   }

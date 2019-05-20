@@ -47,7 +47,7 @@
     &toolbar_buttons:
         width 36 px
         height 36 px
-        inside toolbar
+        inside  toolbar
     &setting_button:
         inside header__settings
     header__settings.setting_button.icon_setting:

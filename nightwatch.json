@@ -72,25 +72,16 @@
         "waitForConditionPollInterval": 300,
         "retryAssertionTimeout": 5000
       },
-      "desiredCapabilities": {
-        "browserName": "chrome",
-        "javascriptEnabled": true,
-        "acceptSslCerts": true
+      "desiredCapabilities" : {
+        "browserName" : "chrome"
       }
     },
-    "chrome": {
-      "desiredCapabilities": {
-        "browserName": "chrome",
-        "javascriptEnabled": true,
-        "acceptSslCerts": true,
-        "chromeOptions": {
-          "args": [
-            "disable-web-security",
-            "ignore-certificate-errors",
-            "--test-type"
-          ]
-        }
-      }
+    "webdriver": {
+      "server_path": "node_modules/.bin/chromedriver",
+      "cli_args": [
+        "--verbose"
+      ],
+      "port": 9515
     },
     "firefox": {
       "desiredCapabilities": {

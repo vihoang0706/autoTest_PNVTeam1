@@ -79,7 +79,7 @@
     "webdriver": {
       "server_path": "node_modules/.bin/chromedriver",
       "cli_args": [
-        "--verbose"
+        "node_modules/chromedriver/lib/chromedriver/chromedriver.exe"
       ],
       "port": 9515
     },

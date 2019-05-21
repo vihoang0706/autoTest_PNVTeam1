@@ -15,7 +15,7 @@
  - Generate galen.config (run command line: galen config)
  - specs file for declaring objects (elements) and .test.js file are the test case
 
-## Working command line
+## Working command line with Jenkins
  - Test UI Media: run it on cmd * galen test tests/galen/media/media.test.js --htmlreport reports *
 
 [1]: https://nodejs.org/en/download/current/

@@ -72,23 +72,17 @@
         "waitForConditionPollInterval": 300,
         "retryAssertionTimeout": 5000
       },
-      "desiredCapabilities" : {
-        "browserName" : "chrome"
-      }
-    },
-    "webdriver": {
-      "server_path": "node_modules/.bin/chromedriver",
-      "cli_args": [
-        "node_modules/chromedriver/lib/chromedriver/chromedriver.exe"
-      ],
-      "port": 9515
-    },
-    "firefox": {
       "desiredCapabilities": {
-        "browserName": "firefox",
-        "marionette": true,
-        "javascriptEnabled": true,
-        "acceptSslCerts": true
+          "browserName": "chrome",
+          "javascriptEnabled": true,
+          "acceptSslCerts": true,
+          "chromeOptions": {
+            "args": [
+              "disable-web-security",
+              "ignore-certificate-errors",
+              "--test-type"
+            ]
+          }
       }
     },
     "ie": {

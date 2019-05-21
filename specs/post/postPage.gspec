@@ -65,7 +65,7 @@
         css color is "rgba(68, 68, 68, 1)"
         css border-color is "rgb(68, 68, 68)"
     editor_body.title_textfield:
-        width 588 px
+        width 610 px
         height 84 px
     editor_body.content_textfield:
         width 588 px

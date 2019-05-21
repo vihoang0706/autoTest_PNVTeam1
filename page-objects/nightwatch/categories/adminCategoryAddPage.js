@@ -44,7 +44,7 @@ module.exports = {
                 .waitForElementVisible(util.format(columnName, categoryName))
                 .moveToElement(util.format(columnName, categoryName), 0, 0)
                 .waitForElementVisible(util.format(linkHidden, action, categoryName))
-                .click(util.format(linkHidden, action, categoryName));
+                .click(util.format(linkHidden, action, categoryName))
         },
         goToAction(action, categoryName) {
             switch (action) {

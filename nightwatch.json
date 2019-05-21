@@ -73,7 +73,7 @@
         "retryAssertionTimeout": 5000
       },
       "desiredCapabilities": {
-        "browserName": "firefox",
+        "browserName": "chrome",
         "javascriptEnabled": true,
         "acceptSslCerts": true
       }
@@ -89,7 +89,8 @@
             "ignore-certificate-errors",
             "--test-type"
           ]
-        }
+        },
+        "binary": "node_modules/chromedriver/lib/chromedriver/chromedriver.exe"
       }
     },
     "firefox": {

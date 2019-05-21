@@ -1,11 +1,12 @@
+const randomString = require('../../../commons/utils/randomString.js');
 var addCategoryPage, loginPage, dashboardPage, username, password, editCategoryPage;
-var nameCategory = 'clothes';
-var slugCategory = 'shopping';
+var nameCategory = randomString('clothes');
+var slugCategory = randomString('shopping');
 var parentCategory = 'None';
 var descriptionCategory = 'Clothes on the store';
-var nameEditCategory = 'clothes store';
-var nameAfterEditCategory = '— clothes store';
-var slugEditCategory = 'shoppingstore';
+var nameEditCategory = randomString('clothes store');
+var nameAfterEditCategory = '— ' + nameEditCategory;
+var slugEditCategory = randomString('shoppingstore');
 var parentEditCategory = 'Uncategory';
 var descriptionEditCategory = 'Clothes on the Team 1 store';
 var editMessageSuccessful = 'Category updated.';

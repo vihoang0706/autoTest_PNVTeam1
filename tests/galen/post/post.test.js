@@ -7,8 +7,8 @@ testOnAllDevices("Verify that post page displays correctly ", "/wp-login.php", f
     var loginPage = null;
     var dashboardPage = null;
     var postPage = null;
-    
-    logged("Verify that post page displays correctly ",function(){
+
+    logged("Verify that post page displays correctly ", function () {
         loginPage = new LoginPage(driver).waitForIt();
         loginPage.login('admin', '123456789');
         dashboardPage = new DashboardPage(driver).waitForIt();

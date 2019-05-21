@@ -1,6 +1,5 @@
-var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-var charactersLength = characters.length;
-const nameMenu = 'Comments' + Math.floor(Math.random() * charactersLength);
+const randomString = require('../../../commons/utils/randomString.js');
+const nameMenu = randomString('Comments');
 var dashboardPage, loginPage, username, password, menuPage;
 module.exports = {
     '@tags': ['add-menu'],

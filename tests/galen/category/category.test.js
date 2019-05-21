@@ -4,7 +4,8 @@ load("../../../page-objects/galen/dashboard/dashboardPage.js");
 load("../../../page-objects/galen/category/categoryPage.js");
 
 testOnDevice("desktop", "Category", "/wp-login.php", function (driver, device) {
-    var loginPage  = null, dashboardPage = null;
+    var loginPage  = null;
+    var dashboardPage = null;
 
     logged("Verify that the category page have enough elements", function () {
         loginPage = new LoginPage(driver).waitForIt();

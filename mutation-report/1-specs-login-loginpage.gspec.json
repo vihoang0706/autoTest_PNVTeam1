@@ -1,0 +1,25 @@
+{
+  "testId" : "1-specs-login-loginpage.gspec",
+  "name" : "specs/login/loginPage.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Mutation test",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  specs/login/loginPage.gspec --url http://192.168.189.70/wordpress/wp-login.php --size 1024x768 --include desktop --offset 5 --htmlreport mutation-report -Dwebdriver.chrome.driver=C:\\Users\\InternDN19.01.06\\AppData\\Roaming\\npm\\node_modules\\galenframework-cli\\node_modules\\chromedriver\\lib\\chromedriver\\chromedriver.exe -Dwebdriver.gecko.driver=C:\\Users\\InternDN19.01.06\\AppData\\Roaming\\npm\\node_modules\\galenframework-cli\\node_modules\\geckodriver\\geckodriver.exe -Djna.nosys=true",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "SyntaxException: Error processing rule: logo should be squared with 84px size\n    in specs/login/loginPage.gspec:26",
+          "status" : "error",
+          "time" : 1558511123248,
+          "stacktrace" : "com.galenframework.parser.SyntaxException: Error processing rule: logo should be squared with 84px size\n    in specs/login/loginPage.gspec:26\r\n\tat com.galenframework.speclang2.pagespec.PageSectionProcessor.processSectionRule(PageSectionProcessor.java:95)\r\n\tat com.galenframework.speclang2.pagespec.PageSectionProcessor.processSection(PageSectionProcessor.java:73)\r\n\tat com.galenframework.speclang2.pagespec.PageSectionProcessor.process(PageSectionProcessor.java:63)\r\n\tat com.galenframework.speclang2.pagespec.PostProcessor.processNode(PostProcessor.java:39)\r\n\tat com.galenframework.speclang2.pagespec.PostProcessor.process(PostProcessor.java:33)\r\n\tat com.galenframework.speclang2.pagespec.PageSpecReader.read(PageSpecReader.java:62)\r\n\tat com.galenframework.speclang2.pagespec.PageSpecReader.read(PageSpecReader.java:45)\r\n\tat com.galenframework.api.mutation.GalenMutate.parseSpec(GalenMutate.java:76)\r\n\tat com.galenframework.api.mutation.GalenMutate.checkAllMutations(GalenMutate.java:51)\r\n\tat com.galenframework.suite.actions.GalenPageActionMutate.execute(GalenPageActionMutate.java:38)\r\n\tat com.galenframework.runner.GalenPageRunner.executeAction(GalenPageRunner.java:84)\r\n\tat com.galenframework.runner.GalenPageRunner.run(GalenPageRunner.java:76)\r\n\tat com.galenframework.runner.GalenBasicTestRunner.runTest(GalenBasicTestRunner.java:76)\r\n\tat com.galenframework.tests.GalenBasicTest.execute(GalenBasicTest.java:55)\r\n\tat com.galenframework.TestRunnable.runTest(TestRunnable.java:75)\r\n\tat com.galenframework.TestRunnable.run(TestRunnable.java:101)\r\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\r\n\tat java.lang.Thread.run(Unknown Source)\r\nCaused by: com.galenframework.parser.SyntaxException: Unknown statement: logo\n    in specs\\login/../galen-extras/galen-extras-rules.gspec:51\r\n\tat com.galenframework.speclang2.pagespec.PageSectionProcessor.processSection(PageSectionProcessor.java:77)\r\n\tat com.galenframework.speclang2.pagespec.PageSectionProcessor.processSectionRule(PageSectionProcessor.java:93)\r\n\t... 18 more\r\n",
+          "type" : "node"
+        } ],
+        "time" : 1558511123000,
+        "type" : "node"
+      } ],
+      "time" : 1558511119071,
+      "type" : "node"
+    } ]
+  }
+}

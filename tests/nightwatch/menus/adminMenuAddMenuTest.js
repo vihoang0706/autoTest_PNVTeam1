@@ -1,5 +1,5 @@
-const randomString = require('../../../commons/utils/randomString.js');
-const nameMenu = randomString('Comments');
+var randomString = require('../../../commons/utils/randomString.js');
+var nameMenu = randomString('Comments');
 var dashboardPage, loginPage, username, password, menuPage;
 module.exports = {
     '@tags': ['add-menu'],

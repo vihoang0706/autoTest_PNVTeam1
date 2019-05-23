@@ -1,10 +1,10 @@
-const randomString = require('../../../commons/utils/randomString.js');
-const firstName = randomString('Hoàng');
-const lastName = randomString('Vi');
-const nickName = 'administrator';
-const description = randomString('I am final year student at Passerellesnumeriques Viet Nam, with major is Testing and Software Development');
-const linkWebsite = 'http://'+ randomString('pnvteam1')+'.com';
-const messageProfileUpdated = 'Profile updated.';
+var randomString = require('../../../commons/utils/randomString.js');
+var firstName = randomString('Hoàng');
+var lastName = randomString('Vi');
+var nickName = 'administrator';
+var description = randomString('I am final year student at Passerellesnumeriques Viet Nam, with major is Testing and Software Development');
+var linkWebsite = 'http://'+ randomString('pnvteam1')+'.com';
+var messageProfileUpdated = 'Profile updated.';
 var userProfilePage, dashboardPage, loginPage;
 module.exports = {
     '@tags': 'edit-admin-profile',
@@ -16,7 +16,7 @@ module.exports = {
         userProfilePage = browser.page.adminUserEditProfilePage();
         loginPage.login(username, password);
     },
-    'Verify that Admin can edit the profile of admin successfully': (browser) => {
+    'Verify that admin can edit the profile of admin with valid data': (browser) => {
         browser.perform(function (browser, done) {
             dashboardPage.goToPage('Edit User Profile');
             userProfilePage.setDefaultCheckboxes();

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="0"
-            failures="1"
+<testsuites errors="1"
+            failures="0"
             tests="2">
 
   <testsuite name="tags.adminTagTest"
-    errors="0" failures="1" hostname="" id="" package="adminTagTest" skipped="0"
-    tests="2" time="9.697" timestamp="">
+    errors="1" failures="0" hostname="" id="" package="adminTagTest" skipped="0"
+    tests="2" time="7.546" timestamp="">
   
-    <testcase name="Verify that admin can add new tag successfully" classname="tags.adminTagTest" time="2.447" assertions="8">
+    <testcase name="Verify that admin can add a new tag with valid data " classname="tags.adminTagTest" time="2.688" assertions="8">
 
     
 
@@ -26,16 +26,31 @@
     
     </testcase>
   
-    <testcase name="Verify that Admin can edit tag " classname="tags.adminTagTest" time="7.250" assertions="2">
+    <testcase name="Verify that admin can edit tag with valid data" classname="tags.adminTagTest" time="4.858" assertions="12">
 
-      <failure message="Timed out while waiting for element &lt;//span[@class=&#39;edit&#39;]/a[ancestor::td//a[text()=&#39;automation testingmw8zc9272y8&#39;]]&gt; to be visible for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not visible&#34;[0m">    at Page.clickLink (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\nightwatch\tags\adminTagAddPage.js:41:18)
-    at Page.goToAction (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\nightwatch\tags\adminTagAddPage.js:47:26)
-    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\nightwatch\tags\adminTagTest.js:42:24)
-    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
-<system-out>[[ATTACHMENT|C:\Users\InternDN19.01.04\autoTest_PNVTeam1\reports\tags\adminTagTest\Verify-that-Admin-can-edit-tag-_FAILED_May-20-2019-115915-GMT+0700-(Indochina.png]]</system-out>
-    <failure message="    at Page.clickLink (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\nightwatch\tags\adminTagAddPage.js:41:18)">    at Page.goToAction (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\nightwatch\tags\adminTagAddPage.js:47:26)
-    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\nightwatch\tags\adminTagTest.js:42:24)
-    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
     </testcase>
   
 

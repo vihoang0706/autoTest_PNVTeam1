@@ -1,8 +1,8 @@
-const nameTitle = 'Hello summer';
-const expectedMessage = 'Page published.\nView Page';
-const description = 'I like swimming on the beach.';
-const updateDescription = 'I often go to the beach on the weekend';
-const expectedUpdateSuccessMessage = 'Page updated.\nView Page';
+var nameTitle = 'Hello summer';
+var expectedMessage = 'Page published.\nView Page';
+var description = 'I like swimming on the beach.';
+var updateDescription = 'I often go to the beach on the weekend';
+var expectedUpdateSuccessMessage = 'Page updated.\nView Page';
 var dashboardPage, viewAllPage, addPage, loginPage, editPage, username, password, pageID;
 module.exports = {
     '@tags': ['page'],
@@ -16,7 +16,7 @@ module.exports = {
         password = browser.globals.userNames.password;
         loginPage.login(username, password);
     },
-    'Verify that admin can add new page with valid data successfully': (browser) => {
+    'Verify that admin can add a new page with valid data': (browser) => {
         browser.perform(function (browser, done) {
             dashboardPage.goToPage('Add New Page');
             addPage.addNewPage(nameTitle, description);
@@ -41,7 +41,7 @@ module.exports = {
             done();
         });
     },
-    'Verify that admin can edit page with valid data successfully': (browser) => {
+    'Verify that admin can edit page with valid data': (browser) => {
         browser.perform(function (browser, done) {
             dashboardPage.goToPage('Add New Page');
             addPage.addNewPage(nameTitle, description);

@@ -5,9 +5,9 @@
 
   <testsuite name="menus.adminMenuAddMenuTest"
     errors="0" failures="0" hostname="" id="" package="adminMenuAddMenuTest" skipped="0"
-    tests="1" time="2.418" timestamp="">
+    tests="1" time="3.376" timestamp="">
   
-    <testcase name="Verify that admin can add new Menu with valid data" classname="menus.adminMenuAddMenuTest" time="2.418" assertions="3">
+    <testcase name="Verify that admin can add new Menu with valid data" classname="menus.adminMenuAddMenuTest" time="3.376" assertions="3">
 
     
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="1">
+
+  <testsuite name="pages.adminPageTest"
+    errors="0" failures="1" hostname="" id="" package="adminPageTest" skipped="1"
+    tests="1" time="13.27" timestamp="">
+  
+    <testcase name="Verify that admin can add a new page with valid data" classname="pages.adminPageTest" time="13.27" assertions="1">  <failure message="Timed out while waiting for element &lt;button.editor-post-publish-button&gt; to be present for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.addNewPage (C:\Users\InternDN19.01.06\autoTest_PNVTeam1\page-objects\nightwatch\pages\adminPageAddPage.js:8:10)
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.06\autoTest_PNVTeam1\tests\nightwatch\pages\adminPageTest.js:22:21)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
+<system-out>[[ATTACHMENT|C:\Users\InternDN19.01.06\autoTest_PNVTeam1\reports\pages\adminPageTest\Verify-that-admin-can-add-a-new-page-with-valid-data_FAILED_May-22-2019-162515-GMT+0700-(Indochina.png]]</system-out>
+    <failure message="    at Page.addNewPage (C:\Users\InternDN19.01.06\autoTest_PNVTeam1\page-objects\nightwatch\pages\adminPageAddPage.js:8:10)">    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.06\autoTest_PNVTeam1\tests\nightwatch\pages\adminPageTest.js:22:21)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
+    </testcase>
+  
+
+  
+
+  
+    
+    <testcase
+      name="Verify that admin can edit page with valid data" classname="pages.adminPageTest">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

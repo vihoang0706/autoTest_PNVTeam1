@@ -1,4 +1,4 @@
-const randomString = require('../../../commons/utils/randomString.js');
+var randomString = require('../../../commons/utils/randomString.js');
 var loginPage, dashboardPage, userManagePage, userPage, userAdmin, passwordAdmin;
 var username = randomString('nightwatch.team1');
 var email = randomString('nightwatch')+'@gmail.com';
@@ -19,7 +19,7 @@ module.exports = {
         passwordAdmin = browser.globals.userNames.password;
         loginPage.login(userAdmin, passwordAdmin);
     },
-    'Verify that user can add a new user with valid information': (browser) => {
+    'Verify that admin can add a new user with valid data': (browser) => {
         browser.perform(function (browser, done) {
             dashboardPage.goToPage('Add New User');
             userPage.addNewUser(username, email, firstName, lastName, website, password, role);
@@ -35,15 +35,12 @@ module.exports = {
             userManagePage.getColumnValueActual('Actual Role', username, function (actualRole) {
                 browser.assert.equal(actualRole, role);
             });
-            // A new user can log in to admin page
             dashboardPage.logout();
-            // browser.pause(2000);
             loginPage.login(username, password);
             dashboardPage.isLogOutVisible(function (result) {
                 browser.assert.equal(result, true);
             });
             dashboardPage.logout();
-            // delete user has just created 
             loginPage.login(userAdmin, passwordAdmin);
             dashboardPage.goToPage('Manage User');
             userManagePage.deleteUser(username);

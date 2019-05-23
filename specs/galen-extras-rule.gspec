@@ -1,0 +1,2 @@
+@rule %{objectPattern} should be squared
+    

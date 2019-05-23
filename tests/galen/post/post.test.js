@@ -3,7 +3,7 @@ load("../../../page-objects/galen/login/loginPage.js");
 load("../../../page-objects/galen/post/postPage.js");
 load("../../../page-objects/galen/dashboard/dashboardPage.js");
 
-testOnAllDevices("Verify that post page displays correctly ", "/wp-login.php", function (driver, device) {
+testOnDevice("mobile","Verify that post page displays correctly ", "/wp-login.php", function (driver, device) {
     var loginPage = null;
     var dashboardPage = null;
     var postPage = null;
@@ -18,13 +18,13 @@ testOnAllDevices("Verify that post page displays correctly ", "/wp-login.php", f
         dumpPage({
             driver: driver,
             name: "Home page",
-            spec: "specs/homepage.gspec",
-            exportPath: "dumps/homepage",
+            spec: "specs/post/postPage.gspec",
+            exportPath: "dumps/post",
             maxWidth: 200,
             maxHeight: 200,
             onlyImages: false,
             excludedObjects: ["header", "footer"]
         });
-        checkLayout(driver, "specs/homepage.gspec", device.tags);
+        // checkLayout(driver, "specs/post/postPage.gspec", device.tags);
     });
 });

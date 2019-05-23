@@ -1,15 +1,15 @@
 var domain = "192.168.189.70/wordpress";
 var devices = {
-    //   mobile: {
-    //     deviceName: "mobile",
-    //     size: "450x800",
-    //     tags: ["mobile"]
-    // },
-    // tablet: {
-    //     deviceName: "tablet",
-    //     size: "600x800",
-    //     tags: ["tablet"]
-    // },
+      mobile: {
+        deviceName: "mobile",
+        size: "450x800",
+        tags: ["mobile"]
+    },
+    tablet: {
+        deviceName: "tablet",
+        size: "600x800",
+        tags: ["tablet"]
+    },
     desktop: {
         deviceName: "desktop",
         size: "1100x800",

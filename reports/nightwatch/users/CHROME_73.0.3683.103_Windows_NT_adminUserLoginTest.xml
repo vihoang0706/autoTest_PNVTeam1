@@ -5,9 +5,9 @@
 
   <testsuite name="users.adminUserLoginTest"
     errors="0" failures="0" hostname="" id="" package="adminUserLoginTest" skipped="0"
-    tests="1" time="2.939" timestamp="">
+    tests="1" time="3.635" timestamp="">
   
-    <testcase name="Verify that admin can login with valid account" classname="users.adminUserLoginTest" time="2.939" assertions="6">
+    <testcase name="Verify that admin can login with valid account" classname="users.adminUserLoginTest" time="3.635" assertions="6">
 
     
 

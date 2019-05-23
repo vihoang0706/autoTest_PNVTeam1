@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <title>Galen Page Dump</title>
+        <link rel="stylesheet" type="text/css" href="galen-report.css"/>
+        <script src="vue.js"></script>
+        <script src="galen-report.js"></script>
+        <script>
+            var pageData = {"title":"Add New Post ‹ Store Front Website — WordPress","items":{"components_panel_item-6":{"area":[755,534,279,47],"hasImage":true},"screen":{"area":[0,0,1034,876],"hasImage":false},"header__settings.preview_button":{"area":[792,43,70,33],"hasImage":true},"toolbar.undo_button":{"area":[204,41,36,36],"hasImage":true},"header__settings.setting_button":{"area":[958,41,36,36],"hasImage":true},"toolbar.table_content_button":{"area":[276,41,36,36],"hasImage":true},"toolbar.redo_button":{"area":[240,41,36,36],"hasImage":true},"sidebar":{"area":[754,88,280,788],"hasImage":false},"editor_body.title_label":{"area":[159,171,1,1],"hasImage":true},"toolbar.insert_button":{"area":[168,41,36,36],"hasImage":true},"header__settings.show_more_tool_button":{"area":[998,41,28,36],"hasImage":true},"editor_body.content_label":{"area":[159,171,1,1],"hasImage":true},"panel_tab.tab_item-1":{"area":[755,88,92,48],"hasImage":true},"panel_tab.tab_item-2":{"area":[846,88,61,48],"hasImage":true},"header__settings.setting_button.icon_setting":{"area":[966,49,20,20],"hasImage":true},"toolbar":{"area":[168,40,180,39],"hasImage":true},"editor_body.title_textfield":{"area":[160,172,594,84],"hasImage":false},"header__settings":{"area":[780,40,245,39],"hasImage":true},"panel_tab":{"area":[755,88,279,50],"hasImage":true},"viewport":{"area":[0,0,1034,876],"hasImage":false},"components_panel_item-1":{"area":[755,138,279,47],"hasImage":true},"components_panel_item-5":{"area":[755,486,279,47],"hasImage":true},"toolbar.block_navigation_button":{"area":[312,41,36,36],"hasImage":true},"editor_body":{"area":[160,132,594,328],"hasImage":false},"editor_body.content_textfield":{"area":[160,260,594,200],"hasImage":false},"header__settings.publish_button":{"area":[869,43,77,33],"hasImage":true},"components_panel_item-4":{"area":[755,438,279,47],"hasImage":true},"components_panel_item-3":{"area":[755,390,279,47],"hasImage":true},"components_panel_item-2":{"area":[755,342,279,47],"hasImage":true}},"pageName":"Home page"};
+        </script>
+    </head>
+
+    <body class="page-dump">
+        <div id="app">
+            <div class="page-dump-canvas-wrapper">
+                <img class="screenshot" src="page.png" v-bind:style="{left: offsetLeft, top: offsetTop}"/>
+                <svg id="canvas" v-bind:width="canvasWidth + 'px'" v-bind:height="canvasHeight + 'px'">
+                    <g v-for="object in objects" v-if="searchFilter === '' || object.name.indexOf(searchFilter) >= 0">
+                        <rect
+                            v-if="object.selected"
+                            v-bind:x="object.area.x + offsetLeft"
+                            v-bind:y="object.area.y + offsetTop"
+                            v-bind:width="object.area.width"
+                            v-bind:height="object.area.height"
+                            style="opacity: 0.2"
+                            v-bind:style="{'fill': '#ff8200', 'stroke-width': 0}"/>
+                        <rect
+                            v-bind:class="{selected: object.selected}"
+                            v-bind:x="object.area.x + offsetLeft"
+                            v-bind:y="object.area.y + offsetTop"
+                            v-bind:width="object.area.width"
+                            v-bind:height="object.area.height"
+                            style="opacity: 0.8"
+                            v-bind:style="{'fill': 'none', 'stroke-width': 1}"/>
+                        <g v-if="object.caption || object.selected">
+                            <rect
+                                v-bind:class="{selected: object.selected}"
+                                v-bind:x="object.area.x + offsetLeft"
+                                v-bind:y="object.area.y - 20 + offsetTop"
+                                v-bind:width="object.name.length * 15 + 10"
+                                v-bind:height="20"
+                                style="opacity: 0.8; stroke-width: 0; stroke: none;"
+                                v-bind:style="{fill: object.color}"/>
+                            <text
+                                v-bind:x="object.area.x + 5 + offsetLeft"
+                                v-bind:y="object.area.y - 5 + offsetTop"
+                                fill="#ffffff"
+                                font-weight="bold"
+                                font-family="helvetica"
+                                font-size="15px"
+                                >{{object.name}}</text>
+                        </g>
+                    </g>
+
+                    <g v-for="object in objects" v-if="searchFilter === '' || object.name.indexOf(searchFilter) >= 0">
+                        <rect
+                            v-on:mousedown="onObjectClick(object)"
+                            v-on:mouseover="onObjectMouseOver(object)"
+                            v-on:mouseleave="onObjectMouseOut(object)"
+                            v-bind:x="object.area.x + offsetLeft"
+                            v-bind:y="object.area.y + offsetTop"
+                            v-bind:width="object.area.width"
+                            v-bind:height="object.area.height"
+                            style="opacity: 0.0"
+                            v-bind:style="{'fill': '#ffffff'}"/>
+                    </g>
+                    <g class="guide" v-for="guideElements in guides">
+                        <g v-for="guide in guideElements">
+                            <line class="meta-line-guide" v-if="guide.type === 'line'"
+                                v-bind:x1="guide.x1 + offsetLeft"
+                                v-bind:y1="guide.y1 + offsetTop"
+                                v-bind:x2="guide.x2 + offsetLeft"
+                                v-bind:y2="guide.y2 + offsetTop"/>
+
+                            <g v-if="guide.type === 'text'">
+                                <text class="meta-text"
+                                    v-bind:x="guide.x + offsetLeft"
+                                    v-bind:y="guide.y + offsetTop"
+                                    v-bind:transform="guide.vertical ? 'rotate(-90,' + (guide.x + offsetLeft) + ', ' + (guide.y + offsetTop) +')': 'rotate(0)'"
+                                    >{{guide.text}}</text>
+                            </g>
+                        </g>
+                    </g>
+
+                </svg>
+            </div>
+            <div id="page-dump-right-panel">
+                <input v-model="searchFilter" type="text" placeholder="Search ..."/>
+                <ul class="objects">
+                    <li v-for="objectName in objectNames" v-if="searchFilter === '' || objectName.indexOf(searchFilter) >= 0">
+                        <span
+                            v-on:click="onObjectClick(objectsMap[objectName])"
+                            v-bind:class="{selected: objectsMap[objectName].selected}"
+                            >{{objectName}}</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="page-dump-top-panel">
+                <h3>{{title}} {{pageName}}</h3>
+            </div>
+            <div id="page-dump-bottom-panel">
+                <div v-if="selection.length > 0">
+                    <table>
+                        <tr>
+                            <td v-for="object in selection">
+                                <h4>{{object.name}}</h4>
+                                <div>
+                                    width: {{object.area.width}}px,
+                                    height: {{object.area.height}}px,
+                                    left: {{object.area.x}},
+                                    top: {{object.area.y}}
+                                </div>
+                                <div v-if="object.hasImage">
+                                    <a class="link" v-bind:href="'objects/' + object.name + '.png'" target="_blank">Object Image</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <script>renderPageDump(pageData);</script>
+    </body>
+</html>

@@ -29,5 +29,5 @@ module.exports = {
     browser.end(function () {
       done();
     });
-  },
+  }
 };

@@ -1,18 +1,48 @@
 {
   "tests" : [ {
-    "name" : "Media on  device",
-    "startedAt" : 1558585435352,
-    "endedAt" : 1558585441423,
+    "name" : "Media on mobile device",
+    "startedAt" : 1558595476652,
+    "endedAt" : 1558595484927,
     "failed" : false,
     "statistic" : {
-      "passed" : 40,
+      "passed" : 28,
       "errors" : 0,
       "warnings" : 0,
-      "total" : 40
+      "total" : 28
     },
-    "testId" : "1-media-on-device",
-    "duration" : 6071,
+    "testId" : "1-media-on-mobile-device",
     "groups" : [ ],
+    "duration" : 8275,
+    "failed" : false
+  }, {
+    "name" : "Media on tablet device",
+    "startedAt" : 1558595485586,
+    "endedAt" : 1558595493252,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 28,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 28
+    },
+    "testId" : "2-media-on-tablet-device",
+    "groups" : [ ],
+    "duration" : 7666,
+    "failed" : false
+  }, {
+    "name" : "Media on desktop device",
+    "startedAt" : 1558595493916,
+    "endedAt" : 1558595502486,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 35,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 35
+    },
+    "testId" : "3-media-on-desktop-device",
+    "groups" : [ ],
+    "duration" : 8570,
     "failed" : false
   } ]
 }

@@ -1,4 +1,4 @@
-@import galen-extras/galen-extras-rules.gspec
+@import ../galen-extras/galen-extras-rules.gspec 
 
 @objects
     toolbar                    .edit-post-header-toolbar
@@ -33,130 +33,175 @@
     tab_item_document_text         Document
     tab_item_block_text            Block
 
-@groups
-    components_add_post     editor__body.title_textfield, editor__body.title_label,         editor__body.content_label, editor__body.content_textfield
-    setting_buttons         header__settings.preview_button, header__settings.publish_button, header__settings.setting_button, header__settings.show_more_tool_button
-    toolbar_buttons         toolbar.insert_button, toolbar.undo_button, toolbar.redo_button, toolbar.table_content_button,toolbar.block_navigation_button               
-    (tab_item, tab_items)   panel_tab.tab_item-*
-
 = Skeleton =
-    | editor_body.title_label should be squared with 1px size
+    @on desktop
+        toolbar:
+            above editor_body.content_label
+            inside screen 50px top, 2px left
+            left-of header__settings
 
-    toolbar:
-        above editor_body 53px
-        inside screen 40px top
-        left-of header__settings
+        header__settings:
+            above sidebar 9px
+            inside screen 40px top, 9px right
+    
+        toolbar, header__settings:
+            height 39px
+        sidebar:
+            inside screen 0px right bottom
+            right-of editor_body 17px
+        editor_body.title_label, editor_body:
+            inside screen >= 0px bottom
 
-    header__settings:
-        above sidebar 9px
-        inside screen 40px top, 9px right
+        editor_body.title_label:
+            below toolbar
+            left-of editor_body 0px
 
-    toolbar, header__settings:
-        height 39px
+        header__settings.show_more_tool_button:
+            above sidebar 11px
+            height 36px
+            inside screen 41px top, 8px right
+            right-of toolbar
+            width 28px
 
-    sidebar:
-        inside screen 0px right bottom
-        right-of editor_body 0px
+    @on mobile, tablet
+        | editor_body.title_textfield, editor_body.content_textfield are aligned vertically above each other with 9px margin
 
-    editor_body.title_label:
-        inside screen >= 0px bottom, >= 40px top
-        left-of editor_body 0px
+        toolbar:
+            above editor_body.content_label
+            inside screen 50px top, 2px left
+            left-of header__settings
+            width 36px
 
-    editor_body:
-        inside screen >= 0px bottom
+        editor_body.title_textfield:
+            height 84px
+            inside editor_body 0px left right, 45px top
 
-    header__settings.show_more_tool_button:
-        above sidebar 11px
-        height 36px
-        inside screen 41px top, 8px right
-        right-of toolbar
-        width 28px
+        header__settings:
+            inside screen 50px top, 3px right
 
-= editor_body elements =
-    | editor_body.title_textfield, editor_body.content_textfield are aligned vertically above each other with 4px margin
+        toolbar, header__settings:
+            height 47px
 
-    editor_body.title_textfield:
-        height 84px
-        inside editor_body 40px top, 0px left right
+        editor_body.content_label:
+            inside screen 15px left, >= 2px right
 
-    editor_body.title_textfield, editor_body.content_textfield:
-        centered horizontally inside editor_body 1px
+        editor_body.title_textfield, editor_body.content_textfield:
+            centered horizontally inside editor_body 1px
 
-    editor_body.content_textfield:
-        inside editor_body 0px left right bottom
+        editor_body.content_textfield:
+            inside editor_body 0px left right bottom
 
-= toolbar elements =
-    | toolbar.insert_button, toolbar.undo_button, toolbar.redo_button, toolbar.table_content_button, toolbar.block_navigation_button are aligned horizontally next to each other with 0px margin
-    | toolbar.insert_button should be squared with 36px size
-    | toolbar.undo_button should be squared with 36px size
-    | toolbar.redo_button should be squared with 36px size
-    | toolbar.table_content_button should be squared with 36px size
-    | toolbar.block_navigation_button should be squared with 36px size
+        header__settings.show_more_tool_button:
+            height 36px
+            inside screen 2px right, 55px top
+            right-of toolbar
+            width 24px
 
-    toolbar.redo_button:
-        centered horizontally inside toolbar 1px
+= Toolbar elements =
+    @on desktop
+        | toolbar.insert_button, toolbar.undo_button, toolbar.redo_button, toolbar.table_content_button, toolbar.block_navigation_button are aligned horizontally next to each other with 0px margin
 
-    toolbar.insert_button:
-        inside toolbar 2px bottom, 1px top, 0px left
+        toolbar.redo_button:
+            centered horizontally inside toolbar 1px
 
-    toolbar.undo_button, toolbar.redo_button, toolbar.table_content_button:
-        inside toolbar 2px bottom, 1px top
+        toolbar.insert_button:
+            inside toolbar 2px bottom, 1px top, 0px left
 
-    toolbar.block_navigation_button:
-        inside toolbar 2px bottom, 1px top, 0px right
+        toolbar.undo_button, toolbar.redo_button, toolbar.table_content_button:
+            inside toolbar 2px bottom, 1px top
 
-= sidebar elements =
-    | panel_tab, components_panel_item-1 are aligned vertically above each other with 0px margin
-    | panel_tab.tab_item-* are aligned horizontally next to each other with -1px margin
-    | components_panel_item-2, components_panel_item-3, components_panel_item-4, components_panel_item-5, components_panel_item-6 are aligned vertically above each other with 1px margin
+        toolbar.block_navigation_button:
+            inside toolbar 2px bottom, 1px top, 0px right
 
-    panel_tab.tab_item-1, panel_tab.tab_item-2:
-        height 48px
+    @on mobile, tablet
+        toolbar.insert_button:
+            centered horizontally inside toolbar 1px
+            inside toolbar 6px bottom, 5px top, 0px left right
 
-    panel_tab:
-        height 50px
-        inside sidebar 1px left, 0px top right
+= Header__settings elements =
+    @on desktop
+        | header__settings.preview_button, header__settings.publish_button are aligned horizontally next to each other with 7px margin
+        header__settings.preview_button:
+            inside header__settings 12px left, 3px top bottom
+            width 70px
 
-    panel_tab, components_panel_item-1, components_panel_item-2, components_panel_item-3, components_panel_item-4, components_panel_item-5, components_panel_item-6:
-        centered horizontally inside sidebar 1px
+        header__settings.publish_button:
+            inside header__settings 3px top bottom
+            left-of header__settings.setting_button 12px
+            width 77px
 
-    components_panel_item-1, components_panel_item-2, components_panel_item-3, components_panel_item-4, components_panel_item-5, components_panel_item-6:
-        height 47px
-        inside sidebar 1px left, 0px right
+        header__settings.setting_button.icon_setting:
+            centered horizontally inside header__settings.setting_button 1px
+            inside header__settings.setting_button 8px top left right bottom
 
-    components_panel_item-1:
-        above components_panel_item-2
+        header__settings.setting_button:
+            inside header__settings 2px bottom, 1px top, 31px right
 
-    panel_tab.tab_item-1:
-        inside panel_tab 2px bottom, 0px top left
+        header__settings.preview_button, header__settings.publish_button:
+            height 33px
 
-    panel_tab.tab_item-2:
-        inside panel_tab 2px bottom, 0px top, >= 0px left
-        width 61px
+    @on mobile, tablet
+        | header__settings.preview_button, header__settings.publish_button are aligned horizontally next to each other with 5px margin
 
-= header__settings elements =
-    | header__settings.preview_button, header__settings.publish_button are aligned horizontally next to each other with 7px margin
-    | header__settings.setting_button should be squared with 36px size
-    | header__settings.setting_button.icon_setting should be squared with 20px size
+        header__settings.preview_button:
+            inside header__settings 7px top bottom, 2px left
+            width 56px
 
-    header__settings.preview_button:
-        inside header__settings 12px left, 3px top bottom
-        width 70px
+        header__settings.setting_button.icon_setting:
+            centered horizontally inside header__settings.setting_button 1px
+            inside header__settings.setting_button 8px top left right bottom
 
-    header__settings.publish_button:
-        inside header__settings 3px top bottom
-        left-of header__settings.setting_button 12px
-        width 77px
+        header__settings.publish_button:
+            inside header__settings 7px top bottom
+            left-of header__settings.setting_button 2px
+            width 63px
 
-    header__settings.setting_button.icon_setting:
-        centered horizontally inside header__settings.setting_button 1px
-        inside header__settings.setting_button 8px top left right bottom
+        header__settings.setting_button:
+            inside header__settings 6px bottom, 5px top, 19px right
 
-    header__settings.setting_button:
-        inside header__settings 2px bottom, 1px top, 31px right
+        header__settings.preview_button, header__settings.publish_button:
+            height 33px
 
-    header__settings.preview_button, header__settings.publish_button:
-        height 33px
+= Editor_body elements =
+    @on desktop
+        | editor_body.title_textfield, editor_body.content_textfield are aligned vertically above each other with 4px margin
 
+        editor_body.title_textfield:
+            height 84px
+            inside editor_body 40px top, 0px left right
 
+        editor_body.title_textfield, editor_body.content_textfield:
+            centered horizontally inside editor_body 1px
 
+        editor_body.content_textfield:
+            inside editor_body 0px left right bottom
+
+= Sidebar elements =
+    @on desktop
+        | panel_tab, components_panel_item-1 are aligned vertically above each other with 0px margin
+        | panel_tab.tab_item-* are aligned horizontally next to each other with -1px margin
+        | components_panel_item-2, components_panel_item-3, components_panel_item-4, components_panel_item-5, components_panel_item-6 are aligned vertically above each other with 1px margin
+
+        panel_tab.tab_item-1, panel_tab.tab_item-2:
+            height 48px
+
+        panel_tab:
+            height 50px
+            inside sidebar 1px left, 0px top right
+
+        panel_tab, components_panel_item-1, components_panel_item-2, components_panel_item-3, components_panel_item-4, components_panel_item-5, components_panel_item-6:
+            centered horizontally inside sidebar 1px
+
+        components_panel_item-1, components_panel_item-2, components_panel_item-3, components_panel_item-4, components_panel_item-5, components_panel_item-6:
+            height 47px
+            inside sidebar 1px left, 0px right
+
+        components_panel_item-1:
+            above components_panel_item-2
+
+        panel_tab.tab_item-1:
+            inside panel_tab 2px bottom, 0px top left
+
+        panel_tab.tab_item-2:
+            inside panel_tab 2px bottom, 0px top, >= 0px left
+            width 61px

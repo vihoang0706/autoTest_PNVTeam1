@@ -1,0 +1,68 @@
+@lib galen-extras
+
+= Skeleton =
+    | editor_body.title_textfield, editor_body.content_textfield are aligned vertically above each other with 9px margin
+    | editor_body.content_label should be squared with 1px size
+
+    toolbar:
+        above editor_body.content_label
+        inside screen 50px top, 2px left
+        left-of header__settings
+        width 36px
+
+    editor_body.title_textfield:
+        height 84px
+        inside editor_body 0px left right, 45px top
+
+    header__settings:
+        inside screen 50px top, 3px right
+
+    toolbar, header__settings:
+        height 47px
+
+    editor_body.content_label:
+        inside screen 15px left, >= 2px right
+
+    editor_body.title_textfield, editor_body.content_textfield:
+        centered horizontally inside editor_body 1px
+
+    editor_body.content_textfield:
+        inside editor_body 0px left right bottom
+
+    header__settings.show_more_tool_button:
+        height 36px
+        inside screen 2px right, 55px top
+        right-of toolbar
+        width 24px
+
+= toolbar elements =
+    | toolbar.insert_button should be squared with 36px size
+
+    toolbar.insert_button:
+        centered horizontally inside toolbar 1px
+        inside toolbar 6px bottom, 5px top, 0px left right
+
+= header__settings elements =
+    | header__settings.preview_button, header__settings.publish_button are aligned horizontally next to each other with 5px margin
+    | header__settings.setting_button should be squared with 36px size
+    | header__settings.setting_button.icon_setting should be squared with 20px size
+
+    header__settings.preview_button:
+        inside header__settings 7px top bottom, 2px left
+        width 56px
+
+    header__settings.setting_button.icon_setting:
+        centered horizontally inside header__settings.setting_button 1px
+        inside header__settings.setting_button 8px top left right bottom
+
+    header__settings.publish_button:
+        inside header__settings 7px top bottom
+        left-of header__settings.setting_button 2px
+        width 63px
+
+    header__settings.setting_button:
+        inside header__settings 6px bottom, 5px top, 19px right
+
+    header__settings.preview_button, header__settings.publish_button:
+        height 33px
+

@@ -17,14 +17,14 @@
 
     sidebar:
         inside screen 0px right bottom
-        right-of editor_body 0px
+        right-of editor_body 17px
+
+    editor_body.title_label, editor_body:
+        inside screen >= 0px bottom
 
     editor_body.title_label:
-        inside screen >= 0px bottom, >= 40px top
+        below toolbar
         left-of editor_body 0px
-
-    editor_body:
-        inside screen >= 0px bottom
 
     header__settings.show_more_tool_button:
         above sidebar 11px
@@ -32,19 +32,6 @@
         inside screen 41px top, 8px right
         right-of toolbar
         width 28px
-
-= editor_body elements =
-    | editor_body.title_textfield, editor_body.content_textfield are aligned vertically above each other with 4px margin
-
-    editor_body.title_textfield:
-        height 84px
-        inside editor_body 40px top, 0px left right
-
-    editor_body.title_textfield, editor_body.content_textfield:
-        centered horizontally inside editor_body 1px
-
-    editor_body.content_textfield:
-        inside editor_body 0px left right bottom
 
 = toolbar elements =
     | toolbar.insert_button, toolbar.undo_button, toolbar.redo_button, toolbar.table_content_button, toolbar.block_navigation_button are aligned horizontally next to each other with 0px margin
@@ -65,6 +52,19 @@
 
     toolbar.block_navigation_button:
         inside toolbar 2px bottom, 1px top, 0px right
+
+= editor_body elements =
+    | editor_body.title_textfield, editor_body.content_textfield are aligned vertically above each other with 4px margin
+
+    editor_body.title_textfield:
+        height 84px
+        inside editor_body 40px top, 0px left right
+
+    editor_body.title_textfield, editor_body.content_textfield:
+        centered horizontally inside editor_body 1px
+
+    editor_body.content_textfield:
+        inside editor_body 0px left right bottom
 
 = sidebar elements =
     | panel_tab, components_panel_item-1 are aligned vertically above each other with 0px margin
@@ -119,64 +119,3 @@
     header__settings.preview_button, header__settings.publish_button:
         height 33px
 
-
-
-
-= Post Header Setting =
-    toolbar.insert_button:
-        aligned horizontally all toolbar.undo_button 0px
-    header__settings.preview_button:
-        left-of header__settings.publish_button 7 px
-    &toolbar_buttons:
-        width 36 px
-        height 36 px
-        inside  toolbar
-    &setting_button:
-        inside header__settings
-    header__settings.setting_button.icon_setting:
-        visible
-        left-of header__settings.show_more_tool_button 12 px
-
-= Form Add Post =
-    editor_body.title_label:
-        inside editor_body.title_textfield
-    editor_body.title_label:
-        text is "${title_label_text}"
-        css font-size is "16px" 
-        css font-family starts "-apple-system"
-        css font-family ends "serif"
-        css color is "rgba(68, 68, 68, 1)"
-        css border-color is "rgb(68, 68, 68)"
-    editor_body.title_textfield:
-        width 588 px
-        height 84 px
-    editor_body.content_textfield:
-        width 588 px
-        height 200 px
-        below editor_body.title_textfield 4 px
-
-= Side bar =
-    | amount of visible &tab_items should be 2
-    | every &tab_item has height ~ 48px 
-    panel_tab:
-        contains panel_tab.tab_item-*
-    panel_tab.tab_item-1:
-        text is "${tab_item_document_text}"
-    panel_tab.tab_item-2:
-        text is "${tab_item_block_text}"
-    components_panel_item-*:
-        width 279 px 
-        height 47 px 
-    | amount of visible components_panel_item-* should be 6
-    components_panel_item-1:
-        text is "${component_status_text}"
-    components_panel_item-2:
-        text is "${component_category_text}"
-    components_panel_item-3:
-        text is "${component_tag_text}"
-    components_panel_item-4:
-        text is "${component_fearture_image_text}"
-    components_panel_item-5:
-        text is "${component_excerpt_text}"
-    components_panel_item-6:
-        text is "${component_discussion_text}"

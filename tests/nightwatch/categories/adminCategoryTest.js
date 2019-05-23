@@ -1,4 +1,4 @@
-const randomString = require('../../../commons/utils/randomString.js');
+var randomString = require('../../../commons/utils/randomString.js');
 var addCategoryPage, loginPage, dashboardPage, username, password, editCategoryPage;
 var nameCategory = randomString('clothes');
 var slugCategory = randomString('shopping');
@@ -21,7 +21,7 @@ module.exports = {
         password = browser.globals.userNames.password;
         loginPage.login(username, password);
     },
-    'Verify that user can create a new category with valid information': (browser) => {
+    'Verify that admin can create a new category with valid data': (browser) => {
         browser.perform(function (browser, done) {
             dashboardPage.goToPage('Category');
             addCategoryPage.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);
@@ -38,7 +38,7 @@ module.exports = {
             done();
         });
     },
-    'Verify that user can edit category with valid data information': (browser) => {
+    'Verify that admin can edit category with valid data': (browser) => {
         browser.perform(function (browser, done) {
             dashboardPage.goToPage('Category');
             addCategoryPage.addNewCategory(nameCategory, slugCategory, parentCategory, descriptionCategory);

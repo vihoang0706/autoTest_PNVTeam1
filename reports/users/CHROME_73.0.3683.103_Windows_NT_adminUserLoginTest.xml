@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="2">
+
+  <testsuite name="users.adminUserLoginTest"
+    errors="0" failures="0" hostname="" id="" package="adminUserLoginTest" skipped="0"
+    tests="2" time="4.767" timestamp="">
+  
+    <testcase name="Verify that admin can login with valid account" classname="users.adminUserLoginTest" time="2.638" assertions="6">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Verify that admin cannot login with valid account" classname="users.adminUserLoginTest" time="2.129" assertions="6">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

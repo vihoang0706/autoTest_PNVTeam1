@@ -23,7 +23,7 @@ module.exports = {
     browser.perform(function () {
       done();
     });
-    htmlReporter.setBrowserOptions(browser.options);
+    htmlReporter.setBrowserOptions( browser.options);
   },
   afterEach: function (browser, done) {
     browser.end(function () {

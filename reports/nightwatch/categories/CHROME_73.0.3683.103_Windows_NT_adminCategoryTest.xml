@@ -26,7 +26,11 @@
     
     </testcase>
   
+<<<<<<< HEAD
     <testcase name="Verify that user can edit category with valid data information" classname="categories.adminCategoryTest" time="3.998" assertions="12">
+=======
+    <testcase name="Verify that admin can edit category with valid data" classname="categories.adminCategoryTest" time="4.370" assertions="12">
+>>>>>>> hotfix-sp4
 
     
 

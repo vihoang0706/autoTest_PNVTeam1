@@ -1,4 +1,5 @@
-var addMediaPage, dashboardPage, loginPage, username, password, imageName = 'girl';
+var addMediaPage, dashboardPage, loginPage, username, password;
+var imageName = 'girl';
 var image = '../../../../images/girl.jpg';
 module.exports = {
     tags: ['add-media'],
@@ -10,7 +11,7 @@ module.exports = {
         password = browser.globals.userNames.password;
         loginPage.login(username, password);
     },
-    'Verify that admin can add new image': (browser) => {
+    'Verify that admin can add new image with valid data': (browser) => {
         browser.perform(function (browser, done) {
             dashboardPage.goToPage('Add New Media');
             addMediaPage.addNewMedia(image);

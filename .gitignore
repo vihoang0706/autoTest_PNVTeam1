@@ -1,6 +1,6 @@
 # ignore node_modules
 node_modules
-# ignore reports folder
+# ignore package lock
 package-lock.json
 # ignore logs
 *.log

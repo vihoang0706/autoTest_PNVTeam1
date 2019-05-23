@@ -3,7 +3,7 @@ load("../../../page-objects/galen/login/loginPage.js");
 load("../../../page-objects/galen/dashboard/dashboardPage.js");
 load("../../../page-objects/galen/category/categoryPage.js");
 
-testOnDevice("desktop", "Category", "/wp-login.php", function (driver, device) {
+testOnAllDevices("Category", "/wp-login.php", function (driver, device) {
     var loginPage  = null;
     var dashboardPage = null;
 
@@ -13,5 +13,16 @@ testOnDevice("desktop", "Category", "/wp-login.php", function (driver, device) {
         dashboardPage = new DashboardPage(driver).waitForIt();
         dashboardPage.goToPage("Category");
         checkLayout(driver, "specs/category/categoryPage.gspec", device.tags);
+    });
+    
+    dumpPage({
+        driver: driver,
+        name: "Category page",
+        spec: "specs/category/categoryPage.gspec",
+        exportPath: "dumps/category",
+        maxWidth: 200,
+        maxHeight: 200,
+        onlyImages: false,
+        excludedObjects: ["header", "footer"]
     });
 });

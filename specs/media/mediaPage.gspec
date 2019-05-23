@@ -1,3 +1,5 @@
+@import ../galen-extras/galen-extras-rules.gspec 
+
 @objects
     help_button             #contextual-help-link
     title                   .wrap h1
@@ -13,48 +15,60 @@
     upload_button_text              Upload
     upload_file_size_text           Maximum upload file size: 2 MB.
     multi_file_link_text            Switch to the multi-file uploader
-    upload_button_desktop_width     ~63 px
     upload_button_border_color      rgb(0, 115, 170) rgb(0, 103, 153) rgb(0, 103, 153)
 
 @groups
     form_elements media_upload_form.upload_button, media_upload_form.multi_file_link, media_upload_form.upload_file_size
 
-= Help =
-    help_button:
-        width ~73px
-        height ~28px
-        inside screen 939px left 
-
-= Title =
-    title:
-        inside screen
-        width 832px
-        height 42px
-        text is "${title_text}"
-        above media_upload_form.upload_input 21 px 
-
-= Form Upload =
-    media_upload_form.upload_input:
-        inside media_upload_form
-        left-of media_upload_form.upload_button 4 px
-        below title 21px 
-        aligned horizontally all media_upload_form.upload_button
-        width 407 % of media_upload_form.upload_button/width 
-        css font-size is "14px" 
-    media_upload_form.upload_button:
-        width ${upload_button_desktop_width}
-        text is "${upload_button_text}"
-        inside media_upload_form 262 px left
-        css border-color is "${upload_button_border_color}"
-    media_upload_form.multi_file_link:
-        text is "${multi_file_link_text}"
-        below media_upload_form.multi_file_link -36 px
-        visible 
-    media_upload_form.upload_file_size:
-        text is "${upload_file_size_text}"
-        below media_upload_form.multi_file_link 14 px
-        visible
 
 = Skeleton =
-    &form_elements:
-        css font-size is "${common_font_size}" 
+    | title, media_upload_form are aligned vertically above each other with 20px margin
+
+    title, media_upload_form:
+        inside screen 20px right
+
+    help_button:
+        above title 48px
+        height 28px
+        inside screen 32px top, 21px right
+        width 74px
+
+    title:
+        height 42px
+        text is "${title_text}" 
+        above media_upload_form.upload_input 21 px 
+
+= media_upload_form elements =
+    | media_upload_form.upload_input, media_upload_form.upload_button are aligned horizontally next to each other with 4px margin
+
+    media_upload_form.upload_file_size:
+        below media_upload_form.multi_file_link 14px
+        centered horizontally inside media_upload_form 1px
+        height 19px
+        inside media_upload_form 0px left right bottom
+        text is "${upload_file_size_text}" 
+
+    media_upload_form.multi_file_link:
+        visible 
+        below media_upload_form.upload_input 15px
+        height 36px
+        inside media_upload_form 3px right, 0px left
+        text is "${multi_file_link_text}" 
+
+    media_upload_form.upload_input, media_upload_form.upload_button:
+        height 28px
+
+    media_upload_form.upload_button:
+        above media_upload_form.multi_file_link 15px
+        inside media_upload_form 1px top, >= 0px right
+        width 63px
+        text is "${upload_button_text}"
+        css border-color is "${upload_button_border_color}" 
+
+    media_upload_form.upload_input:
+        inside media_upload_form 1px top left
+        aligned horizontally all media_upload_form.upload_button 
+        css font-size is "14px"
+    
+    &form_elements: 
+        css font-size is "${common_font_size}"

@@ -1,8 +1,8 @@
 {
   "tests" : [ {
     "name" : "Media on mobile device",
-    "startedAt" : 1558595476652,
-    "endedAt" : 1558595484927,
+    "startedAt" : 1558595866640,
+    "endedAt" : 1558595876149,
     "failed" : false,
     "statistic" : {
       "passed" : 28,
@@ -12,12 +12,12 @@
     },
     "testId" : "1-media-on-mobile-device",
     "groups" : [ ],
-    "duration" : 8275,
+    "duration" : 9509,
     "failed" : false
   }, {
     "name" : "Media on tablet device",
-    "startedAt" : 1558595485586,
-    "endedAt" : 1558595493252,
+    "startedAt" : 1558595876790,
+    "endedAt" : 1558595882838,
     "failed" : false,
     "statistic" : {
       "passed" : 28,
@@ -27,12 +27,12 @@
     },
     "testId" : "2-media-on-tablet-device",
     "groups" : [ ],
-    "duration" : 7666,
+    "duration" : 6048,
     "failed" : false
   }, {
     "name" : "Media on desktop device",
-    "startedAt" : 1558595493916,
-    "endedAt" : 1558595502486,
+    "startedAt" : 1558595883468,
+    "endedAt" : 1558595890664,
     "failed" : false,
     "statistic" : {
       "passed" : 35,
@@ -42,7 +42,7 @@
     },
     "testId" : "3-media-on-desktop-device",
     "groups" : [ ],
-    "duration" : 8570,
+    "duration" : 7196,
     "failed" : false
   } ]
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="1"
+            tests="1">
+
+  <testsuite name="users.adminUserLoginTest"
+    errors="1" failures="1" hostname="" id="" package="adminUserLoginTest" skipped="0"
+    tests="1" time="14.46" timestamp="">
+  
+    <testcase name="Verify that admin can login with valid account" classname="users.adminUserLoginTest" time="14.46" assertions="3">
+
+    
+
+      <failure message="Timed out while waiting for element &lt;//li[@id=&#34;wp-admin-bar-logout&#34;]/a[text()=&#34;Log Out&#34;]&gt; to be visible for 10000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not visible&#34;[0m">    at Page.logout (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\base-objects\adminBasePage.js:54:18)
+    at Object.Verify that admin can login with valid account (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\users\adminUserLoginTest.js:10:19)</failure>
+<system-out>[[ATTACHMENT|C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\reports\users\adminUserLoginTest\Verify-that-admin-can-login-with-valid-account_FAILED_May-07-2019-171117-GMT+0700-(Indochina.png]]</system-out>
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

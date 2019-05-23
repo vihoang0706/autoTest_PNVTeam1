@@ -1,0 +1,18 @@
+{
+  "tests" : [ {
+    "name" : "Media on  device",
+    "startedAt" : 1558078761885,
+    "endedAt" : 1558078772298,
+    "failed" : true,
+    "statistic" : {
+      "passed" : 24,
+      "errors" : 8,
+      "warnings" : 0,
+      "total" : 32
+    },
+    "testId" : "1-media-on-device",
+    "groups" : [ ],
+    "duration" : 10413,
+    "failed" : true
+  } ]
+}

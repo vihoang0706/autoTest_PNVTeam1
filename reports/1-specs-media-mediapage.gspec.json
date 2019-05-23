@@ -1,0 +1,27 @@
+{
+  "testId" : "1-specs-media-mediapage.gspec",
+  "name" : "specs/media/MediaPage.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  specs/media/MediaPage.gspec --url http://192.168.189.70/wordpress/wp-login.php --size 1024x768 --htmlreport reports -Dwebdriver.chrome.driver=C:\\Users\\InternDN19.01.05\\node_modules\\chromedriver\\lib\\chromedriver\\chromedriver.exe -Dwebdriver.gecko.driver=C:\\Users\\InternDN19.01.05\\AppData\\Roaming\\npm\\node_modules\\galenframework-cli\\node_modules\\geckodriver\\geckodriver.exe -Djna.nosys=true",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: specs/media/MediaPage.gspec included tags: ",
+          "status" : "info",
+          "time" : 1557904855298,
+          "sections" : [ ],
+          "objects" : { },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1557904854365,
+        "type" : "node"
+      } ],
+      "time" : 1557904849282,
+      "type" : "node"
+    } ]
+  }
+}

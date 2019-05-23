@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="2"
+            failures="0"
+            tests="1">
+
+  <testsuite name="posts.adminPostEditTest"
+    errors="2" failures="0" hostname="" id="" package="adminPostEditTest" skipped="0"
+    tests="1" time="0.2060" timestamp="">
+  
+    <testcase name="Verify that User Admin is able edit post with valid data" classname="posts.adminPostEditTest" time="0.2060" assertions="1">
+<system-out>[[ATTACHMENT|C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\reports\posts\adminPostEditTest\Verify-that-User-Admin-is-able-edit-post-with-valid-data_FAILED_May-09-2019-143622-GMT+0700-(Indochina.png]]</system-out>
+    
+    </testcase>
+  
+
+  
+    <system-err>
+      [0;31m  Cannot read property &#39;status&#39; of undefined[0m
+[0;90m       at Socket.socketCloseListener (_http_client.js:371:11)[0m
+    </system-err>
+  
+
+  
+  </testsuite>
+</testsuites>

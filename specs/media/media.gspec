@@ -1,0 +1,8 @@
+@objects
+    help_button             #contextual-help-link
+    title                   .wrap h1
+    media_upload_form       #file-form
+        upload_input            #async-upload
+        upload_button           #html-upload
+        multi_file_link         p[class="upload-html-bypass hide-if-no-js"] a
+        upload_file_size        p.max-upload-size

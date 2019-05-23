@@ -12,6 +12,7 @@ testOnAllDevices("Category", "/wp-login.php", function (driver, device) {
         loginPage = new LoginPage(driver).waitForIt();
         loginPage.login('admin', '123456789');
         dashboardPage = new DashboardPage(driver).waitForIt();
+        // dashboardPage.goToNavigation();
         dashboardPage.goToPage("Category");
         checkLayout(driver, "specs/category/categoryPage.gspec", device.tags);
     });

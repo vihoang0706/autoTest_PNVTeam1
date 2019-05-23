@@ -1,6 +1,6 @@
 var domain = "192.168.189.70/wordpress";
 var devices = {
-      mobile: {
+    mobile: {
         deviceName: "mobile",
         size: "450x800",
         tags: ["mobile"]
@@ -33,7 +33,7 @@ function openDriver(url, size) {
         driver.get("http://" + domain);
     }
     return driver;
-}
+};
 afterTest(function (test) {
     var driver = session.get("driver");
     if (driver != null) {
@@ -48,17 +48,17 @@ function _test(testNamePrefix, url, callback) {
         var driver = openDriver(url, device.size);
         callback.call(this, driver, device);
     });
-}
+};
 function testOnAllDevices(testNamePrefix, url, callback) {
     forAll(devices, function () {
         _test(testNamePrefix, url, callback);
     });
-}
+};
 function testOnDevice(device, testNamePrefix, url, callback) {
     forOnly({device: device}, function() {
         _test(testNamePrefix, url, callback);
     });
-}
+};
 (function (exports) {
     exports.devices = devices;
     exports.openDriver = openDriver;

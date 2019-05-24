@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="0">
+
+  <testsuite name="pages.adminPageTest"
+    errors="1" failures="0" hostname="" id="" package="adminPageTest" skipped="2"
+    tests="0" time="0.000" timestamp="">
+  
+
+  
+
+  
+    
+    <testcase
+      name="Verify that admin can add new page with valid data successfully" classname="pages.adminPageTest">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Verify that admin can edit page with valid data successfully" classname="pages.adminPageTest">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

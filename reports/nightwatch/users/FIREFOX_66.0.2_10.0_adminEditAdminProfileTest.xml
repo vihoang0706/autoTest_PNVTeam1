@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="0">
+
+  <testsuite name="users.adminEditAdminProfileTest"
+    errors="1" failures="0" hostname="" id="" package="adminEditAdminProfileTest" skipped="1"
+    tests="0" time="0.000" timestamp="">
+  
+
+  
+
+  
+    
+    <testcase
+      name="Verify that Admin can edit the profile of admin successfully" classname="users.adminEditAdminProfileTest">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

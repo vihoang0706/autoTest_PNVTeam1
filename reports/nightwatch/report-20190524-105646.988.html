@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Results - </title>
+
+  <style>
+    html, body {
+      font-family: Arial,sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    body { padding: 10px 40px; }
+    header { position: relative; }
+    #expand-collapse-all {
+      position: absolute;
+      bottom: -25px;
+      right: 0;
+      padding: 3px 6px;
+      border-radius: 4px;
+      background-color: #000;
+      font-size: 0.8em;
+      color: #fff;
+      cursor: pointer;
+    }
+    table { width: 100%; margin-bottom: 20px; }
+      td {
+        padding: 7px;
+        border-top: none;
+        border-left: 1px black solid;
+        border-bottom: 1px black solid;
+        border-right: none;
+      }
+      td.pass { color: #003b07; background: #86e191; }
+      td.skip { color: #7d3a00; background: #ffd24a; }
+      td.fail { color: #5e0e00; background: #ff9c8a; }
+    tr:last-child       { border-top: 1px black solid; }
+      tr:last-child td    { border-top: 1px black solid; }
+      tr:first-child td   { border-top: 1px black solid; }
+        td:last-child       { border-right: 1px black solid; }
+    tr.overview td      { padding-bottom: 0px; border-bottom: none; }
+    tr.overview.last td { padding-bottom: 3px; }
+    .suite { cursor: pointer; }
+      .suite > .toggle-assertions { display: none; font-weight: normal; margin-left: 2px; }
+    ul.assertions     { list-style-type: none; }
+      span.error      { color: #AD2B2B; }
+      span.success    { color: #53891E; }
+    .stacktrace { display: inline; }
+      .stacktrace code { display: none; }
+    #nightwatch-logo {
+      position: absolute;
+      top: 20px;
+      right: 33px;
+      width: 70px;
+      height: 75px;
+      background: transparent url('http://nightwatchjs.org/img/logo-nightwatch.png') no-repeat;
+      background-size: 70px 75px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Test Results</h1>
+
+  <header>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr class="overview">
+        <td colspan="3" title=""><strong>Browser:</strong> </td>
+      </tr>
+      <tr class="overview">
+        <td colspan="3"><strong>Timestamp:</strong> Fri May 24 2019 10:56:47 GMT+0700 (Indochina Time)</td>
+      </tr>
+      <tr class="overview last">
+        <td colspan="3"><strong>Tests:</strong> 0<br></td>
+      </tr>
+      <tr>
+        <td class="pass"><strong>97</strong> passed</td>
+        <td class="skip"><strong>1</strong> errors</td>
+        <td class="fail"><strong>5</strong> failures</td>
+      </tr>
+    </table>
+
+    <div id="controls">
+      <div id="expand-collapse-all">toggle asssertions</div>
+    </div>
+  </header>
+  
+
+      <h2>menus\adminMenuAddMenuTest</h2>
+
+        <h3 class="suite">Verify that admin can add new Menu with valid data <span class="toggle-assertions"></span></h3>
+        
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;select[id&#x3D;select-menu-to-edit]&gt; was visible after 258 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: Commentst5cbs7s2qn &#x3D;&#x3D; Commentst5cbs7s2qn
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;span[class&#x3D;delete-action]&gt;a&gt; was visible after 305 milliseconds.
+
+
+            </li>
+          <section data-featherlight-gallery data-featherlight-filter="a">
+                <div class='gallery-row-title'>
+                    <h4>Verify that admin can add new Menu with valid data Screenshots checkpoint fails</h4>
+                </div>
+                <div class='gallery-row'>
+                </div>
+            </section>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>3</strong></span> assertions passed. (12.56s)
+        </p>
+
+
+      <hr>
+      <h2>categories\adminCategoryTest</h2>
+
+        <h3 class="suite">Verify that user can create a new category with valid information <span class="toggle-assertions"></span></h3>
+        
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;name column-name has-row-actions column-primary&#x27;]/strong/a[text()&#x3D;&#x27;clothesaxq2srmrooe&#x27;]&gt; was visible after 1052 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: clothesaxq2srmrooe &#x3D;&#x3D; clothesaxq2srmrooe
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;description column-description&#x27;]/p[ancestor::tr//a[text()&#x3D;&#x27;clothesaxq2srmrooe&#x27;]]&gt; was visible after 187 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: Clothes on the store &#x3D;&#x3D; Clothes on the store
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;slug column-slug&#x27; and ancestor::tr//a[text()&#x3D;&#x27;clothesaxq2srmrooe&#x27;]]&gt; was visible after 295 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: shoppinglby2p569g5g &#x3D;&#x3D; shoppinglby2p569g5g
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;name column-name has-row-actions column-primary&#x27;]/strong/a[text()&#x3D;&#x27;clothesaxq2srmrooe&#x27;]&gt; was visible after 273 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//span[@class&#x3D;&#x27;delete&#x27;]/a[ancestor::td//a[text()&#x3D;&#x27;clothesaxq2srmrooe&#x27;]]&gt; was visible after 353 milliseconds.
+
+
+            </li>
+          <section data-featherlight-gallery data-featherlight-filter="a">
+                <div class='gallery-row-title'>
+                    <h4>Verify that user can create a new category with valid information Screenshots checkpoint fails</h4>
+                </div>
+                <div class='gallery-row'>
+                </div>
+            </section>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>8</strong></span> assertions passed. (11.30s)
+        </p>
+        <h3 class="suite">Verify that user can edit category with valid data information <span class="toggle-assertions"></span></h3>
+        
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;name column-name has-row-actions column-primary&#x27;]/strong/a[text()&#x3D;&#x27;clothesaxq2srmrooe&#x27;]&gt; was visible after 808 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//span[@class&#x3D;&#x27;edit&#x27;]/a[ancestor::td//a[text()&#x3D;&#x27;clothesaxq2srmrooe&#x27;]]&gt; was visible after 172 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;#message &gt; p:nth-child(1) &gt; strong&gt; was visible after 502 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: Category updated. &#x3D;&#x3D; Category updated.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;name column-name has-row-actions column-primary&#x27;]/strong/a[text()&#x3D;&#x27;— clothes storef8q749k4g3&#x27;]&gt; was visible after 168 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: — clothes storef8q749k4g3 &#x3D;&#x3D; — clothes storef8q749k4g3
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;description column-description&#x27;]/p[ancestor::tr//a[text()&#x3D;&#x27;— clothes storef8q749k4g3&#x27;]]&gt; was visible after 213 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: Clothes on the Team 1 store &#x3D;&#x3D; Clothes on the Team 1 store
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;slug column-slug&#x27; and ancestor::tr//a[text()&#x3D;&#x27;— clothes storef8q749k4g3&#x27;]]&gt; was visible after 198 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: shoppingstore4z07thdm4xf &#x3D;&#x3D; shoppingstore4z07thdm4xf
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;name column-name has-row-actions column-primary&#x27;]/strong/a[text()&#x3D;&#x27;— clothes storef8q749k4g3&#x27;]&gt; was visible after 182 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//span[@class&#x3D;&#x27;delete&#x27;]/a[ancestor::td//a[text()&#x3D;&#x27;— clothes storef8q749k4g3&#x27;]]&gt; was visible after 262 milliseconds.
+
+
+            </li>
+          <section data-featherlight-gallery data-featherlight-filter="a">
+                <div class='gallery-row-title'>
+                    <h4>Verify that user can edit category with valid data information Screenshots checkpoint fails</h4>
+                </div>
+                <div class='gallery-row'>
+                </div>
+            </section>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>12</strong></span> assertions passed. (21.93s)
+        </p>
+
+
+      <hr>
+      <h2>pages\adminPageTest</h2>
+
+        <h3 class="suite">Verify that admin can add new page with valid data successfully <span class="toggle-assertions"></span></h3>
+        
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;button.editor-post-publish-button&gt; was visible after 354 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;div.components-notice__content&gt; was visible after 1086 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: Page published.
+View Page &#x3D;&#x3D; Page published.
+View Page
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;textarea[id&#x3D;post-title-0]&gt; was visible after 234 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: Hello summer &#x3D;&#x3D; Hello summer
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;textarea[class&#x3D;editor-post-text-editor]&gt; was visible after 186 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: I like swimming on the beach. &#x3D;&#x3D; I like swimming on the beach.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//strong/a[ancestor::tr[@id&#x3D;&#x27;post-3501&#x27;]]&gt; was visible after 185 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//span[@class&#x3D;&#x27;trash&#x27;]/a[ancestor::tr[@id&#x3D;&#x27;post-3501&#x27;]]&gt; was visible after 331 milliseconds.
+
+
+            </li>
+          <section data-featherlight-gallery data-featherlight-filter="a">
+                <div class='gallery-row-title'>
+                    <h4>Verify that admin can add new page with valid data successfully Screenshots checkpoint fails</h4>
+                </div>
+                <div class='gallery-row'>
+                </div>
+            </section>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>9</strong></span> assertions passed. (26.79s)
+        </p>
+        <h3 class="suite">Verify that admin can edit page with valid data successfully <span class="toggle-assertions"></span></h3>
+        
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;button.editor-post-publish-button&gt; was visible after 252 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;div.components-notice__content&gt; was visible after 888 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//strong/a[ancestor::tr[@id&#x3D;&#x27;post-3505&#x27;]]&gt; was visible after 214 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//span[@class&#x3D;&#x27;edit&#x27;]/a[ancestor::tr[@id&#x3D;&#x27;post-3505&#x27;]]&gt; was visible after 382 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="error">&#10006;</span>
+
+              Timed out while waiting for element &lt;button.nux-dot-tip__disable&gt; to be present for 5000 milliseconds. - expected [0;32m&quot;visible&quot;[0m but got: [0;31m&quot;not found&quot;[0m
+
+                Expected &quot;visible&quot; but got: &quot;not found&quot;
+
+            </li>
+          <section data-featherlight-gallery data-featherlight-filter="a">
+                <div class='gallery-row-title'>
+                    <h4>Verify that admin can edit page with valid data successfully Screenshots checkpoint fails</h4>
+                </div>
+                <div class='gallery-row'>
+                                <div class='gallery-column'><a href='C:/Users/InternDN19.01.05/internship_project/autoTest_PNVTeam1/reports/nightwatch/pages/adminPageTest/Verify-that-admin-can-edit-page-with-valid-data-successfully_FAILED_May-24-2019-105515-GMT+0700-(Indochina.png' class='thumbnail gallery'><img class='thumbnail' src='C:/Users/InternDN19.01.05/internship_project/autoTest_PNVTeam1/reports/nightwatch/pages/adminPageTest/Verify-that-admin-can-edit-page-with-valid-data-successfully_FAILED_May-24-2019-105515-GMT+0700-(Indochina.png' alt='Timed out while waiting for element &lt;button.nux-dot-tip__disable&gt; to be present for 5000 milliseconds. - expected [0;32m&quot;visible&quot;[0m but got: [0;31m&quot;not found&quot;[0m' /></a></div>
+                </div>
+            </section>
+        </ul>
+
+        <p>
+            <span class="error"><strong>FAILED:</strong></span>
+            <span class="error"><strong>1</strong></span> assertions failed and
+            <span class="success"><strong>4</span></strong> passed. (21.08s)
+        </p>
+
+
+      <hr>
+      <h2>posts\adminPostTest</h2>
+
+        <h3 class="suite">Verify that use can add new post with valid data <span class="toggle-assertions"></span></h3>
+        
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;button.editor-post-publish-button&gt; was visible after 250 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;div[class&#x3D;components-notice__content]&gt; was visible after 895 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: Post published.
+View Post &#x3D;&#x3D; Post published.
+View Post
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;textarea[id&#x3D;post-title-0]&gt; was visible after 196 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: Post: 13 Where were you &#x3D;&#x3D; Post: 13 Where were you
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;textarea[class&#x3D;editor-post-text-editor]&gt; was visible after 210 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: When you were in trouble and you needed a hand I was always there. &#x3D;&#x3D; When you were in trouble and you needed a hand I was always there.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//strong/a[ancestor::tr[@id&#x3D;&#x27;post-3503&#x27;]]&gt; was visible after 180 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//span[@class&#x3D;&#x27;trash&#x27;]/a[ancestor::tr[@id&#x3D;&#x27;post-3503&#x27;]]&gt; was visible after 229 milliseconds.
+
+
+            </li>
+          <section data-featherlight-gallery data-featherlight-filter="a">
+                <div class='gallery-row-title'>
+                    <h4>Verify that use can add new post with valid data Screenshots checkpoint fails</h4>
+                </div>
+                <div class='gallery-row'>
+                </div>
+            </section>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>9</strong></span> assertions passed. (24.50s)
+        </p>
+        <h3 class="suite">Verify that user can edit post with valid data <span class="toggle-assertions"></span></h3>
+        
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;button.editor-post-publish-button&gt; was visible after 221 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;div[class&#x3D;components-notice__content]&gt; was visible after 1058 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//strong/a[ancestor::tr[@id&#x3D;&#x27;post-3507&#x27;]]&gt; was visible after 206 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//span[@class&#x3D;&#x27;edit&#x27;]/a[ancestor::tr[@id&#x3D;&#x27;post-3507&#x27;]]&gt; was visible after 357 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="error">&#10006;</span>
+
+              Timed out while waiting for element &lt;button.nux-dot-tip__disable&gt; to be present for 5000 milliseconds. - expected [0;32m&quot;visible&quot;[0m but got: [0;31m&quot;not found&quot;[0m
+
+                Expected &quot;visible&quot; but got: &quot;not found&quot;
+
+            </li>
+          <section data-featherlight-gallery data-featherlight-filter="a">
+                <div class='gallery-row-title'>
+                    <h4>Verify that user can edit post with valid data Screenshots checkpoint fails</h4>
+                </div>
+                <div class='gallery-row'>
+                                <div class='gallery-column'><a href='C:/Users/InternDN19.01.05/internship_project/autoTest_PNVTeam1/reports/nightwatch/posts/adminPostTest/Verify-that-user-can-edit-post-with-valid-data_FAILED_May-24-2019-105535-GMT+0700-(Indochina.png' class='thumbnail gallery'><img class='thumbnail' src='C:/Users/InternDN19.01.05/internship_project/autoTest_PNVTeam1/reports/nightwatch/posts/adminPostTest/Verify-that-user-can-edit-post-with-valid-data_FAILED_May-24-2019-105535-GMT+0700-(Indochina.png' alt='Timed out while waiting for element &lt;button.nux-dot-tip__disable&gt; to be present for 5000 milliseconds. - expected [0;32m&quot;visible&quot;[0m but got: [0;31m&quot;not found&quot;[0m' /></a></div>
+                </div>
+            </section>
+        </ul>
+
+        <p>
+            <span class="error"><strong>FAILED:</strong></span>
+            <span class="error"><strong>1</strong></span> assertions failed and
+            <span class="success"><strong>4</span></strong> passed. (23.93s)
+        </p>
+
+
+      <hr>
+      <h2>tags\adminTagTest</h2>
+
+        <h3 class="suite">Verify that admin can add new tag successfully <span class="toggle-assertions"></span></h3>
+        
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;name column-name has-row-actions column-primary&#x27;]/strong/a[text()&#x3D;&#x27;automation testinglp3emzk6bi&#x27;]&gt; was visible after 772 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: automation testinglp3emzk6bi &#x3D;&#x3D; automation testinglp3emzk6bi
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;slug column-slug&#x27; and ancestor::tr//a[text()&#x3D;&#x27;automation testinglp3emzk6bi&#x27;]]&gt; was visible after 152 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: automation-testjvz7dhuf7e &#x3D;&#x3D; automation-testjvz7dhuf7e
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;description column-description&#x27;]/p[ancestor::tr//a[text()&#x3D;&#x27;automation testinglp3emzk6bi&#x27;]]&gt; was visible after 154 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: To learn Automation testing &#x3D;&#x3D; To learn Automation testing
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;name column-name has-row-actions column-primary&#x27;]/strong/a[text()&#x3D;&#x27;automation testinglp3emzk6bi&#x27;]&gt; was visible after 157 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//span[@class&#x3D;&#x27;delete&#x27;]/a[ancestor::td//a[text()&#x3D;&#x27;automation testinglp3emzk6bi&#x27;]]&gt; was visible after 161 milliseconds.
+
+
+            </li>
+          <section data-featherlight-gallery data-featherlight-filter="a">
+                <div class='gallery-row-title'>
+                    <h4>Verify that admin can add new tag successfully Screenshots checkpoint fails</h4>
+                </div>
+                <div class='gallery-row'>
+                </div>
+            </section>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>8</strong></span> assertions passed. (8.565s)
+        </p>
+        <h3 class="suite">Verify that Admin can edit tag  <span class="toggle-assertions"></span></h3>
+        
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;name column-name has-row-actions column-primary&#x27;]/strong/a[text()&#x3D;&#x27;automation testinglp3emzk6bi&#x27;]&gt; was visible after 785 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//span[@class&#x3D;&#x27;edit&#x27;]/a[ancestor::td//a[text()&#x3D;&#x27;automation testinglp3emzk6bi&#x27;]]&gt; was visible after 173 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;div#message&gt;p&gt;strong&gt; was visible after 271 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: Tag updated. &#x3D;&#x3D; Tag updated.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;name column-name has-row-actions column-primary&#x27;]/strong/a[text()&#x3D;&#x27;automationytu0keazq7n&#x27;]&gt; was visible after 147 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: automationytu0keazq7n &#x3D;&#x3D; automationytu0keazq7n
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;slug column-slug&#x27; and ancestor::tr//a[text()&#x3D;&#x27;automationytu0keazq7n&#x27;]]&gt; was visible after 160 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: automation-testing25achsjrp4i &#x3D;&#x3D; automation-testing25achsjrp4i
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;description column-description&#x27;]/p[ancestor::tr//a[text()&#x3D;&#x27;automationytu0keazq7n&#x27;]]&gt; was visible after 146 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: To learn Automation testing by using nightwatch &#x3D;&#x3D; To learn Automation testing by using nightwatch
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;name column-name has-row-actions column-primary&#x27;]/strong/a[text()&#x3D;&#x27;automationytu0keazq7n&#x27;]&gt; was visible after 141 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="error">&#10006;</span>
+
+              Timed out while waiting for element &lt;//span[@class&#x3D;&#x27;delete&#x27;]/a[ancestor::td//a[text()&#x3D;&#x27;automationytu0keazq7n&#x27;]]&gt; to be visible for 5000 milliseconds. - expected [0;32m&quot;visible&quot;[0m but got: [0;31m&quot;not visible&quot;[0m
+
+                Expected &quot;visible&quot; but got: &quot;not visible&quot;
+
+            </li>
+          <section data-featherlight-gallery data-featherlight-filter="a">
+                <div class='gallery-row-title'>
+                    <h4>Verify that Admin can edit tag  Screenshots checkpoint fails</h4>
+                </div>
+                <div class='gallery-row'>
+                                <div class='gallery-column'><a href='C:/Users/InternDN19.01.05/internship_project/autoTest_PNVTeam1/reports/nightwatch/tags/adminTagTest/Verify-that-Admin-can-edit-tag-_FAILED_May-24-2019-105537-GMT+0700-(Indochina.png' class='thumbnail gallery'><img class='thumbnail' src='C:/Users/InternDN19.01.05/internship_project/autoTest_PNVTeam1/reports/nightwatch/tags/adminTagTest/Verify-that-Admin-can-edit-tag-_FAILED_May-24-2019-105537-GMT+0700-(Indochina.png' alt='Timed out while waiting for element &lt;//span[@class&#x3D;&#x27;delete&#x27;]/a[ancestor::td//a[text()&#x3D;&#x27;automationytu0keazq7n&#x27;]]&gt; to be visible for 5000 milliseconds. - expected [0;32m&quot;visible&quot;[0m but got: [0;31m&quot;not visible&quot;[0m' /></a></div>
+                </div>
+            </section>
+        </ul>
+
+        <p>
+            <span class="error"><strong>FAILED:</strong></span>
+            <span class="error"><strong>1</strong></span> assertions failed and
+            <span class="success"><strong>11</span></strong> passed. (21.91s)
+        </p>
+
+
+      <hr>
+      <h2>users\adminUserLoginTest</h2>
+
+        <h3 class="suite">Verify that admin can login with valid account <span class="toggle-assertions"></span></h3>
+        
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;body&gt; was visible after 384 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;input[id&#x3D;user_login]&gt; was visible after 185 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;input[id&#x3D;user_pass]&gt; was visible after 229 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="error">&#10006;</span>
+
+              Timed out while waiting for element &lt;//li[@id&#x3D;&quot;wp-admin-bar-logout&quot;]/a[text()&#x3D;&quot;Log Out&quot;]&gt; to be visible for 5000 milliseconds. - expected [0;32m&quot;visible&quot;[0m but got: [0;31m&quot;not visible&quot;[0m
+
+                Expected &quot;visible&quot; but got: &quot;not visible&quot;
+
+            </li>
+          <section data-featherlight-gallery data-featherlight-filter="a">
+                <div class='gallery-row-title'>
+                    <h4>Verify that admin can login with valid account Screenshots checkpoint fails</h4>
+                </div>
+                <div class='gallery-row'>
+                                <div class='gallery-column'><a href='C:/Users/InternDN19.01.05/internship_project/autoTest_PNVTeam1/reports/nightwatch/users/adminUserLoginTest/Verify-that-admin-can-login-with-valid-account_FAILED_May-24-2019-105550-GMT+0700-(Indochina.png' class='thumbnail gallery'><img class='thumbnail' src='C:/Users/InternDN19.01.05/internship_project/autoTest_PNVTeam1/reports/nightwatch/users/adminUserLoginTest/Verify-that-admin-can-login-with-valid-account_FAILED_May-24-2019-105550-GMT+0700-(Indochina.png' alt='Timed out while waiting for element &lt;//li[@id&#x3D;&quot;wp-admin-bar-logout&quot;]/a[text()&#x3D;&quot;Log Out&quot;]&gt; to be visible for 5000 milliseconds. - expected [0;32m&quot;visible&quot;[0m but got: [0;31m&quot;not visible&quot;[0m' /></a></div>
+                </div>
+            </section>
+        </ul>
+
+        <p>
+            <span class="error"><strong>FAILED:</strong></span>
+            <span class="error"><strong>1</strong></span> assertions failed and
+            <span class="success"><strong>3</span></strong> passed. (9.614s)
+        </p>
+
+
+      <hr>
+      <h2>users\adminUserAddNewTest</h2>
+
+        <h3 class="suite">Verify that user can add a new user with valid information <span class="toggle-assertions"></span></h3>
+        
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//strong/a[text()&#x3D;&#x27;nightwatch.team167cuq8mdjv4&#x27;]&gt; was visible after 170 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: nightwatch.team167cuq8mdjv4 &#x3D;&#x3D; nightwatch.team167cuq8mdjv4
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;name column-name&#x27; and ancestor::tr//a[text()&#x3D;&#x27;nightwatch.team167cuq8mdjv4&#x27;]]&gt; was visible after 158 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: NightWatch06wotpz4wxh Team 1crv10ilnmp9 &#x3D;&#x3D; NightWatch06wotpz4wxh Team 1crv10ilnmp9
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;email column-email&#x27;]/a[ancestor::tr//a[text()&#x3D;&#x27;nightwatch.team167cuq8mdjv4&#x27;]]&gt; was visible after 162 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: nightwatchjhonkz1oqg@gmail.com &#x3D;&#x3D; nightwatchjhonkz1oqg@gmail.com
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//td[@class&#x3D;&#x27;role column-role&#x27; and ancestor::tr//a[text()&#x3D;&#x27;nightwatch.team167cuq8mdjv4&#x27;]]&gt; was visible after 172 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: Subscriber &#x3D;&#x3D; Subscriber
+
+
+            </li>
+            <li>
+                <span class="error">&#10006;</span>
+
+              Timed out while waiting for element &lt;//li[@id&#x3D;&quot;wp-admin-bar-logout&quot;]/a[text()&#x3D;&quot;Log Out&quot;]&gt; to be visible for 5000 milliseconds. - expected [0;32m&quot;visible&quot;[0m but got: [0;31m&quot;not visible&quot;[0m
+
+                Expected &quot;visible&quot; but got: &quot;not visible&quot;
+
+            </li>
+          <section data-featherlight-gallery data-featherlight-filter="a">
+                <div class='gallery-row-title'>
+                    <h4>Verify that user can add a new user with valid information Screenshots checkpoint fails</h4>
+                </div>
+                <div class='gallery-row'>
+                                <div class='gallery-column'><a href='C:/Users/InternDN19.01.05/internship_project/autoTest_PNVTeam1/reports/nightwatch/users/adminUserAddNewTest/Verify-that-user-can-add-a-new-user-with-valid-information_FAILED_May-24-2019-105602-GMT+0700-(Indochina.png' class='thumbnail gallery'><img class='thumbnail' src='C:/Users/InternDN19.01.05/internship_project/autoTest_PNVTeam1/reports/nightwatch/users/adminUserAddNewTest/Verify-that-user-can-add-a-new-user-with-valid-information_FAILED_May-24-2019-105602-GMT+0700-(Indochina.png' alt='Timed out while waiting for element &lt;//li[@id&#x3D;&quot;wp-admin-bar-logout&quot;]/a[text()&#x3D;&quot;Log Out&quot;]&gt; to be visible for 5000 milliseconds. - expected [0;32m&quot;visible&quot;[0m but got: [0;31m&quot;not visible&quot;[0m' /></a></div>
+                </div>
+            </section>
+        </ul>
+
+        <p>
+            <span class="error"><strong>FAILED:</strong></span>
+            <span class="error"><strong>1</strong></span> assertions failed and
+            <span class="success"><strong>8</span></strong> passed. (20.00s)
+        </p>
+
+
+      <hr>
+
+  <div id="nightwatch-logo"></div>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script>
+  $(function() {
+    $('div.stacktrace').on('click', 'a', function(evt) {
+      evt.preventDefault();
+      var $link = $(this);
+      var $code = $link.parent().find('code');
+      $code.toggle();
+      $code.is(':visible') ? $link.text('hide stacktrace'):
+                             $link.text('view stacktrace');
+    });
+    $('h3.suite')
+      .on({
+          click: function(evt) {
+            $(this).next('ul.assertions').toggle();
+            toggleAssertions(this);
+          },
+          mouseenter: function(evt) {
+            toggleAssertions(this);
+            $(this).find('span.toggle-assertions').show();
+          },
+          mouseleave: function(evt) {
+            $(this).find('span.toggle-assertions').hide();
+          }
+      });
+    function toggleAssertions(element) {
+      if ( $(element).next('ul.assertions').is(':visible') ) {
+        $(element).find('span.toggle-assertions').text('-');
+      } else {
+        $(element).find('span.toggle-assertions').text('+');
+      }
+    }
+    $('#expand-collapse-all').on('click', function(evt) {
+      $('ul.assertions').toggle();
+    });
+   if ( $(document).height() > $(window).height()) {
+     $('ul.assertions').hide();
+   }
+  });
+  </script>
+</body>
+</html>

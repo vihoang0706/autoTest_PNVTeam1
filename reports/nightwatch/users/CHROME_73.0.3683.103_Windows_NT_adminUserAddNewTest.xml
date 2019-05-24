@@ -5,9 +5,9 @@
 
   <testsuite name="users.adminUserAddNewTest"
     errors="0" failures="0" hostname="" id="" package="adminUserAddNewTest" skipped="0"
-    tests="1" time="11.92" timestamp="">
+    tests="1" time="14.86" timestamp="">
   
-    <testcase name="Verify that user can add a new user with valid information" classname="users.adminUserAddNewTest" time="11.92" assertions="21">
+    <testcase name="Verify that user can add a new user with valid information" classname="users.adminUserAddNewTest" time="14.86" assertions="21">
 
     
 

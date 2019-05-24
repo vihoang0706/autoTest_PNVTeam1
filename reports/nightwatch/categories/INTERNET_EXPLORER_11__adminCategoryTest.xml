@@ -5,9 +5,9 @@
 
   <testsuite name="categories.adminCategoryTest"
     errors="0" failures="0" hostname="" id="" package="adminCategoryTest" skipped="0"
-    tests="2" time="20.20" timestamp="">
+    tests="2" time="33.23" timestamp="">
   
-    <testcase name="Verify that user can create a new category with valid information" classname="categories.adminCategoryTest" time="7.131" assertions="8">
+    <testcase name="Verify that user can create a new category with valid information" classname="categories.adminCategoryTest" time="11.30" assertions="8">
 
     
 
@@ -26,7 +26,7 @@
     
     </testcase>
   
-    <testcase name="Verify that user can edit category with valid data information" classname="categories.adminCategoryTest" time="13.07" assertions="12">
+    <testcase name="Verify that user can edit category with valid data information" classname="categories.adminCategoryTest" time="21.93" assertions="12">
 
     
 

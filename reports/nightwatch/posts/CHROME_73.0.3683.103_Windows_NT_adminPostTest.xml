@@ -5,9 +5,9 @@
 
   <testsuite name="posts.adminPostTest"
     errors="0" failures="0" hostname="" id="" package="adminPostTest" skipped="0"
-    tests="2" time="20.46" timestamp="">
+    tests="2" time="30.41" timestamp="">
   
-    <testcase name="Verify that use can add new post with valid data" classname="posts.adminPostTest" time="9.851" assertions="9">
+    <testcase name="Verify that use can add new post with valid data" classname="posts.adminPostTest" time="17.77" assertions="9">
 
     
 
@@ -28,7 +28,7 @@
     
     </testcase>
   
-    <testcase name="Verify that user can edit post with valid data" classname="posts.adminPostTest" time="10.61" assertions="15">
+    <testcase name="Verify that user can edit post with valid data" classname="posts.adminPostTest" time="12.64" assertions="15">
 
     
 

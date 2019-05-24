@@ -5,9 +5,9 @@
 
   <testsuite name="users.adminEditAdminProfileTest"
     errors="0" failures="0" hostname="" id="" package="adminEditAdminProfileTest" skipped="0"
-    tests="1" time="7.659" timestamp="">
+    tests="1" time="8.400" timestamp="">
   
-    <testcase name="Verify that Admin can edit the profile of admin successfully" classname="users.adminEditAdminProfileTest" time="7.659" assertions="17">
+    <testcase name="Verify that Admin can edit the profile of admin successfully" classname="users.adminEditAdminProfileTest" time="8.400" assertions="17">
 
     
 

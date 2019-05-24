@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="1"
+<testsuites errors="0"
             failures="1"
             tests="2">
 
   <testsuite name="posts.adminPostTest"
-    errors="1" failures="1" hostname="" id="" package="adminPostTest" skipped="0"
-    tests="2" time="20.41" timestamp="">
+    errors="0" failures="1" hostname="" id="" package="adminPostTest" skipped="0"
+    tests="2" time="28.37" timestamp="">
   
-    <testcase name="Verify that use can add new post with valid data" classname="posts.adminPostTest" time="9.645" assertions="9">
+    <testcase name="Verify that use can add new post with valid data" classname="posts.adminPostTest" time="15.93" assertions="9">
 
     
 
@@ -28,17 +28,17 @@
     
     </testcase>
   
-    <testcase name="Verify that user can edit post with valid data" classname="posts.adminPostTest" time="10.77" assertions="4">
+    <testcase name="Verify that user can edit post with valid data" classname="posts.adminPostTest" time="12.45" assertions="4">
 
     
 
     
 
-      <failure message="Timed out while waiting for element &lt;//span[@class=&#39;edit&#39;]/a[ancestor::tr[@id=&#39;post-3319&#39;]]&gt; to be visible for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not visible&#34;[0m">    at Page.clickLink (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\nightwatch\posts\adminPostViewAllPage.js:13:18)
+      <failure message="Timed out while waiting for element &lt;//span[@class=&#39;edit&#39;]/a[ancestor::tr[@id=&#39;post-3499&#39;]]&gt; to be visible for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not visible&#34;[0m">    at Page.clickLink (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\nightwatch\posts\adminPostViewAllPage.js:13:18)
     at Page.goToAction (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\nightwatch\posts\adminPostViewAllPage.js:19:26)
     at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\nightwatch\posts\adminPostTest.js:53:33)
     at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
-<system-out>[[ATTACHMENT|C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\reports\nightwatch\posts\adminPostTest\Verify-that-user-can-edit-post-with-valid-data_FAILED_May-21-2019-151951-GMT+0700-(Indochina.png]]</system-out>
+<system-out>[[ATTACHMENT|C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\reports\nightwatch\posts\adminPostTest\Verify-that-user-can-edit-post-with-valid-data_FAILED_May-24-2019-105250-GMT+0700-(Indochina.png]]</system-out>
     <failure message="    at Page.clickLink (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\nightwatch\posts\adminPostViewAllPage.js:13:18)">    at Page.goToAction (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\nightwatch\posts\adminPostViewAllPage.js:19:26)
     at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\nightwatch\posts\adminPostTest.js:53:33)
     at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>

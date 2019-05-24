@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="0">
+
+  <testsuite name="menus.adminMenuAddMenuTest"
+    errors="1" failures="0" hostname="" id="" package="adminMenuAddMenuTest" skipped="1"
+    tests="0" time="0.000" timestamp="">
+  
+
+  
+
+  
+    
+    <testcase
+      name="Verify that admin can add new Menu with valid data" classname="menus.adminMenuAddMenuTest">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

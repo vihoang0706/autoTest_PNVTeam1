@@ -5,9 +5,9 @@
 
   <testsuite name="posts.adminPostTest"
     errors="0" failures="1" hostname="" id="" package="adminPostTest" skipped="0"
-    tests="2" time="35.65" timestamp="">
+    tests="2" time="48.43" timestamp="">
   
-    <testcase name="Verify that use can add new post with valid data" classname="posts.adminPostTest" time="23.20" assertions="9">
+    <testcase name="Verify that use can add new post with valid data" classname="posts.adminPostTest" time="24.50" assertions="9">
 
     
 
@@ -28,13 +28,19 @@
     
     </testcase>
   
-    <testcase name="Verify that user can edit post with valid data" classname="posts.adminPostTest" time="12.45" assertions="2">
+    <testcase name="Verify that user can edit post with valid data" classname="posts.adminPostTest" time="23.93" assertions="5">
 
-      <failure message="Timed out while waiting for element &lt;div[class=components-notice__content]&gt; to be present for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.addNewPost (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\nightwatch\posts\adminPostAddPage.js:10:10)
-    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\nightwatch\posts\adminPostTest.js:48:25)
+    
+
+    
+
+    
+
+      <failure message="Timed out while waiting for element &lt;button.nux-dot-tip__disable&gt; to be present for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.editPost (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\nightwatch\posts\adminPostEditPage.js:5:10)
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\nightwatch\posts\adminPostTest.js:54:30)
     at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
-<system-out>[[ATTACHMENT|C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\reports\nightwatch\posts\adminPostTest\Verify-that-user-can-edit-post-with-valid-data_FAILED_May-17-2019-143159-GMT+0700-(Indochina.png]]</system-out>
-    <failure message="    at Page.addNewPost (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\nightwatch\posts\adminPostAddPage.js:10:10)">    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\nightwatch\posts\adminPostTest.js:48:25)
+<system-out>[[ATTACHMENT|C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\reports\nightwatch\posts\adminPostTest\Verify-that-user-can-edit-post-with-valid-data_FAILED_May-24-2019-105535-GMT+0700-(Indochina.png]]</system-out>
+    <failure message="    at Page.editPost (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\nightwatch\posts\adminPostEditPage.js:5:10)">    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\nightwatch\posts\adminPostTest.js:54:30)
     at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
     </testcase>
   

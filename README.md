@@ -2,6 +2,12 @@
 ## How to install Nightwatch.js framework demo jenkin
 - Install npm *npm install npm -g*
 - Install node.js *[1]*
+- run npm init
+- run npm install nightwatch –save
+- run npm install iedriver
+- run npm install geckodriver
+- run npm install chromedriver
+- run npm install @rpii/nightwatch-html-reporter
 
 # **Galen**
 ## How it works ?

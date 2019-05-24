@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="1">
+
+  <testsuite name="categories.adminCategoryTest"
+    errors="1" failures="0" hostname="" id="" package="adminCategoryTest" skipped="1"
+    tests="1" time="3.921" timestamp="">
+  
+    <testcase name="Verify that user can create a new category with valid information" classname="categories.adminCategoryTest" time="3.921" assertions="1">
+<system-out>[[ATTACHMENT|C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\reports\categories\adminCategoryTest\Verify-that-user-can-create-a-new-category-with-valid-information_FAILED_May-10-2019-112011-GMT+0700-(Indochina.png]]</system-out>
+    
+    </testcase>
+  
+
+  
+
+  
+    
+    <testcase
+      name="Verify that user can edit category with valid data information" classname="categories.adminCategoryTest">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

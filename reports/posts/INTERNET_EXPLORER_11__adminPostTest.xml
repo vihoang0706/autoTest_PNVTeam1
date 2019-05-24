@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="1"
+            tests="2">
+
+  <testsuite name="posts.adminPostTest"
+    errors="1" failures="1" hostname="" id="" package="adminPostTest" skipped="0"
+    tests="2" time="64.10" timestamp="">
+  
+    <testcase name="Verify that use can add new post with valid data" classname="posts.adminPostTest" time="32.85" assertions="9">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Verify that user can edit post with valid data" classname="posts.adminPostTest" time="31.24" assertions="15">
+
+    
+
+    
+
+    
+
+      <failure message="Timed out while waiting for element &lt;button.nux-dot-tip__disable&gt; to be present for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.editPost (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\posts\adminPostEditPage.js:5:18)
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\posts\adminPostTest.js:54:26)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+<system-out>[[ATTACHMENT|C:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\reports\posts\adminPostTest\Verify-that-user-can-edit-post-with-valid-data_FAILED_May-10-2019-114539-GMT+0700-(Indochina.png]]</system-out>
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

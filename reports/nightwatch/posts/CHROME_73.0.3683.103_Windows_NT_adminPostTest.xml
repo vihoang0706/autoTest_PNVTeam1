@@ -5,9 +5,15 @@
 
   <testsuite name="posts.adminPostTest"
     errors="0" failures="0" hostname="" id="" package="adminPostTest" skipped="0"
+<<<<<<< HEAD
     tests="2" time="25.72" timestamp="">
   
     <testcase name="Verify that admin can add a new post with valid data" classname="posts.adminPostTest" time="12.06" assertions="9">
+=======
+    tests="2" time="20.46" timestamp="">
+  
+    <testcase name="Verify that use can add new post with valid data" classname="posts.adminPostTest" time="9.851" assertions="9">
+>>>>>>> 97385fd7aad03a0aab12d8af1422cd0aac29592c
 
     
 
@@ -28,7 +34,11 @@
     
     </testcase>
   
+<<<<<<< HEAD
     <testcase name="Verify that admin can edit post with valid data" classname="posts.adminPostTest" time="13.67" assertions="15">
+=======
+    <testcase name="Verify that user can edit post with valid data" classname="posts.adminPostTest" time="10.61" assertions="15">
+>>>>>>> 97385fd7aad03a0aab12d8af1422cd0aac29592c
 
     
 

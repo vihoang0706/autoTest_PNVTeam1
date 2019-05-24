@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="4"
+            tests="1">
+
+  <testsuite name="categories.adminCategoryTest"
+    errors="0" failures="4" hostname="" id="" package="adminCategoryTest" skipped="1"
+    tests="1" time="5.144" timestamp="">
+  
+    <testcase name="Verify that user can create a new category with valid information" classname="categories.adminCategoryTest" time="5.144" assertions="2">  <failure message="Timed out while waiting for element &lt;//td[@class=&#39;name column-name has-row-actions column-primary&#39;]/strong/a[text()=&#39;clothes&#39;]&gt; to be present for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.getColumnValueActual (c:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\page-objects\categories\adminCategoryAddPage.js:24:26)
+    at NightwatchAPI.&lt;anonymous&gt; (c:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\categories\adminCategoryTest.js:27:29)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
+
+      <failure message="Failed [equal]: ({
+  error: [
+    &#39;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#39;,
+    &#34;Build info: version: &#39;3.141.59&#39;, revision: &#39;e82be7d358&#39;, time: &#39;2018-11-14T08:25:53&#39;&#34;,
+    &#34;System info: host: &#39;LGDN18-1212-W10&#39;, ip: &#39;192.168.189.71&#39;, os.name: &#39;Windows 10&#39;, os.arch: &#39;amd64&#39;, os.version: &#39;10.0&#39;, java.version: &#39;1.8.0_201&#39;&#34;,
+    &#39;Driver info: driver.version: unknown&#39;
+  ],
+  message: &#34;Unable to locate element: //td[@class=&#39;name column-name has-row-actions colum... == &#39;clothes&#39;) - expected [0;32m&#34;clothes&#34;[0m but got: [0;31m&#34;[object Object]&#34;[0m">  error: [
+    &#39;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#39;,
+    &#34;Build info: version: &#39;3.141.59&#39;, revision: &#39;e82be7d358&#39;, time: &#39;2018-11-14T08:25:53&#39;&#34;,
+    &#34;System info: host: &#39;LGDN18-1212-W10&#39;, ip: &#39;192.168.189.71&#39;, os.name: &#39;Windows 10&#39;, os.arch: &#39;amd64&#39;, os.version: &#39;10.0&#39;, java.version: &#39;1.8.0_201&#39;&#34;,
+    &#39;Driver info: driver.version: unknown&#39;
+  ],
+  message: &#34;Unable to locate element: //td[@class=&#39;name column-name has-row-actions colum... == &#39;clothes&#39;
+    at c:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\categories\adminCategoryTest.js:28:32
+    at NightwatchAPI.&lt;anonymous&gt; (c:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\commons\custom-commands\getContainText.js:3:9)
+    at processTicksAndRejections (internal/process/task_queues.js:86:5)</failure>
+<system-out>[[ATTACHMENT|c:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\reports\categories\adminCategoryTest\Verify-that-user-can-create-a-new-category-with-valid-information_FAILED_May-13-2019-091420-GMT+0700-(Indochina.png]]</system-out>
+    <failure message="  error: [">    &#39;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#39;,
+    &#34;Build info: version: &#39;3.141.59&#39;, revision: &#39;e82be7d358&#39;, time: &#39;2018-11-14T08:25:53&#39;&#34;,
+    &#34;System info: host: &#39;LGDN18-1212-W10&#39;, ip: &#39;192.168.189.71&#39;, os.name: &#39;Windows 10&#39;, os.arch: &#39;amd64&#39;, os.version: &#39;10.0&#39;, java.version: &#39;1.8.0_201&#39;&#34;,
+    &#39;Driver info: driver.version: unknown&#39;
+  ],
+  message: &#34;Unable to locate element: //td[@class=&#39;name column-name has-row-actions colum... == &#39;clothes&#39;
+    at c:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\tests\categories\adminCategoryTest.js:28:32
+    at NightwatchAPI.&lt;anonymous&gt; (c:\Users\InternDN19.01.05\internship_project\autoTest_PNVTeam1\commons\custom-commands\getContainText.js:3:9)
+    at processTicksAndRejections (internal/process/task_queues.js:86:5)</failure>
+    </testcase>
+  
+
+  
+
+  
+    
+    <testcase
+      name="Verify that user can edit category with valid data information" classname="categories.adminCategoryTest">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

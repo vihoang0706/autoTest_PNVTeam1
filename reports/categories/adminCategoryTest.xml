@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="0">
+
+  <testsuite name="categories.adminCategoryTest"
+    errors="1" failures="0" hostname="" id="" package="adminCategoryTest" skipped="2"
+    tests="0" time="0.000" timestamp="">
+  
+
+  
+    <system-err>
+      [0;31m  An error occurred while retrieving a new session: &#34;Connection refused to 127.0.0.1:4444&#34;. If the Webdriver/Selenium service is managed by Nightwatch, check if &#34;start_process&#34; is set to &#34;true&#34;.[0m
+[0;90m       at Socket.socketErrorListener (_http_client.js:397:9)
+       at emitErrorNT (internal/streams/destroy.js:91:8)
+       at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
+       at processTicksAndRejections (internal/process/task_queues.js:81:17)[0m
+    </system-err>
+  
+
+  
+    
+    <testcase
+      name="Verify that user can create a new category with valid information" classname="categories.adminCategoryTest">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Verify that user can edit category with valid data information" classname="categories.adminCategoryTest">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

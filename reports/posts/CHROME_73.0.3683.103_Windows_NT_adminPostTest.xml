@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="1">
+
+  <testsuite name="posts.adminPostTest"
+    errors="0" failures="0" hostname="" id="" package="adminPostTest" skipped="0"
+    tests="1" time="8.467" timestamp="">
+  
+    <testcase name="Verify that use can add new post with valid data" classname="posts.adminPostTest" time="8.467" assertions="9">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

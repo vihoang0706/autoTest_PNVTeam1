@@ -1,10 +1,6 @@
 var domain = "192.168.189.70/wordpress";
 var devices = {
-<<<<<<< HEAD
     mobile: {
-=======
-      mobile: {
->>>>>>> 97385fd7aad03a0aab12d8af1422cd0aac29592c
         deviceName: "mobile",
         size: "450x800",
         tags: ["mobile"]

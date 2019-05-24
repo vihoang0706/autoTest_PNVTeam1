@@ -1,7 +1,14 @@
-# ignore node_modules
+# ignore node modules
 node_modules
+<<<<<<< HEAD
 # ignore logs
 *.log
 # ignore package-lock json
 package-lock.json
 # ignore reports
+=======
+# ignore package-lock.json
+!package-lock.json
+# ignore logs
+logs/*.log
+>>>>>>> 8ed5493d639c407e2e0f8d6feb093424012a7e57

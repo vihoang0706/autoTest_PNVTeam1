@@ -1,6 +1,7 @@
 {
   "tests" : [ {
     "name" : "specs/login/loginPage.gspec",
+<<<<<<< HEAD
     "startedAt" : 1558511119068,
     "endedAt" : 1558511123865,
     "failed" : true,
@@ -13,5 +14,19 @@
     "testId" : "1-specs-login-loginpage.gspec",
     "duration" : 4797,
     "failed" : true
+=======
+    "startedAt" : 1558343411485,
+    "endedAt" : 1558343425007,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 27,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 27
+    },
+    "testId" : "1-specs-login-loginpage.gspec",
+    "duration" : 13522,
+    "failed" : false
+>>>>>>> 8ed5493d639c407e2e0f8d6feb093424012a7e57
   } ]
 }

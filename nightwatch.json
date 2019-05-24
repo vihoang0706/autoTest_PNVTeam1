@@ -53,7 +53,7 @@
   "detailed_output": true,
   "test_settings": {
     "default": {
-      "skip_testcases_on_fail": true,
+      "skip_testcases_on_fail": false,
       "launch_url": "http://192.168.189.70/wordpress/wp-login.php",
       "selenium_port": 4444,
       "selenium_host": "localhost",
@@ -103,7 +103,6 @@
     "ie": {
       "desiredCapabilities": {
         "browserName": "internet explorer",
-        "marionette": true,
         "javascriptEnabled": true,
         "acceptSslCerts": true
       }

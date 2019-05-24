@@ -11,7 +11,8 @@ testOnAllDevices("Verify that post page displays correctly ", "/wp-login.php", f
     logged("Verify that post page displays correctly ", function () {
         loginPage = new LoginPage(driver).waitForIt();
         loginPage.login('admin', '123456789');
-        dashboardPage = new DashboardPage(driver).waitForIt();
+        dashboardPage = new DashboardPage(driver);
+        dashboardPage.goToNavigation();
         dashboardPage.goToPage('Add New Post');
         postPage = new PostPage(driver).waitForIt();
         postPage.dissmissTip();

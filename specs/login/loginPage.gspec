@@ -1,4 +1,3 @@
-@import ../galen-extras/galen-extras-rules.gspec
 @objects
     logo                    #login h1 a
     form                    #loginform
@@ -21,64 +20,98 @@
 
 @groups
     user_input                   form.username_textfield, form.password_textfield
+    
+= Form =
+    @on mobile
+        form.username_label:
+            css font-size is "14px"
+            color-scheme ~88% white-gray
+            text is "${username_label_text}" 
 
-= Skeleton =
-    # | logo should be squared with ~84px size
+        form.password_label:
+            css font-size is "14px"
+            color-scheme ~98% white-gray
+            text is "${password_label_text}"
 
-    form, lost_password_link, back_to_blog_link, logo:
-        inside screen
+        form.remember_me_label:
+            css font-size is "12px"
+            color-scheme 76% white-gray
+            text is "${remember_me_text}"
 
-    form:
-        above lost_password_link 26px
-        below logo 25px
+        &user_input:
+            width 272px 
+            height 40px
 
-    form, logo:
-        centered horizontally inside screen 1px
+        form.username_textfield:
+            above form.password_textfield 40 to 45 px
 
-    lost_password_link:
-        above back_to_blog_link 18px
+        form.password_textfield:
+            below form.username_textfield 40 to 45 px 
 
-    lost_password_link, back_to_blog_link:
-        height 17px
+        form.remember_me_checkbox:
+            width 25px 
+            height 25px
+            near form.login_button 178px left 
 
-= form elements =
-    #| form.remember_me_checkbox should be squared with 16px size
+        form.login_button:
+            width 69px 
+            height 33px
 
-    form.password_label:
-        above form.login_button 22px
-        below form.username_textfield 19px
-        inside form 24px left, 18px right
+        lost_password_link:
+            text is "${lost_password_text}"
 
-    form.username_label:
-        above form.password_label 25px
-        inside form 24px left, 28px top, 18px right
+        backto_store_link:
+            text is "${backto_store_text}"
 
-    form.username_textfield, form.password_textfield:
-        centered horizontally inside form 1px
-        height 40px
+        logo:
+            visible 
+            width 84px 
+            height 84px
+            above form 20 to 30 px
+            
+    @on desktop, tablet
+        form.username_label:
+            css font-size is "14px"
+            color-scheme ~88% white-gray
+            text is "${username_label_text}" 
 
-    form.remember_me_checkbox:
-        inside form.remember_me_label 0px top left bottom
+        form.password_label:
+            css font-size is "14px"
+            color-scheme ~98% white-gray
+            text is "${password_label_text}"
 
-    form.username_label, form.password_label:
-        height 56px
+        form.remember_me_label:
+            css font-size is "12px"
+            color-scheme 73% white-gray
+            text is "${remember_me_text}"
 
-    form.remember_me_label:
-        below form.password_textfield 19px
-        height 16px
-        inside form 24px left, 56px bottom
-        left-of form.login_button
+        &user_input:
+            width 272px 
+            height 40px
 
-    form.password_textfield:
-        above form.login_button 16px
-        below form.username_textfield 41px
-        inside form 24px left right
+        form.username_textfield:
+            above form.password_textfield 40 to 45 px
 
-    form.username_textfield:
-        inside form 24px left right, 50px top
+        form.password_textfield:
+            below form.username_textfield 40 to 45 px 
 
-    form.login_button:
-        height 30px
-        inside form 24px right, 45px bottom
-        width 62px
-       
+        form.remember_me_checkbox:
+            width 16px 
+            height 16px
+            near form.login_button 194px left 
+
+        form.login_button:
+            width ~60px 
+            height 30px
+
+        lost_password_link:
+            text is "${lost_password_text}"
+
+        backto_store_link:
+            text is "${backto_store_text}"
+
+        logo:
+            visible 
+            width 84px 
+            height 84px
+            above form 20 to 30 px

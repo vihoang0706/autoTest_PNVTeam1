@@ -16,10 +16,12 @@ var devices = {
         tags: ["desktop"]
     }
 };
+
 var TEST_USER = {
     username: "admin",
     password: "123456789"
 };
+
 function openDriver(url, size) {
     var driver = createDriver(null, size);
     session.put("driver", driver);
@@ -34,6 +36,7 @@ function openDriver(url, size) {
     }
     return driver;
 };
+
 afterTest(function (test) {
     var driver = session.get("driver");
     if (driver != null) {
@@ -43,22 +46,26 @@ afterTest(function (test) {
         driver.quit();
     }
 });
+
 function _test(testNamePrefix, url, callback) {
     test(testNamePrefix + " on ${deviceName} device", function (device) {
         var driver = openDriver(url, device.size);
         callback.call(this, driver, device);
     });
 };
+
 function testOnAllDevices(testNamePrefix, url, callback) {
     forAll(devices, function () {
         _test(testNamePrefix, url, callback);
     });
 };
+
 function testOnDevice(device, testNamePrefix, url, callback) {
-    forOnly({device: device}, function() {
+    forOnly({ device: device }, function () {
         _test(testNamePrefix, url, callback);
     });
 };
+
 (function (exports) {
     exports.devices = devices;
     exports.openDriver = openDriver;

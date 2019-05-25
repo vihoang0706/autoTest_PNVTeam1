@@ -38,14 +38,6 @@
         column_slug                     #slug a span:nth-child(1)
         column_count                    #posts a span:nth-child(1)
 
-@groups
-    search_box_element       search_box.label, search_box.textfield, search_box.button
-    captions           form_add.term_name_wrap.caption, form_add.term_slug_wrap.caption, form_add.term_parent_wrap.caption, form_add.term_description_wrap.caption     
-    textfields         form_add.term_name_wrap.textfield, form_add.term_slug_wrap.textfield
-    labels             form_add.term_name_wrap.label, form_add.term_slug_wrap.label, form_add.term_parent_wrap.label, form_add.term_description_wrap.label
-    bulk_action_button       bulk_actions_top.button, bulk_actions_bottom.button
-    bulk_action_combobox     bulk_actions_top.combobox, bulk_actions_bottom.combobox
-
 = Skeleton =
     @on mobile, tablet
         | form_wrap_title, form_add are aligned vertically above each other with 13px margin
@@ -71,16 +63,19 @@
 
         search_box.label:
             inside screen 9px left, >= 20px bottom, >= 9px right
+            
     @on mobile
         search_box:
             centered horizontally inside screen 1px
             height 90px
             inside screen 9px right, 20px bottom, 10px left
+
     @on tablet
         search_box:
             centered horizontally inside screen 1px
             height 90px
             inside screen 11px right, 20px bottom, 10px left
+
     @on desktop
         | form_wrap_title, form_add are aligned vertically above each other with 13px margin
         
@@ -195,6 +190,7 @@
 
         form_add.term_name_wrap.label:
             inside form_add.term_name_wrap 0px top left right
+
     @on mobile
         form_add.term_name_wrap.textfield:
             below form_add.term_name_wrap.label 1px
@@ -207,6 +203,7 @@
             above form_add.term_description_wrap.caption 6px
             below form_add.term_description_wrap.label 0px
             inside form_add.term_description_wrap 23px right, 0px left
+
     @on tablet
         form_add.term_name_wrap.textfield:
             below form_add.term_name_wrap.label 1px
@@ -219,6 +216,7 @@
             above form_add.term_description_wrap.caption 6px
             below form_add.term_description_wrap.label 0px
             inside form_add.term_description_wrap 27px right, 0px left
+
     @on desktop
         | form_add.term_name_wrap, form_add.term_slug_wrap, form_add.term_parent_wrap, form_add.term_description_wrap are aligned vertically above each other with 13px margin
 
@@ -333,6 +331,7 @@
             height 19px
             inside table 13px top
             width 37px
+
     @on desktop
         table.checkbox:
             height 36px
@@ -374,6 +373,7 @@
         bulk_actions_bottom.combobox:
             height 36px
             inside bulk_actions_bottom 3px top, 1px left bottom
+
     @on desktop
         | bulk_actions_bottom.combobox, bulk_actions_bottom.button are aligned horizontally next to each other with 6px margin
 
@@ -398,6 +398,7 @@
             centered horizontally inside search_box 1px
             height 35px
             inside search_box 0px top left right
+
     @on desktop
         | search_box.textfield, search_box.button are aligned horizontally next to each other with 4px margin
 

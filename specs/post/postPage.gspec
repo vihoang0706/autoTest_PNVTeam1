@@ -22,47 +22,8 @@
     panel_tab                   .edit-post-sidebar__panel-tabs
         tab_item-*                   ul li
     components_panel_item-*     .components-panel__body h2 button   
-@set
-    title_label_text               Add title
-    component_status_text          Status & Visibility
-    component_category_text        Categories
-    component_tag_text             Tags
-    component_fearture_image_text  Featured Image
-    component_excerpt_text         Excerpt
-    component_discussion_text      Discussion
-    tab_item_document_text         Document
-    tab_item_block_text            Block
 
 = Skeleton =
-    @on desktop
-        toolbar:
-            above editor_body.content_label
-            inside screen 50px top, 2px left
-            left-of header__settings
-
-        header__settings:
-            above sidebar 9px
-            inside screen 40px top, 9px right
-    
-        toolbar, header__settings:
-            height 39px
-        sidebar:
-            inside screen 0px right bottom
-            right-of editor_body 17px
-        editor_body.title_label, editor_body:
-            inside screen >= 0px bottom
-
-        editor_body.title_label:
-            below toolbar
-            left-of editor_body 0px
-
-        header__settings.show_more_tool_button:
-            above sidebar 11px
-            height 36px
-            inside screen 41px top, 8px right
-            right-of toolbar
-            width 28px
-
     @on mobile, tablet
         | editor_body.title_textfield, editor_body.content_textfield are aligned vertically above each other with 9px margin
 
@@ -97,7 +58,41 @@
             right-of toolbar
             width 24px
 
+    @on desktop
+        toolbar:
+            above editor_body.content_label
+            inside screen 50px top, 2px left
+            left-of header__settings
+
+        header__settings:
+            above sidebar 9px
+            inside screen 40px top, 9px right
+    
+        toolbar, header__settings:
+            height 39px
+        sidebar:
+            inside screen 0px right bottom
+            right-of editor_body 17px
+        editor_body.title_label, editor_body:
+            inside screen >= 0px bottom
+
+        editor_body.title_label:
+            below toolbar
+            left-of editor_body 0px
+
+        header__settings.show_more_tool_button:
+            above sidebar 11px
+            height 36px
+            inside screen 41px top, 8px right
+            right-of toolbar
+            width 28px
+
 = Toolbar elements =
+    @on mobile, tablet
+        toolbar.insert_button:
+            centered horizontally inside toolbar 1px
+            inside toolbar 6px bottom, 5px top, 0px left right
+
     @on desktop
         | toolbar.insert_button, toolbar.undo_button, toolbar.redo_button, toolbar.table_content_button, toolbar.block_navigation_button are aligned horizontally next to each other with 0px margin
 
@@ -113,33 +108,7 @@
         toolbar.block_navigation_button:
             inside toolbar 2px bottom, 1px top, 0px right
 
-    @on mobile, tablet
-        toolbar.insert_button:
-            centered horizontally inside toolbar 1px
-            inside toolbar 6px bottom, 5px top, 0px left right
-
 = Header__settings elements =
-    @on desktop
-        | header__settings.preview_button, header__settings.publish_button are aligned horizontally next to each other with 7px margin
-        header__settings.preview_button:
-            inside header__settings 12px left, 3px top bottom
-            width 70px
-
-        header__settings.publish_button:
-            inside header__settings 3px top bottom
-            left-of header__settings.setting_button 12px
-            width 77px
-
-        header__settings.setting_button.icon_setting:
-            centered horizontally inside header__settings.setting_button 1px
-            inside header__settings.setting_button 8px top left right bottom
-
-        header__settings.setting_button:
-            inside header__settings 2px bottom, 1px top, 31px right
-
-        header__settings.preview_button, header__settings.publish_button:
-            height 33px
-
     @on mobile, tablet
         | header__settings.preview_button, header__settings.publish_button are aligned horizontally next to each other with 5px margin
 
@@ -158,6 +127,27 @@
 
         header__settings.setting_button:
             inside header__settings 6px bottom, 5px top, 19px right
+
+        header__settings.preview_button, header__settings.publish_button:
+            height 33px
+            
+    @on desktop
+        | header__settings.preview_button, header__settings.publish_button are aligned horizontally next to each other with 7px margin
+        header__settings.preview_button:
+            inside header__settings 12px left, 3px top bottom
+            width 70px
+
+        header__settings.publish_button:
+            inside header__settings 3px top bottom
+            left-of header__settings.setting_button 12px
+            width 77px
+
+        header__settings.setting_button.icon_setting:
+            centered horizontally inside header__settings.setting_button 1px
+            inside header__settings.setting_button 8px top left right bottom
+
+        header__settings.setting_button:
+            inside header__settings 2px bottom, 1px top, 31px right
 
         header__settings.preview_button, header__settings.publish_button:
             height 33px

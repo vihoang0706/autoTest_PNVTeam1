@@ -73,7 +73,7 @@
         "retryAssertionTimeout": 5000
       },
       "desiredCapabilities": {
-        "browserName": "chrome",
+        "browserName": "firefox",
         "javascriptEnabled": true,
         "acceptSslCerts": true
       }

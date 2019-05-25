@@ -83,14 +83,13 @@
       <div id="expand-collapse-all">toggle asssertions</div>
     </div>
   </header>
-  
 
   {{#each results.modules}}
       <h2>{{@key}}</h2>
-      <h3>Test cases have run: {{this.tests}} </h3>
+
       {{#each this.completed}}
         <h3 class="suite">{{@key}} <span class="toggle-assertions"></span></h3>
-        
+
         <ul class="assertions">
           {{#each this.assertions}}
             <li>
@@ -114,20 +113,6 @@
               {{/if}}
             </li>
           {{/each}}
-          <section data-featherlight-gallery data-featherlight-filter="a">
-                <div class='gallery-row-title'>
-                    <h4>{{@key}} Screenshots checkpoint fails</h4>
-                </div>
-                <div class='gallery-row'>
-                    {{#each this.assertions}}
-                        {{#if this.screenshots}}
-                            {{#each this.screenshots}}
-                                {{gallery this ../message}}
-                            {{/each}}
-                        {{/if}}
-                    {{/each}}
-                </div>
-            </section>
         </ul>
 
         <p>

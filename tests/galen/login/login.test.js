@@ -1,11 +1,5 @@
 load("../init.js");
-load("../../../page-objects/galen/login/loginPage.js");
 
-testOnAllDevices("Login page", "/wp-login.php", function (driver, device) {
-    var loginPage = null;
-    logged("Basic layout Login check", function () {
-        loginPage = new LoginPage(driver).waitForIt();
-        checkLayout(driver, "specs/login/loginPage.gspec", device.tags);
-        loginPage.login('admin', '123456789');
-    });
+testOnAllDevices("Verify that the login page displays all elements correctly", "/wp-login.php", function (driver, device) {
+    checkLayout(driver, "specs/login/loginPage.gspec", device.tags);
 });

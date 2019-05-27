@@ -1,7 +1,6 @@
-// Can not clear value title when edit post  
-const nameTitle = 'Post: ' + (Math.floor(Math.random() * 50)) + ' Where were you';
-const description = 'When you were in trouble and you needed a hand I was always there.';
-const updateDescription = 'I have some best friends their names are: Delia and Sofia.';
+var nameTitle = 'Post: Where were you';
+var description = 'When you were in trouble and you needed a hand I was always there.';
+var updateDescription = 'I have some best friends their names are: Delia and Sofia.';
 var dashboardPage, addPostPage, loginPage, username, password, editPostPage, postID, viewAllPostPage;
 var expectedMessage = "Post published.\nView Post";
 var expectedUpdateSuccessMessage = "Post updated.\nView Post";
@@ -17,7 +16,7 @@ module.exports = {
         password = browser.globals.userNames.password;
         loginPage.login(username, password);
     },
-    'Verify that use can add new post with valid data': (browser) => {
+    'Verify that admin can add a new post with valid data': (browser) => {
         browser.perform(function (browser, done) {
             dashboardPage.goToPage('Add New Post');
             addPostPage.addNewPost(nameTitle, description);
@@ -42,7 +41,7 @@ module.exports = {
             done();
         });
     },
-    'Verify that user can edit post with valid data': (browser) => {
+    'Verify that admin can edit post with valid data': (browser) => {
         browser.perform(function (browser, done) {
             dashboardPage.goToPage('Add New Post');
             addPostPage.addNewPost(nameTitle, description);

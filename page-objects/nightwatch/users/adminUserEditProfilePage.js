@@ -3,7 +3,6 @@ module.exports = {
         {
             updateUserProfile(firstName, lastName, nickName, linkWebsite, userInfor) {
                 this
-                    .click('@checkboxRichEditing')
                     .click('@checkboxSyntaxHightlight')
                     .click('@radioAdminColor')
                     .click('@checkboxCommentShortcut')
@@ -67,7 +66,6 @@ module.exports = {
                 });
             },
             isCheckboxesSelected(callback) {
-                this.getCheckboxSelected('id', 'rich_editing', callback);
                 this.getCheckboxSelected('id', 'syntax_highlighting', callback);
                 this.getCheckboxSelected('id', 'admin_color_fresh', callback);
                 this.getCheckboxSelected('id', 'comment_shortcuts', callback);
@@ -75,11 +73,6 @@ module.exports = {
             },
             setDefaultCheckboxes() {
                 var self = this;
-                self.getCheckboxSelected('id', 'rich_editing', function (result) {
-                    if (result == true) {
-                        self.click('@checkboxRichEditing');
-                    }
-                });
                 self.getCheckboxSelected('id', 'syntax_highlighting', function (result) {
                     if (result == true) {
                         self.click('@checkboxSyntaxHightlight');
@@ -100,7 +93,6 @@ module.exports = {
         }
     ],
     elements: {
-        checkboxRichEditing: 'input[id=rich_editing]',
         checkboxSyntaxHightlight: 'input[id=syntax_highlighting]',
         radioAdminColor: 'input[id=admin_color_fresh]',
         checkboxCommentShortcut: 'input[id=comment_shortcuts]',

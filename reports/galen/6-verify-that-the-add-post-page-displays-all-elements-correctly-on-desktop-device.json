@@ -1,0 +1,2266 @@
+{
+  "testId" : "6-verify-that-the-add-post-page-displays-all-elements-correctly-on-desktop-device",
+  "name" : "Verify that the add post page displays all elements correctly on desktop device",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Type \"admin\" to email on Login page",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "css: input#user_login",
+        "type" : "text"
+      } ],
+      "time" : 1558935282839,
+      "type" : "node"
+    }, {
+      "name" : "Type \"123456789\" to password on Login page",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "css: input#user_pass",
+        "type" : "text"
+      } ],
+      "time" : 1558935282883,
+      "type" : "node"
+    }, {
+      "name" : "Click submitButton on Login page",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "css: input#wp-submit",
+        "type" : "text"
+      } ],
+      "time" : 1558935282927,
+      "type" : "node"
+    }, {
+      "name" : "Click linkPost on Dashboard Page",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "xpath: //div[@class='wp-menu-name' and text()= 'Posts']",
+        "type" : "text"
+      } ],
+      "time" : 1558935283736,
+      "type" : "node"
+    }, {
+      "name" : "Click linkNewPost on Dashboard Page",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "xpath: //li[@id='menu-posts']//a[text()='Add New']",
+        "type" : "text"
+      } ],
+      "time" : 1558935284160,
+      "type" : "node"
+    }, {
+      "name" : "Click dismissButton on Post page",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "css: .nux-dot-tip__disable",
+        "type" : "text"
+      } ],
+      "time" : 1558935286486,
+      "type" : "node"
+    }, {
+      "name" : "Check layout: specs/post/postPage.gspec included tags: desktop",
+      "status" : "error",
+      "time" : 1558935288844,
+      "includedTags" : [ "desktop" ],
+      "sections" : [ {
+        "name" : "Skeleton",
+        "place" : {
+          "filePath" : "specs/post/postPage.gspec",
+          "lineNumber" : 26
+        },
+        "objects" : [ {
+          "name" : "toolbar",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 63
+            },
+            "name" : "above editor_body.content_label",
+            "meta" : [ {
+              "from" : {
+                "object" : "toolbar",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "editor_body.content_label",
+                "edge" : "top"
+              },
+              "expectedDistance" : ">= 0px",
+              "realDistance" : "92px"
+            } ],
+            "highlight" : [ "toolbar", "editor_body.content_label" ]
+          }, {
+            "status" : "error",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 64
+            },
+            "name" : "inside screen 50px top, 2px left",
+            "errors" : [ "\"toolbar\" is 40px top instead of 50px and 168px left instead of 2px" ],
+            "meta" : [ {
+              "from" : {
+                "object" : "toolbar",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "screen",
+                "edge" : "top"
+              },
+              "expectedDistance" : "50px",
+              "realDistance" : "40px"
+            }, {
+              "from" : {
+                "object" : "toolbar",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "screen",
+                "edge" : "left"
+              },
+              "expectedDistance" : "2px",
+              "realDistance" : "168px"
+            } ],
+            "highlight" : [ "toolbar", "screen" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 65
+            },
+            "name" : "left-of header__settings",
+            "meta" : [ {
+              "from" : {
+                "object" : "toolbar",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "header__settings",
+                "edge" : "left"
+              },
+              "expectedDistance" : ">= 0px",
+              "realDistance" : "482px"
+            } ],
+            "highlight" : [ "toolbar", "header__settings" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 72
+            },
+            "name" : "height 39px",
+            "meta" : [ {
+              "from" : {
+                "object" : "toolbar",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "toolbar",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "39px",
+              "realDistance" : "39px"
+            } ],
+            "highlight" : [ "toolbar" ]
+          } ]
+        }, {
+          "name" : "header__settings",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 68
+            },
+            "name" : "above sidebar 9px",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "top"
+              },
+              "expectedDistance" : "9px",
+              "realDistance" : "9px"
+            } ],
+            "highlight" : [ "header__settings", "sidebar" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 69
+            },
+            "name" : "inside screen 40px top, 9px right",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "screen",
+                "edge" : "top"
+              },
+              "expectedDistance" : "40px",
+              "realDistance" : "40px"
+            }, {
+              "from" : {
+                "object" : "header__settings",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "screen",
+                "edge" : "right"
+              },
+              "expectedDistance" : "9px",
+              "realDistance" : "9px"
+            } ],
+            "highlight" : [ "header__settings", "screen" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 72
+            },
+            "name" : "height 39px",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "header__settings",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "39px",
+              "realDistance" : "39px"
+            } ],
+            "highlight" : [ "header__settings" ]
+          } ]
+        }, {
+          "name" : "sidebar",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 74
+            },
+            "name" : "inside screen 0px right bottom",
+            "meta" : [ {
+              "from" : {
+                "object" : "sidebar",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "screen",
+                "edge" : "right"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            }, {
+              "from" : {
+                "object" : "sidebar",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "screen",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            } ],
+            "highlight" : [ "sidebar", "screen" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 75
+            },
+            "name" : "right-of editor_body 17px",
+            "meta" : [ {
+              "from" : {
+                "object" : "sidebar",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "editor_body",
+                "edge" : "right"
+              },
+              "expectedDistance" : "17px",
+              "realDistance" : "17px"
+            } ],
+            "highlight" : [ "sidebar", "editor_body" ]
+          } ]
+        }, {
+          "name" : "editor_body.title_label",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 77
+            },
+            "name" : "inside screen >= 0px bottom",
+            "meta" : [ {
+              "from" : {
+                "object" : "editor_body.title_label",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "screen",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : ">= 0px",
+              "realDistance" : "540px"
+            } ],
+            "highlight" : [ "editor_body.title_label", "screen" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 80
+            },
+            "name" : "below toolbar",
+            "meta" : [ {
+              "from" : {
+                "object" : "editor_body.title_label",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "toolbar",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : ">= 0px",
+              "realDistance" : "92px"
+            } ],
+            "highlight" : [ "editor_body.title_label", "toolbar" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 81
+            },
+            "name" : "left-of editor_body 0px",
+            "meta" : [ {
+              "from" : {
+                "object" : "editor_body.title_label",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "editor_body",
+                "edge" : "left"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            } ],
+            "highlight" : [ "editor_body.title_label", "editor_body" ]
+          } ]
+        }, {
+          "name" : "editor_body",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 77
+            },
+            "name" : "inside screen >= 0px bottom",
+            "meta" : [ {
+              "from" : {
+                "object" : "editor_body",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "screen",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : ">= 0px",
+              "realDistance" : "252px"
+            } ],
+            "highlight" : [ "editor_body", "screen" ]
+          } ]
+        }, {
+          "name" : "header__settings.show_more_tool_button",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 84
+            },
+            "name" : "above sidebar 11px",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings.show_more_tool_button",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "top"
+              },
+              "expectedDistance" : "11px",
+              "realDistance" : "11px"
+            } ],
+            "highlight" : [ "header__settings.show_more_tool_button", "sidebar" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 85
+            },
+            "name" : "height 36px",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings.show_more_tool_button",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "header__settings.show_more_tool_button",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "36px",
+              "realDistance" : "36px"
+            } ],
+            "highlight" : [ "header__settings.show_more_tool_button" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 86
+            },
+            "name" : "inside screen 41px top, 8px right",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings.show_more_tool_button",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "screen",
+                "edge" : "top"
+              },
+              "expectedDistance" : "41px",
+              "realDistance" : "41px"
+            }, {
+              "from" : {
+                "object" : "header__settings.show_more_tool_button",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "screen",
+                "edge" : "right"
+              },
+              "expectedDistance" : "8px",
+              "realDistance" : "8px"
+            } ],
+            "highlight" : [ "header__settings.show_more_tool_button", "screen" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 87
+            },
+            "name" : "right-of toolbar",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings.show_more_tool_button",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "toolbar",
+                "edge" : "right"
+              },
+              "expectedDistance" : ">= 0px",
+              "realDistance" : "700px"
+            } ],
+            "highlight" : [ "header__settings.show_more_tool_button", "toolbar" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 88
+            },
+            "name" : "width 28px",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings.show_more_tool_button",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "header__settings.show_more_tool_button",
+                "edge" : "right"
+              },
+              "expectedDistance" : "28px",
+              "realDistance" : "28px"
+            } ],
+            "highlight" : [ "header__settings.show_more_tool_button" ]
+          } ]
+        } ]
+      }, {
+        "name" : "Toolbar elements",
+        "place" : {
+          "filePath" : "specs/post/postPage.gspec",
+          "lineNumber" : 90
+        },
+        "objects" : [ {
+          "name" : "toolbar.redo_button",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 100
+            },
+            "name" : "centered horizontally inside toolbar 1px",
+            "highlight" : [ "toolbar.redo_button", "toolbar" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 106
+            },
+            "name" : "inside toolbar 2px bottom, 1px top",
+            "meta" : [ {
+              "from" : {
+                "object" : "toolbar.redo_button",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "toolbar",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "2px",
+              "realDistance" : "2px"
+            }, {
+              "from" : {
+                "object" : "toolbar.redo_button",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "toolbar",
+                "edge" : "top"
+              },
+              "expectedDistance" : "1px",
+              "realDistance" : "1px"
+            } ],
+            "highlight" : [ "toolbar.redo_button", "toolbar" ]
+          } ]
+        }, {
+          "name" : "toolbar.insert_button",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 103
+            },
+            "name" : "inside toolbar 2px bottom, 1px top, 0px left",
+            "meta" : [ {
+              "from" : {
+                "object" : "toolbar.insert_button",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "toolbar",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "2px",
+              "realDistance" : "2px"
+            }, {
+              "from" : {
+                "object" : "toolbar.insert_button",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "toolbar",
+                "edge" : "top"
+              },
+              "expectedDistance" : "1px",
+              "realDistance" : "1px"
+            }, {
+              "from" : {
+                "object" : "toolbar.insert_button",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "toolbar",
+                "edge" : "left"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            } ],
+            "highlight" : [ "toolbar.insert_button", "toolbar" ]
+          } ]
+        }, {
+          "name" : "toolbar.undo_button",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 106
+            },
+            "name" : "inside toolbar 2px bottom, 1px top",
+            "meta" : [ {
+              "from" : {
+                "object" : "toolbar.undo_button",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "toolbar",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "2px",
+              "realDistance" : "2px"
+            }, {
+              "from" : {
+                "object" : "toolbar.undo_button",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "toolbar",
+                "edge" : "top"
+              },
+              "expectedDistance" : "1px",
+              "realDistance" : "1px"
+            } ],
+            "highlight" : [ "toolbar.undo_button", "toolbar" ]
+          } ]
+        }, {
+          "name" : "toolbar.table_content_button",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 106
+            },
+            "name" : "inside toolbar 2px bottom, 1px top",
+            "meta" : [ {
+              "from" : {
+                "object" : "toolbar.table_content_button",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "toolbar",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "2px",
+              "realDistance" : "2px"
+            }, {
+              "from" : {
+                "object" : "toolbar.table_content_button",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "toolbar",
+                "edge" : "top"
+              },
+              "expectedDistance" : "1px",
+              "realDistance" : "1px"
+            } ],
+            "highlight" : [ "toolbar.table_content_button", "toolbar" ]
+          } ]
+        }, {
+          "name" : "toolbar.block_navigation_button",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 109
+            },
+            "name" : "inside toolbar 2px bottom, 1px top, 0px right",
+            "meta" : [ {
+              "from" : {
+                "object" : "toolbar.block_navigation_button",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "toolbar",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "2px",
+              "realDistance" : "2px"
+            }, {
+              "from" : {
+                "object" : "toolbar.block_navigation_button",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "toolbar",
+                "edge" : "top"
+              },
+              "expectedDistance" : "1px",
+              "realDistance" : "1px"
+            }, {
+              "from" : {
+                "object" : "toolbar.block_navigation_button",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "toolbar",
+                "edge" : "right"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            } ],
+            "highlight" : [ "toolbar.block_navigation_button", "toolbar" ]
+          } ]
+        } ],
+        "sections" : [ {
+          "name" : "toolbar.insert_button, toolbar.undo_button, toolbar.redo_button, toolbar.table_content_button, toolbar.block_navigation_button are aligned horizontally next to each other with 0px margin",
+          "place" : {
+            "filePath" : "specs/post/postPage.gspec",
+            "lineNumber" : 97
+          },
+          "objects" : [ {
+            "name" : "toolbar.insert_button",
+            "specs" : [ {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 184
+              },
+              "name" : "aligned horizontally all toolbar.undo_button",
+              "highlight" : [ "toolbar.insert_button", "toolbar.undo_button" ]
+            }, {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 185
+              },
+              "name" : "left-of toolbar.undo_button 0px",
+              "meta" : [ {
+                "from" : {
+                  "object" : "toolbar.insert_button",
+                  "edge" : "right"
+                },
+                "to" : {
+                  "object" : "toolbar.undo_button",
+                  "edge" : "left"
+                },
+                "expectedDistance" : "0px",
+                "realDistance" : "0px"
+              } ],
+              "highlight" : [ "toolbar.insert_button", "toolbar.undo_button" ]
+            } ]
+          }, {
+            "name" : "toolbar.undo_button",
+            "specs" : [ {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 184
+              },
+              "name" : "aligned horizontally all toolbar.redo_button",
+              "highlight" : [ "toolbar.undo_button", "toolbar.redo_button" ]
+            }, {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 185
+              },
+              "name" : "left-of toolbar.redo_button 0px",
+              "meta" : [ {
+                "from" : {
+                  "object" : "toolbar.undo_button",
+                  "edge" : "right"
+                },
+                "to" : {
+                  "object" : "toolbar.redo_button",
+                  "edge" : "left"
+                },
+                "expectedDistance" : "0px",
+                "realDistance" : "0px"
+              } ],
+              "highlight" : [ "toolbar.undo_button", "toolbar.redo_button" ]
+            } ]
+          }, {
+            "name" : "toolbar.redo_button",
+            "specs" : [ {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 184
+              },
+              "name" : "aligned horizontally all toolbar.table_content_button",
+              "highlight" : [ "toolbar.redo_button", "toolbar.table_content_button" ]
+            }, {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 185
+              },
+              "name" : "left-of toolbar.table_content_button 0px",
+              "meta" : [ {
+                "from" : {
+                  "object" : "toolbar.redo_button",
+                  "edge" : "right"
+                },
+                "to" : {
+                  "object" : "toolbar.table_content_button",
+                  "edge" : "left"
+                },
+                "expectedDistance" : "0px",
+                "realDistance" : "0px"
+              } ],
+              "highlight" : [ "toolbar.redo_button", "toolbar.table_content_button" ]
+            } ]
+          }, {
+            "name" : "toolbar.table_content_button",
+            "specs" : [ {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 184
+              },
+              "name" : "aligned horizontally all toolbar.block_navigation_button",
+              "highlight" : [ "toolbar.table_content_button", "toolbar.block_navigation_button" ]
+            }, {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 185
+              },
+              "name" : "left-of toolbar.block_navigation_button 0px",
+              "meta" : [ {
+                "from" : {
+                  "object" : "toolbar.table_content_button",
+                  "edge" : "right"
+                },
+                "to" : {
+                  "object" : "toolbar.block_navigation_button",
+                  "edge" : "left"
+                },
+                "expectedDistance" : "0px",
+                "realDistance" : "0px"
+              } ],
+              "highlight" : [ "toolbar.table_content_button", "toolbar.block_navigation_button" ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "name" : "Header__settings elements",
+        "place" : {
+          "filePath" : "specs/post/postPage.gspec",
+          "lineNumber" : 111
+        },
+        "objects" : [ {
+          "name" : "header__settings.preview_button",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 137
+            },
+            "name" : "inside header__settings 12px left, 3px top bottom",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings.preview_button",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "header__settings",
+                "edge" : "left"
+              },
+              "expectedDistance" : "12px",
+              "realDistance" : "12px"
+            }, {
+              "from" : {
+                "object" : "header__settings.preview_button",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "header__settings",
+                "edge" : "top"
+              },
+              "expectedDistance" : "3px",
+              "realDistance" : "3px"
+            }, {
+              "from" : {
+                "object" : "header__settings.preview_button",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "header__settings",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "3px",
+              "realDistance" : "3px"
+            } ],
+            "highlight" : [ "header__settings.preview_button", "header__settings" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 138
+            },
+            "name" : "width 70px",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings.preview_button",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "header__settings.preview_button",
+                "edge" : "right"
+              },
+              "expectedDistance" : "70px",
+              "realDistance" : "70px"
+            } ],
+            "highlight" : [ "header__settings.preview_button" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 153
+            },
+            "name" : "height 33px",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings.preview_button",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "header__settings.preview_button",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "33px",
+              "realDistance" : "33px"
+            } ],
+            "highlight" : [ "header__settings.preview_button" ]
+          } ]
+        }, {
+          "name" : "header__settings.publish_button",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 141
+            },
+            "name" : "inside header__settings 3px top bottom",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings.publish_button",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "header__settings",
+                "edge" : "top"
+              },
+              "expectedDistance" : "3px",
+              "realDistance" : "3px"
+            }, {
+              "from" : {
+                "object" : "header__settings.publish_button",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "header__settings",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "3px",
+              "realDistance" : "3px"
+            } ],
+            "highlight" : [ "header__settings.publish_button", "header__settings" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 142
+            },
+            "name" : "left-of header__settings.setting_button 12px",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings.publish_button",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "header__settings.setting_button",
+                "edge" : "left"
+              },
+              "expectedDistance" : "12px",
+              "realDistance" : "12px"
+            } ],
+            "highlight" : [ "header__settings.publish_button", "header__settings.setting_button" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 143
+            },
+            "name" : "width 77px",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings.publish_button",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "header__settings.publish_button",
+                "edge" : "right"
+              },
+              "expectedDistance" : "77px",
+              "realDistance" : "77px"
+            } ],
+            "highlight" : [ "header__settings.publish_button" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 153
+            },
+            "name" : "height 33px",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings.publish_button",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "header__settings.publish_button",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "33px",
+              "realDistance" : "33px"
+            } ],
+            "highlight" : [ "header__settings.publish_button" ]
+          } ]
+        }, {
+          "name" : "header__settings.setting_button.icon_setting",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 146
+            },
+            "name" : "centered horizontally inside header__settings.setting_button 1px",
+            "highlight" : [ "header__settings.setting_button.icon_setting", "header__settings.setting_button" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 147
+            },
+            "name" : "inside header__settings.setting_button 8px top left right bottom",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings.setting_button.icon_setting",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "header__settings.setting_button",
+                "edge" : "top"
+              },
+              "expectedDistance" : "8px",
+              "realDistance" : "8px"
+            }, {
+              "from" : {
+                "object" : "header__settings.setting_button.icon_setting",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "header__settings.setting_button",
+                "edge" : "left"
+              },
+              "expectedDistance" : "8px",
+              "realDistance" : "8px"
+            }, {
+              "from" : {
+                "object" : "header__settings.setting_button.icon_setting",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "header__settings.setting_button",
+                "edge" : "right"
+              },
+              "expectedDistance" : "8px",
+              "realDistance" : "8px"
+            }, {
+              "from" : {
+                "object" : "header__settings.setting_button.icon_setting",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "header__settings.setting_button",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "8px",
+              "realDistance" : "8px"
+            } ],
+            "highlight" : [ "header__settings.setting_button.icon_setting", "header__settings.setting_button" ]
+          } ]
+        }, {
+          "name" : "header__settings.setting_button",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 150
+            },
+            "name" : "inside header__settings 2px bottom, 1px top, 31px right",
+            "meta" : [ {
+              "from" : {
+                "object" : "header__settings.setting_button",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "header__settings",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "2px",
+              "realDistance" : "2px"
+            }, {
+              "from" : {
+                "object" : "header__settings.setting_button",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "header__settings",
+                "edge" : "top"
+              },
+              "expectedDistance" : "1px",
+              "realDistance" : "1px"
+            }, {
+              "from" : {
+                "object" : "header__settings.setting_button",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "header__settings",
+                "edge" : "right"
+              },
+              "expectedDistance" : "31px",
+              "realDistance" : "31px"
+            } ],
+            "highlight" : [ "header__settings.setting_button", "header__settings" ]
+          } ]
+        } ],
+        "sections" : [ {
+          "name" : "header__settings.preview_button, header__settings.publish_button are aligned horizontally next to each other with 7px margin",
+          "place" : {
+            "filePath" : "specs/post/postPage.gspec",
+            "lineNumber" : 135
+          },
+          "objects" : [ {
+            "name" : "header__settings.preview_button",
+            "specs" : [ {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 184
+              },
+              "name" : "aligned horizontally all header__settings.publish_button",
+              "highlight" : [ "header__settings.preview_button", "header__settings.publish_button" ]
+            }, {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 185
+              },
+              "name" : "left-of header__settings.publish_button 7px",
+              "meta" : [ {
+                "from" : {
+                  "object" : "header__settings.preview_button",
+                  "edge" : "right"
+                },
+                "to" : {
+                  "object" : "header__settings.publish_button",
+                  "edge" : "left"
+                },
+                "expectedDistance" : "7px",
+                "realDistance" : "7px"
+              } ],
+              "highlight" : [ "header__settings.preview_button", "header__settings.publish_button" ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "name" : "Editor_body elements",
+        "place" : {
+          "filePath" : "specs/post/postPage.gspec",
+          "lineNumber" : 155
+        },
+        "objects" : [ {
+          "name" : "editor_body.title_textfield",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 160
+            },
+            "name" : "height 84px",
+            "meta" : [ {
+              "from" : {
+                "object" : "editor_body.title_textfield",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "editor_body.title_textfield",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "84px",
+              "realDistance" : "84px"
+            } ],
+            "highlight" : [ "editor_body.title_textfield" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 161
+            },
+            "name" : "inside editor_body 40px top, 0px left right",
+            "meta" : [ {
+              "from" : {
+                "object" : "editor_body.title_textfield",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "editor_body",
+                "edge" : "top"
+              },
+              "expectedDistance" : "40px",
+              "realDistance" : "40px"
+            }, {
+              "from" : {
+                "object" : "editor_body.title_textfield",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "editor_body",
+                "edge" : "left"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            }, {
+              "from" : {
+                "object" : "editor_body.title_textfield",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "editor_body",
+                "edge" : "right"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            } ],
+            "highlight" : [ "editor_body.title_textfield", "editor_body" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 164
+            },
+            "name" : "centered horizontally inside editor_body 1px",
+            "highlight" : [ "editor_body.title_textfield", "editor_body" ]
+          } ]
+        }, {
+          "name" : "editor_body.content_textfield",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 164
+            },
+            "name" : "centered horizontally inside editor_body 1px",
+            "highlight" : [ "editor_body.content_textfield", "editor_body" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 167
+            },
+            "name" : "inside editor_body 0px left right bottom",
+            "meta" : [ {
+              "from" : {
+                "object" : "editor_body.content_textfield",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "editor_body",
+                "edge" : "left"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            }, {
+              "from" : {
+                "object" : "editor_body.content_textfield",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "editor_body",
+                "edge" : "right"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            }, {
+              "from" : {
+                "object" : "editor_body.content_textfield",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "editor_body",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            } ],
+            "highlight" : [ "editor_body.content_textfield", "editor_body" ]
+          } ]
+        } ],
+        "sections" : [ {
+          "name" : "editor_body.title_textfield, editor_body.content_textfield are aligned vertically above each other with 4px margin",
+          "place" : {
+            "filePath" : "specs/post/postPage.gspec",
+            "lineNumber" : 157
+          },
+          "objects" : [ {
+            "name" : "editor_body.title_textfield",
+            "specs" : [ {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 197
+              },
+              "name" : "aligned vertically all editor_body.content_textfield",
+              "highlight" : [ "editor_body.title_textfield", "editor_body.content_textfield" ]
+            }, {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 198
+              },
+              "name" : "above editor_body.content_textfield 4px",
+              "meta" : [ {
+                "from" : {
+                  "object" : "editor_body.title_textfield",
+                  "edge" : "bottom"
+                },
+                "to" : {
+                  "object" : "editor_body.content_textfield",
+                  "edge" : "top"
+                },
+                "expectedDistance" : "4px",
+                "realDistance" : "4px"
+              } ],
+              "highlight" : [ "editor_body.title_textfield", "editor_body.content_textfield" ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "name" : "Sidebar elements",
+        "place" : {
+          "filePath" : "specs/post/postPage.gspec",
+          "lineNumber" : 169
+        },
+        "objects" : [ {
+          "name" : "panel_tab.tab_item-1",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 176
+            },
+            "name" : "height 48px",
+            "meta" : [ {
+              "from" : {
+                "object" : "panel_tab.tab_item-1",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "panel_tab.tab_item-1",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "48px",
+              "realDistance" : "48px"
+            } ],
+            "highlight" : [ "panel_tab.tab_item-1" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 193
+            },
+            "name" : "inside panel_tab 2px bottom, 0px top left",
+            "meta" : [ {
+              "from" : {
+                "object" : "panel_tab.tab_item-1",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "panel_tab",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "2px",
+              "realDistance" : "2px"
+            }, {
+              "from" : {
+                "object" : "panel_tab.tab_item-1",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "panel_tab",
+                "edge" : "top"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            }, {
+              "from" : {
+                "object" : "panel_tab.tab_item-1",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "panel_tab",
+                "edge" : "left"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            } ],
+            "highlight" : [ "panel_tab.tab_item-1", "panel_tab" ]
+          } ]
+        }, {
+          "name" : "panel_tab.tab_item-2",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 176
+            },
+            "name" : "height 48px",
+            "meta" : [ {
+              "from" : {
+                "object" : "panel_tab.tab_item-2",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "panel_tab.tab_item-2",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "48px",
+              "realDistance" : "48px"
+            } ],
+            "highlight" : [ "panel_tab.tab_item-2" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 196
+            },
+            "name" : "inside panel_tab 2px bottom, 0px top, >= 0px left",
+            "meta" : [ {
+              "from" : {
+                "object" : "panel_tab.tab_item-2",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "panel_tab",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "2px",
+              "realDistance" : "2px"
+            }, {
+              "from" : {
+                "object" : "panel_tab.tab_item-2",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "panel_tab",
+                "edge" : "top"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            }, {
+              "from" : {
+                "object" : "panel_tab.tab_item-2",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "panel_tab",
+                "edge" : "left"
+              },
+              "expectedDistance" : ">= 0px",
+              "realDistance" : "91px"
+            } ],
+            "highlight" : [ "panel_tab.tab_item-2", "panel_tab" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 197
+            },
+            "name" : "width 61px",
+            "meta" : [ {
+              "from" : {
+                "object" : "panel_tab.tab_item-2",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "panel_tab.tab_item-2",
+                "edge" : "right"
+              },
+              "expectedDistance" : "61px",
+              "realDistance" : "61px"
+            } ],
+            "highlight" : [ "panel_tab.tab_item-2" ]
+          } ]
+        }, {
+          "name" : "panel_tab",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 179
+            },
+            "name" : "height 50px",
+            "meta" : [ {
+              "from" : {
+                "object" : "panel_tab",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "panel_tab",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "50px",
+              "realDistance" : "50px"
+            } ],
+            "highlight" : [ "panel_tab" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 180
+            },
+            "name" : "inside sidebar 1px left, 0px top right",
+            "meta" : [ {
+              "from" : {
+                "object" : "panel_tab",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "left"
+              },
+              "expectedDistance" : "1px",
+              "realDistance" : "1px"
+            }, {
+              "from" : {
+                "object" : "panel_tab",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "top"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            }, {
+              "from" : {
+                "object" : "panel_tab",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "right"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            } ],
+            "highlight" : [ "panel_tab", "sidebar" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 183
+            },
+            "name" : "centered horizontally inside sidebar 1px",
+            "highlight" : [ "panel_tab", "sidebar" ]
+          } ]
+        }, {
+          "name" : "components_panel_item-1",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 183
+            },
+            "name" : "centered horizontally inside sidebar 1px",
+            "highlight" : [ "components_panel_item-1", "sidebar" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 186
+            },
+            "name" : "height 47px",
+            "meta" : [ {
+              "from" : {
+                "object" : "components_panel_item-1",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "components_panel_item-1",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "47px",
+              "realDistance" : "47px"
+            } ],
+            "highlight" : [ "components_panel_item-1" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 187
+            },
+            "name" : "inside sidebar 1px left, 0px right",
+            "meta" : [ {
+              "from" : {
+                "object" : "components_panel_item-1",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "left"
+              },
+              "expectedDistance" : "1px",
+              "realDistance" : "1px"
+            }, {
+              "from" : {
+                "object" : "components_panel_item-1",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "right"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            } ],
+            "highlight" : [ "components_panel_item-1", "sidebar" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 190
+            },
+            "name" : "above components_panel_item-2",
+            "meta" : [ {
+              "from" : {
+                "object" : "components_panel_item-1",
+                "edge" : "bottom"
+              },
+              "to" : {
+                "object" : "components_panel_item-2",
+                "edge" : "top"
+              },
+              "expectedDistance" : ">= 0px",
+              "realDistance" : "157px"
+            } ],
+            "highlight" : [ "components_panel_item-1", "components_panel_item-2" ]
+          } ]
+        }, {
+          "name" : "components_panel_item-2",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 183
+            },
+            "name" : "centered horizontally inside sidebar 1px",
+            "highlight" : [ "components_panel_item-2", "sidebar" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 186
+            },
+            "name" : "height 47px",
+            "meta" : [ {
+              "from" : {
+                "object" : "components_panel_item-2",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "components_panel_item-2",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "47px",
+              "realDistance" : "47px"
+            } ],
+            "highlight" : [ "components_panel_item-2" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 187
+            },
+            "name" : "inside sidebar 1px left, 0px right",
+            "meta" : [ {
+              "from" : {
+                "object" : "components_panel_item-2",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "left"
+              },
+              "expectedDistance" : "1px",
+              "realDistance" : "1px"
+            }, {
+              "from" : {
+                "object" : "components_panel_item-2",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "right"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            } ],
+            "highlight" : [ "components_panel_item-2", "sidebar" ]
+          } ]
+        }, {
+          "name" : "components_panel_item-3",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 183
+            },
+            "name" : "centered horizontally inside sidebar 1px",
+            "highlight" : [ "components_panel_item-3", "sidebar" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 186
+            },
+            "name" : "height 47px",
+            "meta" : [ {
+              "from" : {
+                "object" : "components_panel_item-3",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "components_panel_item-3",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "47px",
+              "realDistance" : "47px"
+            } ],
+            "highlight" : [ "components_panel_item-3" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 187
+            },
+            "name" : "inside sidebar 1px left, 0px right",
+            "meta" : [ {
+              "from" : {
+                "object" : "components_panel_item-3",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "left"
+              },
+              "expectedDistance" : "1px",
+              "realDistance" : "1px"
+            }, {
+              "from" : {
+                "object" : "components_panel_item-3",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "right"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            } ],
+            "highlight" : [ "components_panel_item-3", "sidebar" ]
+          } ]
+        }, {
+          "name" : "components_panel_item-4",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 183
+            },
+            "name" : "centered horizontally inside sidebar 1px",
+            "highlight" : [ "components_panel_item-4", "sidebar" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 186
+            },
+            "name" : "height 47px",
+            "meta" : [ {
+              "from" : {
+                "object" : "components_panel_item-4",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "components_panel_item-4",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "47px",
+              "realDistance" : "47px"
+            } ],
+            "highlight" : [ "components_panel_item-4" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 187
+            },
+            "name" : "inside sidebar 1px left, 0px right",
+            "meta" : [ {
+              "from" : {
+                "object" : "components_panel_item-4",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "left"
+              },
+              "expectedDistance" : "1px",
+              "realDistance" : "1px"
+            }, {
+              "from" : {
+                "object" : "components_panel_item-4",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "right"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            } ],
+            "highlight" : [ "components_panel_item-4", "sidebar" ]
+          } ]
+        }, {
+          "name" : "components_panel_item-5",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 183
+            },
+            "name" : "centered horizontally inside sidebar 1px",
+            "highlight" : [ "components_panel_item-5", "sidebar" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 186
+            },
+            "name" : "height 47px",
+            "meta" : [ {
+              "from" : {
+                "object" : "components_panel_item-5",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "components_panel_item-5",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "47px",
+              "realDistance" : "47px"
+            } ],
+            "highlight" : [ "components_panel_item-5" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 187
+            },
+            "name" : "inside sidebar 1px left, 0px right",
+            "meta" : [ {
+              "from" : {
+                "object" : "components_panel_item-5",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "left"
+              },
+              "expectedDistance" : "1px",
+              "realDistance" : "1px"
+            }, {
+              "from" : {
+                "object" : "components_panel_item-5",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "right"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            } ],
+            "highlight" : [ "components_panel_item-5", "sidebar" ]
+          } ]
+        }, {
+          "name" : "components_panel_item-6",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 183
+            },
+            "name" : "centered horizontally inside sidebar 1px",
+            "highlight" : [ "components_panel_item-6", "sidebar" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 186
+            },
+            "name" : "height 47px",
+            "meta" : [ {
+              "from" : {
+                "object" : "components_panel_item-6",
+                "edge" : "top"
+              },
+              "to" : {
+                "object" : "components_panel_item-6",
+                "edge" : "bottom"
+              },
+              "expectedDistance" : "47px",
+              "realDistance" : "47px"
+            } ],
+            "highlight" : [ "components_panel_item-6" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "specs/post/postPage.gspec",
+              "lineNumber" : 187
+            },
+            "name" : "inside sidebar 1px left, 0px right",
+            "meta" : [ {
+              "from" : {
+                "object" : "components_panel_item-6",
+                "edge" : "left"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "left"
+              },
+              "expectedDistance" : "1px",
+              "realDistance" : "1px"
+            }, {
+              "from" : {
+                "object" : "components_panel_item-6",
+                "edge" : "right"
+              },
+              "to" : {
+                "object" : "sidebar",
+                "edge" : "right"
+              },
+              "expectedDistance" : "0px",
+              "realDistance" : "0px"
+            } ],
+            "highlight" : [ "components_panel_item-6", "sidebar" ]
+          } ]
+        } ],
+        "sections" : [ {
+          "name" : "panel_tab, components_panel_item-1 are aligned vertically above each other with 0px margin",
+          "place" : {
+            "filePath" : "specs/post/postPage.gspec",
+            "lineNumber" : 171
+          },
+          "objects" : [ {
+            "name" : "panel_tab",
+            "specs" : [ {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 197
+              },
+              "name" : "aligned vertically all components_panel_item-1",
+              "highlight" : [ "panel_tab", "components_panel_item-1" ]
+            }, {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 198
+              },
+              "name" : "above components_panel_item-1 0px",
+              "meta" : [ {
+                "from" : {
+                  "object" : "panel_tab",
+                  "edge" : "bottom"
+                },
+                "to" : {
+                  "object" : "components_panel_item-1",
+                  "edge" : "top"
+                },
+                "expectedDistance" : "0px",
+                "realDistance" : "0px"
+              } ],
+              "highlight" : [ "panel_tab", "components_panel_item-1" ]
+            } ]
+          } ]
+        }, {
+          "name" : "panel_tab.tab_item-* are aligned horizontally next to each other with -1px margin",
+          "place" : {
+            "filePath" : "specs/post/postPage.gspec",
+            "lineNumber" : 172
+          },
+          "objects" : [ {
+            "name" : "panel_tab.tab_item-1",
+            "specs" : [ {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 184
+              },
+              "name" : "aligned horizontally all panel_tab.tab_item-2",
+              "highlight" : [ "panel_tab.tab_item-1", "panel_tab.tab_item-2" ]
+            }, {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 185
+              },
+              "name" : "left-of panel_tab.tab_item-2 -1px",
+              "meta" : [ {
+                "from" : {
+                  "object" : "panel_tab.tab_item-1",
+                  "edge" : "right"
+                },
+                "to" : {
+                  "object" : "panel_tab.tab_item-2",
+                  "edge" : "left"
+                },
+                "expectedDistance" : "-1px",
+                "realDistance" : "-1px"
+              } ],
+              "highlight" : [ "panel_tab.tab_item-1", "panel_tab.tab_item-2" ]
+            } ]
+          } ]
+        }, {
+          "name" : "components_panel_item-2, components_panel_item-3, components_panel_item-4, components_panel_item-5, components_panel_item-6 are aligned vertically above each other with 1px margin",
+          "place" : {
+            "filePath" : "specs/post/postPage.gspec",
+            "lineNumber" : 173
+          },
+          "objects" : [ {
+            "name" : "components_panel_item-2",
+            "specs" : [ {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 197
+              },
+              "name" : "aligned vertically all components_panel_item-3",
+              "highlight" : [ "components_panel_item-2", "components_panel_item-3" ]
+            }, {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 198
+              },
+              "name" : "above components_panel_item-3 1px",
+              "meta" : [ {
+                "from" : {
+                  "object" : "components_panel_item-2",
+                  "edge" : "bottom"
+                },
+                "to" : {
+                  "object" : "components_panel_item-3",
+                  "edge" : "top"
+                },
+                "expectedDistance" : "1px",
+                "realDistance" : "1px"
+              } ],
+              "highlight" : [ "components_panel_item-2", "components_panel_item-3" ]
+            } ]
+          }, {
+            "name" : "components_panel_item-3",
+            "specs" : [ {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 197
+              },
+              "name" : "aligned vertically all components_panel_item-4",
+              "highlight" : [ "components_panel_item-3", "components_panel_item-4" ]
+            }, {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 198
+              },
+              "name" : "above components_panel_item-4 1px",
+              "meta" : [ {
+                "from" : {
+                  "object" : "components_panel_item-3",
+                  "edge" : "bottom"
+                },
+                "to" : {
+                  "object" : "components_panel_item-4",
+                  "edge" : "top"
+                },
+                "expectedDistance" : "1px",
+                "realDistance" : "1px"
+              } ],
+              "highlight" : [ "components_panel_item-3", "components_panel_item-4" ]
+            } ]
+          }, {
+            "name" : "components_panel_item-4",
+            "specs" : [ {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 197
+              },
+              "name" : "aligned vertically all components_panel_item-5",
+              "highlight" : [ "components_panel_item-4", "components_panel_item-5" ]
+            }, {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 198
+              },
+              "name" : "above components_panel_item-5 1px",
+              "meta" : [ {
+                "from" : {
+                  "object" : "components_panel_item-4",
+                  "edge" : "bottom"
+                },
+                "to" : {
+                  "object" : "components_panel_item-5",
+                  "edge" : "top"
+                },
+                "expectedDistance" : "1px",
+                "realDistance" : "1px"
+              } ],
+              "highlight" : [ "components_panel_item-4", "components_panel_item-5" ]
+            } ]
+          }, {
+            "name" : "components_panel_item-5",
+            "specs" : [ {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 197
+              },
+              "name" : "aligned vertically all components_panel_item-6",
+              "highlight" : [ "components_panel_item-5", "components_panel_item-6" ]
+            }, {
+              "status" : "info",
+              "place" : {
+                "filePath" : "specs\\post/../galen-extras/galen-extras-rules.gspec",
+                "lineNumber" : 198
+              },
+              "name" : "above components_panel_item-6 1px",
+              "meta" : [ {
+                "from" : {
+                  "object" : "components_panel_item-5",
+                  "edge" : "bottom"
+                },
+                "to" : {
+                  "object" : "components_panel_item-6",
+                  "edge" : "top"
+                },
+                "expectedDistance" : "1px",
+                "realDistance" : "1px"
+              } ],
+              "highlight" : [ "components_panel_item-5", "components_panel_item-6" ]
+            } ]
+          } ]
+        } ]
+      } ],
+      "objects" : {
+        "components_panel_item-6" : {
+          "area" : [ 805, 534, 279, 47 ]
+        },
+        "screen" : {
+          "area" : [ 0, 0, 1084, 712 ]
+        },
+        "header__settings.preview_button" : {
+          "area" : [ 842, 43, 70, 33 ]
+        },
+        "toolbar.undo_button" : {
+          "area" : [ 204, 41, 36, 36 ]
+        },
+        "header__settings.setting_button" : {
+          "area" : [ 1008, 41, 36, 36 ]
+        },
+        "toolbar.table_content_button" : {
+          "area" : [ 276, 41, 36, 36 ]
+        },
+        "toolbar.redo_button" : {
+          "area" : [ 240, 41, 36, 36 ]
+        },
+        "sidebar" : {
+          "area" : [ 804, 88, 280, 624 ]
+        },
+        "editor_body.title_label" : {
+          "area" : [ 176, 171, 1, 1 ]
+        },
+        "toolbar.insert_button" : {
+          "area" : [ 168, 41, 36, 36 ]
+        },
+        "header__settings.show_more_tool_button" : {
+          "area" : [ 1048, 41, 28, 36 ]
+        },
+        "editor_body.content_label" : {
+          "area" : [ 176, 171, 1, 1 ]
+        },
+        "panel_tab.tab_item-1" : {
+          "area" : [ 805, 88, 92, 48 ]
+        },
+        "panel_tab.tab_item-2" : {
+          "area" : [ 896, 88, 61, 48 ]
+        },
+        "header__settings.setting_button.icon_setting" : {
+          "area" : [ 1016, 49, 20, 20 ]
+        },
+        "toolbar" : {
+          "area" : [ 168, 40, 180, 39 ]
+        },
+        "editor_body.title_textfield" : {
+          "area" : [ 177, 172, 610, 84 ]
+        },
+        "header__settings" : {
+          "area" : [ 830, 40, 245, 39 ]
+        },
+        "panel_tab" : {
+          "area" : [ 805, 88, 279, 50 ]
+        },
+        "components_panel_item-1" : {
+          "area" : [ 805, 138, 279, 47 ]
+        },
+        "components_panel_item-5" : {
+          "area" : [ 805, 486, 279, 47 ]
+        },
+        "editor_body" : {
+          "area" : [ 177, 132, 610, 328 ]
+        },
+        "toolbar.block_navigation_button" : {
+          "area" : [ 312, 41, 36, 36 ]
+        },
+        "header__settings.publish_button" : {
+          "area" : [ 919, 43, 77, 33 ]
+        },
+        "editor_body.content_textfield" : {
+          "area" : [ 177, 260, 610, 200 ]
+        },
+        "components_panel_item-4" : {
+          "area" : [ 805, 438, 279, 47 ]
+        },
+        "components_panel_item-3" : {
+          "area" : [ 805, 390, 279, 47 ]
+        },
+        "components_panel_item-2" : {
+          "area" : [ 805, 342, 279, 47 ]
+        }
+      },
+      "screenshot" : "layout-6-screenshot.png",
+      "type" : "layout"
+    }, {
+      "name" : "Screenshot",
+      "status" : "info",
+      "attachments" : [ "file-7-Screenshot" ],
+      "time" : 1558935288844,
+      "type" : "node"
+    } ]
+  }
+}

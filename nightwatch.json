@@ -61,7 +61,7 @@
       "use_xpath": true,
       "screenshots": {
         "enabled": true,
-        "path": "./reports",
+        "path": "./reports/nightwatch",
         "on_failure": true,
         "on_error": true
       },

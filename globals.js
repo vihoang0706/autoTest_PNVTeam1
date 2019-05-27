@@ -1,4 +1,3 @@
-const path = require('path');
 var userNames = {
   username: 'admin',
   password: '123456789',
@@ -12,10 +11,8 @@ const htmlReporter = new HtmlReporter({
 });
 module.exports = {
   userNames: userNames,
-  paths: {
-    data: path.resolve(__dirname, './data/data.csv')
-  },
   "reporter": htmlReporter.fn,
+
   beforeEach: async function (browser, done) {
     browser
       .maximizeWindow()
@@ -25,6 +22,7 @@ module.exports = {
     });
     htmlReporter.setBrowserOptions(browser.options);
   },
+
   afterEach: function (browser, done) {
     browser.end(function () {
       done();

@@ -1,11 +1,11 @@
-const randomString = require('../../../commons/utils/randomString.js');
-const nameTag = randomString('automation testing');
-const slugTag = randomString('automation-test');
-const descriptionTag = 'To learn Automation testing';
-const editNameTag = randomString('automation');
-const editSlugTag = randomString('automation-testing');
-const editDescriptionTag = 'To learn Automation testing by using nightwatch';
-const messageTagUpdated = 'Tag updated.';
+var randomString = require('../../../commons/utils/randomString.js');
+var nameTag = randomString('automation testing');
+var slugTag = randomString('automation-test');
+var descriptionTag = 'To learn Automation testing';
+var editNameTag = randomString('automation');
+var editSlugTag = randomString('automation-testing');
+var editDescriptionTag = 'To learn Automation testing by using nightwatch';
+var messageTagUpdated = 'Tag updated.';
 var dashboardPage, addTagPage, username, password, loginPage, editTagPage;
 module.exports = {
     '@tags': ['tag'],
@@ -18,7 +18,7 @@ module.exports = {
         editTagPage = browser.page.adminTagEditPage();
         loginPage.login(username, password);
     },
-    'Verify that admin can add new tag successfully': (browser) => {
+    'Verify that admin can add a new tag with valid data ': (browser) => {
         browser.perform(function (browser, done) {
             dashboardPage.goToPage('Tag');
             addTagPage.addNewTag(nameTag, slugTag, descriptionTag);
@@ -35,7 +35,7 @@ module.exports = {
             done();
         });
     },
-    'Verify that Admin can edit tag ': (browser) => {
+    'Verify that admin can edit tag with valid data': (browser) => {
         browser.perform(function (browser, done) {
             dashboardPage.goToPage('Tag');
             addTagPage.addNewTag(nameTag, slugTag, descriptionTag);

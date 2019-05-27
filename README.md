@@ -1,7 +1,13 @@
 # **nightwatch**
-## How to install Nightwatch.js framework
+## How to install Nightwatch.js framework demo jenkin
 - Install npm *npm install npm -g*
 - Install node.js *[1]*
+- run npm init
+- run npm install nightwatch –save
+- run npm install iedriver
+- run npm install geckodriver
+- run npm install chromedriver
+- run npm install @rpii/nightwatch-html-reporter
 
 # **Galen**
 ## How it works ?
@@ -15,7 +21,7 @@
  - Generate galen.config (run command line: galen config)
  - specs file for declaring objects (elements) and .test.js file are the test case
 
-## Working command line
+## Working command line with Jenkins
  - Test UI Media: run it on cmd * galen test tests/galen/media/media.test.js --htmlreport reports *
 
 [1]: https://nodejs.org/en/download/current/

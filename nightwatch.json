@@ -39,7 +39,7 @@
     "server_path": "libraries/selenium/selenium-server-standalone-3.141.59.jar",
     "log_path": "logs/",
     "host": "127.0.0.1",
-    "port": 9515,
+    "port": 4444,
     "cli_args": {
       "webdriver.chrome.driver": "libraries/drivers/chromedriver.exe",
       "webdriver.gecko.driver": "node_modules/geckodriver/geckodriver.exe",
@@ -55,7 +55,7 @@
     "default": {
       "skip_testcases_on_fail": false,
       "launch_url": "http://192.168.189.70/wordpress/wp-login.php",
-      "selenium_port": 9515,
+      "selenium_port": 4444,
       "selenium_host": "localhost",
       "silent": true,
       "use_xpath": true,
@@ -74,15 +74,15 @@
       },
       "desiredCapabilities": {
         "browserName": "chrome",
-        "javascriptEnabled": true,
-        "acceptSslCerts": true
+        "chromeOptions": {
+          "args" : ["--no-sandbox"]
+        },
+        "loggingPrefs": {"driver": "INFO", "server": "OFF", "browser": "INFO"}
       }
     },
     "chrome": {
       "desiredCapabilities": {
         "browserName": "chrome",
-        "javascriptEnabled": true,
-        "acceptSslCerts": true,
         "chromeOptions": {
           "args": [
             "disable-web-security",

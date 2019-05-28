@@ -5,9 +5,9 @@
 
   <testsuite name="tags.adminTagTest"
     errors="0" failures="0" hostname="" id="" package="adminTagTest" skipped="0"
-    tests="2" time="12.53" timestamp="">
+    tests="2" time="10.38" timestamp="">
   
-    <testcase name="Verify that admin can add a new tag with valid data " classname="tags.adminTagTest" time="4.523" assertions="8">
+    <testcase name="Verify that admin can add a new tag with valid data " classname="tags.adminTagTest" time="3.977" assertions="8">
 
     
 
@@ -26,7 +26,7 @@
     
     </testcase>
   
-    <testcase name="Verify that admin can edit tag with valid data" classname="tags.adminTagTest" time="8.003" assertions="12">
+    <testcase name="Verify that admin can edit tag with valid data" classname="tags.adminTagTest" time="6.407" assertions="12">
 
     
 

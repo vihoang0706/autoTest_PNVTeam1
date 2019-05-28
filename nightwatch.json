@@ -27,7 +27,7 @@
   "globals_path": "globals.js",
   "webdriver": {
     "start_process": true,
-    "server_path": "C:\Users\InternDN19.01.05\AppData\Local\Google\Chrome\Application\chrome.exe",
+    "server_path": "node_modules/chromedriver/lib/chromedriver/chromedriver.exe",
     "cli_args": [
       "--log",
       "debug"
@@ -73,11 +73,9 @@
         "retryAssertionTimeout": 5000
       },
       "desiredCapabilities": {
-        "browserName": "chrome",
-        "chromeOptions": {
-          "args" : ["--no-sandbox"]
-        },
-        "loggingPrefs": {"driver": "INFO", "server": "OFF", "browser": "INFO"}
+        "browserName": "firefox",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
       }
     },
     "chrome": {

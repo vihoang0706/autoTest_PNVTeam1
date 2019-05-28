@@ -27,7 +27,7 @@
   "globals_path": "globals.js",
   "webdriver": {
     "start_process": true,
-    "server_path": "node_modules/chromedriver/lib/chromedriver/chromedriver.exe",
+    "server_path": "libraries/drivers/chromedriver.exe",
     "cli_args": [
       "--log",
       "debug"
@@ -41,7 +41,7 @@
     "host": "127.0.0.1",
     "port": 4444,
     "cli_args": {
-      "webdriver.chrome.driver": "node_modules/chromedriver/lib/chromedriver/chromedriver.exe",
+      "webdriver.chrome.driver": "libraries/drivers/chromedriver.exe",
       "webdriver.gecko.driver": "node_modules/geckodriver/geckodriver.exe",
       "webdriver.ie.driver": "node_modules/iedriver/lib/iedriver/IEDriverServer.exe"
     }

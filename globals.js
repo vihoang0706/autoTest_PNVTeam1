@@ -14,9 +14,8 @@ module.exports = {
   "reporter": htmlReporter.fn,
 
   beforeEach: async function (browser, done) {
-    browser
-      .maximizeWindow()
-      .url('http://192.168.189.70/wordpress/wp-login.php');
+    browser.maximizeWindow();
+    browser.url('http://192.168.189.70/wordpress/wp-login.php');
     browser.perform(function () {
       done();
     });

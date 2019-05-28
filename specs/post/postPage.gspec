@@ -61,7 +61,7 @@
     @on desktop
         toolbar:
             above editor_body.content_label
-            inside screen 50px top, 2px left
+            inside screen 40px top, 168px left
             left-of header__settings
 
         header__settings:

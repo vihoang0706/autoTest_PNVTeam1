@@ -5,7 +5,7 @@ var userNames = {
 const HtmlReporter = require('@rpii/nightwatch-html-reporter');
 const htmlReporter = new HtmlReporter({
   openBrowser: true,
-  reportsDirectory: __dirname + '/reports/nightwatch',
+  reportsDirectory: __dirname + '/reports/nightwatch/',
   uniqueFilename: true,
   customTheme: 'html-reporter.html'
 });

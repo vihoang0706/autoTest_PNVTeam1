@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="2"
+            tests="2">
+
+  <testsuite name="categories.adminCategoryTest"
+    errors="0" failures="2" hostname="" id="" package="adminCategoryTest" skipped="0"
+    tests="2" time="10.82" timestamp="">
+  
+    <testcase name="Verify that admin can create a new category with valid data" classname="categories.adminCategoryTest" time="5.549" assertions="1">  <failure message="Timed out while waiting for element &lt;//td[@class=&#39;name column-name has-row-actions column-primary&#39;]/strong/a[text()=&#39;clotheshhszhcikgcj&#39;]&gt; to be present for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.getColumnValueActual (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\nightwatch\categories\adminCategoryAddPage.js:24:26)
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\nightwatch\categories\adminCategoryTest.js:28:29)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
+
+    <failure message="    at Page.getColumnValueActual (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\nightwatch\categories\adminCategoryAddPage.js:24:26)">    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\nightwatch\categories\adminCategoryTest.js:28:29)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
+    </testcase>
+  
+    <testcase name="Verify that admin can edit category with valid data" classname="categories.adminCategoryTest" time="5.270" assertions="1">  <failure message="Timed out while waiting for element &lt;//td[@class=&#39;name column-name has-row-actions column-primary&#39;]/strong/a[text()=&#39;clotheshhszhcikgcj&#39;]&gt; to be present for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.clickLink (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\nightwatch\categories\adminCategoryAddPage.js:44:18)
+    at Page.goToAction (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\nightwatch\categories\adminCategoryAddPage.js:52:26)
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\nightwatch\categories\adminCategoryTest.js:45:29)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
+<system-out>[[ATTACHMENT|C:\Users\InternDN19.01.04\autoTest_PNVTeam1\reports\nightwatch\categories\adminCategoryTest\Verify-that-admin-can-edit-category-with-valid-data_FAILED_May-27-2019-164836-GMT+0700-(Indochina.png]]</system-out>
+    <failure message="    at Page.clickLink (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\nightwatch\categories\adminCategoryAddPage.js:44:18)">    at Page.goToAction (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\nightwatch\categories\adminCategoryAddPage.js:52:26)
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\nightwatch\categories\adminCategoryTest.js:45:29)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

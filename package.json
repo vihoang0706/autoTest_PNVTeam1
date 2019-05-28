@@ -1,0 +1,30 @@
+{
+  "name": "autotest_pnvteam1",
+  "version": "1.0.0",
+  "description": "- Install npm *npm install npm -g*\r - Install node.js *[1]*\r - run npm init\r - run npm install nightwatch –save\r - run npm install iedriver\r - run npm install geckodriver\r - run npm install chromedriver\r - run npm install @rpii/nightwatch-html-reporter",
+  "main": "globals.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "handlebars": "^4.1.2",
+    "light-server": "^2.6.2",
+    "nightwatch-html-reporter": "^2.0.6",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vihoang0706/autoTest_PNVTeam1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vihoang0706/autoTest_PNVTeam1/issues"
+  },
+  "homepage": "https://github.com/vihoang0706/autoTest_PNVTeam1#readme"
+}

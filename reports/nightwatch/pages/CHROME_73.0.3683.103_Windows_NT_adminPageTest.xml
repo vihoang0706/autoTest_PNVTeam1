@@ -5,9 +5,9 @@
 
   <testsuite name="pages.adminPageTest"
     errors="0" failures="0" hostname="" id="" package="adminPageTest" skipped="0"
-    tests="2" time="38.20" timestamp="">
+    tests="2" time="44.13" timestamp="">
   
-    <testcase name="Verify that admin can add a new page with valid data" classname="pages.adminPageTest" time="18.57" assertions="9">
+    <testcase name="Verify that admin can add a new page with valid data" classname="pages.adminPageTest" time="25.91" assertions="9">
 
     
 
@@ -28,7 +28,7 @@
     
     </testcase>
   
-    <testcase name="Verify that admin can edit page with valid data" classname="pages.adminPageTest" time="19.63" assertions="15">
+    <testcase name="Verify that admin can edit page with valid data" classname="pages.adminPageTest" time="18.22" assertions="15">
 
     
 

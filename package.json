@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "- Install npm *npm install npm -g*\r - Install node.js *[1]*\r - run npm init\r - run npm install nightwatch –save\r - run npm install iedriver\r - run npm install geckodriver\r - run npm install chromedriver\r - run npm install @rpii/nightwatch-html-reporter",
   "main": "globals.js",
+  "scripts": {
+    "lint": "eslint .",
+    "debug": "node --inspect-brk node_modules/nightwatch/bin/runner.js --env chrome",
+    "start-server": "./node_modules/.bin/light-server -s . -p 500 -w ./reports/*.html",
+    "test": "node nightwatch -e chrome tests/nightwatch",
+    "galen": "galen",
+    "test-galen": "galen test tests/galen/post/post.test.js --htmlreport reports/galen --parallel-tests 3"
+  },
   "directories": {
     "test": "tests"
   },
@@ -14,9 +22,6 @@
     "path": "^0.12.7"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "mocha"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vihoang0706/autoTest_PNVTeam1.git"

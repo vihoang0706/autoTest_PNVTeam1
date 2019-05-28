@@ -1,64 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="0"
+            failures="2"
             tests="2">
 
   <testsuite name="posts.adminPostTest"
-    errors="0" failures="0" hostname="" id="" package="adminPostTest" skipped="0"
-    tests="2" time="37.83" timestamp="">
+    errors="0" failures="2" hostname="" id="" package="adminPostTest" skipped="0"
+    tests="2" time="10.54" timestamp="">
   
-    <testcase name="Verify that admin can add a new post with valid data" classname="posts.adminPostTest" time="20.77" assertions="9">
+    <testcase name="Verify that admin can add a new post with valid data" classname="posts.adminPostTest" time="5.207" assertions="1">  <failure message="Timed out while waiting for element &lt;button.editor-post-publish-button&gt; to be present for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.addNewPost (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\nightwatch\posts\adminPostAddPage.js:8:10)
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\nightwatch\posts\adminPostTest.js:22:25)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
+    <failure message="    at Page.addNewPost (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\nightwatch\posts\adminPostAddPage.js:8:10)">    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\nightwatch\posts\adminPostTest.js:22:25)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
     </testcase>
   
-    <testcase name="Verify that admin can edit post with valid data" classname="posts.adminPostTest" time="17.06" assertions="15">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
+    <testcase name="Verify that admin can edit post with valid data" classname="posts.adminPostTest" time="5.333" assertions="1">  <failure message="Timed out while waiting for element &lt;button.editor-post-publish-button&gt; to be present for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Page.addNewPost (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\nightwatch\posts\adminPostAddPage.js:8:10)
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\nightwatch\posts\adminPostTest.js:47:25)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
+<system-out>[[ATTACHMENT|C:\Users\InternDN19.01.04\autoTest_PNVTeam1\reports\nightwatch\posts\adminPostTest\Verify-that-admin-can-edit-post-with-valid-data_FAILED_May-28-2019-100059-GMT+0700-(Indochina.png]]</system-out>
+    <failure message="    at Page.addNewPost (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\page-objects\nightwatch\posts\adminPostAddPage.js:8:10)">    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\InternDN19.01.04\autoTest_PNVTeam1\tests\nightwatch\posts\adminPostTest.js:47:25)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
     </testcase>
   
 

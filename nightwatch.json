@@ -27,7 +27,7 @@
   "globals_path": "globals.js",
   "webdriver": {
     "start_process": true,
-    "server_path": "node_modules/chromedriver/lib/chromedriver/chromedriver.exe",
+    "server_path": "C:\Users\InternDN19.01.05\AppData\Local\Google\Chrome\Application\chrome.exe",
     "cli_args": [
       "--log",
       "debug"
